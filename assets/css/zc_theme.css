@@ -5675,7 +5675,7 @@ section.parallax .row .background-image-holder {
 
 @media all and (min-width: 990px) {
     .menu-horizontal li:not(:last-child) {
-        margin-right: 1.23809524em;
+       
     }
 
     .bar__module:not(:only-child) .menu-horizontal {
@@ -5696,7 +5696,7 @@ section.parallax .row .background-image-holder {
 
     .bar-2 .bar__module,
     .bar-1 .bar__module {
-        margin-bottom: 1.85714286em;
+        
     }
 
     .bar-2 .row div[class*='col-']:last-child .bar__module:last-child,
@@ -10630,7 +10630,7 @@ footer .logo {
 }
 
 footer ul:not(.list-inline):not(.slides) > li {
-    line-height: 2.32142857em !important;
+    line-height: 2.32142857em;
 }
 
 footer.footer-2 .row:last-child {

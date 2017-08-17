@@ -33,6 +33,14 @@ section.imagebg.parallax
 	border-radius 0px 0px 25% 0px
 .pad-sm
 	padding 10px
+@media (max-width: 768px)
+	.float-center-xs
+		float none
+		margin 20px auto
+@media (max-width: 992px)
+	.float-center-sm
+		float none
+		margin 20px auto
 
 
 
@@ -46,13 +54,6 @@ section.imagebg.parallax
 	border-right $border
 .border-bottom
 	border-bottom $border
-#overlap-video
-	position relative
-	top -75px
-	z-index 3
-	padding 25px
-	color $white
-
 
 
 
@@ -85,6 +86,7 @@ a
 
 .btn
 	border-radius 999px
+	white-space normal
 .btn--primary,
 .btn--primary:visited
 	background rgba(0,0,0,0.0)
@@ -138,58 +140,66 @@ a
 
 
 // --- header
-
+.dropdown__content
+	border-radius 0 !important
+	box-shadow none !important
+	li
+		padding 10px 20px
+	a
+		padding 10px 20px
 header
 	height $headerHeight
 	background $white
 	position fixed
 	z-index 10
 	width 100%
-	div
-		position relative
-		height 100%
+	// div
+	// 	position relative
+	// 	height 100%
 	.logo
 		height 75px
 		position absolute
 		top 0
 		bottom 0
 		margin auto
-	nav.small
-		position absolute
-		right 0
-		top 10px
-		ul
-			li
-				display inline-block
-				padding 2px 10px
+	.nav-container
+		height 100%
+	
+	nav
+		a 
+			text-transform none !important
+			opacity 1 !important
+			color $green !important
+			transition .2s !important
+			font-size inherit !important
+			line-height inherit !important
+			&:hover
+				color $yellow !important
+				transition .2s !important
+	// nav.small
+	// 	position absolute
+	// 	right 0
+	// 	top 10px
+	// 	ul
+	// 		li
+	// 			display inline-block
+	// 			padding 2px 10px
 				
-				.dropdown
-					border none
-					width auto
-					font-weight 600
-					.dropdown__content
-						box-shadow none
-						ul
-							width auto
-							background $white
-							li
-								padding 10px 20px
-								display block
-								max-width 100px
+
 						
-				a
-					font-weight 600
-	nav.large
-		position absolute
-		right 0
-		top 50px
-		ul
-			li
-				display inline-block
-				padding 2px 10px
+	// 			a
+	// 				font-weight 600
+	// nav.large
+	// 	position absolute
+	// 	right 0
+	// 	top 50px
+	// 	ul
+	// 		li
+	// 			display inline-block
+	// 			padding 2px 10px
 										
-				a
-					font-weight 600
+	// 			a
+	// 				font-weight 600
 
 
 
@@ -203,6 +213,24 @@ footer
 	width 100%
 	background $gray
 	z-index 1
+	.footer-logo
+		width 200px
+		margin-bottom 50px
+	.footer-nav
+		li
+			line-height 1.5em !important
+		a
+			color $white !important
+	.footer-address
+		line-height 1.5em !important
+		color $white !important
+	.footer-social
+		h1,h2,h3,h4,h5,h6
+			color $white
+		li
+			display	inline-block
+			img
+				width 50px
 #footer-blue-box
 	position relative
 	z-index 3
@@ -224,6 +252,12 @@ body
 	background $white
 	border-radius 0px 0px 500px 0px
 	//background $blue
+	#overlap-video
+		position relative
+		top -75px
+		z-index 3
+		padding 25px
+		color $white
 	#updates-teaser
 		position relative
 		z-index 3
@@ -243,3 +277,37 @@ body
 				left 0
 				right 0
 				margin auto
+				
+
+// --- queries
+@media (max-width:990px)
+	.menu-horizontal
+		li
+			display inline-block
+			margin-right 15px
+@media (max-width:768px)
+	.stack-menu
+		margin 25px
+	.menu-horizontal
+		li
+			display block
+			margin-top 15px
+	.content
+		border-radius 0px
+@media (max-width: 992px)
+	.content
+		#overlap-video
+			position relative
+			top 0
+			z-index 3
+			padding 25px
+			color $white
+	footer
+		padding 0px 0px 50px 0px
+		#footer-blue-box
+			width 100%
+			top 0
+		.col-xs-12
+			padding 25px
+			text-align center
+		

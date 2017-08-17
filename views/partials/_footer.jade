@@ -3,7 +3,7 @@
 footer
 	.container
 		.row
-			#footer-blue-box.col-lg-6.float-left
+			#footer-blue-box.col-md-6.col-xs-12.float-left
 				h2.color--white How can we help you?
 				p.color--white.
 					We are available for all your questions.
@@ -13,10 +13,83 @@ footer
 				a.btn.btn--primary.type--uppercase(href='#' style="margin-top:25px;")
 					span.btn__text
 						| Visit our Support Page
-			.col-lg-6.float-right
+			.col-md-6.col-xs-12.float-right
 				h2.color--white Stay informed
 				p.color--white With an update in your inbox every month
 				input(type="text")
 				a.btn.btn--primary.type--uppercase(href='#' style="margin-top:25px;")
 					span.btn__text
 						| Subscribe
+		.row.text-center
+			.col-xs-12
+				img.footer-logo(src="/img/logo/vasLogo-white.png")
+		#footer-nav-row.row
+			.col-sm-3.col-xs-9.float-center-xs.text-center-xs
+				ul.footer-nav
+					li
+						a(href="#").
+							Solutions
+					li
+						a(href="#").
+							About Us
+					li
+						a(href="#").
+							Support
+					li
+						a(href="#").
+							Inspiration
+			.col-sm-3.col-xs-9.float-center-xs.text-center-xs
+				ul.footer-nav
+					li
+						a(href="#").
+							DairyComp
+					li
+						a(href="#").
+							FeedComp
+					li
+						a(href="#").
+							ParlorComp
+			.col-sm-3.col-xs-9.float-center-xs.text-center-xs
+				ul.footer-nav
+					li
+						a(href="#").
+							Updates
+					li
+						a(href="#").
+							Newsletter
+					li
+						a(href="#").
+							Contact
+			.col-sm-3.col-xs-9.float-center-xs.text-center-xs
+				p.footer-address.
+					VAS #[br]
+					3950 South K Street #[br]
+					Tulare, CA 93274 USA
+		.row.mt--3.footer-social
+			.col-md-4.col-sm-6
+				h4.text-center-xs At the Heart of Your Dairy
+			.col-md-4.col-sm-6
+				ul.text-center
+					li
+						a(href="#")
+							img(src="/img/social/social-twitter.png")
+					li
+						a(href="#")
+							img(src="/img/social/social-facebook.png")
+					li
+						a(href="#")
+							img(src="/img/social/social-linkedin.png")
+			.col-md-4.col-sm-12
+				ul.text-right.color--white.text-center-xs
+					li.pad-sm
+						a(href="#").small.color--white.
+							Terms of use
+					li.pad-sm
+						a(href="#").small.color--white.
+							Privacy and Cookies
+					li.pad-sm
+						a(href="#").small.color--white.
+							Colofon
+					li.pad-sm
+						p.small.
+							© VAS 2017

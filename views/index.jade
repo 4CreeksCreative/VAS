@@ -4,7 +4,7 @@ block content
 	.content
 		section.imagebg.parallax.cover.height-80(data-overlay="1")
 			.background-image-holder
-				img(alt='background', src='/img/home/header.jpg')
+				img(alt='background', src='/img/home/green-header.jpg')
 			.container
 				.row
 					.col-lg-4
@@ -16,25 +16,27 @@ block content
 							span.btn__text
 								| Get Connected
 		#updates-teaser.container
-			.row.imagebg.cover(style="min-height:500px;")
+			.row.imagebg.cover
 				.background-image-holder
 					img(src="/img/home/cowpet.jpg")
-				.col-lg-8(style="min-height:500px;")
-				.col-lg-4.update-post.border-bottom.bg--white
+				.col-md-8.hidden-sm.hidden-xs
+				.col-md-4.update-post.border-bottom.bg--white.clearfix
 					a(href="#")
-						p.color--primary-2.small.unmarg.float-left Update 2/3/2017
-						h4.color--primary-1.unmarg.float-left Visit VAS at the 2017 World Dairy Expo!
-						i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--primary-2.float-right
-				.col-lg-4.update-post.border-bottom.bg--white
+						p.color--primary-2.small.unmarg.float-left.col-xs-12 Update 2/3/2017
+						h4.color--primary-1.unmarg.float-left.col-xs-10 Visit VAS at the 2017 World Dairy Expo!
+						i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--primary-2.float-right.col-xs-2
+				.col-md-8.hidden-sm.hidden-xs
+				.col-md-4.update-post.border-bottom.bg--white.clearfix
 					a(href="#")
-						p.color--primary-2.small.unmarg.float-left Update 2/3/2017
-						h4.color--primary-1.unmarg.float-left Visit VAS at the 2017 World Dairy Expo!
-						i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--primary-2.float-right
-				.col-lg-4.update-post.border-bottom.bg--white
+						p.color--primary-2.small.unmarg.float-left.col-xs-12 Update 2/3/2017
+						h4.color--primary-1.unmarg.float-left.col-xs-10 Visit VAS at the 2017 World Dairy Expo!
+						i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--primary-2.float-right.col-xs-2
+				.col-md-8.hidden-sm.hidden-xs
+				.col-md-4.update-post.border-bottom.bg--white.clearfix
 					a(href="#")
-						p.color--primary-2.small.unmarg.float-left Update 2/3/2017
-						h4.color--primary-1.unmarg.float-left Visit VAS at the 2017 World Dairy Expo!
-						i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--primary-2.float-right
+						p.color--primary-2.small.unmarg.float-left.col-xs-12 Update 2/3/2017
+						h4.color--primary-1.unmarg.float-left.col-xs-10 Visit VAS at the 2017 World Dairy Expo!
+						i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--primary-2.float-right.col-xs-2
 		#video-teaser.container
 			.row
 				.col-lg-12
@@ -43,7 +45,7 @@ block content
 							img(alt='image', src='/img/home/video.jpg')
 						.video-play-icon.video-play-icon--sm
 						iframe(src="https://www.youtube.com/embed/W_z3IO7kO9c?ecver=1")
-				#overlap-video.col-lg-6.bg--gradient.float-right
+				#overlap-video.col-md-6.bg--gradient.float-right
 					p.
 						We're proud to present to you our new branding. Strong roots give us strength for the future.
 					a.btn.btn--primary.type--uppercase.float-right(href='#')
@@ -54,28 +56,28 @@ block content
 				.col-lg-12
 					h3.color--primary-2.
 						Our Products
-			.row.text-left
-				.col-lg-4
+			.row.text-center
+				.col-md-4.col-xs-9.float-center-sm
 					img.img-clip(src="/img/home/dcomp.jpg")
-					div.pad-sm
+					div.pad-sm.text-left
 						h4.color--primary-1.
 							DairyComp
 						p.color--primary-1.unmarg #[i.fa.fa-check.color--primary-2]    Fastest program for recording
 						p.color--primary-1.unmarg #[i.fa.fa-check.color--primary-2]    Simple entry system
 						p.color--primary-1.unmarg #[i.fa.fa-check.color--primary-2]    Flexible and customizable
 						p.color--primary-1.unmarg #[i.fa.fa-check.color--primary-2]    Connect with on-farm systems
-				.col-lg-4(style="margin-top:50px;")
+				.col-md-4.col-xs-9.float-center-sm
 					img.img-clip(src="/img/home/fcomp.jpg")
-					div.pad-sm
+					div.pad-sm.text-left
 						h4.color--primary-1.
 							FeedComp
 						p.color--primary-1.unmarg #[i.fa.fa-check.color--primary-2]    Eliminate feed sheets
 						p.color--primary-1.unmarg #[i.fa.fa-check.color--primary-2]    Monitor intakes
 						p.color--primary-1.unmarg #[i.fa.fa-check.color--primary-2]    Track ingredient / ratio chemistries
 						p.color--primary-1.unmarg #[i.fa.fa-check.color--primary-2]    Reduce feed wastes
-				.col-lg-4
+				.col-md-4.col-xs-9.float-center-sm
 					img.img-clip(src="/img/home/pcomp.jpg")
-					div.pad-sm
+					div.pad-sm.text-left
 						h4.color--primary-1.
 							ParlorComp
 						p.color--primary-1.unmarg #[i.fa.fa-check.color--primary-2]    Operate your parlor effectively
@@ -88,26 +90,26 @@ block content
 					h3.color--primary-2.
 						Updates
 			.row.text-left
-				.col-lg-6
+				.col-md-6.col-sm-12.clearfix
 					a(href="#")
-						p.color--primary-2.small.unmarg.float-left Update 2/3/2017
-						h4.color--primary-1.unmarg.float-left Visit VAS at the 2017 World Dairy Expo!
-						i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--primary-2.float-right
-				.col-lg-6
+						p.color--primary-2.small.unmarg.float-left.col-xs-12 Update 2/3/2017
+						h4.color--primary-1.unmarg.float-left.col-xs-10 Visit VAS at the 2017 World Dairy Expo!
+						i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--primary-2.float-right.col-xs-2
+				.col-md-6.col-sm-12.clearfix
 					a(href="#")
-						p.color--primary-2.small.unmarg.float-left Update 2/3/2017
-						h4.color--primary-1.unmarg.float-left Visit VAS at the 2017 World Dairy Expo!
-						i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--primary-2.float-right
-				.col-lg-6
+						p.color--primary-2.small.unmarg.float-left.col-xs-12 Update 2/3/2017
+						h4.color--primary-1.unmarg.float-left.col-xs-10 Visit VAS at the 2017 World Dairy Expo!
+						i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--primary-2.float-right.col-xs-2
+				.col-md-6.col-sm-12.clearfix
 					a(href="#")
-						p.color--primary-2.small.unmarg.float-left Update 2/3/2017
-						h4.color--primary-1.unmarg.float-left Visit VAS at the 2017 World Dairy Expo!
-						i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--primary-2.float-right
-				.col-lg-6
+						p.color--primary-2.small.unmarg.float-left.col-xs-12 Update 2/3/2017
+						h4.color--primary-1.unmarg.float-left.col-xs-10 Visit VAS at the 2017 World Dairy Expo!
+						i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--primary-2.float-right.col-xs-2
+				.col-md-6.col-sm-12.clearfix
 					a(href="#")
-						p.color--primary-2.small.unmarg.float-left Update 2/3/2017
-						h4.color--primary-1.unmarg.float-left Visit VAS at the 2017 World Dairy Expo!
-						i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--primary-2.float-right
+						p.color--primary-2.small.unmarg.float-left.col-xs-12 Update 2/3/2017
+						h4.color--primary-1.unmarg.float-left.col-xs-10 Visit VAS at the 2017 World Dairy Expo!
+						i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--primary-2.float-right.col-xs-2
 			.row.text-center(style="margin-top:50px")
 				a.btn.btn--primary-1.type--uppercase(href='#')
 					span.btn__text

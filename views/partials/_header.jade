@@ -1,5 +1,61 @@
 header
-	div.container
+	.nav-container(style="height:100%;")
+		.visible-xs(style="height:100%;")
+			.container(style="height:100%;")
+				.row(style="height:100%;")
+					.col-xs-3.col-sm-2(style="height:100%;")
+						a(href='index.html')
+							img.logo.logo-dark(alt='logo', src='/img/logo/vasIcon-color.png')
+							img.logo.logo-light(alt='logo', src='/img/logo/vasIcon-color.png')
+					.col-xs-9.col-sm-10.text-right(style="height:100%;")
+						a.hamburger-toggle(href='#', data-toggle-class='#menu1;hidden-xs')
+							i.icon.icon--sm.stack-interface.stack-menu
+				// end of row
+			// end of container
+		// end bar
+		nav#menu1.hidden-xs(style="padding-top:15px")
+			.container
+				a(href='#').float-left.hidden-xs
+					img.logo.logo-dark(alt='logo', src='/img/logo/vasLogo-color.png')
+					img.logo.logo-light(alt='logo', src='/img/logo/vasLogo-color.png')
+				.row.small(style="background:#fff;")
+					.col-xs-11.text-right.float-right.text-center-xs.float-center-xs
+						.bar__module
+							ul.menu-horizontal.text-right.text-center-xs
+								li
+									a(href="#") Updates
+								li
+									a(href="#") Newsletter
+								li
+									a(href="#") Contact
+								li.dropdown
+									span.dropdown__trigger #[i.fa.fa-globe] English
+									.dropdown__container
+										.container
+											.row
+												.col-xs-12.col-sm-6.dropdown__content.dropdown__content--lg
+													.col-md-2.col-md-offset-6.col-sm-4
+														ul
+															li
+																a(href="#") Spanish
+															li
+																a(href="#") German
+
+
+				.row(style="background:#fff;")
+					.col-xs-11.text-right.text-center-xs.float-right.float-center-xs
+						.bar__module
+							ul.menu-horizontal.text-right.text-center-xs
+								li
+									a(href="#") Solutions
+								li
+									a(href="#") About Us
+								li
+									a(href="#") Support
+								li
+									a(href="#") Inspiration
+
+	//-div.container
 		img.logo(src="/img/logo/vasLogo-color.png")
 		nav.small
 			ul
