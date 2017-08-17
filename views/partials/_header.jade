@@ -4,7 +4,7 @@ header
 			.container(style="height:100%;")
 				.row(style="height:100%;")
 					.col-xs-3.col-sm-2(style="height:100%;")
-						a(href='index.html')
+						a(href='/')
 							img.logo.logo-dark(alt='logo', src='/img/logo/vasIcon-color.png')
 							img.logo.logo-light(alt='logo', src='/img/logo/vasIcon-color.png')
 					.col-xs-9.col-sm-10.text-right(style="height:100%;")
@@ -29,17 +29,19 @@ header
 								li
 									a(href="#") Contact
 								li.dropdown
-									span.dropdown__trigger #[i.fa.fa-globe] English
+									span.dropdown__trigger #[i.fa.fa-globe] Language
 									.dropdown__container
 										.container
 											.row
 												.col-xs-12.col-sm-6.dropdown__content.dropdown__content--lg
-													.col-md-2.col-md-offset-6.col-sm-4
+													.col-md-2.col-md-offset-6.col-sm-4.text-center
 														ul
 															li
-																a(href="#") Spanish
+																a.language(href="/") English
 															li
-																a(href="#") German
+																a.language(href="/es") Spanish
+															li
+																a.language(href="/de") German
 
 
 				.row(style="background:#fff;")
@@ -47,7 +49,7 @@ header
 						.bar__module
 							ul.menu-horizontal.text-right.text-center-xs
 								li
-									a(href="#") Solutions
+									a(href="/solutions") Solutions
 								li
 									a(href="#") About Us
 								li
