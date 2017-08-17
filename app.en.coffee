@@ -4,11 +4,10 @@ autoprefixer = require 'autoprefixer-stylus'
 js_pipeline  = require 'js-pipeline'
 css_pipeline = require 'css-pipeline'
 contentful   = require 'roots-contentful'
-path         = require 'path'
 
 module.exports =
-  output: '/public'
-  ignores: ['readme.md', '**/layout.*', '**/_*', '.gitignore', 'ship.*conf','**/public/**','**/img/resized/*','**/img/stack/*']
+  output: 'public'
+  ignores: ['start_app.js','readme.md', '**/layout.*', '**/_*', '.gitignore', 'ship.*conf','**/public/**','**/img/resized/*','**/img/stack/*','*.coffee']
 
   extensions: [
     js_pipeline(files: ['assets/**/*.js','assets/js/*.coffee']),
@@ -32,7 +31,6 @@ module.exports =
           id: 'homePage'
           filters:{
             'locale':'en-US'
-
           }
           ##template: 'views/partial/_cf_post.jade'
         
