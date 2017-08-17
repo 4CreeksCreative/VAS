@@ -1,0 +1,245 @@
+@import 'zy_settings'
+
+//normalize-css()
+//base()
+$headerHeight = 100px
+$border = 1px $bordergray solid
+
+
+// --- fonts
+a,p,h1,h2,h3,h4,h5,h6,input,textarea,select,option,span,li
+	font-family $uni
+	font-weight 600
+h1,h2
+	font-weight 800
+h3,h4,h5,h6
+	font-weight 700
+p,a,input,textarea,select,option,span,li
+	font-weight 600
+
+
+
+
+
+
+
+// --- fixes
+.dropdown__content
+	padding 0 !important
+section.imagebg.parallax
+	min-height 750px;
+	border-radius 0px 0px 25% 0px
+.img-clip
+	border-radius 0px 0px 25% 0px
+.pad-sm
+	padding 10px
+
+
+
+
+
+
+
+
+// --- misc classes
+.border-right
+	border-right $border
+.border-bottom
+	border-bottom $border
+#overlap-video
+	position relative
+	top -75px
+	z-index 3
+	padding 25px
+	color $white
+
+
+
+
+
+
+
+// --- colors
+a
+	color $green
+	&:hover
+		color $yellowgreen
+::selection 
+	background $yellow /* WebKit/Blink Browsers */
+	color $white
+
+::-moz-selection
+	background: $yellow /* Gecko Browsers */
+	color $white
+.bg--gradient
+	for key, value in $greengradient
+		{key}:value
+
+
+
+
+
+
+
+// --- buttons
+
+.btn
+	border-radius 999px
+.btn--primary,
+.btn--primary:visited
+	background rgba(0,0,0,0.0)
+	border-color $white
+
+.btn--primary .btn__text,
+.btn--primary:visited .btn__text
+	color #fff
+
+.btn--primary .btn__text i,
+				.btn--primary:visited .btn__text i
+	color #fff
+
+.btn--primary
+	&:hover
+		background $yellowgreen
+	&:active
+		background $green
+		
+
+.btn--primary-1,
+.btn--primary-1:visited
+	background rgba(0,0,0,0.0)
+	border-color $green
+
+.btn--primary-1 .btn__text,
+.btn--primary-1:visited .btn__text
+	color $green
+
+.btn--primary-1 .btn__text i,
+				.btn--primary-1:visited .btn__text i
+	color $green
+
+.btn--primary-1
+	&:hover
+		background $yellowgreen
+		border-color $white
+		.btn__text
+			color $white 
+	&:active
+		background $green
+		border-color $white
+		.btn__text
+			color $white
+
+
+
+
+
+
+
+
+// --- header
+
+header
+	height $headerHeight
+	background $white
+	position fixed
+	z-index 10
+	width 100%
+	div
+		position relative
+		height 100%
+	.logo
+		height 75px
+		position absolute
+		top 0
+		bottom 0
+		margin auto
+	nav.small
+		position absolute
+		right 0
+		top 10px
+		ul
+			li
+				display inline-block
+				padding 2px 10px
+				
+				.dropdown
+					border none
+					width auto
+					font-weight 600
+					.dropdown__content
+						box-shadow none
+						ul
+							width auto
+							background $white
+							li
+								padding 10px 20px
+								display block
+								max-width 100px
+						
+				a
+					font-weight 600
+	nav.large
+		position absolute
+		right 0
+		top 50px
+		ul
+			li
+				display inline-block
+				padding 2px 10px
+										
+				a
+					font-weight 600
+
+
+
+
+
+// --- Footer
+
+footer
+	position relative
+	//margin-top -200px
+	width 100%
+	background $gray
+	z-index 1
+#footer-blue-box
+	position relative
+	z-index 3
+	top -225px
+	padding 50px
+	background $blue
+
+
+
+
+
+
+// --- main content area
+body
+	background $gray
+.content
+	padding-top $headerHeight
+	//padding-bottom 200px
+	background $white
+	border-radius 0px 0px 500px 0px
+	//background $blue
+	#updates-teaser
+		position relative
+		z-index 3
+		top -225px
+		.update-post
+			padding 20px
+	#updates
+		.col-lg-6
+			padding 20px
+			&::after
+				content ''
+				border-bottom $border
+				display block
+				position absolute
+				bottom 0
+				width 90%
+				left 0
+				right 0
+				margin auto
