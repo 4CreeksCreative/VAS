@@ -96,7 +96,7 @@ block content
 				- var i = 0; var e = (contentful.Updates.length >=4) ? 4 : contentful.Updates.length; while (i<4){
 				- var date = new Date(contentful.Updates[i].date);
 					.col-md-12.col-sm-12.clearfix
-						a(href="#")
+						a(href="#{contentful.Updates[i]._url}")
 							p.color--primary-2.small.unmarg.float-left.col-xs-12 Update #{date.getMonth() +'/'+ date.getDate() +'/'+ date.getFullYear()}
 							h4.color--primary-1.unmarg.float-left.col-xs-10= contentful.Updates[i].title
 							i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--primary-2.float-right.col-xs-2
