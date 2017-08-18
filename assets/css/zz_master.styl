@@ -147,6 +147,8 @@ a
 		padding 10px 20px
 	a
 		padding 10px 20px
+#menu1
+	padding-top 15px
 header
 	height $headerHeight
 	background $white
@@ -156,12 +158,17 @@ header
 	// div
 	// 	position relative
 	// 	height 100%
-	.logo
+	a.logo
 		height 75px
 		position absolute
+		z-index 5
 		top 0
 		bottom 0
 		margin auto
+		.logo
+			height 75px
+			
+		
 	.nav-container
 		height 100%
 	
@@ -286,8 +293,12 @@ body
 			display inline-block
 			margin-right 15px
 @media (max-width:768px)
+	#menu1
+		padding-top 0px
+	.logo-mobile
+		margin-left 10px !important
 	.stack-menu
-		margin 25px
+		margin 25px 0px 0px 0px
 	.menu-horizontal
 		li
 			display block
