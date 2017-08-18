@@ -22,13 +22,15 @@ header
 						.bar__module
 							ul.menu-horizontal.text-right.text-center-xs
 								li
-									a(href="#") Updates
+									a(href="#")= contentful.Navigation[0].updates
 								li
-									a(href="#") Newsletter
+									a(href="#")= contentful.Navigation[0].newsletter
 								li
-									a(href="#") Contact
+									a(href="#")= contentful.Navigation[0].contact
 								li.dropdown
-									span.dropdown__trigger #[i.fa.fa-globe] Language
+									span.dropdown__trigger 
+										|#[i.fa.fa-globe]
+										!= contentful.Navigation[0].language
 									.dropdown__container
 										.container
 											.row
@@ -36,11 +38,11 @@ header
 													.col-md-2.col-md-offset-6.col-sm-4.text-center
 														ul
 															li
-																a.language(href="/") English
+																a.language(href="/")= contentful.Navigation[0].english
 															li
-																a.language(href="/es") Spanish
+																a.language(href="/es")= contentful.Navigation[0].spanish
 															li
-																a.language(href="/de") German
+																a.language(href="/de")= contentful.Navigation[0].german
 
 
 				.row(style="background:#fff;")
@@ -48,13 +50,13 @@ header
 						.bar__module
 							ul.menu-horizontal.text-right.text-center-xs
 								li
-									a(href="/solutions") Solutions
+									a(href="/solutions")= contentful.Navigation[0].solutions
 								li
-									a(href="#") About Us
+									a(href="#")= contentful.Navigation[0].aboutUs
 								li
-									a(href="#") Support
+									a(href="#")= contentful.Navigation[0].support
 								li
-									a(href="#") Inspiration
+									a(href="#")= contentful.Navigation[0].inspiration
 
 	//-div.container
 		img.logo(src="/img/logo/vasLogo-color.png")

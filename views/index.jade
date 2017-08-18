@@ -11,8 +11,7 @@ block content
 						h2= contentful.Home[0].headerLargeText
 						p= contentful.Home[0].headerSubtext
 						a.btn.btn--primary.type--uppercase(href='#')
-							span.btn__text
-								| Get Connected
+							span.btn__text= contentful.Home[0].headerButtonText
 		#updates-teaser.container
 			.row.imagebg.cover
 				.background-image-holder
@@ -40,22 +39,29 @@ block content
 				.col-lg-12
 					.video-cover.border--round
 						.background-image-holder
-							img(alt='image', src='/img/home/video.jpg')
+							img(alt='image', src='#{asset(contentful.Home[0].featuredVideoCover)}')
 						.video-play-icon.video-play-icon--sm
-						iframe(src="https://www.youtube.com/embed/W_z3IO7kO9c?ecver=1")
+						!= contentful.Home[0].featuredVideo
 				#overlap-video.col-md-6.bg--gradient.float-right
-					p.
-						We're proud to present to you our new branding. Strong roots give us strength for the future.
+					p= contentful.Home[0].featuredVideoDescription
 					a.btn.btn--primary.type--uppercase.float-right(href='#')
-							span.btn__text
-								| View The Video
+							span.btn__text= contentful.Home[0].featuredVideoButtonText
+								
 		section#products.container
 			.row.text-center
 				.col-lg-12
-					h3.color--primary-2.
-						Our Products
+					h3.color--primary-2= contentful.Home[0].productSectionTitle
 			.row.text-center
-				.col-md-4.col-xs-9.float-center-sm
+				for product in contentful.HomeProducts
+					.col-md-4.col-xs-9.float-center-sm
+						img.img-clip(src="#{asset(product.photo)}")
+						div.pad-sm.text-left
+							h4.color--primary-1= product.title
+							for item in product.list
+								p.color--primary-1.unmarg
+									|#[i.fa.fa-check.color--primary-2]
+									!= item
+				//-.col-md-4.col-xs-9.float-center-sm
 					img.img-clip(src="/img/home/dcomp.jpg")
 					div.pad-sm.text-left
 						h4.color--primary-1.
@@ -64,7 +70,7 @@ block content
 						p.color--primary-1.unmarg #[i.fa.fa-check.color--primary-2]    Simple entry system
 						p.color--primary-1.unmarg #[i.fa.fa-check.color--primary-2]    Flexible and customizable
 						p.color--primary-1.unmarg #[i.fa.fa-check.color--primary-2]    Connect with on-farm systems
-				.col-md-4.col-xs-9.float-center-sm
+				//-.col-md-4.col-xs-9.float-center-sm
 					img.img-clip(src="/img/home/fcomp.jpg")
 					div.pad-sm.text-left
 						h4.color--primary-1.
@@ -73,7 +79,7 @@ block content
 						p.color--primary-1.unmarg #[i.fa.fa-check.color--primary-2]    Monitor intakes
 						p.color--primary-1.unmarg #[i.fa.fa-check.color--primary-2]    Track ingredient / ratio chemistries
 						p.color--primary-1.unmarg #[i.fa.fa-check.color--primary-2]    Reduce feed wastes
-				.col-md-4.col-xs-9.float-center-sm
+				//-.col-md-4.col-xs-9.float-center-sm
 					img.img-clip(src="/img/home/pcomp.jpg")
 					div.pad-sm.text-left
 						h4.color--primary-1.
@@ -85,30 +91,36 @@ block content
 		section#updates.container
 			.row.text-center
 				.col-lg-12
-					h3.color--primary-2.
-						Updates
+					h3.color--primary-2= contentful.Home[0].updatesSectionTitle
 			.row.text-left
-				.col-md-6.col-sm-12.clearfix
+				- var i = 0; var e = (contentful.Updates.length >=4) ? 4 : contentful.Updates.length; while (i<4){
+				- var date = new Date(contentful.Updates[i].date);
+					.col-md-12.col-sm-12.clearfix
+						a(href="#")
+							p.color--primary-2.small.unmarg.float-left.col-xs-12 Update #{date.getMonth() +'/'+ date.getDate() +'/'+ date.getFullYear()}
+							h4.color--primary-1.unmarg.float-left.col-xs-10= contentful.Updates[i].title
+							i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--primary-2.float-right.col-xs-2
+				- i++}
+				//-.col-md-6.col-sm-12.clearfix
 					a(href="#")
 						p.color--primary-2.small.unmarg.float-left.col-xs-12 Update 2/3/2017
 						h4.color--primary-1.unmarg.float-left.col-xs-10 Visit VAS at the 2017 World Dairy Expo!
 						i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--primary-2.float-right.col-xs-2
-				.col-md-6.col-sm-12.clearfix
+				//-.col-md-6.col-sm-12.clearfix
 					a(href="#")
 						p.color--primary-2.small.unmarg.float-left.col-xs-12 Update 2/3/2017
 						h4.color--primary-1.unmarg.float-left.col-xs-10 Visit VAS at the 2017 World Dairy Expo!
 						i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--primary-2.float-right.col-xs-2
-				.col-md-6.col-sm-12.clearfix
+				//-.col-md-6.col-sm-12.clearfix
 					a(href="#")
 						p.color--primary-2.small.unmarg.float-left.col-xs-12 Update 2/3/2017
 						h4.color--primary-1.unmarg.float-left.col-xs-10 Visit VAS at the 2017 World Dairy Expo!
 						i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--primary-2.float-right.col-xs-2
-				.col-md-6.col-sm-12.clearfix
+				//-.col-md-6.col-sm-12.clearfix
 					a(href="#")
 						p.color--primary-2.small.unmarg.float-left.col-xs-12 Update 2/3/2017
 						h4.color--primary-1.unmarg.float-left.col-xs-10 Visit VAS at the 2017 World Dairy Expo!
 						i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--primary-2.float-right.col-xs-2
 			.row.text-center(style="margin-top:50px")
 				a.btn.btn--primary-1.type--uppercase(href='#')
-					span.btn__text
-						| View all Updates
+					span.btn__text= contentful.Home[0].updatesButtonText

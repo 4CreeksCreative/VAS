@@ -33,7 +33,22 @@ module.exports =
             'locale':'de'
 
           }
-          ##template: 'views/partial/_cf_post.jade'
+        HomeProducts:
+          id: 'homePageProducts'
+          filters:{
+            'locale':'de'
+          }
+        Updates:
+          id: 'updates'
+          filters:{
+            'locale':'de'
+          }
+          template: 'views/partials/_update.jade'
+        Navigation:
+          id: 'navigation'
+          filters:{
+            'locale':'de'
+          }
         
     
   ]
