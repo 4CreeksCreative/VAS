@@ -58,8 +58,8 @@ block content
 							span.btn__text Read my Story
 						
 								
-		
-		section#updates.container
+		include partials/_4updates
+		//-section#updates.container
 			.row.text-center
 				.col-lg-12
 					h3.color--primary-2= contentful.Home[0].updatesSectionTitle
@@ -93,5 +93,5 @@ block content
 						h4.color--primary-1.unmarg.float-left.col-xs-10 Visit VAS at the 2017 World Dairy Expo!
 						i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--primary-2.float-right.col-xs-2
 			.row.text-center(style="margin-top:50px")
-				a.btn.btn--primary-1.type--uppercase(href='#')
+				a.btn.btn--primary-1.type--uppercase(href='/updates')
 					span.btn__text= contentful.Home[0].updatesButtonText
