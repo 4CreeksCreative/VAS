@@ -1,5 +1,8 @@
 extends ../layout
 
+block head
+	<meta property="og:image" content="#{asset(entry.featuredImage)}" />
+
 block content
 	.content
 		section.imagebg.parallax.cover.height-30(data-overlay="7")
