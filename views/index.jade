@@ -17,7 +17,7 @@ block content
 				.background-image-holder
 					img(src="/img/home/cowpet.jpg")
 				
-				- var i = 0; var e = (contentful.Updates.length >=3) ? 3 : contentful.Updates.length; while (i<3){
+				- var i = 0; var e = (contentful.Updates.length >=3) ? 3 : contentful.Updates.length; while (i<e){
 				- var date = new Date(contentful.Updates[i].date);
 					.col-md-8.hidden-sm.hidden-xs
 					.col-md-4.update-post.border-bottom.bg--white.clearfix
@@ -105,7 +105,7 @@ block content
 				.col-lg-12
 					h3.color--primary-2= contentful.Home[0].updatesSectionTitle
 			.row.text-left
-				- var i = 0; var e = (contentful.Updates.length >=4) ? 4 : contentful.Updates.length; while (i<4){
+				- var i = 0; var e = (contentful.Updates.length >=4) ? 4 : contentful.Updates.length; while (i<e){
 				- var date = new Date(contentful.Updates[i].date);
 					.col-md-12.col-sm-12.clearfix
 						a(href="#{contentful.Updates[i]._url}")
