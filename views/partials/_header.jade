@@ -22,7 +22,7 @@ header
 						.bar__module
 							ul.menu-horizontal.text-right.text-center-xs
 								li
-									a(href="#")= contentful.Navigation[0].updates
+									a(href="/updates")= contentful.Navigation[0].updates
 								li
 									a(href="#")= contentful.Navigation[0].newsletter
 								li
@@ -34,8 +34,8 @@ header
 									.dropdown__container
 										.container
 											.row
-												.col-xs-12.col-sm-6.dropdown__content.dropdown__content--lg
-													.col-md-2.col-md-offset-6.col-sm-4.text-center
+												.col-xs-12.col-sm-2.dropdown__content.dropdown__content--lg
+													.col-md-2.col-sm-4.text-center
 														ul
 															li
 																a.language(href="/")= contentful.Navigation[0].english
@@ -56,7 +56,7 @@ header
 								li
 									a(href="#")= contentful.Navigation[0].support
 								li
-									a(href="#")= contentful.Navigation[0].inspiration
+									a(href="/inspiration")= contentful.Navigation[0].inspiration
 
 	//-div.container
 		img.logo(src="/img/logo/vasLogo-color.png")
