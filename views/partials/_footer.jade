@@ -4,22 +4,14 @@ footer
 	.container
 		.row
 			#footer-blue-box.col-md-6.col-xs-12.float-left
-				h2.color--white How can we help you?
-				p.color--white.
-					We are available for all your questions.
-				p.unmarg.color--white.
-					US/Canada (Toll-Free): 888-225-6753 #[br]
-					International: 559-686-9496
+				!= contentful.Footer[0].blueBoxContent
 				a.btn.btn--primary.type--uppercase(href='#' style="margin-top:25px;")
-					span.btn__text
-						| Visit our Support Page
+					span.btn__text= contentful.Footer[0].blueBoxButtonText
 			.col-md-6.col-xs-12.float-right
-				h2.color--white Stay informed
-				p.color--white With an update in your inbox every month
+				!= contentful.Footer[0].subscribeContent
 				input(type="text")
 				a.btn.btn--primary.type--uppercase(href='#' style="margin-top:25px;")
-					span.btn__text
-						| Subscribe
+					span.btn__text= contentful.Footer[0].subscribeButtonText
 		.row.text-center
 			.col-xs-12
 				a(href="/")
@@ -28,69 +20,55 @@ footer
 			.col-sm-3.col-xs-9.float-center-xs.text-center-xs
 				ul.footer-nav
 					li
-						a(href="#").
-							Solutions
+						a(href="#")= contentful.Navigation[0].solutions
 					li
-						a(href="#").
-							About Us
+						a(href="#")= contentful.Navigation[0].aboutUs
 					li
-						a(href="#").
-							Support
+						a(href="#")= contentful.Navigation[0].support
 					li
-						a(href="#").
-							Inspiration
+						a(href="#")= contentful.Navigation[0].inspiration
+
 			.col-sm-3.col-xs-9.float-center-xs.text-center-xs
 				ul.footer-nav
 					li
-						a(href="#").
-							DairyComp
+						a(href="#")=contentful.Navigation[0].dairyComp
 					li
-						a(href="#").
-							FeedComp
+						a(href="#")= contentful.Navigation[0].feedComp
 					li
-						a(href="#").
-							ParlorComp
+						a(href="#")= contentful.Navigation[0].parlorComp
+
 			.col-sm-3.col-xs-9.float-center-xs.text-center-xs
 				ul.footer-nav
 					li
-						a(href="#").
-							Updates
+						a(href="#")= contentful.Navigation[0].updates
 					li
-						a(href="#").
-							Newsletter
+						a(href="#")= contentful.Navigation[0].newsletter
 					li
-						a(href="#").
-							Contact
+						a(href="#")= contentful.Navigation[0].contact
+
 			.col-sm-3.col-xs-9.float-center-xs.text-center-xs
-				p.footer-address.
-					VAS #[br]
-					3950 South K Street #[br]
-					Tulare, CA 93274 USA
+				!= contentful.Footer[0].address
 		.row.mt--3.footer-social
 			.col-md-4.col-sm-6
-				h4.text-center-xs At the Heart of Your Dairy
+				h4.text-center-xs= contentful.Footer[0].footerSlogan
 			.col-md-4.col-sm-6
 				ul.text-center
 					li
-						a(href="#")
+						a(href="#" target="_blank")
 							img(src="/img/social/social-twitter.png")
 					li
-						a(href="#")
+						a(href="#" target="_blank")
 							img(src="/img/social/social-facebook.png")
 					li
-						a(href="#")
+						a(href="#" target="_blank")
 							img(src="/img/social/social-linkedin.png")
 			.col-md-4.col-sm-12
 				ul.text-right.color--white.text-center-xs
 					li.pad-sm
-						a(href="#").small.color--white.
-							Terms of use
+						a(href="#").small.color--white= contentful.Navigation[0].termsOfUse
 					li.pad-sm
-						a(href="#").small.color--white.
-							Privacy and Cookies
+						a(href="#").small.color--white= contentful.Navigation[0].privacyAndCookies
 					li.pad-sm
-						a(href="#").small.color--white.
-							Colofon
+						a(href="#").small.color--white= contentful.Navigation[0].colofon
 					li.pad-sm
-						p.small.
-							© VAS 2017
+						p.small= contentful.Footer[0].copyright
