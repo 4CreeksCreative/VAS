@@ -54,6 +54,11 @@ module.exports =
           filters:{
             'locale':'en-US'
           }
+        UpdatesPage:
+          id: 'updatesPage'
+          filters:{
+            'locale':'en-US'
+          }
         
     
   ]
