@@ -1,7 +1,9 @@
 extends ../layout
 
 block head
-	<meta property="og:image" content="#{asset(entry.featuredImage)}" />
+	meta(property="og:image" content="#{asset(entry.featuredImage)}")
+	meta(property="og:title" content= entry.title)
+	meta(property="og:description" content= entry.featuredText)
 
 block content
 	.content
