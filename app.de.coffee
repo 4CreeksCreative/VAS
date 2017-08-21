@@ -54,6 +54,11 @@ module.exports =
           filters:{
             'locale':'de'
           }
+        Social:
+          id: 'social'
+          filters:{
+            'locale':'de'
+          }
         
     
   ]
