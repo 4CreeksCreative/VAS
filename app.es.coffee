@@ -49,6 +49,11 @@ module.exports =
           filters:{
             'locale':'es'
           }
+        Footer:
+          id: 'footer'
+          filters:{
+            'locale':'es'
+          }
         
     
   ]
