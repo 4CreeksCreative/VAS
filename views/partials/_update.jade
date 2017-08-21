@@ -13,8 +13,8 @@ block content
 			.container.pos-vertical-center
 				.row.text-center
 					.col-sm-12
-						h2= entry.title
-						p.featuredText= entry.featuredText
+						h2#updatetitle= entry.title
+						p#featuredtext.featuredText= entry.featuredText
 		section#updates-content
 			.container
 				.row
@@ -29,13 +29,13 @@ block content
 					.col-sm-12
 						ul
 							li
-								a#fbshare
+								a#fbshare(target="_blank")
 									img(src="/img/social/social-facebook-blue.png")
 							li
-								a#twittershare
+								a#twittershare(target="_blank")
 									img(src="/img/social/social-twitter-blue.png")
 							li
-								a#inshare
+								a#inshare(target="_blank")
 									img(src="/img/social/social-linkedin-blue.png")
 
 		section#more-updates
