@@ -9,5 +9,7 @@ $(document).ready(function(){
 				$(val).attr('href',locale+$(val).attr('href'))
 			}
 		})
+		$('a#twittershare').attr('href', 'https://twitter.com/home?status='+window.location.href)
+		$('a#inshare').attr('href', 'https://www.linkedin.com/shareArticle?mini=true&url='+window.location.href+'&title='+$('#updatetitle').text()+'&summary='+$('#featuredtext').text()+'&source='+window.location.href)
 	
 })
