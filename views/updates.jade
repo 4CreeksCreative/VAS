@@ -1,0 +1,30 @@
+extends layout
+
+block content
+	.content
+		section.imagebg.parallax.cover.height-30(data-overlay="7")
+			.background-image-holder
+				img(alt='background', src='#{asset(contentful.UpdatesPage[0].headerBackground)}')
+			.container.pos-vertical-center
+				.row.text-center
+					.col-sm-12
+						h2#updatetitle Updates
+
+
+
+		section#more-updates
+			.container
+				.row
+					.col-sm-12.text-center
+						h3.color--primary-2= contentful.Home[0].updatesSectionTitle
+					
+					- var i = 0; var e = contentful.Updates.length; while (i<e){
+					- var date = new Date(contentful.Updates[i].date);
+
+						.col-md-12.update-post.bg--white.clearfix
+							a(href="#{contentful.Updates[i]._url}")
+								p.color--primary-2.small.unmarg.float-left.col-xs-12 Update #{date.getMonth() +'/'+ date.getDate() +'/'+ date.getFullYear()}
+								h4.color--primary-1.unmarg.float-left.col-xs-10= contentful.Updates[i].title
+								i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--primary-2.float-right.col-xs-2
+					- i++}
+
