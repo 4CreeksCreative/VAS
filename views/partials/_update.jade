@@ -23,12 +23,20 @@ block content
 
 		section#social-share
 			.container
-				.row
+				.row.text-center
 					.col-sm-12
-						ul.text-center
+						h3.color--primary-2= contentful.Social[0].shareHeader
+					.col-sm-12
+						ul
 							li
 								a#fbshare
 									img(src="/img/social/social-facebook-blue.png")
+							li
+								a#twittershare
+									img(src="/img/social/social-twitter-blue.png")
+							li
+								a#inshare
+									img(src="/img/social/social-linkedin-blue.png")
 
 		section#more-updates
 			.container
