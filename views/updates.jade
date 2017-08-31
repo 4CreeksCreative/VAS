@@ -25,6 +25,7 @@ block content
 							a(href="#{contentful.Updates[i]._url}")
 								p.color--primary-2.small.unmarg.float-left.col-xs-12 Update #{date.getMonth() +'/'+ date.getDate() +'/'+ date.getFullYear()}
 								h4.color--primary-1.unmarg.float-left.col-xs-10= contentful.Updates[i].title
-								i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--primary-2.float-right.col-xs-2
+								img.arrow-right(src="/img/icon/arrow-o-right.png")
+								//-i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--primary-2.float-right.col-xs-2
 					- i++}
 

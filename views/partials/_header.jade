@@ -14,7 +14,7 @@ header
 			// end of container
 		// end bar
 		nav#menu1.hidden-xs
-			.container
+			.container(style="padding:0px;")
 				a(href='/').float-left.hidden-xs.logo
 					img.logo(alt='logo', src='/img/logo/vasLogo-color.png')
 				.row.small(style="background:#fff;")
@@ -27,9 +27,9 @@ header
 									a(href="#")= contentful.Navigation[0].newsletter
 								li
 									a(href="#")= contentful.Navigation[0].contact
-								li.dropdown
+								li.dropdown(style="border-left:1px #ccc solid; padding-left: 10px;")
 									span.dropdown__trigger 
-										|#[i.fa.fa-globe]
+										img(src="/img/icon/world.png" style="height:20px; padding: 0 10px; margin-bottom: 7px;")
 										!= contentful.Navigation[0].language
 									.dropdown__container
 										.container

@@ -2,29 +2,40 @@ extends layout
 
 block content
 	.content
-		section.imagebg.parallax.cover.height-80(data-overlay="5")
+		section.imagebg.parallax.cover.height-80
 			.background-image-holder
 				img(alt='background', src='#{asset(contentful.Home[0].headerBackground)}')
 			.container
 				.row
 					.col-lg-4
-						h2= contentful.Home[0].headerLargeText
-						p= contentful.Home[0].headerSubtext
+						h1= contentful.Home[0].headerLargeText
+						h5= contentful.Home[0].headerSubtext
 						a.btn.btn--primary.type--uppercase(href='#')
 							span.btn__text= contentful.Home[0].headerButtonText
+							img.arrow-right(src="/img/icon/arrow-right.png")
 		#updates-teaser.container
-			.row.imagebg.cover
-				.background-image-holder
-					img(src="/img/home/cowpet.jpg")
-				
-				- var i = 0; var e = (contentful.Updates.length >=3) ? 3 : contentful.Updates.length; while (i<e){
+			.row.pos-relative
+				//-.col-img-fix.col-sm-8.imagebg.cover.move-up
+					.background-image-holder
+						img(src="/img/home/cowpet.jpg")
+				- var date = new Date(contentful.Updates[0].date);
+				.col-img-fix.col-sm-8.imagebg.cover.move-up
+					.background-image-holder
+						img(src="#{asset(contentful.Updates[0].featuredImage)}")
+				.col-sm-8.move-up
+					a(href="#{contentful.Updates[0]._url}")
+						p.color--primary-2.small.unmarg.float-left.col-xs-12 Update #{date.getMonth() +'/'+ date.getDate() +'/'+ date.getFullYear()}
+						h4.color--primary-1.unmarg.float-left.col-xs-10= contentful.Updates[0].title
+						img.arrow-right(src="/img/icon/arrow-o-right.png")
+				- var i = 1; var e = (contentful.Updates.length >=4) ? 4 : contentful.Updates.length; while (i<e){
 				- var date = new Date(contentful.Updates[i].date);
 					.col-md-8.hidden-sm.hidden-xs
 					.col-md-4.update-post.border-bottom.bg--white.clearfix
 						a(href="#{contentful.Updates[i]._url}")
 							p.color--primary-2.small.unmarg.float-left.col-xs-12 Update #{date.getMonth() +'/'+ date.getDate() +'/'+ date.getFullYear()}
 							h4.color--primary-1.unmarg.float-left.col-xs-10= contentful.Updates[i].title
-							i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--primary-2.float-right.col-xs-2
+							img.arrow-right(src="/img/icon/arrow-o-right.png")
+							//-i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--primary-2.float-right.col-xs-2
 				- i++}
 				//-.col-md-8.hidden-sm.hidden-xs
 				//-.col-md-4.update-post.border-bottom.bg--white.clearfix

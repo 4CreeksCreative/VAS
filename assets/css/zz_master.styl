@@ -11,11 +11,28 @@ a,p,h1,h2,h3,h4,h5,h6,input,textarea,select,option,span,li
 	font-family $uni
 	font-weight 600
 h1,h2
-	font-weight 800
-h3,h4,h5,h6
 	font-weight 700
+h3,h4,h5,h6
+	font-weight 600
 p,a,input,textarea,select,option,span,li
 	font-weight 600
+
+
+h1
+	font-size 60px
+	line-height 60px
+h2
+	font-size 50px
+h3
+	font-size 40px
+h4
+	font-size 30px
+h5
+	font-size 20px
+	line-height 28px
+h6
+	font-size 16px
+
 
 
 
@@ -28,9 +45,9 @@ p,a,input,textarea,select,option,span,li
 	padding 0 !important
 section.imagebg.parallax
 	min-height 750px;
-	border-radius 0px 0px 25% 0px
+	//border-radius 0px 0px 25% 0px
 .img-clip
-	border-radius 0px 0px 25% 0px
+	//border-radius 0px 0px 25% 0px
 .pad-sm
 	padding 10px
 @media (max-width: 768px)
@@ -43,6 +60,9 @@ section.imagebg.parallax
 		margin 20px auto
 p i
 	margin-right 10px
+.col-img-fix
+	position absolute
+	height 100%
 
 
 
@@ -55,8 +75,17 @@ p i
 	border-right $border
 .border-bottom
 	border-bottom $border
-
-
+.move-up
+	transform: translate(0px, -100px);
+.arrow-right
+	height 35px
+.btn > .arrow-right
+	height 20px
+	position absolute
+	right 10px
+	top 0
+	bottom 0
+	margin auto
 
 
 
@@ -82,16 +111,29 @@ a
 		{key}:value
 [data-overlay] > .background-image-holder:before
 	content ""
-	width 100%
+	width 50%
 	height 100%
 	background transparent url("../img/logo/vassig-white.png") no-repeat
-	background-size cover
-	background-position center left
-	bottom 0
-	left 5%
+	background-size contain
+	background-position top left
+	top -9%
+	left -5%
 	position absolute
 	display block
 	opacity .5
+	
+.img-clip:after, .imagebg.cover:after
+	content ""
+	width 25%
+	height 25%
+	background transparent url("../img/corner.png") no-repeat
+	background-size contain
+	background-position bottom right
+	bottom 0
+	right 0
+	position absolute
+	display block
+	opacity 1
 
 
 
@@ -188,16 +230,30 @@ header
 		height 100%
 	
 	nav
-		a 
-			text-transform none !important
-			opacity 1 !important
-			color $green !important
-			transition .2s !important
-			font-size inherit !important
-			line-height inherit !important
-			&:hover
-				color $yellow !important
+		.row.small
+			a, .language
+				text-transform none !important
+				opacity 1 !important
+				color $green2 !important
 				transition .2s !important
+				font-size 15px !important
+				line-height inherit !important
+				font-weight 600
+				&:hover
+					color $blue !important
+					transition .2s !important
+		.row:not(.small)
+			a 
+				text-transform none !important
+				opacity 1 !important
+				color $green !important
+				transition .2s !important
+				font-size 22px !important
+				line-height inherit !important
+				font-weight 600
+				&:hover
+					color $blue !important
+					transition .2s !important
 	// nav.small
 	// 	position absolute
 	// 	right 0
@@ -272,7 +328,7 @@ body
 	padding-top $headerHeight
 	//padding-bottom 200px
 	background $white
-	border-radius 0px 0px 500px 0px
+	//border-radius 0px 0px 500px 0px
 	//background $blue
 #overlap-video 
 	position relative

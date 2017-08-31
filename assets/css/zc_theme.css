@@ -1367,7 +1367,7 @@ ul:last-child {
         }
 
             .menu-horizontal > li:not(:last-child) {
-                margin-right: 1.85714286em;
+                margin-right: 1em;
             }
 
     .menu-vertical {
