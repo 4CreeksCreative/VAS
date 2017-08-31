@@ -64,6 +64,12 @@ module.exports =
           filters:{
             'locale':'de'
           }
+        ProductPost:
+          id: 'productBlogPost'
+          filters:{
+            'locale':'de'
+          }
+          template: 'views/partials/_product.jade'
         
     
   ]

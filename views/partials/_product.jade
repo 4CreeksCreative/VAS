@@ -1,0 +1,85 @@
+extends ../layout
+
+block content
+
+	.content
+		section.imagebg.clip.parallax.cover.height-30(data-overlay="7")
+			.background-image-holder
+				//-img(alt='background', src='/img/icon/white.png')
+			.signature-container
+			.container.pos-vertical-center
+				.row.text-left
+					.col-sm-12
+						h2#updatetitle= entry.title
+						p#featuredtext.featuredText= entry.titleSubtext
+		section#updates-content
+			.container
+				.row.mt--1
+					.col-sm-12
+						- var date = new Date(entry.date);
+						p.color--primary-2.small= date.getMonth() +' '+ date.getDate() +' '+ date.getFullYear()
+				.row.mt--1
+					.col-sm-8
+						p= entry.paragraph1
+				.row.mt--1
+					.col-sm-6
+						p= entry.paragraph2
+					.col-sm-5.col-sm-offset-1.blue-pullquote
+						h6.color--primary-1= entry.bluePullquote
+						p.small.color--primary-1= entry.pullquoteName
+				.row.mt--1
+					.col-sm-6
+						h6.color--primary-2= entry.paragraph3Title
+				.row.mt--1
+					.col-sm-6
+						p= entry.paragraph3
+
+
+		section#social-share
+			.container
+				.row.text-left
+					.col-sm-12
+						.float-left
+							h3.unmarg.color--primary-1= contentful.Social[0].shareHeader
+						#share-icons.float-left
+							include _social-icons
+						//-ul
+							li
+								a#fbshare(target="_blank")
+									img(src="/img/social/social-facebook-blue.png")
+							li
+								a#twittershare(target="_blank")
+									img(src="/img/social/social-twitter-blue.png")
+							li
+								a#inshare(target="_blank")
+									img(src="/img/social/social-linkedin-blue.png")
+
+		include _4updates
+		//-section#more-updates
+			.container
+				.row
+					.col-sm-12.text-left
+						h3.color--primary-2= contentful.Home[0].updatesSectionTitle
+					
+					- var i = 0; var e = (contentful.Updates.length >=4) ? 4 : contentful.Updates.length; while (i<4){
+					- var date = new Date(contentful.Updates[i].date);
+
+						.col-md-12.unpad.update-post.bg--white.clearfix
+							a(href="#{contentful.Updates[i]._url}")
+								p.color--primary-2.small.unmarg.float-left.col-xs-12 Update #{date.getMonth() +'/'+ date.getDate() +'/'+ date.getFullYear()}
+								h4.color--primary-1.unmarg.float-left.col-xs-10= contentful.Updates[i].title
+								div.arrow-right.float-right
+								//-i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--primary-2.float-right.col-xs-2
+					- i++}
+
+	script.
+		document.querySelector('#share-icons .facebook').onclick = function(e){
+		e.preventDefault(0)
+			FB.ui({
+				method: 'share',
+				mobile_iframe: true,
+				href: window.location.href,
+			}, function(response){});
+
+		}
+		

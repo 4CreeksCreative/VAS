@@ -208,7 +208,25 @@ a
 .bg--gradient
 	for key, value in $greengradient
 		{key}:value
-
+.signature-container
+	height 100%
+	width 100%
+	display block
+	position absolute
+	top 0
+	left 0
+.signature-container:before
+	content ""
+	width 50%
+	height 100%
+	background transparent url("../img/logo/vassig-white.png") no-repeat
+	background-size contain
+	background-position top left
+	top -9%
+	left -5%
+	position absolute
+	display block
+	opacity .5
 [data-overlay]:before
 	for key, value in $greengradient
 		{key}:value
@@ -674,8 +692,10 @@ body
 			
 	
 
+// --- Product Posts
 
-
+.blue-pullquote
+	border-left 2px $blue solid
 
 
 
