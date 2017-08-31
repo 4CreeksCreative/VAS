@@ -1,21 +1,18 @@
 
 
-footer
+footer.corner-point-brown
 	.container
-		.row
+		.row.unmarg
 			#footer-blue-box.col-md-6.col-xs-12.float-left
 				!= contentful.Footer[0].blueBoxContent
-				a.btn.btn--primary.type--uppercase(href='#' style="margin-top:25px;")
+				a.btn.btn-white-blue.type--uppercase.arrow-after-white-blue(href='#' style="margin-top:25px;")
 					span.btn__text= contentful.Footer[0].blueBoxButtonText
-			.col-md-6.col-xs-12.float-right
+			.col-offset-md-1.col-md-5.col-xs-12.float-right
 				!= contentful.Footer[0].subscribeContent
 				input(type="text")
-				a.btn.btn--primary.type--uppercase(href='#' style="margin-top:25px;")
+				a.btn.btn-white-gray.type--uppercase.arrow-after-white-gray(href='#' style="margin-top:25px;")
 					span.btn__text= contentful.Footer[0].subscribeButtonText
-		.row.text-center
-			.col-xs-12
-				a(href="/")
-					img.footer-logo(src="/img/logo/vasLogo-white.png")
+		
 		#footer-nav-row.row
 			.col-sm-3.col-xs-9.float-center-xs.text-center-xs
 				ul.footer-nav
@@ -49,10 +46,10 @@ footer
 			.col-sm-3.col-xs-9.float-center-xs.text-center-xs
 				!= contentful.Footer[0].address
 		.row.mt--3.footer-social
-			.col-md-4.col-sm-6
-				h4.text-center-xs= contentful.Footer[0].footerSlogan
-			.col-md-4.col-sm-6
-				ul.text-center
+			
+			#footer-social-icons.col-md-4.col-sm-6
+				include _social-icons
+				//-ul.text-center(style="line-height: 129px; vertical-align:baseline;")
 					li
 						a(href="https://twitter.com/VASPRODUCTS?lang=en" target="_blank")
 							img(src="/img/social/social-twitter.png")
@@ -62,8 +59,14 @@ footer
 					li
 						a(href="https://www.linkedin.com/company-beta/4426837/" target="_blank")
 							img(src="/img/social/social-linkedin.png")
-			.col-md-4.col-sm-12
-				ul.text-right.color--white.text-center-xs
+			
+			.col-md-4.col-sm-12.text-center
+				a.pos-relative(href="/" style="top:-40px;")
+					img.footer-logo(src="/img/logo/vasLogo-white.png")
+			.col-md-4.col-xs-12
+				h4.footer-slogan.text-center-sm.unmarg= contentful.Footer[0].footerSlogan
+			.col-sm-12
+				ul.text-left.color--white.text-center-xs
 					li.pad-sm
 						a(href="#").small.color--white= contentful.Navigation[0].termsOfUse
 					li.pad-sm

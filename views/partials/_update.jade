@@ -7,11 +7,11 @@ block head
 
 block content
 	.content
-		section.imagebg.parallax.cover.height-30(data-overlay="7")
+		section.clip.imagebg.parallax.cover.height-30(data-overlay="7")
 			.background-image-holder
 				img(alt='background', src='#{asset(entry.featuredImage)}')
 			.container.pos-vertical-center
-				.row.text-center
+				.row.text-left
 					.col-sm-12
 						h2#updatetitle= entry.title
 						p#featuredtext.featuredText= entry.featuredText
@@ -23,11 +23,13 @@ block content
 
 		section#social-share
 			.container
-				.row.text-center
+				.row.text-left
 					.col-sm-12
-						h3.color--primary-2= contentful.Social[0].shareHeader
-					.col-sm-12
-						ul
+						.float-left
+							h3.unmarg.color--primary-1= contentful.Social[0].shareHeader
+						#share-icons.float-left
+							include _social-icons
+						//-ul
 							li
 								a#fbshare(target="_blank")
 									img(src="/img/social/social-facebook-blue.png")
@@ -38,24 +40,26 @@ block content
 								a#inshare(target="_blank")
 									img(src="/img/social/social-linkedin-blue.png")
 
-		section#more-updates
+		include _4updates
+		//-section#more-updates
 			.container
 				.row
-					.col-sm-12.text-center
+					.col-sm-12.text-left
 						h3.color--primary-2= contentful.Home[0].updatesSectionTitle
 					
 					- var i = 0; var e = (contentful.Updates.length >=4) ? 4 : contentful.Updates.length; while (i<4){
 					- var date = new Date(contentful.Updates[i].date);
 
-						.col-md-12.update-post.bg--white.clearfix
+						.col-md-12.unpad.update-post.bg--white.clearfix
 							a(href="#{contentful.Updates[i]._url}")
 								p.color--primary-2.small.unmarg.float-left.col-xs-12 Update #{date.getMonth() +'/'+ date.getDate() +'/'+ date.getFullYear()}
 								h4.color--primary-1.unmarg.float-left.col-xs-10= contentful.Updates[i].title
-								i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--primary-2.float-right.col-xs-2
+								div.arrow-right.float-right
+								//-i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--primary-2.float-right.col-xs-2
 					- i++}
 
 	script.
-		document.getElementById('fbshare').onclick = function(e){
+		document.querySelector('#share-icons .facebook').onclick = function(e){
 		e.preventDefault(0)
 			FB.ui({
 				method: 'share',

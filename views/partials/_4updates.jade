@@ -1,17 +1,32 @@
 section#updates.container
 	.row.text-center
 		.col-lg-12
-			h3.color--primary-2= contentful.Home[0].updatesSectionTitle
+			h4.color--primary-2= contentful.Home[0].updatesSectionTitle
 	.row.text-left
 		- var i = 0; var e = (contentful.Updates.length >=4) ? 4 : contentful.Updates.length; while (i<4){
 		- var date = new Date(contentful.Updates[i].date);
-			.col-md-12.col-sm-12.clearfix
-				a(href="#{contentful.Updates[i]._url}")
-					p.color--primary-2.small.unmarg.float-left.col-xs-12 Update #{date.getMonth() +'/'+ date.getDate() +'/'+ date.getFullYear()}
-					h4.color--primary-1.unmarg.float-left.col-xs-10= contentful.Updates[i].title
-					img.arrow-right(src="/img/icon/arrow-o-right.png")
+
+			.update-item.col-xs-12.clearfix
+				a.clearfix(href="#{contentful.Updates[i]._url}")
+					p.color--primary-2.small.unmarg.float-left.col-xs-12 Update #{date.getMonth() +' '+ date.getDate() +' '+ date.getFullYear()}
+					h6.color--primary-1.unmarg.float-left.col-xs-10= contentful.Updates[i].title
+					div.arrow-right.float-right
+					//-img.arrow-right(src="/img/icon/arrow-o-right.png")
 					//-i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--primary-2.float-right.col-xs-2
 		- i++}
+
+
+
+
+		//-- var i = 0; var e = (contentful.Updates.length >=4) ? 4 : contentful.Updates.length; while (i<4){
+		//-- var date = new Date(contentful.Updates[i].date);
+			//-.update-item.col-md-12.col-sm-12.clearfix
+				a(href="#{contentful.Updates[i]._url}")
+					p.color--primary-2.small.unmarg.float-left.col-xs-12 Update #{date.getMonth() +' '+ date.getDate() +' '+ date.getFullYear()}
+					h6.color--primary-1.unmarg.float-left.col-xs-10= contentful.Updates[i].title
+					div.arrow-right.float-right
+					//-i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--primary-2.float-right.col-xs-2
+		//-- i++}
 		//-.col-md-6.col-sm-12.clearfix
 			a(href="#")
 				p.color--primary-2.small.unmarg.float-left.col-xs-12 Update 2/3/2017
@@ -33,5 +48,5 @@ section#updates.container
 				h4.color--primary-1.unmarg.float-left.col-xs-10 Visit VAS at the 2017 World Dairy Expo!
 				i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--primary-2.float-right.col-xs-2
 	.row.text-center(style="margin-top:50px")
-		a.btn.btn--primary-1.type--uppercase(href='/updates')
+		a.btn.btn-green-white.type--uppercase.arrow-after-green-white(href='/updates')
 			span.btn__text= contentful.Home[0].updatesButtonText

@@ -27,12 +27,17 @@ h3
 	font-size 40px
 h4
 	font-size 30px
+	line-height 34px
+	font-weight 700
 h5
+	font-size 24px
+	line-height 32px
+	font-weight 700
+h6
 	font-size 20px
 	line-height 28px
-h6
+p
 	font-size 16px
-
 
 
 
@@ -77,17 +82,115 @@ p i
 	border-bottom $border
 .move-up
 	transform: translate(0px, -100px);
-.arrow-right
-	height 35px
-.btn > .arrow-right
+
+.btn > img.arrow-right
 	height 20px
 	position absolute
 	right 10px
 	top 0
 	bottom 0
 	margin auto
-
-
+.social-icons
+	li
+			
+		a
+			transition 0.2s
+			height 50px
+			width 50px
+			display block
+			margin 10px
+			border-radius 999px
+			i
+				padding 15px
+				display block
+.check-mark-before
+	position relative
+	padding-left 35px
+	&:before
+		content ""
+		width 20px
+		height 20px
+		background transparent url("../img/icon/check.png") no-repeat
+		background-size contain
+		background-position center right
+		bottom 0
+		top 0
+		left 0px
+		position absolute
+		opacity 1
+		margin auto
+.video-play-icon
+	position relative
+.video-play-icon:before
+	border none
+	transition 0.2s
+	content ""
+	width 40%
+	height 40%
+	background transparent url("../img/icon/play.png") no-repeat center center
+	background-size contain
+	bottom 0
+	right 0
+	top 0
+	left 0
+	position absolute
+	display block
+	opacity 1
+	z-index 5
+	margin auto
+[class*="arrow-after-"]:after
+	border none
+	transition 0.2s
+	content ""
+	width 30px
+	height 40%
+	bottom 0
+	right 15px
+	top 0
+	position absolute
+	display block
+	opacity 1
+	z-index 2
+	margin auto
+.arrow-after-white-green
+	&:hover:after
+		background transparent url("../img/icon/arrow-right-green.png") no-repeat center center
+		background-size contain
+	&:after
+		background transparent url("../img/icon/arrow-right.png") no-repeat center center
+		background-size contain
+.arrow-after-green-white
+	&:hover:after
+		background transparent url("../img/icon/arrow-right.png") no-repeat center center
+		background-size contain
+	&:after
+		background transparent url("../img/icon/arrow-right-green.png") no-repeat center center
+		background-size contain
+.arrow-after-white-blue
+	&:hover:after
+		background transparent url("../img/icon/arrow-right-blue.png") no-repeat center center
+		background-size contain
+	&:after
+		background transparent url("../img/icon/arrow-right.png") no-repeat center center
+		background-size contain
+.arrow-after-blue-white
+	&:hover:after
+		background transparent url("../img/icon/arrow-right.png") no-repeat center center
+		background-size contain
+	&:after
+		background transparent url("../img/icon/arrow-right-blue.png") no-repeat center center
+		background-size contain
+.arrow-after-white-gray
+	&:hover:after
+		background transparent url("../img/icon/arrow-right-gray.png") no-repeat center center
+		background-size contain
+	&:after
+		background transparent url("../img/icon/arrow-right.png") no-repeat center center
+		background-size contain
+		
+			
+	
+	
 
 
 // --- colors
@@ -96,11 +199,11 @@ a
 	&:hover
 		color $yellowgreen
 ::selection 
-	background $yellow /* WebKit/Blink Browsers */
+	background $blue /* WebKit/Blink Browsers */
 	color $white
 
 ::-moz-selection
-	background: $yellow /* Gecko Browsers */
+	background: $blue /* Gecko Browsers */
 	color $white
 .bg--gradient
 	for key, value in $greengradient
@@ -109,6 +212,7 @@ a
 [data-overlay]:before
 	for key, value in $greengradient
 		{key}:value
+	z-index 1
 [data-overlay] > .background-image-holder:before
 	content ""
 	width 50%
@@ -121,19 +225,24 @@ a
 	position absolute
 	display block
 	opacity .5
-	
-.img-clip:after, .imagebg.cover:after
+.img-clip
+	position relative
+	//margin-bottom 20px
+	transition 0.2s
+.img-clip:after, .clip.imagebg.cover:after
+	transition 0.2s
 	content ""
 	width 25%
 	height 25%
 	background transparent url("../img/corner.png") no-repeat
 	background-size contain
 	background-position bottom right
-	bottom 0
+	bottom -1px
 	right 0
 	position absolute
 	display block
 	opacity 1
+	z-index 5
 
 
 
@@ -144,51 +253,133 @@ a
 .btn
 	border-radius 999px
 	white-space normal
-.btn--primary,
-.btn--primary:visited
+	
+// --- white on gray
+.btn-white-gray,
+.btn-white-gray:visited
 	background rgba(0,0,0,0.0)
 	border-color $white
 
-.btn--primary .btn__text,
-.btn--primary:visited .btn__text
+.btn-white-gray .btn__text,
+.btn-white-gray:visited .btn__text
 	color #fff
 
-.btn--primary .btn__text i,
-				.btn--primary:visited .btn__text i
+.btn-white-gray .btn__text i,
+				.btn-white-gray:visited .btn__text i
 	color #fff
 
-.btn--primary
+.btn-white-gray
 	&:hover
-		background $yellowgreen
+		background $white
+		border-color $gray !important
+		.btn__text
+			color $gray
+	&:active
+		background $white
+		
+
+
+// --- white on blue
+.btn-white-blue,
+.btn-white-blue:visited
+	background rgba(0,0,0,0.0)
+	border-color $white
+
+.btn-white-blue .btn__text,
+.btn-white-blue:visited .btn__text
+	color #fff
+
+.btn-white-blue .btn__text i,
+				.btn-white-blue:visited .btn__text i
+	color #fff
+
+.btn-white-blue
+	&:hover
+		background $white
+		border-color $blue !important
+		.btn__text
+			color $blue
+	&:active
+		background $white
+		
+
+
+// --- white on green
+.btn-white-green,
+.btn-white-green:visited
+	background rgba(0,0,0,0.0)
+	border-color $white
+
+.btn-white-green .btn__text,
+.btn-white-green:visited .btn__text
+	color #fff
+
+.btn-white-green .btn__text i,
+				.btn-white-green:visited .btn__text i
+	color #fff
+
+.btn-white-green
+	&:hover
+		background $white
+		border-color $green !important
+		.btn__text
+			color $green
+	&:active
+		background $white
+		
+
+// --- green on white
+.btn-green-white,
+.btn-green-white:visited
+	background rgba(0,0,0,0.0)
+	border-color $green
+
+.btn-green-white .btn__text,
+.btn-green-white:visited .btn__text
+	color $green
+
+.btn-green-white .btn__text i, .btn-green-white:visited .btn__text i
+	color $green
+
+.btn-green-white
+	&:hover
+		background $green
+		border-color $white !important
+		.btn__text
+			color $white
 	&:active
 		background $green
 		
 
-.btn--primary-1,
-.btn--primary-1:visited
+// --- blue on white
+.btn-blue-white,
+.btn-blue-white:visited
 	background rgba(0,0,0,0.0)
-	border-color $green
+	border-color $blue !important
 
-.btn--primary-1 .btn__text,
-.btn--primary-1:visited .btn__text
-	color $green
+.btn-blue-white .btn__text,
+.btn-blue-white:visited .btn__text
+	color $blue
 
-.btn--primary-1 .btn__text i,
-				.btn--primary-1:visited .btn__text i
-	color $green
+.btn-blue-white .btn__text i, .btn-blue-white:visited .btn__text i
+	color $blue
 
-.btn--primary-1
+.btn-blue-white
 	&:hover
-		background $yellowgreen
-		border-color $white
-		.btn__text
-			color $white 
-	&:active
-		background $green
-		border-color $white
+		background $blue
+		border-color $white !important
 		.btn__text
 			color $white
+	&:active
+		background $blue
 
+
+
+
+.btn-circle
+	border-radius 999px
+	padding 20px !important
+	transition padding 0s
 
 
 
@@ -254,32 +445,6 @@ header
 				&:hover
 					color $blue !important
 					transition .2s !important
-	// nav.small
-	// 	position absolute
-	// 	right 0
-	// 	top 10px
-	// 	ul
-	// 		li
-	// 			display inline-block
-	// 			padding 2px 10px
-				
-
-						
-	// 			a
-	// 				font-weight 600
-	// nav.large
-	// 	position absolute
-	// 	right 0
-	// 	top 50px
-	// 	ul
-	// 		li
-	// 			display inline-block
-	// 			padding 2px 10px
-										
-	// 			a
-	// 				font-weight 600
-
-
 
 
 
@@ -291,16 +456,20 @@ footer
 	width 100%
 	background $gray
 	z-index 1
+	.footer-slogan
+			line-height 129px
 	.footer-logo
 		width 200px
 		margin-bottom 50px
 	.footer-nav
 		li
-			line-height 1.5em !important
+			line-height 2em !important
 		a
+			font-weight 600 !important
+			font-size 16px
 			color $white !important
 	.footer-address
-		line-height 1.5em !important
+		line-height 2em !important
 		color $white !important
 	.footer-social
 		h1,h2,h3,h4,h5,h6
@@ -309,12 +478,41 @@ footer
 			display	inline-block
 			img
 				width 50px
+	#footer-social-icons
+		text-align left
+		ul 
+			line-height 129px
+			vertical-align baseline
+			li
+				
+				a
+					border 1px $white solid
+					color $white
+					&:hover
+						transition 0.2s
+						background $white
+						border 1px $gray solid
+						color $gray
 #footer-blue-box
 	position relative
 	z-index 3
 	top -225px
 	padding 50px
 	background $blue
+.corner-point-brown
+	overflow visible
+	&:before
+		content ""
+		width 25%
+		height 25%
+		background transparent url("../img/corner-brown.png") no-repeat
+		background-size contain
+		background-position bottom right
+		top -25%
+		right 0
+		position absolute
+		display block
+		opacity 1
 
 
 
@@ -340,21 +538,84 @@ body
 	position relative
 	z-index 3
 	top -225px
-	.update-post
-		padding 20px
-#updates
-	.col-lg-6
-		padding 20px
-		&::after
-			content ''
+#products-container
+	> div:not(:nth-child(2))
+		margin-top 30px
+	.product-post
+		
+		.product-content
+			transition 0.2s
+			position relative
+			top -2px
+			padding 25px
+			h4 
+				margin-bottom 20px
+		&:hover
+			
+			.product-content
+				transition 0.2s
+				background $blue
+			.img-clip:after
+				transition 0.2s
+				content ""
+				width 25%
+				height 25%
+				background transparent url("../img/corner-blue.png") no-repeat
+				background-size contain
+				background-position bottom right
+				bottom -1px
+				right 0
+				position absolute
+				display block
+				opacity 1
+			h4
+				color $white !important
+			p
+				color $white !important
+			.btn
+				background rgba(0,0,0,0.0) !important
+				border-color $white !important
+
+				.btn__text
+					color $white !important
+					i
+						color $white !important
+				&:hover
+					background $white !important
+					border-color $blue !important
+					.btn__text
+						color $blue !important
+				&:active
+					background $white !important
+								
+			
+	
+#updates-teaser, #more-updates, #updates
+	.update-item
+		padding 20px 0
+		&:not(:last-child)
 			border-bottom $border
+		
+		
+		h6
+			transition color 0.2s
+		.arrow-right
+			transition 0.2s
+			margin-right 20px
+			background url("../img/icon/arrow-o-right.png") no-repeat center center
+			background-size contain
+			width 35px
+			height 35px
 			display block
-			position absolute
-			bottom 0
-			width 90%
-			left 0
-			right 0
-			margin auto
+		&:hover
+			h6
+				transition color 0.2s
+				color $green !important
+			.arrow-right
+				margin-right 15px
+				transition 0.2s
+				background url("../img/icon/arrow-o-right-fill.png") no-repeat center center
+				background-size contain
 				
 
 
@@ -362,12 +623,56 @@ body
 
 // --- Blog Posts
 
-#social-share
+
+		
+#share-icons
 	li
-		width 50px
+		text-align center
 		display inline-block
-		cursor pointer
-		margin 0 10px
+		a
+			border 1px $blue solid
+			color $blue
+			&:hover
+				transition 0.2s
+				background $blue
+				border 1px $blue solid
+				color $white
+
+// #updates
+// 	.col-lg-6
+// 		padding 20px
+// 		&::after
+// 			content ''
+// 			border-bottom $border
+// 			display block
+// 			position absolute
+// 			bottom 0
+// 			width 90%
+// 			left 0
+// 			right 0
+// 			margin auto
+	
+// 		h4
+// 			transition color 0.2s
+// 		.arrow-right
+// 			transition 0.2s
+// 			background url("../img/icon/arrow-o-right.png") no-repeat center center
+// 			background-size contain
+// 			width 35px
+// 			height 35px
+// 			display block
+// 		&:hover
+// 			h4 
+// 				color $green !important
+// 				transition color 0.2s
+// 			.arrow-right
+// 				transition 0.2s
+// 				background url("../img/icon/arrow-o-right-fill.png") no-repeat center center
+// 				background-size contain
+	
+
+			
+	
 
 
 
@@ -378,8 +683,7 @@ body
 
 // --- Inspiration page
 .inspiration-post
-	width 47.5%
-	margin 1.125%
+	width 50%
 	padding 0 !important
 	display inline-block
 #inspiration-posts
@@ -392,8 +696,63 @@ body
 	top -100px
 	padding 25px
 	z-index 3
+.masonry-content
+	padding 0 30px 30px 30px
+.masonry__container 
+	.masonry__item
+		transition 0.2s
+		.btn
+			.btn__text
+				display none
 
+		&:first-child
+			margin-top 60px
+		&:hover
+			background $blue
+			transition 0.2s
+			box-shadow 0px 2px 20px 0px rgba(0,0,0,0.3)
+			//filter drop-shadow(0px 0px 10px rgba(0,0,0,0.25));
+			.img-clip:after
+				transition 0.2s
+				content ""
+				width 25%
+				height 25%
+				background transparent url("../img/corner-blue.png") no-repeat
+				background-size contain
+				background-position bottom right
+				bottom 0
+				right 0
+				position absolute
+				display block
+				opacity 1
+			p, h4
+				color $white !important
+			.btn-circle
+				transition padding 0s
+				padding 5px 20px !important
+			.btn
+				background $white
+				border-color $white !important
+				.btn__text
+					padding-right 20px
+					color $blue !important
+					display inline !important
 
+.corner-point-green
+	overflow visible
+	&:before
+		content ""
+		width 25%
+		height 25%
+		background transparent url("../img/corner-green.png") no-repeat
+		background-size contain
+		background-position bottom left
+		top -25%
+		left 0
+		position absolute
+		display block
+		opacity 1
+				
 
 
 
@@ -419,12 +778,18 @@ body
 	.content
 		border-radius 0px
 @media (max-width: 992px)
+	.product-post.unpad
+		padding-left 15px
+		padding-right 15px
 	#inspiration-posts
 		top 0
-		
+		margin-bottom 100px
 	.inspiration-post
 		width 100%
 		margin 0
+	.update-item.pos-absolute
+		position unset
+		border-bottom $border
 	#text-overlap
 		top 0
 	.content
@@ -439,6 +804,16 @@ body
 			color $white
 	footer
 		padding 0px 0px 50px 0px
+		.mt--3
+			margin-top 0px
+		#footer-social-icons
+			text-align center
+			margin-bottom 50px
+		.footer-logo
+			width 200px
+			margin-bottom 0px
+		.footer-slogan
+			line-height unset
 		#footer-blue-box
 			width 100%
 			top 0
