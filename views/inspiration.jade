@@ -4,13 +4,13 @@ block content
 	.content
 		section.imagebg.parallax.cover.height-80(data-overlay="5")
 			.background-image-holder
-				img(alt='background', src='#{asset(contentful.Home[0].headerBackground)}')
+				img(alt='background', src='#{asset(contentful.InspirationPage[0].headerImage)}')
 			.container
 				.row
 					.col-lg-4
-						h1= contentful.Home[0].headerLargeText
-						h5= contentful.Home[0].headerSubtext
-						a.btn.btn-white-green.type--uppercase.arrow-after-white-green(href='#')
+						h1= contentful.InspirationPage[0].headerLargeText
+						h5= contentful.InspirationPage[0].headerSubtext
+						//-a.btn.btn-white-green.type--uppercase.arrow-after-white-green(href='#')
 							span.btn__text= contentful.Home[0].headerButtonText
 		#inspiration-posts.container
 			.masonry
@@ -70,16 +70,15 @@ block content
 
 		section.imagebg.parallax.cover.height-80
 			.background-image-holder
-				img(alt='background', src='#{asset(contentful.Home[0].headerBackground)}')
+				img(alt='background', src='#{asset(contentful.InspirationPage[0].bottomImage)}')
 		.container
 			.row
 				#text-overlap.corner-point-green.col-lg-8.bg--gradient.clearfix.float-right
-					h5.color--white.col-sm-12.
-						The most interesting part of the challenge is how to control the fast growing data streams available to us farmers
-					p.small.col-sm-6.color--primary James Reed, Farmer
+					h5.color--white.col-sm-12= contentful.InspirationPage[0].bottomImageText
+					p.small.col-sm-6.color--primary= contentful.InspirationPage[0].bottomImageTextName
 					div.col-sm-6.text-center
 						a.btn.btn-white-green.type--uppercase.arrow-after-white-green(href='#')
-							span.small.btn__text Read my Story
+							span.small.btn__text= contentful.InspirationPage[0].bottomImageButtonText
 						
 								
 		include partials/_4updates

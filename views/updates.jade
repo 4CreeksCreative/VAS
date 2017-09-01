@@ -8,7 +8,7 @@ block content
 			.container.pos-vertical-center
 				.row.text-center
 					.col-sm-12
-						h2#updatetitle Updates
+						h2#updatetitle= contentful.Home[0].updatesSectionTitle
 
 
 
@@ -34,7 +34,7 @@ block content
 			.container
 				.row
 					.col-sm-12.text-center
-						h3.color--primary-2 Product Updates
+						h3.color--primary-2= contentful.Home[0].productUpdates
 					
 					- var i = 0; var e = contentful.ProductPost.length; while (i<e){
 					- var date = new Date(contentful.ProductPost[i].date);
@@ -53,7 +53,7 @@ block content
 			.container
 				.row
 					.col-sm-12.text-center
-						h3.color--primary-2 Event Updates
+						h3.color--primary-2= contentful.Home[0].eventUpdates
 					
 					- var i = 0; var e = contentful.EventPost.length; while (i<e){
 					- var date = new Date(contentful.EventPost[i].date);

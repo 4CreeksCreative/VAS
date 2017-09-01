@@ -64,6 +64,11 @@ module.exports =
           filters:{
             'locale':'de'
           }
+        InspirationPage:
+          id: 'inspirationPage'
+          filters:{
+            'locale':'de'
+          }
         ProductPost:
           id: 'productBlogPost'
           filters:{
