@@ -1173,8 +1173,8 @@ div[data-overlay] ul {
 
 .btn--primary-2,
 .btn--primary-2:visited {
-    background: #A58961;
-    border-color: #A58961;
+    background: #004C75;
+    border-color: #004C75;
 }
 
     .btn--primary-2 .btn__text,
@@ -1183,11 +1183,11 @@ div[data-overlay] ul {
     }
 
     .btn--primary-2:hover {
-        background: #665a48;
+        background: #004C75;
     }
 
     .btn--primary-2:active {
-        background: #665a48;
+        background: #004C75;
     }
 
 .btn--secondary {
@@ -3420,7 +3420,7 @@ a {
     }
 
 .bg--primary-2 {
-    background: #A58961;
+    background: #004C75;
 }
 
     .bg--primary-2 p,

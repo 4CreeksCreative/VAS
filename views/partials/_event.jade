@@ -3,16 +3,22 @@ extends ../layout
 block content
 
 	.content
-		section.imagebg.clip.parallax.cover.height-30(data-overlay="7")
-			.background-image-holder
+		section.imagebg.clip.parallax.cover.height-30(data-overlay="10")
+			//-.background-image-holder
 				img(alt='background', src='#{asset(entry.headerImage)}')
-			//-.signature-container
+			.signature-container
 			.container.pos-vertical-center
 				.row.text-left
 					.col-sm-12
 						h2#updatetitle= entry.title
-						p#featuredtext.featuredText= entry.titleSubtext
-		section#updates-content
+						//-p#featuredtext.featuredText= entry.titleSubtext
+		.container
+			.row.unmarg
+				.col-sm-12.imagebg.cover.height-40.move-up(style='z-index:1;')
+					.background-image-holder
+						img(src="#{asset(entry.featuredImage)}")
+						
+		section#updates-content.unpad--top
 			.container
 				.row
 					.col-sm-12
@@ -24,9 +30,10 @@ block content
 				.row.mt--1
 					.col-sm-6
 						p= entry.paragraph2
-					.col-sm-5.col-sm-offset-1.blue-pullquote
-						h6.color--primary-1= entry.bluePullquote
-						p.small.color--primary-1= entry.pullquoteName
+					.col-sm-5.col-sm-offset-1.bg--primary-2.blue-box-pullquote
+						for item in entry.blueChecklist
+							h6.color--white.unmarg.check-mark-before-white
+								!= item
 				.row.mt--1
 					.col-sm-6
 						h6.color--primary-2= entry.paragraph3Title
@@ -35,14 +42,7 @@ block content
 						p= entry.paragraph3
 
 
-		section#social-share
-			.container
-				.row.text-left
-					.col-sm-12
-						.float-left
-							h3.unmarg.color--primary-1= contentful.Social[0].shareHeader
-						#share-icons.float-left
-							include _social-icons
+		
 						//-ul
 							li
 								a#fbshare(target="_blank")
@@ -59,15 +59,26 @@ block content
 				img(alt='background', src='#{asset(entry.bottomImage)}')
 		.container
 			.row
-				#text-overlap.corner-point-green.col-lg-6.bg--gradient.clearfix.float-right
-					h5.color--white.col-sm-12= entry.bottomImageText
-					p.small.col-sm-6.color--primary= entry.bottomImageTextName
-					div.col-sm-6.text-center
-						a.btn.btn-white-green.type--uppercase.arrow-after-white-green(href='#')
-							span.small.btn__text(style="white-space:nowrap")= entry.bottomImageButtonText
+				#text-overlap.corner-point-white.col-lg-6.bg--white.clearfix.float-right
+					p.small.color--primary-2.col-sm-12= entry.bottomImageText
+		
+		.container
+			.row.mt--1
+					.col-sm-8
+						h6.color--primary-2= entry.bottomParagraphTitle
+			.row.mt--1
+					.col-sm-8
+						p= entry.bottomParagraph
 
 
-
+		section#social-share
+			.container
+				.row.text-left
+					.col-sm-12
+						.float-left
+							h3.unmarg.color--primary-1= contentful.Social[0].shareHeader
+						#share-icons.float-left
+							include _social-icons
 		include _4updates
 		//-section#more-updates
 			.container

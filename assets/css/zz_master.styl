@@ -103,15 +103,13 @@ p i
 			i
 				padding 15px
 				display block
-.check-mark-before
+.check-mark-before, .check-mark-before-white
 	position relative
 	padding-left 35px
 	&:before
 		content ""
 		width 20px
 		height 20px
-		background transparent url("../img/icon/check.png") no-repeat
-		background-size contain
 		background-position center right
 		bottom 0
 		top 0
@@ -119,6 +117,12 @@ p i
 		position absolute
 		opacity 1
 		margin auto
+.check-mark-before:before
+	background transparent url("../img/icon/check.png") no-repeat
+	background-size contain
+.check-mark-before-white:before
+	background transparent url("../img/icon/check-white.png") no-repeat
+	background-size contain
 .video-play-icon
 	position relative
 .video-play-icon:before
@@ -696,6 +700,11 @@ body
 
 .blue-pullquote
 	border-left 2px $blue solid
+	
+.blue-box-pullquote
+	padding 30px
+	h6
+		line-height 45px
 
 
 
@@ -769,6 +778,20 @@ body
 		background-position bottom left
 		top -25%
 		left 0
+		position absolute
+		display block
+		opacity 1
+.corner-point-white
+	overflow visible
+	&:before
+		content ""
+		width 25%
+		height 25%
+		background transparent url("../img/corner.png") no-repeat
+		background-size contain
+		background-position bottom right
+		top -25%
+		right 0
 		position absolute
 		display block
 		opacity 1

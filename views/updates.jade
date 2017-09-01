@@ -48,3 +48,23 @@ block content
 								//-i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--primary-2.float-right.col-xs-2
 					- i++}
 
+
+		section#more-updates
+			.container
+				.row
+					.col-sm-12.text-center
+						h3.color--primary-2 Event Updates
+					
+					- var i = 0; var e = contentful.EventPost.length; while (i<e){
+					- var date = new Date(contentful.EventPost[i].date);
+
+						.col-xs-12.update-item.bg--white.clearfix
+							a(href="#{contentful.EventPost[i]._url}")
+								p.color--primary-2.small.unmarg.float-left.col-xs-12 Update #{date.getMonth() +' '+ date.getDate() +' '+ date.getFullYear()}
+								h6.color--primary-1.unmarg.float-left.col-xs-10= contentful.EventPost[i].title
+								div.arrow-right.float-right
+								//-img.arrow-right(src="/img/icon/arrow-o-right.png")
+								//-i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--primary-2.float-right.col-xs-2
+					- i++}
+
+

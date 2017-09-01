@@ -65,6 +65,12 @@ module.exports =
             'locale':'en-US'
           }
           template: 'views/partials/_product.jade'
+        EventPost:
+          id: 'eventBlogPost'
+          filters:{
+            'locale':'en-US'
+          }
+          template: 'views/partials/_event.jade'
         
     
   ]
