@@ -10,15 +10,15 @@ block content
 		section.clip.imagebg.parallax.cover.height-30(data-overlay="7")
 			.background-image-holder
 				img(alt='background', src='#{asset(entry.featuredImage)}')
+			.signature-container
 			.container.pos-vertical-center
 				.row.text-left
 					.col-sm-12
 						h2#updatetitle= entry.title
 						p#featuredtext.featuredText= entry.featuredText
 		section#updates-content
-			.container
-				.row
-					!= entry.mainContent
+			!= entry.mainContent
+					
 
 
 		section#social-share
