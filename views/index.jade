@@ -19,38 +19,36 @@ block content
 					.background-image-holder
 						img(src="/img/home/cowpet.jpg")
 				- var date = new Date(contentful.Updates[0].date);
-				- if  (contentful.Updates.length === 1){
+				if  contentful.Updates.length === 1
 					a.clearfix(href="#{contentful.Updates[0]._url}")
 						.col-md-12.imagebg.cover.move-up(style="min-height:500px;")
 							.background-image-holder
 								img(src="#{asset(contentful.Updates[0].featuredImage)}")
 						.col-sm-12.update-item.move-up.clearfix(style="bottom:-10px;")
-							
-								p.color--primary-2.small.unmarg.float-left.col-xs-12 Update #{date.getMonth() +' '+ date.getDate() +' '+ date.getFullYear()}
+								p.color--primary-2.small.unmarg.float-left.col-xs-12 Update #{(date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()}
 								h6.color--primary-1.unmarg.float-left.col-xs-10= contentful.Updates[0].title
 								div.arrow-right.float-right
 							//-img.arrow-right(src="/img/icon/arrow-o-right.png")
 
 				
-				-} else {
+				else 
 					a.clearfix(href="#{contentful.Updates[0]._url}")
-						.col-img-fix.hidden-sm.hidden-xs.col-md-8.imagebg.cover.move-up(style="min-height:400px;")
+						.col-img-fix.hidden-sm.hidden-xs.col-md-8.imagebg.cover.move-up(style="min-height:400px; padding: 0;")
 							.background-image-holder
 								img(src="#{asset(contentful.Updates[0].featuredImage)}")
-						.col-sm-12.col-md-8.update-item.pos-absolute.clearfix(style="bottom:-10px;")
-							
-								p.color--primary-2.small.unmarg.float-left.col-xs-12 Update #{date.getMonth() +' '+ date.getDate() +' '+ date.getFullYear()}
-								h6.color--primary-1.unmarg.float-left.col-xs-10= contentful.Updates[0].title
-								div.arrow-right.float-right
-							//-img.arrow-right(src="/img/icon/arrow-o-right.png")
-				-}
+							.col-sm-12.update-item.pos-absolute.clearfix(style="top:100%;")
+									p.color--primary-2.small.unmarg.float-left.col-xs-12 Update #{(date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()}
+									h6.color--primary-1.unmarg.float-left.col-xs-10= contentful.Updates[0].title
+									div.arrow-right.float-right
+								//-img.arrow-right(src="/img/icon/arrow-o-right.png")
+				
 
 				
 				- var i = 1; var e = (contentful.Updates.length >=4) ? 4 : contentful.Updates.length; while (i<e){
 				- var date = new Date(contentful.Updates[i].date);
 					.col-md-4.col-md-offset-8.update-item.bg--white.clearfix
 						a(href="#{contentful.Updates[i]._url}")
-							p.color--primary-2.small.unmarg.float-left.col-xs-12 Update #{date.getMonth() +' '+ date.getDate() +' '+ date.getFullYear()}
+							p.color--primary-2.small.unmarg.float-left.col-xs-12 Update #{(date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()}
 							h6.color--primary-1.unmarg.float-left.col-xs-10= contentful.Updates[i].title
 							div.arrow-right.float-right
 							//-a.btn.btn--primary.type--uppercase(href='#')
@@ -78,7 +76,7 @@ block content
 						h4.color--primary-1.unmarg.float-left.col-xs-10 Visit VAS at the 2017 World Dairy Expo!
 						i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--primary-2.float-right.col-xs-2
 		
-
+	
 		#video-teaser.container
 			.row
 				.col-lg-12(style="padding:0px;")
@@ -118,7 +116,7 @@ block content
 								p.color--primary-1.unmarg.check-mark-before
 									!= item
 							a.mt--1.btn.btn-blue-white.type--uppercase.modal-trigger
-								span.btn__text= contentful.Home[0].featuredVideoButtonText
+								span.btn__text= contentful.Home[0].productDetails
 				//-.col-md-4.col-xs-9.float-center-sm
 					img.img-clip(src="/img/home/dcomp.jpg")
 					div.pad-sm.text-left
