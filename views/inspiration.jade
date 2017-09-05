@@ -23,7 +23,7 @@ block content
 									.img-clip
 										img(src="#{asset(contentful.Updates[i].featuredImage)}")
 									.masonry-content.clearfix
-										p.color--primary-2.small.unmarg.float-left.col-sm-12 Update #{date.getMonth() +' '+ date.getDate() +' '+ date.getFullYear()}
+										p.color--primary-2.small.unmarg.float-left.col-sm-12 Update #{(date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()}
 										h4.color--primary-1.unmarg.float-left.col-sm-12= contentful.Updates[i].title
 										p.col-xs-10= contentful.Updates[i].featuredText
 										.col-xs-12
