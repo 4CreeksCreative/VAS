@@ -1,45 +1,45 @@
 doctype html
 html(xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#")
 
-  head
-    meta(charset='utf8')
-    meta(http-equiv='X-UA-Compatible', content='IE=edge, chrome=1')
-    
-    meta(name='author', content= "JJ Fry")
-    link(rel="icon" href="/img/logo/vasIcon-color.png")
-    
-    //- uncomment if your site is responsive!
-    meta(name="viewport" content="width=device-width, initial-scale=1")
-    
-    title= 'VAS - ' + contentful.Home[0].headerLargeText
-    meta(name='description', content='VAS - #{contentful.Home[0].headerLargeText}')
+	head
+		meta(charset='utf8')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge, chrome=1')
+		
+		meta(name='author', content= "JJ Fry")
+		link(rel="icon" href="/img/logo/vasIcon-color.png")
+		
+		//- uncomment if your site is responsive!
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+		
+		title= 'VAS - ' + contentful.Home[0].headerLargeText
+		meta(name='description', content='VAS - #{contentful.Home[0].headerLargeText}')
 
-    
-    block head
+		
+		block head
 
-    != css("/")
+		!= css("/")
 
-  body
-    include partials/_header
-    block content
-    include partials/_footer
-    != js("/")
+	body
+		include partials/_header
+		block content
+		include partials/_footer
+		!= js("/")
 
-    script.
-      window.fbAsyncInit = function() {
-        FB.init({
-          appId            : '407590409638822',
-          autoLogAppEvents : true,
-          xfbml            : true,
-          version          : 'v2.10'
-        });
-        FB.AppEvents.logPageView();
-      };
+		script.
+			window.fbAsyncInit = function() {
+				FB.init({
+					appId            : '407590409638822',
+					autoLogAppEvents : true,
+					xfbml            : true,
+					version          : 'v2.10'
+				});
+				FB.AppEvents.logPageView();
+			};
 
-      (function(d, s, id){
-         var js, fjs = d.getElementsByTagName(s)[0];
-         if (d.getElementById(id)) {return;}
-         js = d.createElement(s); js.id = id;
-         js.src = "//connect.facebook.net/en_US/sdk.js";
-         fjs.parentNode.insertBefore(js, fjs);
-       }(document, 'script', 'facebook-jssdk'));
+			(function(d, s, id){
+				 var js, fjs = d.getElementsByTagName(s)[0];
+				 if (d.getElementById(id)) {return;}
+				 js = d.createElement(s); js.id = id;
+				 js.src = "//connect.facebook.net/en_US/sdk.js";
+				 fjs.parentNode.insertBefore(js, fjs);
+			 }(document, 'script', 'facebook-jssdk'));
