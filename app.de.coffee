@@ -42,6 +42,7 @@ module.exports =
           id: 'updates'
           filters:{
             'locale':'de'
+            'order': '-sys.createdAt'
           }
           template: 'views/partials/_update.jade'
         Navigation:
@@ -73,12 +74,14 @@ module.exports =
           id: 'productBlogPost'
           filters:{
             'locale':'de'
+            'order': '-sys.createdAt'
           }
           template: 'views/partials/_product.jade'
         EventPost:
           id: 'eventBlogPost'
           filters:{
             'locale':'de'
+            'order': '-sys.createdAt'
           }
           template: 'views/partials/_event.jade'
         
