@@ -17,6 +17,12 @@ block content
 						h2#updatetitle= entry.title
 						p#featuredtext.featuredText= entry.featuredText
 		section#updates-content
+			- var date = new Date(entry.date);
+			.container
+				.row
+					.col-sm-12
+						p.color--primary-2= entry.location + ' - ' + (date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()
+			
 			!= entry.mainContent
 					
 
