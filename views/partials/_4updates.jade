@@ -3,7 +3,7 @@ section#updates.container
 		.col-lg-12
 			h4.color--primary-2= contentful.Home[0].updatesSectionTitle
 	.row.text-left
-		- var i = 0; var e = (contentful.Updates.length >=4) ? 4 : contentful.Updates.length; while (i<4){
+		- var i = 0; var e = (contentful.Updates.length >=4) ? 4 : contentful.Updates.length; while (i<e){
 		- var date = new Date(contentful.Updates[i].date);
 
 			.update-item.col-xs-12.clearfix
