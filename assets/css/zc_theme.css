@@ -63,7 +63,7 @@ html {
     font-size: 87.5%;
 }
 
-@media all and (max-width: 768px) {
+@media all and (max-width: 767px) {
     html {
         font-size: 81.25%;
     }
@@ -1089,7 +1089,7 @@ div[data-overlay] ul {
                 color: #fff;
             }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) {
     .btn + .btn {
         margin-left: 1.85714286em;
     }
@@ -2040,7 +2040,7 @@ img + .boxed {
         padding: 0;
     }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) {
     .slider.height-10 .slides li.imagebg {
         min-height: 10vh;
     }
@@ -2055,7 +2055,7 @@ img + .boxed {
         padding: 0;
     }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) {
     .slider.height-20 .slides li.imagebg {
         min-height: 20vh;
     }
@@ -2070,7 +2070,7 @@ img + .boxed {
         padding: 0;
     }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) {
     .slider.height-30 .slides li.imagebg {
         min-height: 30vh;
     }
@@ -2085,7 +2085,7 @@ img + .boxed {
         padding: 0;
     }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) {
     .slider.height-40 .slides li.imagebg {
         min-height: 40vh;
     }
@@ -2100,7 +2100,7 @@ img + .boxed {
         padding: 0;
     }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) {
     .slider.height-50 .slides li.imagebg {
         min-height: 50vh;
     }
@@ -2115,7 +2115,7 @@ img + .boxed {
         padding: 0;
     }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) {
     .slider.height-60 .slides li.imagebg {
         min-height: 60vh;
     }
@@ -2130,7 +2130,7 @@ img + .boxed {
         padding: 0;
     }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) {
     .slider.height-70 .slides li.imagebg {
         min-height: 70vh;
     }
@@ -2145,7 +2145,7 @@ img + .boxed {
         padding: 0;
     }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) {
     .slider.height-80 .slides li.imagebg {
         min-height: 80vh;
     }
@@ -2160,7 +2160,7 @@ img + .boxed {
         padding: 0;
     }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) {
     .slider.height-90 .slides li.imagebg {
         min-height: 90vh;
     }
@@ -2175,7 +2175,7 @@ img + .boxed {
         padding: 0;
     }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) {
     .slider.height-100 .slides li.imagebg {
         min-height: 100vh;
     }
@@ -2235,7 +2235,7 @@ section.slider {
             padding: 0;
         }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) {
     section.slider.height-10 .slides li.imagebg {
         min-height: 10vh;
     }
@@ -2250,7 +2250,7 @@ section.slider.height-20 {
         padding: 0;
     }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) {
     section.slider.height-20 .slides li.imagebg {
         min-height: 20vh;
     }
@@ -2265,7 +2265,7 @@ section.slider.height-30 {
         padding: 0;
     }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) {
     section.slider.height-30 .slides li.imagebg {
         min-height: 30vh;
     }
@@ -2280,7 +2280,7 @@ section.slider.height-40 {
         padding: 0;
     }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) {
     section.slider.height-40 .slides li.imagebg {
         min-height: 40vh;
     }
@@ -2295,7 +2295,7 @@ section.slider.height-50 {
         padding: 0;
     }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) {
     section.slider.height-50 .slides li.imagebg {
         min-height: 50vh;
     }
@@ -2310,7 +2310,7 @@ section.slider.height-60 {
         padding: 0;
     }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) {
     section.slider.height-60 .slides li.imagebg {
         min-height: 60vh;
     }
@@ -2325,7 +2325,7 @@ section.slider.height-70 {
         padding: 0;
     }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) {
     section.slider.height-70 .slides li.imagebg {
         min-height: 70vh;
     }
@@ -2340,7 +2340,7 @@ section.slider.height-80 {
         padding: 0;
     }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) {
     section.slider.height-80 .slides li.imagebg {
         min-height: 80vh;
     }
@@ -2355,7 +2355,7 @@ section.slider.height-90 {
         padding: 0;
     }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) {
     section.slider.height-90 .slides li.imagebg {
         min-height: 90vh;
     }
@@ -2370,7 +2370,7 @@ section.slider.height-100 {
         padding: 0;
     }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) {
     section.slider.height-100 .slides li.imagebg {
         min-height: 100vh;
     }
@@ -3142,8 +3142,8 @@ iframe {
     }
 
 .video-play-icon {
-    width: 7.42857143em;
-    height: 7.42857143em;
+    width: 100px;
+    height:  100px;
     border-radius: 50%;
     position: relative;
     z-index: 4;
@@ -4229,7 +4229,7 @@ div[class*='col-'] > div[class*='col-']:last-child {
     }
 }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) {
     
 }
 .mt--1 {
@@ -4819,7 +4819,7 @@ h1,
         margin-bottom: 0.59090909090909em;
     }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) {
     h1.h1--large,
     .h1.h1--large {
         font-weight: 200;
@@ -4995,7 +4995,7 @@ pre {
     margin-bottom: 0.52em;
 }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) {
     div[class*='col-'] .text-block + .text-block {
         margin-top: 3.71428571em;
     }
@@ -5151,7 +5151,7 @@ ol {
     max-height: 2.78571429em;
 }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) {
     .list-inline--images li:not(:last-child) {
         margin-right: 5.57142857em;
     }
@@ -5364,7 +5364,7 @@ p > .btn {
     background: rgba(255, 255, 255, 0.2);
 }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) {
     .btn-group .btn {
         margin-bottom: 0 !important;
         margin-left: 0;
@@ -5683,7 +5683,7 @@ section.parallax .row .background-image-holder {
     }
 }
 
-@media all and (min-width: 768px) and (max-width: 1023px) {
+@media all and (min-width: 767px) and (max-width: 1023px) {
     .bar-2 .menu-horizontal > li,
     .bar-1 .menu-horizontal > li {
         display: inline-block;
@@ -5923,7 +5923,7 @@ section.parallax .row .background-image-holder {
     animation: fadeInDown .3s ease forwards;
 }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) {
     .side-menu .side-menu__module span.type--fine-print {
         position: relative;
         top: 8px;
@@ -6768,7 +6768,7 @@ p .material-icons {
         background: #fafafa;
     }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) {
     .switchable .imagebg .boxed {
         padding-left: 5.57142857em;
     }
@@ -6834,7 +6834,7 @@ p .material-icons {
         color: #57818a !important;
     }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) {
     .boxed.boxed--emphasis {
         transform: scale(1.075);
         -webkit-transform: scale(1.075);
@@ -6907,7 +6907,7 @@ section.text-center .feature-6 h4 + p {
     margin: 0 auto;
 }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) {
     .row div[class*='col-']:nth-child(1):nth-last-child(3) .feature,
     .row div[class*='col-']:nth-child(2):nth-last-child(2) .feature,
     .row div[class*='col-']:nth-child(3):last-child .feature {
@@ -7184,7 +7184,7 @@ a.block:hover > .feature {
     margin-bottom: 30px;
 }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) {
     .features-small-14 .text-block {
         margin-bottom: 3.71428571em;
     }
@@ -7194,7 +7194,7 @@ a.block:hover > .feature {
     }
 }
 /*! -- Stack Features Large -- */
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) {
     .staggered div[class*='col-']:nth-child(2):last-child {
         margin-top: 13em;
     }
@@ -7232,7 +7232,7 @@ a.block:hover > .feature {
     margin-bottom: 2.73684210526316em;
 }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) {
     .feature-large-2 div[class*='col-']:first-child {
         margin-top: 5.57142857em;
     }
@@ -7278,7 +7278,7 @@ a.block:hover > .feature {
         border-radius: 6px;
     }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) {
     .feature-large-14.switchable .switchable__text {
         margin-top: 5.57142857em;
     }
@@ -7516,7 +7516,7 @@ a.block:hover > .feature {
         border-color: #fff;
     }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) {
     .tabs.tabs--spaced {
         margin-bottom: 3.71428571em;
     }
@@ -7599,7 +7599,7 @@ a.block:hover > .feature {
     margin-bottom: 0;
 }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) {
     .cta--horizontal h4,
     .cta--horizontal .lead,
     .cta--horizontal .btn {
@@ -7675,7 +7675,7 @@ a.block:hover > .feature {
         background: #ffffff;
     }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) {
     .cta-3 .switchable__text {
         margin-top: 5.57142857em;
     }
@@ -7736,13 +7736,13 @@ a.block:hover > .feature {
     z-index: 10;
 }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) {
     h2 + .video-cover {
         margin-top: 3.71428571em;
     }
 }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) {
     .video-1 .video-play-icon {
         margin-right: 1.85714286em;
     }
@@ -7788,7 +7788,7 @@ a.block:hover > .feature {
     display: block;
 }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) {
     .modal-instance + span:last-child {
         display: inline-block;
         margin-left: 0.92857143em;
@@ -7997,7 +7997,7 @@ a[data-lightbox] {
     margin-bottom: 1.85714286em;
 }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) {
     .cover .row .row:last-child {
         margin-top: 5.57142857em;
     }
@@ -8016,7 +8016,7 @@ a[data-lightbox] {
     }
 }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) {
     .cover .triptych {
         margin-top: 7.42857143em;
     }
@@ -8082,7 +8082,7 @@ a[data-lightbox] {
         top: 0;
     }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) {
     .cover-slider + .cta-4 {
         position: absolute;
         background: none;
@@ -8157,7 +8157,7 @@ a[data-lightbox] {
         margin-left: 1px;
     }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) {
     .process-1 .process__item:nth-child(odd) {
         text-align: right;
         padding-right: 3.71428571em;
@@ -8446,7 +8446,7 @@ form {
         margin-left: -15px;
     }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) {
     div[class*='col-'] > form div[class*='col-']:last-child:nth-child(2) {
         padding-right: 0;
     }
@@ -9244,7 +9244,7 @@ label {
     }
 }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) {
     h2 + .slider,
     .h2 + .slider {
         margin-top: 3.71428571em;
@@ -9420,7 +9420,7 @@ label {
     }
 }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) {
     .pricing-section-1 .pricing:not(.boxed--emphasis) {
         left: 0.92857143em;
     }
@@ -9510,7 +9510,7 @@ iframe[src*='google.com/maps'] {
         left: 0;
     }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) {
     .background-image-holder .map-container,
     .imageblock__content .map-container {
         position: absolute;
@@ -9571,13 +9571,13 @@ iframe[src*='google.com/maps'] {
     }
 }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) {
     .lead + .testimonial-2 {
         margin-top: 3.71428571em;
     }
 }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) {
     .testimonials-1 .list-inline {
         position: relative;
         top: 0.92857143em;
@@ -10057,7 +10057,7 @@ section.unpad > article .imagebg + div {
     background: #fff;
 }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) {
     .comments__list li {
         padding: 2.78571429em;
     }
@@ -10111,13 +10111,13 @@ section.unpad > article .imagebg + div {
         padding-left: 15%;
     }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) {
     .comments + .comments-form {
         margin-top: 3.71428571em;
     }
 }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) {
     h3 + .related-blog-list {
         margin-top: 3.71428571em;
     }
@@ -10191,7 +10191,7 @@ section.unpad > article .imagebg + div {
             margin-bottom: 0;
         }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) {
     .conversation__avatar {
         position: absolute;
         top: 1.85714286em;
@@ -10298,7 +10298,7 @@ section.unpad > article .imagebg + div {
     }
 }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) {
     .col-xs-12:not(.col-sm-6) .project-thumb.hover-element > a {
         height: 46.42857143em;
     }
@@ -10330,7 +10330,7 @@ section.unpad > article .imagebg + div {
     overflow: hidden;
 }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) {
     .cart-total {
         margin-top: 3.71428571em;
     }
@@ -10667,7 +10667,7 @@ footer.footer-7 {
     padding: 1.85714286em 0;
 }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) {
     footer .list-inline + .btn {
         position: relative;
         bottom: 4px;
