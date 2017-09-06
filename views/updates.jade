@@ -2,7 +2,7 @@ extends layout
 
 block content
 	.content
-		section.imagebg.parallax.cover.height-30(data-overlay="7")
+		section.imagebg.parallax.cover.height-80(data-overlay="5")
 			.background-image-holder
 				img(alt='background', src='#{asset(contentful.UpdatesPage[0].headerBackground)}')
 			.signature-container
@@ -13,7 +13,7 @@ block content
 
 
 
-		section#more-updates
+		section.updates-section
 			.container
 				.row
 					.col-sm-12.text-center
@@ -31,7 +31,7 @@ block content
 								//-i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--primary-2.float-right.col-xs-2
 					- i++}
 
-		section#product-updates
+		section.updates-section
 			.container
 				.row
 					.col-sm-12.text-center
@@ -50,7 +50,7 @@ block content
 					- i++}
 
 
-		section#event-updates
+		section.updates-section
 			.container
 				.row
 					.col-sm-12.text-center

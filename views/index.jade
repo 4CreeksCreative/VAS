@@ -13,7 +13,7 @@ block content
 						a.btn.btn-white-green.arrow-after-white-green(href='#')
 							span.btn__text= contentful.Home[0].headerButtonText
 							
-		#updates-teaser.container
+		.updates-section.container
 			.row.pos-relative
 				//-.col-img-fix.col-sm-8.imagebg.cover.move-up
 					.background-image-holder
@@ -44,7 +44,7 @@ block content
 									h4.color--primary-1.unmarg.float-left.col-xs-12= contentful.Updates[0].title
 									p.col-xs-12.color--primary-1= contentful.Updates[0].featuredText
 									.col-xs-12
-										div.arrow-right.float-right
+										div.arrow-right.float-right(style="height:40px; width:40px;")
 								//-img.arrow-right(src="/img/icon/arrow-o-right.png")
 				
 
@@ -99,7 +99,7 @@ block content
 					h6.color--white= contentful.Home[0].featuredVideoDescription
 					
 					.modal-instance.float-right
-						a.btn.btn-white-green.modal-trigger.arrow-after-white-green
+						a.btn.btn-white-blue.modal-trigger.arrow-after-white-blue
 							span.btn__text= contentful.Home[0].featuredVideoButtonText
 						.modal-container
 							.modal-content.bg-dark(data-width='60%', data-height='60%')
