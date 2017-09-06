@@ -78,6 +78,13 @@ p i
 .col-img-fix
 	position absolute
 	height 100%
+.hamburger-toggle i
+	color $green2
+.language-dropdown
+	border-left $border
+	padding-left 10px
+	img
+		padding 0 10px
 
 
 
@@ -482,6 +489,12 @@ header
 				&:hover
 					color $blue !important
 					transition .2s !important
+	#mega-menu
+		position relative
+		top 40px
+	#mini-menu
+		position relative
+		top -30px
 
 
 
@@ -579,7 +592,8 @@ body
 #updates-teaser
 	position relative
 	z-index 3
-	top -225px
+	margin-top -150px
+	margin-bottom 100px
 #products-container
 	> div:not(:nth-child(2))
 		margin-top 30px
@@ -841,13 +855,19 @@ body
 // --- queries
 @media (max-height:1000px)
 	#updates-teaser
-		top -100px
+		margin-top -100px
 @media (max-width:990px)
 	.menu-horizontal
 		li
 			display inline-block
 			margin-right 15px
 @media (max-width:767px)
+	#mega-menu
+			
+		top unset
+	#mini-menu
+		
+		top unset
 	#menu1
 		padding-top 0px
 	.logo-mobile
@@ -861,6 +881,22 @@ body
 	.content
 		border-radius 0px
 @media (max-width: 992px)
+	// #update-move-up
+	// 	>div 
+	// 		position relative
+	// 		margin-bottom 400px;
+	// 		.update-item
+	// 			background $white
+	// 			position absolute
+	// 			bottom -400px
+	// 			top unset
+	header
+		
+	.language-dropdown
+		border none
+		padding 0px
+		img
+			padding-left 0
 	.product-post.unpad
 		padding-left 15px
 		padding-right 15px
@@ -877,8 +913,8 @@ body
 		top 0
 	.content
 		#updates-teaser
-			top 0
-			margin-bottom 100px
+			margin-top -25px
+			
 		#overlap-video
 			position relative
 			top 0
@@ -888,10 +924,19 @@ body
 	.move-up
 		transform: translate(0px, 0px);
 	footer
+		input 
+			margin-bottom 10px
+		#footer-nav-row
+			padding-top 20px
+			.col-xs-12
+				margin-top 20px
+				
 		padding 0px 0px 50px 0px
 		.mt--3
 			margin-top 0px
 		#footer-social-icons
+			ul
+				line-height 20px
 			text-align center
 			margin-bottom 50px
 		.footer-logo

@@ -4081,7 +4081,7 @@ form[action*='list-manage.com'] .small-meta {
 }
 /**! 36. Helper Classes **/
 .clearfix {
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 
 .allow-overflow {

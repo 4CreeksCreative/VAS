@@ -5,7 +5,7 @@ header
 				.row(style="height:100%;")
 					.float-left(style="height:100%;")
 						a.logo.logo-mobile(href='/')
-							img.logo(alt='logo', src='/img/logo/vasIcon-color.png')
+							img.logo(alt='logo', src='/img/logo/vasLogo-color.png')
 							
 					.float-right.col-xs-9.col-sm-10.text-right(style="height:100%;")
 						a.hamburger-toggle(href='#', data-toggle-class='#menu1;hidden-xs')
@@ -17,25 +17,41 @@ header
 			.container(style="padding:0px;")
 				a(href='/').float-left.hidden-xs.logo
 					img.logo(alt='logo', src='/img/logo/vasLogo-color.png')
-				.row.small(style="background:#fff;")
-					.col-xs-11.text-right.float-right.text-center-xs.float-center-xs
+				
+
+				#mega-menu.row
+					.col-sm-11.col-xs-6.text-right.text-right-xs.float-right.float-right-xs.bg--white
 						.bar__module
-							ul.menu-horizontal.text-right.text-center-xs
+							ul.menu-horizontal.text-right.text-left-xs
+								li
+									a(href="/solutions")= contentful.Navigation[0].solutions
+								li
+									a(href="#")= contentful.Navigation[0].aboutUs
+								li
+									a(href="#")= contentful.Navigation[0].support
+								li
+									a(href="/inspiration")= contentful.Navigation[0].inspiration
+
+				
+				#mini-menu.row.small
+					.col-sm-11.col-xs-6.text-right.float-right.text-center-xs.float-right-xs.bg--white
+						.bar__module
+							ul.menu-horizontal.text-right.text-left-xs
 								li
 									a(href="/updates")= contentful.Navigation[0].updates
 								li
 									a(href="#")= contentful.Navigation[0].newsletter
 								li
 									a(href="#")= contentful.Navigation[0].contact
-								li.dropdown(style="border-left:1px #ccc solid; padding-left: 10px;")
+								li.dropdown.language-dropdown
 									span.dropdown__trigger 
-										img(src="/img/icon/world.png" style="height:20px; padding: 0 10px; margin-bottom: 7px;")
+										img(src="/img/icon/world.png" style="height:20px; margin-bottom: 7px;")
 										!= contentful.Navigation[0].language
 									.dropdown__container
 										.container
 											.row
 												.col-xs-12.col-sm-2.dropdown__content.dropdown__content--lg
-													.col-md-2.col-sm-4.text-center
+													.col-md-2.col-sm-4.text-left
 														ul
 															li
 																a.language(href="/")= contentful.Navigation[0].english
@@ -45,18 +61,7 @@ header
 																a.language(href="/de")= contentful.Navigation[0].german
 
 
-				.row(style="background:#fff;")
-					.col-xs-11.text-right.text-center-xs.float-right.float-center-xs
-						.bar__module
-							ul.menu-horizontal.text-right.text-center-xs
-								li
-									a(href="/solutions")= contentful.Navigation[0].solutions
-								li
-									a(href="#")= contentful.Navigation[0].aboutUs
-								li
-									a(href="#")= contentful.Navigation[0].support
-								li
-									a(href="/inspiration")= contentful.Navigation[0].inspiration
+				
 
 	//-div.container
 		img.logo(src="/img/logo/vasLogo-color.png")

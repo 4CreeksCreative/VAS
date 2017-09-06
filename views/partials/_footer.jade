@@ -10,11 +10,11 @@ footer.corner-point-brown
 			.col-offset-md-1.col-md-5.col-xs-12.float-right.clearfix
 				!= contentful.Footer[0].subscribeContent
 				input.col-sm-6.col-xs-12(type="text" placeholder="Your email address")
-				a.col-sm-5.col-xs-12.col-offset-sm-1.float-right.btn.btn-white-gray.arrow-after-white-gray(href='#' style="margin-top:4px;")
+				a.col-sm-5.col-xs-6.col-offset-sm-1.float-left-xs.float-right.btn.btn-white-gray.arrow-after-white-gray(href='#' style="margin-top:4px;")
 					span.btn__text= contentful.Footer[0].subscribeButtonText
 		
 		#footer-nav-row.row
-			.col-sm-3.col-xs-9.float-center-xs.text-center-xs
+			.col-sm-3.col-xs-6.text-center-xs
 				ul.footer-nav
 					li
 						a(href="/solutions")= contentful.Navigation[0].solutions
@@ -25,7 +25,7 @@ footer.corner-point-brown
 					li
 						a(href="/inspiration")= contentful.Navigation[0].inspiration
 
-			.col-sm-3.col-xs-9.float-center-xs.text-center-xs
+			.col-sm-3.col-xs-6.text-center-xs
 				ul.footer-nav
 					li
 						a(href="#")=contentful.Navigation[0].dairyComp
@@ -34,7 +34,7 @@ footer.corner-point-brown
 					li
 						a(href="#")= contentful.Navigation[0].parlorComp
 
-			.col-sm-3.col-xs-9.float-center-xs.text-center-xs
+			.col-sm-3.col-xs-12.text-center-xs
 				ul.footer-nav
 					li
 						a(href="/updates")= contentful.Navigation[0].updates
@@ -43,11 +43,11 @@ footer.corner-point-brown
 					li
 						a(href="#")= contentful.Navigation[0].contact
 
-			.col-sm-3.col-xs-9.float-center-xs.text-center-xs
+			.col-sm-3.col-xs-12.text-center-xs
 				!= contentful.Footer[0].address
 		.row.mt--1.footer-social
 			
-			#footer-social-icons.col-md-4.col-sm-6
+			#footer-social-icons.col-md-4.col-sm-12.col-xs-12
 				include _social-icons
 				//-ul.text-center(style="line-height: 129px; vertical-align:baseline;")
 					li
@@ -64,7 +64,7 @@ footer.corner-point-brown
 				a.pos-relative(href="/" style="top:-15px;")
 					img.footer-logo(src="/img/logo/vasLogo-white.png")
 			.col-md-4.col-xs-12
-				h5.footer-slogan.text-center-sm.unmarg= contentful.Footer[0].footerSlogan
+				h5.footer-slogan.text-center-sm.unmarg.text-center-xs.text-center-md= contentful.Footer[0].footerSlogan
 			.col-sm-12
 				ul.text-left.color--white.text-center-xs
 					li.pad-sm
