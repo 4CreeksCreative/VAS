@@ -911,27 +911,27 @@ mr = (function (mr, $, window, document){
     
     mr.forms.submit = function(e){
         // return false so form submits through jQuery rather than reloading page.
-        if (e.preventDefault) e.preventDefault();
-        else e.returnValue = false;
+        // if (e.preventDefault) e.preventDefault();
+        // else e.returnValue = false;
 
-        var body          = $('body'),
-            thisForm      = $(e.target).closest('form'),
-            formAction    = typeof thisForm.attr('action') !== typeof undefined ? thisForm.attr('action') : "",
-            submitButton  = thisForm.find('button[type="submit"], input[type="submit"]'),
-            error         = 0,
-            originalError = thisForm.attr('original-error'),
-            captchaUsed   = thisForm.find('div.recaptcha').length ? true:false,
-            successRedirect, formError, formSuccess, errorText, successText;
+        // var body          = $('body'),
+        //     thisForm      = $(e.target).closest('form'),
+        //     formAction    = typeof thisForm.attr('action') !== typeof undefined ? thisForm.attr('action') : "",
+        //     submitButton  = thisForm.find('button[type="submit"], input[type="submit"]'),
+        //     error         = 0,
+        //     originalError = thisForm.attr('original-error'),
+        //     captchaUsed   = thisForm.find('div.recaptcha').length ? true:false,
+        //     successRedirect, formError, formSuccess, errorText, successText;
 
-        body.find('.form-error, .form-success').remove();
-        submitButton.attr('data-text', submitButton.text());
-        errorText = thisForm.attr('data-error') ? thisForm.attr('data-error') : "Please fill all fields correctly";
-        successText = thisForm.attr('data-success') ? thisForm.attr('data-success') : "Thanks, we'll be in touch shortly";
-        body.append('<div class="form-error" style="display: none;">' + errorText + '</div>');
-        body.append('<div class="form-success" style="display: none;">' + successText + '</div>');
-        formError = body.find('.form-error');
-        formSuccess = body.find('.form-success');
-        thisForm.addClass('attempted-submit');
+        // body.find('.form-error, .form-success').remove();
+        // submitButton.attr('data-text', submitButton.text());
+        // errorText = thisForm.attr('data-error') ? thisForm.attr('data-error') : "Please fill all fields correctly";
+        // successText = thisForm.attr('data-success') ? thisForm.attr('data-success') : "Thanks, we'll be in touch shortly";
+        // body.append('<div class="form-error" style="display: none;">' + errorText + '</div>');
+        // body.append('<div class="form-success" style="display: none;">' + successText + '</div>');
+        // formError = body.find('.form-error');
+        // formSuccess = body.find('.form-success');
+        // thisForm.addClass('attempted-submit');
 
         // Do this if the form is intended to be submitted to MailChimp or Campaign Monitor
         if (formAction.indexOf('createsend.com') !== -1 || formAction.indexOf('list-manage.com') !== -1 ) {
