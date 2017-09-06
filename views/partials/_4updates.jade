@@ -1,7 +1,7 @@
 section#updates.container
 	.row.text-center
 		.col-lg-12
-			h4.color--primary-2= contentful.Home[0].updatesSectionTitle
+			h3.color--primary-2= contentful.Home[0].updatesSectionTitle
 	.row.text-left
 		- var i = 0; var e = (contentful.Updates.length >=4) ? 4 : contentful.Updates.length; while (i<e){
 		- var date = new Date(contentful.Updates[i].date);
@@ -9,7 +9,7 @@ section#updates.container
 			.update-item.col-xs-12.clearfix
 				a.clearfix(href="#{contentful.Updates[i]._url}")
 					p.color--primary-2.small.unmarg.float-left.col-xs-12 Update #{(date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()}
-					h6.color--primary-1.unmarg.float-left.col-xs-10= contentful.Updates[i].title
+					h6.weight-700.color--primary-1.unmarg.float-left.col-xs-10= contentful.Updates[i].title
 					div.arrow-right.float-right
 					//-img.arrow-right(src="/img/icon/arrow-o-right.png")
 					//-i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--primary-2.float-right.col-xs-2
@@ -48,5 +48,5 @@ section#updates.container
 				h4.color--primary-1.unmarg.float-left.col-xs-10 Visit VAS at the 2017 World Dairy Expo!
 				i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--primary-2.float-right.col-xs-2
 	.row.text-center(style="margin-top:50px")
-		a.btn.btn-green-white.type--uppercase.arrow-after-green-white(href='/updates')
+		a.btn.btn-green-white.arrow-after-green-white(href='/updates')
 			span.btn__text= contentful.Home[0].updatesButtonText

@@ -7,7 +7,7 @@ block content
 				img(alt='background', src='#{asset(contentful.UpdatesPage[0].headerBackground)}')
 			.signature-container
 			.container.pos-vertical-center
-				.row.text-center
+				.row
 					.col-sm-12
 						h2#updatetitle= contentful.Home[0].updatesSectionTitle
 
@@ -24,8 +24,8 @@ block content
 
 						.col-xs-12.update-item.bg--white.clearfix
 							a(href="#{contentful.Updates[i]._url}")
-								p.color--primary-2.small.unmarg.float-left.col-xs-12 Update #{(date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()}
-								h6.color--primary-1.unmarg.float-left.col-xs-10= contentful.Updates[i].title
+								p.color--primary-2.small.unmarg.float-left.col-xs-12= contentful.Updates[i].location + ' ' + (date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()
+								h6.weight-700.color--primary-1.unmarg.float-left.col-xs-10= contentful.Updates[i].title
 								div.arrow-right.float-right
 								//-img.arrow-right(src="/img/icon/arrow-o-right.png")
 								//-i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--primary-2.float-right.col-xs-2
@@ -43,7 +43,7 @@ block content
 						.col-xs-12.update-item.bg--white.clearfix
 							a(href="#{contentful.ProductPost[i]._url}")
 								p.color--primary-2.small.unmarg.float-left.col-xs-12 Update #{(date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()}
-								h6.color--primary-1.unmarg.float-left.col-xs-10= contentful.ProductPost[i].title
+								h6.weight-700.color--primary-1.unmarg.float-left.col-xs-10= contentful.ProductPost[i].title
 								div.arrow-right.float-right
 								//-img.arrow-right(src="/img/icon/arrow-o-right.png")
 								//-i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--primary-2.float-right.col-xs-2
@@ -62,7 +62,7 @@ block content
 						.col-xs-12.update-item.bg--white.clearfix
 							a(href="#{contentful.EventPost[i]._url}")
 								p.color--primary-2.small.unmarg.float-left.col-xs-12 Update #{(date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()}
-								h6.color--primary-1.unmarg.float-left.col-xs-10= contentful.EventPost[i].title
+								h6.weight-700.color--primary-1.unmarg.float-left.col-xs-10= contentful.EventPost[i].title
 								div.arrow-right.float-right
 								//-img.arrow-right(src="/img/icon/arrow-o-right.png")
 								//-i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--primary-2.float-right.col-xs-2

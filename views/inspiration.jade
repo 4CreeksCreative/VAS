@@ -23,11 +23,11 @@ block content
 									.img-clip
 										img(src="#{asset(contentful.Updates[i].featuredImage)}")
 									.masonry-content.clearfix
-										p.color--primary-2.small.unmarg.float-left.col-sm-12 Update #{(date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()}
-										h4.color--primary-1.unmarg.float-left.col-sm-12= contentful.Updates[i].title
+										p.color--primary-2.small.unmarg.float-left.col-sm-12= contentful.Updates[i].location +' '+ (date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()
+										h3.color--primary-1.unmarg.float-left.col-sm-12= contentful.Updates[i].title
 										p.col-xs-10= contentful.Updates[i].featuredText
 										.col-xs-12
-											a.float-right.btn.btn-circle.btn-blue-white.type--uppercase
+											a.float-right.btn.btn-circle.btn-blue-white
 												span.btn__text= contentful.Home[0].headerButtonText
 												img.arrow-right(src="/img/icon/arrow-right-blue.png")
 											//-img.arrow-right(src="/img/icon/arrow-o-right.png")
@@ -74,11 +74,11 @@ block content
 				img(alt='background', src='#{asset(contentful.InspirationPage[0].bottomImage)}')
 		.container
 			.row
-				#text-overlap.corner-point-green.col-lg-8.bg--gradient.clearfix.float-right
-					h5.color--white.col-sm-12= contentful.InspirationPage[0].bottomImageText
-					p.small.col-sm-6.color--primary= contentful.InspirationPage[0].bottomImageTextName
+				#text-overlap.corner-point-blue.col-lg-8.bg--primary-1.clearfix.float-right
+					h6.color--white.col-sm-12= contentful.InspirationPage[0].bottomImageText
+					p.small.col-sm-6.color--white= contentful.InspirationPage[0].bottomImageTextName
 					div.col-sm-6.text-center
-						a.btn.btn-white-green.type--uppercase.arrow-after-white-green(href='#')
+						a.btn.btn-white-blue.arrow-after-white-blue(href='#')
 							span.small.btn__text= contentful.InspirationPage[0].bottomImageButtonText
 						
 								
