@@ -1,0 +1,24 @@
+extends layout
+
+block content
+	.content
+		section.imagebg.clip.parallax.cover.height-30
+			.background-image-holder
+				img(alt='background', src='#{asset(contentful.Home[0].headerBackground)}')
+			//-.container
+				.row
+					.col-lg-4
+						h1= contentful.Home[0].headerLargeText
+						h5= contentful.Home[0].headerSubtext
+						a.btn.btn-white-green.arrow-after-white-green(href='#')
+							span.btn__text= contentful.Home[0].headerButtonText
+		section
+			.container
+				.row
+					.col-sm-8.col-sm-offset-2
+						p.
+							Dairy operators can’t control milk prices – but they can control/tighten the variables that determine profitability. New and faster ways of managing and interpreting data will give early adopters an advantage over the competition.   
+						p.color--primary-1.
+							By Tim Taylor, CEO, VAS
+						a.btn.btn-blue-white.arrow-after-blue-white(href='/New_VAS_Informational_White_Paper.pdf' target="_blank")
+							span.btn__text Download whitepaper
