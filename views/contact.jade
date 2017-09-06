@@ -1,0 +1,46 @@
+extends layout
+
+block content
+	.content
+		section.imagebg.clip.parallax.cover.height-80
+			.background-image-holder
+				img(alt='background', src='#{asset(contentful.Home[0].headerBackground)}')
+			.container
+				.row
+					.col-lg-4
+						h1= contentful.Home[0].headerLargeText
+						h5= contentful.Home[0].headerSubtext
+						a.btn.btn-white-green.arrow-after-white-green(href='#')
+							span.btn__text= contentful.Home[0].headerButtonText
+							
+		section
+			.container
+				.row
+					.col-sm-12
+						form.form-email(name='contact', action='thank-you', netlify data-success="Thanks for your enquiry, we'll be in touch shortly.", data-error="Please fill in all fields.", novalidate="true")
+							.col-sm-6
+								label Your Name:
+								input.validate-required(type='text', name='name')
+							.col-sm-6
+								label Your Email:
+								input.validate-required(type='text', name='email')
+							.col-sm-12
+								label Your Name:
+								textarea.validate-required(type='text', name='message')
+							.float-right
+								button.btn.btn-green-white.arrow-after-green-white(type='submit')
+									span.btn__text Send
+							//- p
+							//- 	label
+							//- 		| Your Name: 
+							//- 		input.validate-required(type='text', name='name')
+							//- p
+							//- 	label
+							//- 		| Your Email: 
+							//- 		input(type='email', name='email')
+							//- p
+							//- 	label
+							//- 		| Message: 
+							//- 		textarea(name='message')
+							//- p
+							//- 	button(type='submit') Send

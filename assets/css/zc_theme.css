@@ -5254,11 +5254,11 @@ hr[data-title] {
 }
 
     .btn:not([class*='primary']) {
-        border-color: #d3d3d3;
+       /* border-color: #d3d3d3;*/
     }
 
         .btn:not([class*='primary']):hover {
-            border-color: #252525;
+           /* border-color: #252525;*/
         }
 
     .btn.type--uppercase {
@@ -8514,15 +8514,15 @@ form + span.type--fine-print {
 
 button,
 input[type="submit"] {
-    height: 3.25000000000001em;
+    /*height: 3.25000000000001em;*/
 }
 
     button.btn,
     input[type="submit"].btn {
-        font-size: 0.85714286em;
-        font-weight: 700;
-        padding-left: 0;
-        padding-right: 0;
+        /*font-size: 0.85714286em;
+        font-weight: 700;*/
+        /*padding-left: 0;
+        padding-right: 0;*/
     }
 
         button.btn.btn--primary,
