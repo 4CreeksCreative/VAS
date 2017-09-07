@@ -2,22 +2,23 @@ extends layout
 
 block content
 	.content
-		section.imagebg.clip.parallax.cover.height-80
+		section.imagebg.clip.parallax.cover.height-80(data-overlay="5")
 			.background-image-holder
-				img(alt='background', src='#{asset(contentful.Home[0].headerBackground)}')
+				img(alt='background', src='#{asset(contentful.Contact[0].headerImage)}')
+			.signature-container
 			.container
 				.row
-					.col-lg-4
-						h1= contentful.Home[0].headerLargeText
-						h5= contentful.Home[0].headerSubtext
-						a.btn.btn-white-green.arrow-after-white-green(href='#')
+					.col-lg-6
+						h1= contentful.Contact[0].headerText
+						h5= contentful.Contact[0].headerSubtext
+						//-a.btn.btn-white-green.arrow-after-white-green(href='#')
 							span.btn__text= contentful.Home[0].headerButtonText
 							
 		section
 			.container
 				.row
 					.col-sm-12
-						h3.color--green Contact Us
+						h3.color--green= contentful.Contact[0].contactTitle
 				.row
 					.col-sm-12.unpad
 						form#contact-form.form-email(name='contact', netlify-honeypot="bot-field", action='/thankyou', netlify)
@@ -25,17 +26,17 @@ block content
 								label don't fill this out:
 								input(type='text', name='bot-field')
 							.col-sm-6
-								label Your Name:
+								label= contentful.Contact[0].yourName
 								input.validate-required(type='text', name='name')
 							.col-sm-6
-								label Your Email:
-								input.validate-required(type='text', name='email')
+								label= contentful.Contact[0].yourEmail
+								input.validate-required.validate-email(type='text', name='email')
 							.col-sm-12
-								label Your Name:
+								label= contentful.Contact[0].yourMessage
 								textarea.validate-required(type='text', name='message')
 							.float-right
-								button.btn.btn-green-white.arrow-after-green-white(type='submit')
-									span.btn__text Send
+								button.btn.btn-blue-white.arrow-after-blue-white(type='submit')
+									span.btn__text= contentful.Contact[0].sendButtonText
 							//- p
 							//- 	label
 							//- 		| Your Name: 
