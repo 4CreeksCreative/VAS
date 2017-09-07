@@ -1,8 +1,13 @@
 extends layout
 
+block head
+	style
+		|header,footer{display:none !important;}
+		|.content{padding-top:0px !important;}
+
 block content
 	.content
-		section.imagebg.clip.parallax.cover.height-80
+		section.imagebg.clip.parallax.cover.height-100
 			.background-image-holder
 				img(alt='background', src='#{asset(contentful.Home[0].headerBackground)}')
 			.container
