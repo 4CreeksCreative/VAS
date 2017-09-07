@@ -6,7 +6,7 @@ $(document).ready(function(){
 				$(val).attr('href',locale+$(val).attr('href'))
 			}
 		})
-		$('#contact-form').attr('action',locale+$('#contact-form').attr('action'))
+		$('#contact-form').attr('action',locale+$('#contact-form').attr('action')+'.html')
 		
 		$('#share-icons a.facebook').attr('href', '#')
 		$('#share-icons a.twitter').attr('href', 'https://twitter.com/home?status='+window.location.href)
