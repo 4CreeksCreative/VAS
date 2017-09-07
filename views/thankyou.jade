@@ -7,13 +7,14 @@ block head
 
 block content
 	.content
-		section.imagebg.clip.parallax.cover.height-100
+		section.imagebg.clip.parallax.cover.height-100(data-overlay="5")
 			.background-image-holder
-				img(alt='background', src='#{asset(contentful.Home[0].headerBackground)}')
+				img(alt='background', src='#{asset(contentful.Contact[0].headerImage)}')
+			.signature-container
 			.container
 				.row
 					.col-lg-4
-						h1 Thank you
-						h5 Your message has been sent
+						h1= contentful.Contact[0].thankYou
+						h5= contentful.Contact[0].sentMessage
 						a.btn.btn-white-green.arrow-after-white-green(href='/')
-							span.btn__text Return to home page
+							span.btn__text= contentful.Contact[0].returnToHome
