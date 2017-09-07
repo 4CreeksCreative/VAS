@@ -21,7 +21,7 @@ block content
 			.container
 				.row
 					.col-sm-12
-						p.color--primary-2= entry.location + ' - ' + (date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()
+						p.color--green= entry.location + ' - ' + (date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()
 			
 			!= entry.mainContent
 					
@@ -32,7 +32,7 @@ block content
 				.row.text-left
 					.col-sm-12
 						.float-left
-							h3.unmarg.color--primary-1= contentful.Social[0].shareHeader
+							h3.unmarg.color--blue= contentful.Social[0].shareHeader
 						#share-icons.float-left
 							include _social-icons
 						//-ul
@@ -51,17 +51,17 @@ block content
 			.container
 				.row
 					.col-sm-12.text-left
-						h3.color--primary-2= contentful.Home[0].updatesSectionTitle
+						h3.color--green= contentful.Home[0].updatesSectionTitle
 					
 					- var i = 0; var e = (contentful.Updates.length >=4) ? 4 : contentful.Updates.length; while (i<4){
 					- var date = new Date(contentful.Updates[i].date);
 
 						.col-md-12.unpad.update-post.bg--white.clearfix
 							a(href="#{contentful.Updates[i]._url}")
-								p.color--primary-2.small.unmarg.float-left.col-xs-12 Update #{date.getMonth() +'/'+ date.getDate() +'/'+ date.getFullYear()}
-								h4.color--primary-1.unmarg.float-left.col-xs-10= contentful.Updates[i].title
+								p.color--green.small.unmarg.float-left.col-xs-12 Update #{date.getMonth() +'/'+ date.getDate() +'/'+ date.getFullYear()}
+								h4.color--blue.unmarg.float-left.col-xs-10= contentful.Updates[i].title
 								div.arrow-right.float-right
-								//-i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--primary-2.float-right.col-xs-2
+								//-i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--green.float-right.col-xs-2
 					- i++}
 
 	script.

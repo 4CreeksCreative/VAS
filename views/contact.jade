@@ -17,7 +17,10 @@ block content
 			.container
 				.row
 					.col-sm-12
-						form.form-email(name='contact', netlify-honeypot="bot-field", action='/thankyou', netlify)
+						h3.color--green Contact Us
+				.row
+					.col-sm-12.unpad
+						form#contact-form.form-email(name='contact', netlify-honeypot="bot-field", action='/thankyou', netlify)
 							.col-sm-12.hidden
 								label don't fill this out:
 								input(type='text', name='bot-field')

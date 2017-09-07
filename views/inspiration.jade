@@ -23,8 +23,8 @@ block content
 									.img-clip
 										img(src="#{asset(contentful.Updates[i].featuredImage)}")
 									.masonry-content.clearfix
-										p.color--primary-2.small.unmarg.float-left.col-sm-12= contentful.Updates[i].location +' '+ (date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()
-										h3.color--primary-1.unmarg.float-left.col-sm-12= contentful.Updates[i].title
+										p.color--green.small.unmarg.float-left.col-sm-12= contentful.Updates[i].location +' '+ (date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()
+										h3.color--blue.unmarg.float-left.col-sm-12= contentful.Updates[i].title
 										p.col-xs-10= contentful.Updates[i].featuredText
 										.col-xs-12
 											a.float-right.btn.btn-circle.btn-blue-white
@@ -44,29 +44,29 @@ block content
 						a(href="#{contentful.Updates[i]._url}")
 							.img-clip
 								img(src="#{asset(contentful.Updates[i].featuredImage)}")
-							p.color--primary-2.small.unmarg.float-left.col-sm-12 Update #{date.getMonth() +'/'+ date.getDate() +'/'+ date.getFullYear()}
-							h4.color--primary-1.unmarg.float-left.col-sm-12= contentful.Updates[i].title
+							p.color--green.small.unmarg.float-left.col-sm-12 Update #{date.getMonth() +'/'+ date.getDate() +'/'+ date.getFullYear()}
+							h4.color--blue.unmarg.float-left.col-sm-12= contentful.Updates[i].title
 							p.col-xs-10= contentful.Updates[i].featuredText
 							img.arrow-right(src="/img/icon/arrow-o-right.png")
 				- i++}
 				//-.col-md-8.hidden-sm.hidden-xs
 				//-.col-md-4.update-post.border-bottom.bg--white.clearfix
 					a(href="#")
-						p.color--primary-2.small.unmarg.float-left.col-xs-12 Update 2/3/2017
-						h4.color--primary-1.unmarg.float-left.col-xs-10 Visit VAS at the 2017 World Dairy Expo!
-						i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--primary-2.float-right.col-xs-2
+						p.color--green.small.unmarg.float-left.col-xs-12 Update 2/3/2017
+						h4.color--blue.unmarg.float-left.col-xs-10 Visit VAS at the 2017 World Dairy Expo!
+						i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--green.float-right.col-xs-2
 				//-.col-md-8.hidden-sm.hidden-xs
 				//-.col-md-4.update-post.border-bottom.bg--white.clearfix
 					a(href="#")
-						p.color--primary-2.small.unmarg.float-left.col-xs-12 Update 2/3/2017
-						h4.color--primary-1.unmarg.float-left.col-xs-10 Visit VAS at the 2017 World Dairy Expo!
-						i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--primary-2.float-right.col-xs-2
+						p.color--green.small.unmarg.float-left.col-xs-12 Update 2/3/2017
+						h4.color--blue.unmarg.float-left.col-xs-10 Visit VAS at the 2017 World Dairy Expo!
+						i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--green.float-right.col-xs-2
 				//-.col-md-8.hidden-sm.hidden-xs
 				//-.col-md-4.update-post.border-bottom.bg--white.clearfix
 					a(href="#")
-						p.color--primary-2.small.unmarg.float-left.col-xs-12 Update 2/3/2017
-						h4.color--primary-1.unmarg.float-left.col-xs-10 Visit VAS at the 2017 World Dairy Expo!
-						i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--primary-2.float-right.col-xs-2
+						p.color--green.small.unmarg.float-left.col-xs-12 Update 2/3/2017
+						h4.color--blue.unmarg.float-left.col-xs-10 Visit VAS at the 2017 World Dairy Expo!
+						i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--green.float-right.col-xs-2
 		
 
 		section.imagebg.parallax.cover.height-80
@@ -74,48 +74,13 @@ block content
 				img(alt='background', src='#{asset(contentful.InspirationPage[0].bottomImage)}')
 		.container
 			.row
-				#text-overlap.corner-point-blue.col-lg-8.bg--primary-1.clearfix.float-right
+				#text-overlap.corner-point-green.col-lg-8.bg--gradient.clearfix.float-right
 					h6.color--white.col-sm-12= contentful.InspirationPage[0].bottomImageText
 					p.small.col-sm-6.color--white= contentful.InspirationPage[0].bottomImageTextName
 					div.col-sm-6.text-center
-						a.btn.btn-white-blue.arrow-after-white-blue(href='#')
+						a.btn.btn-white-green.arrow-after-white-green(href='#')
 							span.small.btn__text= contentful.InspirationPage[0].bottomImageButtonText
 						
 								
 		include partials/_4updates
-		//-section#updates.container
-			.row.text-center
-				.col-lg-12
-					h3.color--primary-2= contentful.Home[0].updatesSectionTitle
-			.row.text-left
-				- var i = 0; var e = (contentful.Updates.length >=4) ? 4 : contentful.Updates.length; while (i<4){
-				- var date = new Date(contentful.Updates[i].date);
-					.col-md-12.col-sm-12.clearfix
-						a(href="#{contentful.Updates[i]._url}")
-							p.color--primary-2.small.unmarg.float-left.col-xs-12 Update #{date.getMonth() +'/'+ date.getDate() +'/'+ date.getFullYear()}
-							h4.color--primary-1.unmarg.float-left.col-xs-10= contentful.Updates[i].title
-							i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--primary-2.float-right.col-xs-2
-				- i++}
-				//-.col-md-6.col-sm-12.clearfix
-					a(href="#")
-						p.color--primary-2.small.unmarg.float-left.col-xs-12 Update 2/3/2017
-						h4.color--primary-1.unmarg.float-left.col-xs-10 Visit VAS at the 2017 World Dairy Expo!
-						i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--primary-2.float-right.col-xs-2
-				//-.col-md-6.col-sm-12.clearfix
-					a(href="#")
-						p.color--primary-2.small.unmarg.float-left.col-xs-12 Update 2/3/2017
-						h4.color--primary-1.unmarg.float-left.col-xs-10 Visit VAS at the 2017 World Dairy Expo!
-						i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--primary-2.float-right.col-xs-2
-				//-.col-md-6.col-sm-12.clearfix
-					a(href="#")
-						p.color--primary-2.small.unmarg.float-left.col-xs-12 Update 2/3/2017
-						h4.color--primary-1.unmarg.float-left.col-xs-10 Visit VAS at the 2017 World Dairy Expo!
-						i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--primary-2.float-right.col-xs-2
-				//-.col-md-6.col-sm-12.clearfix
-					a(href="#")
-						p.color--primary-2.small.unmarg.float-left.col-xs-12 Update 2/3/2017
-						h4.color--primary-1.unmarg.float-left.col-xs-10 Visit VAS at the 2017 World Dairy Expo!
-						i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--primary-2.float-right.col-xs-2
-			.row.text-center(style="margin-top:50px")
-				a.btn.btn--primary-1.type--uppercase(href='/updates')
-					span.btn__text= contentful.Home[0].updatesButtonText
+		

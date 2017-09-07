@@ -17,7 +17,7 @@ block content
 				.row
 					.col-sm-12
 						- var date = new Date(entry.date);
-						p.color--primary-2.small= date.getMonth() +' '+ date.getDate() +' '+ date.getFullYear()
+						p.color--green.small= date.getMonth() +' '+ date.getDate() +' '+ date.getFullYear()
 				.row.mt--1
 					.col-sm-8
 						p= entry.paragraph1
@@ -25,11 +25,11 @@ block content
 					.col-sm-6
 						p= entry.paragraph2
 					.col-sm-5.col-sm-offset-1.blue-pullquote
-						h6.color--primary-1= entry.bluePullquote
-						p.small.color--primary-1= entry.pullquoteName
+						h6.color--blue= entry.bluePullquote
+						p.small.color--blue= entry.pullquoteName
 				.row.mt--1
 					.col-sm-6
-						h6.color--primary-2= entry.paragraph3Title
+						h6.color--green= entry.paragraph3Title
 				.row.mt--1
 					.col-sm-6
 						p= entry.paragraph3
@@ -40,7 +40,7 @@ block content
 				.row.text-left
 					.col-sm-12
 						.float-left
-							h3.unmarg.color--primary-1= contentful.Social[0].shareHeader
+							h3.unmarg.color--blue= contentful.Social[0].shareHeader
 						#share-icons.float-left
 							include _social-icons
 						//-ul
@@ -61,7 +61,7 @@ block content
 			.row
 				#text-overlap.corner-point-green.col-lg-6.bg--gradient.clearfix.float-right
 					h5.color--white.col-sm-12= entry.bottomImageText
-					p.small.col-sm-6.color--primary= entry.bottomImageTextName
+					p.small.col-sm-6.color--yellow= entry.bottomImageTextName
 					div.col-sm-6.text-center
 						a.btn.btn-white-green.arrow-after-white-green(href='#')
 							span.small.btn__text(style="white-space:nowrap")= entry.bottomImageButtonText
@@ -73,17 +73,17 @@ block content
 			.container
 				.row
 					.col-sm-12.text-left
-						h3.color--primary-2= contentful.Home[0].updatesSectionTitle
+						h3.color--green= contentful.Home[0].updatesSectionTitle
 					
 					- var i = 0; var e = (contentful.Updates.length >=4) ? 4 : contentful.Updates.length; while (i<4){
 					- var date = new Date(contentful.Updates[i].date);
 
 						.col-md-12.unpad.update-post.bg--white.clearfix
 							a(href="#{contentful.Updates[i]._url}")
-								p.color--primary-2.small.unmarg.float-left.col-xs-12 Update #{date.getMonth() +'/'+ date.getDate() +'/'+ date.getFullYear()}
-								h4.color--primary-1.unmarg.float-left.col-xs-10= contentful.Updates[i].title
+								p.color--green.small.unmarg.float-left.col-xs-12 Update #{date.getMonth() +'/'+ date.getDate() +'/'+ date.getFullYear()}
+								h4.color--blue.unmarg.float-left.col-xs-10= contentful.Updates[i].title
 								div.arrow-right.float-right
-								//-i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--primary-2.float-right.col-xs-2
+								//-i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--green.float-right.col-xs-2
 					- i++}
 
 	script.

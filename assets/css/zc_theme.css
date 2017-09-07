@@ -3356,7 +3356,7 @@ a {
     .bg--white span,
     .bg--white ul,
     .bg--white a:not(.btn) {
-        color: #666666;
+        /*color: #666666;*/
     }
 
     .bg--white h1,
@@ -3366,7 +3366,7 @@ a {
     .bg--white h5,
     .bg--white h6,
     .bg--white i {
-        color: #252525;
+        /*color: #252525;*/
     }
 
 .bg--error {

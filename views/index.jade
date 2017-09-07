@@ -23,9 +23,9 @@ block content
 							.background-image-holder
 								img(src="#{asset(contentful.Updates[0].featuredImage)}")
 						.col-sm-12.update-item.move-up.clearfix(style="bottom:-10px;")
-								p.color--primary-2.small.unmarg.float-left.col-xs-12 Update #{(date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()}
-								h4.color--primary-1.unmarg.float-left.col-xs-12= contentful.Updates[0].title
-								p.col-xs-12.color--primary-1= contentful.Updates[0].featuredText
+								p.color--green.small.unmarg.float-left.col-xs-12 Update #{(date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()}
+								h4.color--blue.unmarg.float-left.col-xs-12= contentful.Updates[0].title
+								p.col-xs-12.color--blue= contentful.Updates[0].featuredText
 								.col-xs-12
 									div.arrow-right.float-right
 							
@@ -38,9 +38,9 @@ block content
 								.background-image-holder
 									img(src="#{asset(contentful.Updates[0].featuredImage)}")
 							.col-xs-12.update-item.clearfix.border-bottom
-									p.color--primary-2.small.unmarg.float-left.col-xs-12 Update #{(date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()}
-									h4.color--primary-1.unmarg.float-left.col-xs-12= contentful.Updates[0].title
-									p.col-xs-12.color--primary-1= contentful.Updates[0].featuredText
+									p.color--green.small.unmarg.float-left.col-xs-12 Update #{(date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()}
+									h4.color--blue.unmarg.float-left.col-xs-12= contentful.Updates[0].title
+									p.col-xs-12.color--blue= contentful.Updates[0].featuredText
 									.col-xs-12
 										div.arrow-right.float-right(style="height:40px; width:40px;")
 								
@@ -51,8 +51,8 @@ block content
 				- var date = new Date(contentful.Updates[i].date);
 					.col-md-4.update-item.bg--white.clearfix.border-bottom
 						a(href="#{contentful.Updates[i]._url}")
-							p.color--primary-2.small.unmarg.float-left.col-xs-12 Update #{(date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()}
-							h6.color--primary-1.unmarg.float-left.col-xs-10.weight-700= contentful.Updates[i].title
+							p.color--green.small.unmarg.float-left.col-xs-12 Update #{(date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()}
+							h6.color--blue.unmarg.float-left.col-xs-10.weight-700= contentful.Updates[i].title
 							.col-xs-12
 								div.arrow-right.float-right
 							
@@ -72,31 +72,29 @@ block content
 								.modal-container
 									.modal-content.bg-dark(data-width='60%', data-height='60%')
 										!= contentful.Home[0].featuredVideo
-				#overlap-video.corner-point-blue.col-md-6.bg--primary-1.float-right
+				#overlap-video.corner-point-green.col-md-6.bg--gradient.float-right
 					h6.color--white= contentful.Home[0].featuredVideoDescription
 					
 					.modal-instance.float-right
-						a.btn.btn-white-blue.modal-trigger.arrow-after-white-blue
+						a.btn.btn-white-green.modal-trigger.arrow-after-white-green
 							span.btn__text= contentful.Home[0].featuredVideoButtonText
 						.modal-container
 							.modal-content.bg-dark(data-width='60%', data-height='60%')
 								!= contentful.Home[0].featuredVideo
-					//-a.btn.btn--primary.type--uppercase.float-right(href='#')
-						span.btn__text= contentful.Home[0].featuredVideoButtonText
 								
 		section#products.container
 			.row.text-center
 				.col-lg-12
-					h3.color--primary-2= contentful.Home[0].productSectionTitle
+					h3.color--green= contentful.Home[0].productSectionTitle
 			#products-container.row.text-center
 				for product in contentful.HomeProducts
 					.col-md-4.col-xs-12.float-center-sm.unpad.product-post
 						.img-clip
 							img(src="#{asset(product.photo)}")
 						div.product-content.text-left
-							h3.color--primary-1= product.title
+							h3.color--blue= product.title
 							for item in product.list
-								p.color--primary-1.unmarg.check-mark-before
+								p.color--blue.unmarg.check-mark-before
 									!= item
 							//-a.mt--1.btn.btn-blue-white.modal-trigger
 								span.btn__text= contentful.Home[0].productDetails
@@ -105,12 +103,12 @@ block content
 				//-.col-md-4.col-xs-9.float-center-sm
 					img.img-clip(src="/img/home/dcomp.jpg")
 					div.pad-sm.text-left
-						h4.color--primary-1.
+						h4.color--blue.
 							DairyComp
-						p.color--primary-1.unmarg #[i.fa.fa-check.color--primary-2]    Fastest program for recording
-						p.color--primary-1.unmarg #[i.fa.fa-check.color--primary-2]    Simple entry system
-						p.color--primary-1.unmarg #[i.fa.fa-check.color--primary-2]    Flexible and customizable
-						p.color--primary-1.unmarg #[i.fa.fa-check.color--primary-2]    Connect with on-farm systems
+						p.color--blue.unmarg #[i.fa.fa-check.color--green]    Fastest program for recording
+						p.color--blue.unmarg #[i.fa.fa-check.color--green]    Simple entry system
+						p.color--blue.unmarg #[i.fa.fa-check.color--green]    Flexible and customizable
+						p.color--blue.unmarg #[i.fa.fa-check.color--green]    Connect with on-farm systems
 				
 		include partials/_4updates
 		
