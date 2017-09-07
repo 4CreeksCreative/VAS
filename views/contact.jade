@@ -21,7 +21,7 @@ block content
 						h3.color--green= contentful.Contact[0].contactTitle
 				.row
 					.col-sm-12.unpad
-						form#contact-form.form-email(data-error="#{contentful.Contact[0].sendErrorMessage}", name='contact', netlify-honeypot="bot-field", action='/thankyou', netlify)
+						form#contact-form.form-email.custom-script(data-error="#{contentful.Contact[0].sendErrorMessage}", name='contact', netlify-honeypot="bot-field", action='/thankyou', netlify)
 							.col-sm-12.hidden
 								label don't fill this out:
 								input(type='text', name='bot-field')
