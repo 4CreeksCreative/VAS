@@ -6,7 +6,7 @@ $(document).ready(function(){
 				$(val).attr('href',locale+$(val).attr('href'))
 			}
 		})
-		
+		$('#contact-form').attr('action',locale+$('#contact-form').attr('action'))
 		
 		$('#share-icons a.facebook').attr('href', '#')
 		$('#share-icons a.twitter').attr('href', 'https://twitter.com/home?status='+window.location.href)
@@ -15,8 +15,7 @@ $(document).ready(function(){
 })
 
 $('form.form-email.custom-script').submit(function(e){
-	$('#contact-form').attr('action',locale+$('#contact-form').attr('action'))
-    var body          = $('body'),
+	var body          = $('body'),
             thisForm      = $(e.target).closest('form'),
             formAction    = typeof thisForm.attr('action') !== typeof undefined ? thisForm.attr('action') : "",
             submitButton  = thisForm.find('button[type="submit"], input[type="submit"]'),
