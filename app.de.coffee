@@ -60,6 +60,11 @@ module.exports =
 					filters:{
 						'locale':'de'
 					}
+				Contact:
+					id: 'contactPage'
+					filters:{
+						'locale':'de'
+					}
 				UpdatesPage:
 					id: 'updatesPage'
 					filters:{
