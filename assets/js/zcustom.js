@@ -1,12 +1,12 @@
 var locale = (/\/de\/|\/es\//ig.exec(window.location.pathname)) ? /\/de\/|\/es\//ig.exec(window.location.pathname)[0].substring(0,3) : ''
 $(document).ready(function(){
-		$('a:not(.language, .social)').each(function(i,val){
+		$('a:not(.language, .social, .lb-next, .lb-prev)').each(function(i,val){
 			if($(val).attr('href') != '#' && $(val).attr('href') != undefined){
 				console.log('changed '+$(val).attr('href') + ' to ' + locale+$(val).attr('href'))
 				$(val).attr('href',locale+$(val).attr('href'))
 			}
 		})
-		$('#contact-form').attr('action',locale+$('#contact-form').attr('action')+'.html')
+		$('#contact-form').attr('action',locale+$('#contact-form').attr('action'))
 		
 		$('#share-icons a.facebook').attr('href', '#')
 		$('#share-icons a.twitter').attr('href', 'https://twitter.com/home?status='+window.location.href)
@@ -33,6 +33,8 @@ $('form.form-email.custom-script').submit(function(e){
         formError = body.find('.form-error');
         formSuccess = body.find('.form-success');
         thisForm.addClass('attempted-submit');
+
+
 	if (mr.forms.validateFields($('form.form-email.custom-script')) !== 1) return
 	else e.preventDefault(); mr.forms.showFormError(formSuccess, formError, 1000, 5000, 500);
 
