@@ -69,3 +69,21 @@ block content
 					- i++}
 
 
+		section.updates-section
+			.container
+				.row
+					.col-sm-12.text-center
+						h3.color--green= contentful.Home[0].tipOfTheMonth
+					
+					- var i = 0; var e = contentful.TOTM.length; while (i<e){
+					- var date = new Date(contentful.TOTM[i].date);
+
+						.col-xs-12.update-item.bg--white.clearfix
+							a(href="#{contentful.TOTM[i]._url}")
+								p.color--green.small.unmarg.float-left.col-xs-12 Update #{(date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()}
+								h6.weight-700.color--blue.unmarg.float-left.col-xs-10= contentful.TOTM[i].title
+								div.arrow-right.float-right
+								//-img.arrow-right(src="/img/icon/arrow-o-right.png")
+								//-i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--green.float-right.col-xs-2
+					- i++}
+

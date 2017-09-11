@@ -1,0 +1,92 @@
+extends ../layout
+
+block head
+	meta(property="og:image" content="#{asset(entry.featuredImage)}")
+	meta(property="og:title" content= entry.title)
+	meta(property="og:description" content= entry.featuredText)
+
+block content
+	.content
+		section.clip.imagebg.parallax.cover.height-80(data-overlay="7")
+			.background-image-holder
+				img(alt='background', src='#{asset(entry.featuredImage)}')
+			.signature-container
+			.container.pos-vertical-center
+				.row.text-left
+					.col-sm-12
+						h2#updatetitle= entry.title
+						p#featuredtext.featuredText= entry.featuredText
+		section#updates-content
+			- var date = new Date(entry.date);
+			.container
+				.row
+					.col-sm-12
+						p.color--green= entry.location + ' - ' + (date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()
+			
+			.container
+				.row
+					.col-sm-8
+						p= entry.body
+
+		section#image-gallery
+			.container
+				.row
+					.col-sm-12.unpad
+						.masonry
+								.masonry__container
+									for image in entry.photoGallery
+										.masonry__item.col-xs-6.col-sm-4
+											a(href='#{asset(image)}', data-lightbox='true')
+												img(src="#{asset(image)}")
+										
+					
+
+
+		section#social-share
+			.container
+				.row.text-left
+					.col-sm-12
+						.float-left
+							h3.unmarg.color--blue= contentful.Social[0].shareHeader
+						#share-icons.float-left
+							include _social-icons
+						//-ul
+							li
+								a#fbshare(target="_blank")
+									img(src="/img/social/social-facebook-blue.png")
+							li
+								a#twittershare(target="_blank")
+									img(src="/img/social/social-twitter-blue.png")
+							li
+								a#inshare(target="_blank")
+									img(src="/img/social/social-linkedin-blue.png")
+
+		include _4updates
+		//-section#more-updates
+			.container
+				.row
+					.col-sm-12.text-left
+						h3.color--green= contentful.Home[0].updatesSectionTitle
+					
+					- var i = 0; var e = (contentful.Updates.length >=4) ? 4 : contentful.Updates.length; while (i<4){
+					- var date = new Date(contentful.Updates[i].date);
+
+						.col-md-12.unpad.update-post.bg--white.clearfix
+							a(href="#{contentful.Updates[i]._url}")
+								p.color--green.small.unmarg.float-left.col-xs-12 Update #{date.getMonth() +'/'+ date.getDate() +'/'+ date.getFullYear()}
+								h4.color--blue.unmarg.float-left.col-xs-10= contentful.Updates[i].title
+								div.arrow-right.float-right
+								//-i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--green.float-right.col-xs-2
+					- i++}
+
+	script.
+		document.querySelector('#share-icons .facebook').onclick = function(e){
+		e.preventDefault(0)
+			FB.ui({
+				method: 'share',
+				mobile_iframe: true,
+				href: window.location.href,
+			}, function(response){});
+
+		}
+		

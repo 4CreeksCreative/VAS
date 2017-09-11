@@ -89,6 +89,13 @@ module.exports =
 						'order': '-sys.createdAt'
 					}
 					template: 'views/partials/_event.jade'
+				TOTM:
+					id: 'tipOfTheMonthPost'
+					filters:{
+						'locale':'de'
+						'order': '-sys.createdAt'
+					}
+					template: 'views/partials/_TOTM.jade'
 				
 		
 	]
