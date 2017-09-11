@@ -2,8 +2,9 @@ extends layout
 
 block content
 	//-.p= JSON.stringify(contentful.Home[0])
+	
 	.content
-		section.pos-relative.img-clip.height-80.unpad(data-overlay="5")
+		section.pos-relative.img-clip.height-70.unpad(data-overlay="7")
 			.signature-container
 			.slider(data-arrows='false', data-paging='false')
 				ul.slides
@@ -37,28 +38,29 @@ block content
 				
 				- var date = new Date(contentful.Updates[0].date);
 				if  contentful.Updates.length === 1
-					a.clearfix.border-bottom(href="#{contentful.Updates[0]._url}")
-						.col-md-12.imagebg.cover.move-up(style="min-height:500px;")
-							.background-image-holder
-								img(src="#{asset(contentful.Updates[0].featuredImage)}")
-						.col-sm-12.update-item.move-up.clearfix(style="bottom:-10px;")
-								p.color--green.small.unmarg.float-left.col-xs-12 Update #{(date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()}
-								h4.color--blue.unmarg.float-left.col-xs-12= contentful.Updates[0].title
-								p.col-xs-12.color--blue= contentful.Updates[0].featuredText
-								.col-xs-12
-									div.arrow-right.float-right
+					.col-xs-12.unpad.move-up.main-update-article
+						a.clearfix.border-bottom(href="#{contentful.Updates[0]._url}")
+							.col-md-12.imagebg.cover.move-up(style="min-height:500px;")
+								.background-image-holder
+									img(src="#{asset(contentful.Updates[0].featuredImage)}")
+							.col-sm-12.update-item.move-up.clearfix(style="bottom:-10px;")
+									p.color--green.small.unmarg.float-left.col-xs-12 Update #{(date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()}
+									h4.color--blue.float-left.col-xs-12= contentful.Updates[0].title
+									p.col-xs-12.color--blue= contentful.Updates[0].featuredText
+									.col-xs-12
+										div.arrow-right.float-right
 							
 
 				
 				else 
-					.col-md-8.unpad.move-up
+					.col-md-8.unpad.move-up.main-update-article
 						a#update-move-up.clearfix(href="#{contentful.Updates[0]._url}")
 							.col-xs-12.imagebg.cover(style="min-height:400px; padding: 0;")
 								.background-image-holder
 									img(src="#{asset(contentful.Updates[0].featuredImage)}")
 							.col-xs-12.update-item.clearfix.border-bottom
 									p.color--green.small.unmarg.float-left.col-xs-12 Update #{(date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()}
-									h4.color--blue.unmarg.float-left.col-xs-12= contentful.Updates[0].title
+									h4.color--blue.float-left.col-xs-12= contentful.Updates[0].title
 									p.col-xs-12.color--blue= contentful.Updates[0].featuredText
 									.col-xs-12
 										div.arrow-right.float-right(style="height:40px; width:40px;")
@@ -85,12 +87,15 @@ block content
 					.imagebg.cover.height-40
 						.background-image-holder
 							img(alt='image', src='#{asset(contentful.Home[0].featuredVideoCover)}')
-						.container.pos-vertical-center.text-center
-							.modal-instance
-								.video-play-icon.modal-trigger.box-shadow
-								.modal-container
-									.modal-content.bg-dark(data-width='60%', data-height='60%')
-										!= contentful.Home[0].featuredVideo
+						
+						.modal-instance.play-button-fix
+							.video-play-icon.modal-trigger.box-shadow
+							.modal-container
+								.custom-close-button.modal-close
+									p.color--white.
+										Close
+								.modal-content.bg-dark(data-width='60%', data-height='60%')
+									!= contentful.Home[0].featuredVideo
 				#overlap-video.corner-point-green.col-md-6.bg--gradient.float-right
 					h6.color--white= contentful.Home[0].featuredVideoDescription
 					
@@ -98,6 +103,9 @@ block content
 						a.btn.btn-white-green.modal-trigger.arrow-after-white-green
 							span.btn__text= contentful.Home[0].featuredVideoButtonText
 						.modal-container
+							.custom-close-button.modal-close
+									p.color--white.
+										Close
 							.modal-content.bg-dark(data-width='60%', data-height='60%')
 								!= contentful.Home[0].featuredVideo
 								
@@ -113,7 +121,7 @@ block content
 						div.product-content.text-left
 							h3.color--blue= product.title
 							for item in product.list
-								p.color--blue.unmarg.check-mark-before
+								p.color--blue.check-mark-before
 									!= item
 							a.mt--1.btn.btn-blue-white(href="#{product.pageUrl}")
 								span.btn__text= contentful.Home[0].productDetails
