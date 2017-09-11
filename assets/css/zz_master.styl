@@ -103,7 +103,22 @@ p i
 		padding 0 10px
 textarea
 	min-height 300px
-
+.slider
+	z-index 0 !important
+	height 100%
+.slides 
+	height 100%
+	z-index 0 !important
+.slide > img
+	min-width 100%
+	height 100%
+.flickity-viewport, .flickity-slider, & >li
+	height 100% !important
+.home-header-fix
+	top 0
+	bottom 0
+	margin auto
+	z-index 1
 
 
 
@@ -260,6 +275,7 @@ a
 	position absolute
 	top 0
 	left 0
+	z-index 1 !important
 .signature-container:before
 	content ""
 	width 60%
@@ -273,7 +289,7 @@ a
 	display block
 	opacity .5
 [data-overlay]:before
-	for key, value in $greengradient
+	for key, value in $greengradient2
 		{key}:value
 	z-index 1
 // [data-overlay] > .background-image-holder:before
@@ -305,7 +321,7 @@ a
 	position absolute
 	display block
 	opacity 1
-	z-index 3
+	z-index 1
 
 
 
@@ -668,6 +684,8 @@ body
 								
 			
 #updates-section
+	position relative
+	z-index 1
 	margin-top -100px
 .updates-section
 	.update-item
@@ -878,30 +896,7 @@ body
 @media (max-height:1000px)
 	#updates-teaser
 		margin-top -100px
-@media (max-width:990px)
-	.menu-horizontal
-		li
-			display inline-block
-			margin-right 15px
-@media (max-width:767px)
-	#mega-menu
-			
-		top unset
-	#mini-menu
-		
-		top unset
-	#menu1
-		padding-top 0px
-	.logo-mobile
-		margin-left 10px !important
-	.stack-menu
-		margin 25px 0px 0px 0px
-	.menu-horizontal
-		li
-			display block
-			margin-top 15px
-	.content
-		border-radius 0px
+
 @media (max-width: 992px)
 	// #update-move-up
 	// 	>div 
@@ -974,4 +969,30 @@ body
 		//.col-xs-12
 		//	padding 25px
 		//	text-align center
+@media (max-width:990px)
+	.menu-horizontal
+		li
+			display inline-block
+			margin-right 15px
+@media (max-width:767px)
+	#mega-menu
+			
+		top unset
+	#mini-menu
 		
+		top unset
+	#menu1
+		padding-top 0px
+	.logo-mobile
+		margin-left 10px !important
+	.stack-menu
+		margin 25px 0px 0px 0px
+	.menu-horizontal
+		li
+			display block
+			margin-top 15px
+	.content
+		border-radius 0px
+	.height-80
+		height 80vh
+		min-height 600px

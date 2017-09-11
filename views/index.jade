@@ -1,8 +1,27 @@
 extends layout
 
 block content
+	//-.p= JSON.stringify(contentful.Home[0])
 	.content
-		section.imagebg.clip.parallax.cover.height-80
+		section.pos-relative.img-clip.height-80.unpad(data-overlay="5")
+			.signature-container
+			.slider(data-arrows='false', data-paging='false')
+				ul.slides
+					for image in contentful.Home[0].headerBackgrounds
+						li.unpad.imagebg.parallax
+							.background-image-holder
+								img(src="#{asset(image)}")
+					
+			.container.pos-absolute(style="padding-top:8vh;top:0;z-index:1;")
+				.row
+					.col-lg-4
+						h1.color--white= contentful.Home[0].headerLargeText
+						h5.color--white= contentful.Home[0].headerSubtext
+						a.btn.btn-white-green.arrow-after-white-green(href='#')
+							span.btn__text= contentful.Home[0].headerButtonText
+
+
+		//-section.imagebg.clip.parallax.cover.height-80
 			.background-image-holder
 				img(alt='background', src='#{asset(contentful.Home[0].headerBackground)}')
 			.container

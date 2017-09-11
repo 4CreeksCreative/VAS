@@ -28,8 +28,8 @@ $('form.form-email.custom-script').submit(function(e){
         submitButton.attr('data-text', submitButton.text());
         errorText = thisForm.attr('data-error') ? thisForm.attr('data-error') : "Please fill all fields correctly";
         successText = thisForm.attr('data-success') ? thisForm.attr('data-success') : "Thanks, we'll be in touch shortly";
-        body.append('<div class="form-error" style="display: none;">' + errorText + '</div>');
-        body.append('<div class="form-success" style="display: none;">' + successText + '</div>');
+        thisForm.append('<div class="form-error" style="display: none;">' + errorText + '</div>');
+        thisForm.append('<div class="form-success" style="display: none;">' + successText + '</div>');
         formError = body.find('.form-error');
         formSuccess = body.find('.form-success');
         thisForm.addClass('attempted-submit');

@@ -29,8 +29,14 @@ block content
 								label= contentful.Contact[0].yourName
 								input.validate-required(type='text', name='name')
 							.col-sm-6
+								label= contentful.Contact[0].yourDairy
+								input(type='text', name='dairy-name')
+							.col-sm-6
 								label= contentful.Contact[0].yourEmail
 								input.validate-required.validate-email(type='text', name='email')
+							.col-sm-6
+								label= contentful.Contact[0].yourPhone
+								input.validate-number-dash(type='text', name='phone-number')
 							.col-sm-12
 								label= contentful.Contact[0].yourMessage
 								textarea.validate-required(type='text', name='message')
