@@ -333,7 +333,9 @@ a
 	border-radius 999px
 	white-space normal
 	padding 0 20px
-	
+
+.btn.large
+	font-size 25px
 	
 // --- white on gray
 .btn-white-gray,
@@ -802,47 +804,48 @@ body
 	top -100px
 	padding 25px
 	z-index 3
-.masonry-content
-	padding 30px
-.masonry__container 
-	.masonry__item
-		transition 0.2s
-		.btn
-			.btn__text
-				display none
-
-		&:first-child
-			margin-top 60px
-		&:hover
-			background $blue
+#inspiration-posts
+	.masonry-content
+		padding 30px
+	.masonry__container 
+		.masonry__item
 			transition 0.2s
-			box-shadow 0px 2px 20px 0px rgba(0,0,0,0.3)
-			//filter drop-shadow(0px 0px 10px rgba(0,0,0,0.25));
-			.img-clip:after
-				transition 0.2s
-				content ""
-				width 25%
-				height 25%
-				background transparent url("../img/corner-blue.png") no-repeat
-				background-size contain
-				background-position bottom right
-				bottom 0
-				right 0
-				position absolute
-				display block
-				opacity 1
-			p, h1,h2,h3,h4,h5,h6
-				color $white !important
-			.btn-circle
-				transition padding 0s
-				padding 5px 20px !important
 			.btn
-				background $white
-				border-color $white !important
 				.btn__text
-					padding-right 20px
-					color $blue !important
-					display inline !important
+					display none
+
+			&:first-child
+				margin-top 60px
+			&:hover
+				background $blue
+				transition 0.2s
+				box-shadow 0px 2px 20px 0px rgba(0,0,0,0.3)
+				//filter drop-shadow(0px 0px 10px rgba(0,0,0,0.25));
+				.img-clip:after
+					transition 0.2s
+					content ""
+					width 25%
+					height 25%
+					background transparent url("../img/corner-blue.png") no-repeat
+					background-size contain
+					background-position bottom right
+					bottom 0
+					right 0
+					position absolute
+					display block
+					opacity 1
+				p, h1,h2,h3,h4,h5,h6
+					color $white !important
+				.btn-circle
+					transition padding 0s
+					padding 5px 20px !important
+				.btn
+					background $white
+					border-color $white !important
+					.btn__text
+						padding-right 20px
+						color $blue !important
+						display inline !important
 
 .corner-point-green
 	overflow visible
