@@ -9,8 +9,41 @@ footer.corner-point-brown
 					span.btn__text= contentful.Footer[0].blueBoxButtonText
 			#subscribe.col-md-6.col-xs-12.float-right.clearfix
 				!= contentful.Footer[0].subscribeContent
-				input.col-sm-6.col-xs-12.large(type="text" placeholder="Your email address")
-				a.col-sm-5.col-xs-6.col-offset-sm-1.float-left-xs.float-right.btn.btn-white-gray.arrow-after-white-gray.large(href='#')
+				
+				
+
+
+				//-link(href='//cdn-images.mailchimp.com/embedcode/classic-10_7.css', rel='stylesheet', type='text/css')
+				//-style(type='text/css').
+					#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+					/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+					We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+				#mc_embed_signup
+					form#mc-embedded-subscribe-form.validate(action='//vas.us14.list-manage.com/subscribe/post?u=f0f106248a8a0df7906dc9354&id=779c844d05', method='post', name='mc-embedded-subscribe-form', target='_blank', novalidate='' data-success="Check your inbox to complete subscription!")
+						#mc_embed_signup_scroll
+							#mce-responses.clear
+								#mce-error-response.response(style='display:none')
+								#mce-success-response.response(style='display:none')
+							// real people should not fill this in and expect good things - do not remove this or risk form bot signups
+							div(style='position: absolute; left: -5000px;', aria-hidden='true')
+								input(type='text', name='b_f0f106248a8a0df7906dc9354_779c844d05', tabindex='-1', value='')
+
+
+							.mc-field-group.clearfix
+								//-label(for='mce-EMAIL') Email Address 
+								input#mce-EMAIL.required.email.col-sm-6.col-xs-12.large(type='email', value='', name='EMAIL' placeholder="Your email address")
+							
+							
+								button#mc-embedded-subscribe.col-sm-5.col-xs-6.col-offset-sm-1.float-left-xs.float-right.btn.btn-white-gray.arrow-after-white-gray.large.unmarg(type='submit', value='Subscribe', name='subscribe')
+									span.btn__text= contentful.Footer[0].subscribeButtonText
+				//-script(type='text/javascript', src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js')
+				//-script(type='text/javascript').
+					(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';}(jQuery));var $mcj = jQuery.noConflict(true);
+				
+
+
+				//-input.col-sm-6.col-xs-12.large(type="text" placeholder="Your email address")
+				//-a.col-sm-5.col-xs-6.col-offset-sm-1.float-left-xs.float-right.btn.btn-white-gray.arrow-after-white-gray.large(href='#')
 					span.btn__text= contentful.Footer[0].subscribeButtonText
 		
 		#footer-nav-row.row
