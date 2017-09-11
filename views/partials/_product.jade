@@ -3,15 +3,15 @@ extends ../layout
 block content
 
 	.content
-		section.imagebg.clip.parallax.cover.height-80(data-overlay="7")
+		section.imagebg.clip.parallax.cover.height-70(data-overlay="7")
 			.background-image-holder
 				img(alt='background', src='#{asset(entry.headerImage)}')
 			.signature-container
 			.container.pos-vertical-center
 				.row.text-left
 					.col-sm-12
-						h2#updatetitle= entry.title
-						p#featuredtext.featuredText= entry.titleSubtext
+						h1#updatetitle= entry.title
+						h6#featuredtext.featuredText= entry.titleSubtext
 		section#updates-content
 			.container
 				.row
