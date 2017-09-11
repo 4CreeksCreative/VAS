@@ -14,10 +14,10 @@ block content
 					
 			.container.pos-absolute(style="padding-top:8vh;top:0;z-index:1;")
 				.row
-					.col-lg-4
+					.col-lg-6
 						h1.color--white= contentful.Home[0].headerLargeText
 						h5.color--white= contentful.Home[0].headerSubtext
-						a.btn.btn-white-green.arrow-after-white-green(href='#')
+						a.btn.btn-white-green.arrow-after-white-green.large(href='#')
 							span.btn__text= contentful.Home[0].headerButtonText
 
 
@@ -115,7 +115,7 @@ block content
 							for item in product.list
 								p.color--blue.unmarg.check-mark-before
 									!= item
-							//-a.mt--1.btn.btn-blue-white.modal-trigger
+							a.mt--1.btn.btn-blue-white(href="#{product.pageUrl}")
 								span.btn__text= contentful.Home[0].productDetails
 				
 
