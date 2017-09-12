@@ -1,0 +1,17 @@
+extends layout
+
+block content
+	.content
+		section#hero.img-clip.imagebg.parallax.cover.height-70(data-overlay="7")
+			.background-image-holder
+				img(alt='background', src='#{asset(contentful.TOU[0].headerBackground)}')
+			.signature-container
+			.container.pos-vertical-center
+				.row
+					.col-sm-12
+						h2#updatetitle= contentful.TOU[0].headerTitle
+		section
+			.container
+				.row
+					.col-sm-8
+						!= contentful.TOU[0].content

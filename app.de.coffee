@@ -106,6 +106,16 @@ module.exports =
 						'order': '-sys.createdAt'
 					}
 					template: 'views/partials/_TOTM.jade'
+				TOU:
+					id: 'termsOfUse'
+					filters:{
+						'locale':'de'
+					}
+				Privacy:
+					id: 'privacyPolicy'
+					filters:{
+						'locale':'de'
+					}
 				
 		
 	]
