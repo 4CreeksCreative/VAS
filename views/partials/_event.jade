@@ -3,7 +3,7 @@ extends ../layout
 block content
 
 	.content
-		section.imagebg.clip.parallax.cover.height-70(data-overlay="7")
+		section#hero.imagebg.clip.parallax.cover.height-70(data-overlay="7")
 			//-.background-image-holder
 				img(alt='background', src='#{asset(entry.headerImage)}')
 			.signature-container
@@ -26,10 +26,10 @@ block content
 						p.color--green.small= date.getMonth() +' '+ date.getDate() +' '+ date.getFullYear()
 				.row.mt--1
 					.col-sm-8
-						p= entry.paragraph1
+						p.font--corbel.font--corbel= entry.paragraph1
 				.row.mt--1
 					.col-sm-6
-						p= entry.paragraph2
+						p.font--corbel.font--corbel= entry.paragraph2
 					.col-sm-5.col-sm-offset-1.bg--blue.blue-box-pullquote
 						for item in entry.blueChecklist
 							h6.color--white.unmarg.check-mark-before-white
@@ -39,7 +39,7 @@ block content
 						h6.color--green= entry.paragraph3Title
 				.row.mt--1
 					.col-sm-6
-						p= entry.paragraph3
+						p.font--corbel.font--corbel= entry.paragraph3
 
 
 		
@@ -68,7 +68,7 @@ block content
 						h6.color--green= entry.bottomParagraphTitle
 			.row.mt--1
 					.col-sm-8
-						p= entry.bottomParagraph
+						p.font--corbel.font--corbel= entry.bottomParagraph
 
 
 		section#social-share
@@ -76,7 +76,7 @@ block content
 				.row.text-left
 					.col-sm-12
 						.float-left
-							h3.unmarg.color--blue= contentful.Social[0].shareHeader
+							p.strong.unmarg.color--blue= contentful.Social[0].shareHeader
 						#share-icons.float-left
 							include _social-icons
 		include _4updates

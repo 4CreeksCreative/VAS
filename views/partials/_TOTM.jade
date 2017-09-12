@@ -7,7 +7,7 @@ block head
 
 block content
 	.content
-		section.clip.imagebg.parallax.cover.height-70(data-overlay="7")
+		section#hero.clip.imagebg.parallax.cover.height-70(data-overlay="7")
 			.background-image-holder
 				img(alt='background', src='#{asset(entry.featuredImage)}')
 			.signature-container
@@ -26,7 +26,7 @@ block content
 			.container
 				.row
 					.col-sm-8
-						p= entry.body
+						p.weight-normal.font--corbel= entry.body
 
 		section#image-gallery
 			.container
@@ -47,7 +47,7 @@ block content
 				.row.text-left
 					.col-sm-12
 						.float-left
-							h3.unmarg.color--blue= contentful.Social[0].shareHeader
+							p.strong.unmarg.color--blue= contentful.Social[0].shareHeader
 						#share-icons.float-left
 							include _social-icons
 						//-ul

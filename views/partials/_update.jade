@@ -2,15 +2,16 @@ extends ../layout
 
 block head
 	meta(property="og:image" content="#{asset(entry.featuredImage)}")
-	meta(property="og:title" content= entry.title)
-	meta(property="og:description" content= entry.featuredText)
+	meta#page-title(property="og:title" content= entry.title)
+	meta#page-description(property="og:description" content= entry.featuredText)
 
 block content
 	.content
-		section.clip.imagebg.parallax.cover.height-70(data-overlay="7")
+		section#hero.clip.imagebg.parallax.cover.height-70(data-overlay="7")
+			//-.signature-container
 			.background-image-holder
 				img(alt='background', src='#{asset(entry.featuredImage)}')
-			.signature-container
+			
 			.container.pos-vertical-center
 				.row.text-left
 					.col-sm-12
@@ -32,7 +33,7 @@ block content
 				.row.text-left
 					.col-sm-12
 						.float-left
-							h3.unmarg.color--blue= contentful.Social[0].shareHeader
+							p.strong.unmarg.color--blue= contentful.Social[0].shareHeader
 						#share-icons.float-left
 							include _social-icons
 						//-ul
