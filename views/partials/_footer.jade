@@ -49,7 +49,7 @@ footer#footer.corner-point-brown
 		#footer-nav-row.row
 			.col-sm-3.col-xs-6.text-center-xs
 				ul.footer-nav
-					li
+					//-li
 						a(href="#")= contentful.Navigation[0].solutions
 					li
 						a(href="/about")= contentful.Navigation[0].aboutUs
@@ -61,17 +61,17 @@ footer#footer.corner-point-brown
 			.col-sm-3.col-xs-6.text-center-xs
 				ul.footer-nav
 					li
-						a(href="#")=contentful.Navigation[0].dairyComp
+						a(href="/updates/dairycomp")=contentful.Navigation[0].dairyComp
 					li
-						a(href="#")= contentful.Navigation[0].feedComp
+						a(href="/updates/feedcomp")= contentful.Navigation[0].feedComp
 					li
-						a(href="#")= contentful.Navigation[0].parlorComp
+						a(href="/updates/parlorcomp")= contentful.Navigation[0].parlorComp
 
 			.col-sm-3.col-xs-12.text-center-xs
 				ul.footer-nav
 					li
 						a(href="/updates")= contentful.Navigation[0].updates
-					li
+					//-li
 						a(href="#")= contentful.Navigation[0].newsletter
 					li
 						a(href="/contact")= contentful.Navigation[0].contact
@@ -101,9 +101,9 @@ footer#footer.corner-point-brown
 			.col-xs-12
 				ul.text-left.color--white.text-center-xs
 					li.pad-sm
-						a(href="#").small.color--white= contentful.Navigation[0].termsOfUse
+						a(href="/termsOfUse").small.color--white= contentful.Navigation[0].termsOfUse
 					li.pad-sm
-						a(href="#").small.color--white= contentful.Navigation[0].privacyAndCookies
+						a(href="/privacy").small.color--white= contentful.Navigation[0].privacyAndCookies
 					li.pad-sm
 						a(href="#").small.color--white= contentful.Navigation[0].colofon
 					li.pad-sm
