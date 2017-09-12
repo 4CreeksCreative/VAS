@@ -1187,6 +1187,9 @@ body
 			left initial !important
 			position fixed
 			width 65%
+			@media (max-height:580px)
+				bottom 0
+				top initial
 	
 	.blue-pullquote
 		border-top 2px $blue solid
@@ -1197,6 +1200,8 @@ body
 		
 	#menu1
 		padding-top 0px
+		height 90vh
+		overflow-y auto
 	.logo-mobile
 		margin-left 10px !important
 	.stack-menu
