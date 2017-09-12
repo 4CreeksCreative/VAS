@@ -15,7 +15,7 @@ block content
 		section
 			.container
 				.row
-					.col-sm-12
+					.col-sm-8
 						for item in contentful.About[0].aboutUsSection
 							h3.color--green= item.fields.sectionTitle
 							!= item.fields.sectionContent
