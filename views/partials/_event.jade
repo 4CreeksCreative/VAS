@@ -26,10 +26,10 @@ block content
 						p.color--green.small= date.getMonth() +' '+ date.getDate() +' '+ date.getFullYear()
 				.row.mt--1
 					.col-sm-8
-						p.font--corbel.font--corbel= entry.paragraph1
+						p.font--corbel.weight-normal= entry.paragraph1
 				.row.mt--1
 					.col-sm-6
-						p.font--corbel.font--corbel= entry.paragraph2
+						p.font--corbel.weight-normal= entry.paragraph2
 					.col-sm-5.col-sm-offset-1.bg--blue.blue-box-pullquote
 						for item in entry.blueChecklist
 							h6.color--white.unmarg.check-mark-before-white
@@ -39,7 +39,7 @@ block content
 						h6.color--green= entry.paragraph3Title
 				.row.mt--1
 					.col-sm-6
-						p.font--corbel.font--corbel= entry.paragraph3
+						p.font--corbel.weight-normal= entry.paragraph3
 
 
 		
@@ -68,7 +68,7 @@ block content
 						h6.color--green= entry.bottomParagraphTitle
 			.row.mt--1
 					.col-sm-8
-						p.font--corbel.font--corbel= entry.bottomParagraph
+						p.font--corbel.weight-normal= entry.bottomParagraph
 
 
 		section#social-share
