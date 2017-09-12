@@ -38,6 +38,16 @@ module.exports =
 					filters:{
 						'locale':'de'
 					}
+				About:
+					id: 'aboutUsPage'
+					filters:{
+						'locale':'de'
+					}
+				Support:
+					id: 'supportPage'
+					filters:{
+						'locale':'de'
+					}
 				Updates:
 					id: 'updates'
 					filters:{

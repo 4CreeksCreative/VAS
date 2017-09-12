@@ -1,0 +1,53 @@
+extends layout
+
+block content
+	.content
+		section#hero.img-clip.imagebg.parallax.cover.height-70(data-overlay="7")
+			.background-image-holder
+				img(alt='background', src='#{asset(contentful.About[0].headerBackground)}')
+			.signature-container
+			.container.pos-vertical-center
+				.row
+					.col-sm-12
+						h2#updatetitle= contentful.About[0].headerTitle
+
+
+		section
+			.container
+				.row
+					.col-sm-12
+						for item in contentful.About[0].aboutUsSection
+							h3.color--green= item.fields.sectionTitle
+							!= item.fields.sectionContent
+
+						//- h3.color--green Company Overview
+						
+						//- p.font--corbel.weight-normal.
+						//- 	The company was founded in 1981 by two veterinarians, Connor Jameson and Steve Eicker. Their initial project was DairyComp 305, a herd management package that combined the functionality of the early spreadsheet, database and graphics software packages into an integrated dairy specific program. DairyComp has matured into a solid package that is used to manage approximately 60% of the cows in the United States. Variants of DairyComp are also in widespread use with off the farm consultants such as veterinarians, nutritionalists, DHI techs, and AI technicians.
+						
+
+						//- h3.color--green Our Advantages
+						
+						//- p.font--corbel.weight-normal.
+						//- 	Valley Agricultural Software (VAS) as the name implies is agriculture first and then software. While we are very proud of our software products we are a company born from agriculture. From the founders of the company, to the management team, to the support technicians there is a vast amount of production experience and knowledge gained the old fashioned way.
+						
+						//- p.font--corbel.weight-normal.
+						//- 	We understand your business is not a cookie cutter endeavor. Your priorities may be different than another customer's. Our software has the flexibility to help you manage your operation and our support personnel understand what you are talking about.
+
+						//- h3.color--green Why Choose Us?
+						
+						//- p.font--corbel.weight-normal.
+						//- 	We know the business, and we know it's always changing. Whether it is individual animal ID, tracking milk production, feeding software, or automating platform scales we continually strive to keep our software applications on the cutting edge. Our development team watches trends, solicits input from our valued customers and couples it with their experience and imagination to keep VAS a leader in on farm technology. While we are proud of what we have done, we are even more excited about the future. A future defined by increased efficiencies and optimized production, facilitated by technology.
+
+						//- h3.color--green Valley Agricultural Software's Values
+		
+						//- p.font--corbel.weight-normal.
+						//- 	We believe in honesty and integrity in everything that we do. There is no alternative.
+						//- p.font--corbel.weight-normal.
+						//- 	We highly value our customers/vendors and are committed to meeting their needs quickly and fairly.
+						//- p.font--corbel.weight-normal.
+						//- 	We encourage innovation and creativity from every employee, in every department. Mistakes that arise from good intentions and hard work are distinguished from those arising from lack of effort or carelessness.
+						//- p.font--corbel.weight-normal.
+						//- 	We are committed to an environment that respects and values the diverse backgrounds, interests and talents of our employees.
+						//- p.font--corbel.weight-normal.
+						//- 	We protect our company resources to benefit those who depend on us, such as our employees and customers.

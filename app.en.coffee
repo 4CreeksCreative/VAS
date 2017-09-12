@@ -33,6 +33,16 @@ module.exports =
 					filters:{
 						'locale':'en-US'
 					}
+				About:
+					id: 'aboutUsPage'
+					filters:{
+						'locale':'en-US'
+					}
+				Support:
+					id: 'supportPage'
+					filters:{
+						'locale':'en-US'
+					}
 				Updates:
 					id: 'updates'
 					filters:{
@@ -91,6 +101,7 @@ module.exports =
 						'order': '-sys.createdAt'
 					}
 					template: 'views/partials/_TOTM.jade'
+
 				
 		
 	]
