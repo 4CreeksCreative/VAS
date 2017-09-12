@@ -4,7 +4,7 @@ block content
 	//-.p= JSON.stringify(contentful.Home[0])
 	
 	.content
-		section.pos-relative.img-clip.height-70.unpad(data-overlay="7")
+		section#hero.pos-relative.img-clip.height-70.unpad(data-overlay="7")
 			.signature-container
 			.slider(data-arrows='false', data-paging='false')
 				ul.slides
@@ -113,7 +113,7 @@ block content
 			.row.text-center
 				.col-lg-12
 					h3.color--green= contentful.Home[0].productSectionTitle
-			#products-container.row.text-center
+			#products-container.mt--1.row.text-center
 				for product in contentful.HomeProducts
 					.col-md-4.col-xs-12.float-center-sm.unpad.product-post
 						.img-clip
@@ -121,7 +121,7 @@ block content
 						div.product-content.text-left
 							h3.color--blue= product.title
 							for item in product.list
-								p.color--blue.check-mark-before
+								p.weight-normal.font--corbel.color--blue.check-mark-before
 									!= item
 							a.mt--1.btn.btn-blue-white(href="#{product.pageUrl}")
 								span.btn__text= contentful.Home[0].productDetails

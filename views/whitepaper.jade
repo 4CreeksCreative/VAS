@@ -2,7 +2,7 @@ extends layout
 
 block content
 	.content
-		section.imagebg.clip.parallax.cover.height-70(data-overlay="7")
+		section#hero.imagebg.clip.parallax.cover.height-70(data-overlay="7")
 			.background-image-holder
 				img(alt='background', src='#{asset(contentful.UpdatesPage[0].headerBackground)}')
 			.signature-container
@@ -17,7 +17,7 @@ block content
 			.container
 				.row
 					.col-sm-8
-						p.
+						p.font--corbel.weight-normal.
 							Dairy operators can’t control milk prices – but they can control/tighten the variables that determine profitability. New and faster ways of managing and interpreting data will give early adopters an advantage over the competition.   
 						p.color--blue.
 							By Tim Taylor, CEO, VAS
