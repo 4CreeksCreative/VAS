@@ -55,7 +55,7 @@ module.exports =
 						'locale':'es'
 						'order': '-sys.createdAt'
 					}
-					path: (e) -> "es/updates/#{slugify(e.url)}"
+					path: (e) -> "updates/#{slugify(e.url)}"
 					template: 'views/partials/_update.jade'
 				Navigation:
 					id: 'navigation'
