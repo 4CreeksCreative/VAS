@@ -90,8 +90,8 @@ block content
 						.col-sm-12.unpad
 							.masonry
 									.masonry__container
-										for image in entry.photoGallery
-											.masonry__item.col-xs-6.col-sm-4
+										for image in entry.gallery
+											.masonry__item.col-xs-6.col-sm-3
 												a(href='#{asset(image)}', data-lightbox='true')
 													img(src="#{asset(image)}")
 
