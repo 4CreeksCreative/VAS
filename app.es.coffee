@@ -4,6 +4,7 @@ autoprefixer = require 'autoprefixer-stylus'
 js_pipeline  = require 'js-pipeline'
 css_pipeline = require 'css-pipeline'
 contentful   = require 'roots-contentful'
+slugify      = require 'slugify'
 
 module.exports =
 	output: 'public/es'
@@ -54,6 +55,7 @@ module.exports =
 						'locale':'es'
 						'order': '-sys.createdAt'
 					}
+					path: (e) -> "updates/#{slugify(e.url)}"
 					template: 'views/partials/_update.jade'
 				Navigation:
 					id: 'navigation'

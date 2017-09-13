@@ -4,6 +4,7 @@ autoprefixer = require 'autoprefixer-stylus'
 js_pipeline  = require 'js-pipeline'
 css_pipeline = require 'css-pipeline'
 contentful   = require 'roots-contentful'
+slugify      = require 'slugify'
 
 module.exports =
 	output: 'public/de'
@@ -34,9 +35,9 @@ module.exports =
 
 					}
 				HomeProducts:
-					id: 'homePageProducts'
+					id: 'homePageProductsGerman'
 					filters:{
-						'locale':'de'
+						'locale':'en-US'
 					}
 				About:
 					id: 'aboutUsPage'
@@ -49,11 +50,12 @@ module.exports =
 						'locale':'de'
 					}
 				Updates:
-					id: 'updates'
+					id: 'updatePostGerman'
 					filters:{
 						'locale':'de'
 						'order': '-sys.createdAt'
 					}
+					path: (e) -> "updates/#{slugify(e.url)}"
 					template: 'views/partials/_update.jade'
 				Navigation:
 					id: 'navigation'
