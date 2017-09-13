@@ -45,17 +45,17 @@ module.exports =
 						'locale':'de'
 					}
 				Support:
-					id: 'supportPage'
+					id: 'supportPageGerman'
 					filters:{
-						'locale':'de'
+						'locale':'en-US'
 					}
 				Updates:
 					id: 'updatePostGerman'
 					filters:{
-						'locale':'de'
+						'locale':'en-US'
 						'order': '-sys.createdAt'
 					}
-					path: (e) -> "updates/#{slugify(e.url)}"
+					path: (e) -> "de/updates/#{slugify(e.url)}"
 					template: 'views/partials/_update.jade'
 				Navigation:
 					id: 'navigation'
