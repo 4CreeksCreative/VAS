@@ -7,6 +7,7 @@ block head
 
 block content
 	#blog-content.content
+		p= JSON.stringify(entry.textAreas)
 		section#hero.clip.imagebg.parallax.cover.height-70(data-overlay="7")
 			.signature-container
 			.background-image-holder
@@ -24,8 +25,99 @@ block content
 					.col-sm-12
 						p.color--green= entry.location + ' - ' + (date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()
 			
+				//-!= entry.mainContent
+				if entry.textAreas != undefined
+					for item in entry.textAreas
+						.row
+							.col-sm-8
+								if item.fields.subhead != undefined
+									h6.color--green= item.fields.subhead
+								if item.fields.body != undefined
+									pre= item.fields.body
+		
+		if entry.largeImage != undefined
+			.section.cover
+				.container
+					.row
+						.col-sm-12
+							img(src='#{asset(entry.largeImage)}')
+
+		
+		if entry.imageSubtext != undefined
+			.container
+				.row
+					#text-overlap.corner-point-white.col-lg-6.float-right.bg--white.clearfix
+						p.color--blue.col-sm-12= entry.imageSubtext
+						if entry.imageSubtextName != undefined
+							p.small.color--green.col-sm-12= entry.imageSubtextName
+							
+
+		if entry.textAreas2 != undefined
+			.container
+				for item in entry.textAreas2
+					.row
+						.col-sm-6
+							if item.fields.subhead != undefined
+								h6.color--green= item.fields.subhead
+							if item.fields.body != undefined
+								pre= item.fields.body
+
+						if entry.bluePullquote != undefined
+							.col-sm-6.blue-pullquote
+								h6.color--blue= entry.bluePullquote
+
+		if entry.checklist != undefined
+			.mb--2.mt--2.bg--blue
+				.container
+					.row.mt--1.mb--1
+						.col-sm-12
+							for item in entry.checklist
+								h6.color--white.check-mark-before= item
+
+		if entry.downloads != undefined
+			.container.mb--2
+				.row
+					.col-sm-12
+						h5.color--blue= contentful.Support[0].downloads
+						for item in entry.downloads
+							a.btn.btn-blue-white.download-before-blue-white(href='#{asset(item.fields.file)}', target='_blank', rel='noopener')
+								span.btn__text= item.fields.title
+		
+		if entry.gallery != undefined
+			section#image-gallery
+				.container
+					.row
+						.col-sm-12.unpad
+							.masonry
+									.masonry__container
+										for image in entry.photoGallery
+											.masonry__item.col-xs-6.col-sm-4
+												a(href='#{asset(image)}', data-lightbox='true')
+													img(src="#{asset(image)}")
+
+		if entry.textAreas3 != undefined
+			.container
+				for item in entry.textAreas3
+					.row
+						.col-sm-8
+							if item.fields.subhead != undefined
+								h6.color--green= item.fields.subhead
+							if item.fields.body != undefined
+								pre= item.fields.body
+
+
+
+		if entry.mainContent != undefined
 			!= entry.mainContent
-					
+
+
+
+
+
+
+
+
+
 
 
 		section#social-share
@@ -33,7 +125,7 @@ block content
 				.row.text-left
 					.col-sm-12
 						.float-left
-							p.strong.unmarg.color--blue= contentful.Social[0].shareHeader
+							h6.unmarg.color--blue= contentful.Social[0].shareHeader
 						#share-icons.float-left
 							include _social-icons
 						//-ul
