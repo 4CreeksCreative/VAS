@@ -79,6 +79,8 @@ section
 	color $green2
 .color--blue
 	color $blue
+.color--default
+	color $gray3
 .bg--green
 	background-color $green
 .bg--green2
@@ -879,6 +881,10 @@ body
 		margin-bottom 5px
 	p,h1,h2,h3,h4,h5,h6
 		max-width 600px 
+#update-move-up
+	.imagebg 
+		min-height 500px
+		padding 0
 				
 
 
@@ -960,13 +966,6 @@ body
 	width 50%
 	padding 0 !important
 	display inline-block
-#inspiration-posts
-	position relative
-	z-index 3
-	top -425px
-	margin-bottom -325px
-	.masonry__item
-		margin 0
 #text-overlap, .text-overlap
 	position relative
 	top -99px
@@ -974,14 +973,24 @@ body
 	z-index 3
 	min-height 100px
 #inspiration-posts
+	position relative
+	z-index 3
+	top -425px
+	margin-bottom -325px
 	.masonry-content
 		padding 30px
 	.masonry__container 
 		.masonry__item
 			transition 0.2s
+			margin 0
+			h1,h2,h3,h4,h5,h6
+				font-weight 700
 			.btn
+				height 40px
+				width 40px
 				.btn__text
 					display none
+					font-size 20px
 
 			&:first-child
 				margin-top 60px
@@ -1006,8 +1015,10 @@ body
 				p, h1,h2,h3,h4,h5,h6
 					color $white !important
 				.btn-circle
+					height 40px
+					width auto
 					transition padding 0s
-					padding 5px 20px !important
+					padding 2px 20px !important
 				.btn
 					background $white
 					border-color $white !important
@@ -1072,15 +1083,9 @@ body
 		height 70vh
 
 @media (max-width: 992px)
-	// #update-move-up
-	// 	>div 
-	// 		position relative
-	// 		margin-bottom 400px;
-	// 		.update-item
-	// 			background $white
-	// 			position absolute
-	// 			bottom -400px
-	// 			top unset
+	#update-move-up
+		.imagebg 
+			min-height 400px
 	header
 		
 	.language-dropdown
@@ -1214,4 +1219,23 @@ body
 		border-radius 0px
 	.height-70
 		height 70vh
-		min-height 600px
+		min-height 450px
+	#social-share
+		.float-left
+			float none
+			text-align left
+		#share-icons
+			float none
+			li
+				display block
+				text-align left
+				a
+					margin 5px 0
+					i
+						margin 0
+						text-align center
+	.large
+		font-size 21px
+	#update-move-up
+		.imagebg 
+			min-height 250px

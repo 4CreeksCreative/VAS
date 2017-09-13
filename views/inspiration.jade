@@ -24,8 +24,8 @@ block content
 										img(src="#{asset(contentful.Updates[i].featuredImage)}")
 									.masonry-content.clearfix
 										p.color--green.small.unmarg.float-left.col-sm-12= contentful.Updates[i].location +' '+ (date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()
-										h3.color--blue.unmarg.float-left.col-sm-12= contentful.Updates[i].title
-										p.col-xs-10= contentful.Updates[i].featuredText
+										h3.color--blue.float-left.col-sm-12= contentful.Updates[i].title
+										p.color--default.col-xs-10= contentful.Updates[i].featuredText
 										.col-xs-12
 											a.float-right.btn.btn-circle.btn-blue-white
 												span.btn__text= contentful.Home[0].headerButtonText
