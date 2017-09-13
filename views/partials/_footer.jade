@@ -24,14 +24,14 @@ footer#footer.corner-point-brown
 							#mce-responses.clear
 								#mce-error-response.response(style='display:none')
 								#mce-success-response.response(style='display:none')
-							// real people should not fill this in and expect good things - do not remove this or risk form bot signups
+							//- real people should not fill this in and expect good things - do not remove this or risk form bot signups
 							div(style='position: absolute; left: -5000px;', aria-hidden='true')
 								input(type='text', name='b_f0f106248a8a0df7906dc9354_779c844d05', tabindex='-1', value='')
 
 
 							.mc-field-group.clearfix
 								//-label(for='mce-EMAIL') Email Address 
-								input#mce-EMAIL.required.email.col-sm-6.col-xs-12.large(type='email', value='', name='EMAIL' placeholder="Your email address")
+								input#mce-EMAIL.required.email.col-sm-6.col-xs-12.large(type='email', value='', name='EMAIL' placeholder="#{contentful.Footer[0].subscribePlaceholder}")
 							
 							
 								button#mc-embedded-subscribe.col-sm-5.col-xs-12.col-offset-sm-1.float-left-xs.float-right.btn.btn-white-gray.arrow-after-white-gray.large.unmarg(type='submit', value='Subscribe', name='subscribe')
@@ -104,7 +104,7 @@ footer#footer.corner-point-brown
 						a(href="/termsOfUse").small.color--white= contentful.Navigation[0].termsOfUse
 					li.pad-sm
 						a(href="/privacy").small.color--white= contentful.Navigation[0].privacyAndCookies
-					li.pad-sm
+					//-li.pad-sm
 						a(href="#").small.color--white= contentful.Navigation[0].colofon
 					li.pad-sm
 						p.small.color--white= contentful.Footer[0].copyright
