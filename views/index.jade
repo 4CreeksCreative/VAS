@@ -36,17 +36,17 @@ block content
 		#updates-section.updates-section.container
 			.row.pos-relative
 				
-				- var date = new Date(contentful.Updates[0].date);
-				if  contentful.Updates.length === 1
+				- var date = new Date(contentful.ProductUpdates[0].date);
+				if  contentful.ProductUpdates.length === 1
 					.col-xs-12.unpad.move-up.main-update-article
-						a.clearfix.border-bottom(href="#{contentful.Updates[0]._url}")
+						a.clearfix.border-bottom(href="#{contentful.ProductUpdates[0]._url}")
 							.col-md-12.imagebg.cover.move-up(style="min-height:500px;")
 								.background-image-holder
-									img(src="#{asset(contentful.Updates[0].featuredImage)}")
+									img(src="#{asset(contentful.ProductUpdates[0].featuredImage)}")
 							.col-sm-12.update-item.move-up.clearfix(style="bottom:-10px;")
 									p.color--green.small.unmarg.float-left.col-xs-12 Update #{(date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()}
-									h4.color--blue.float-left.col-xs-12= contentful.Updates[0].title
-									p.col-xs-12.color--blue= contentful.Updates[0].featuredText
+									h4.color--blue.float-left.col-xs-12= contentful.ProductUpdates[0].title
+									p.col-xs-12.color--blue= contentful.ProductUpdates[0].featuredText
 									.col-xs-12
 										div.arrow-right.float-right
 							
@@ -54,26 +54,26 @@ block content
 				
 				else 
 					.col-md-8.unpad.move-up.main-update-article
-						a#update-move-up.clearfix(href="#{contentful.Updates[0]._url}")
+						a#update-move-up.clearfix(href="#{contentful.ProductUpdates[0]._url}")
 							.col-xs-12.imagebg.cover
 								.background-image-holder
-									img(src="#{asset(contentful.Updates[0].featuredImage)}")
+									img(src="#{asset(contentful.ProductUpdates[0].featuredImage)}")
 							.col-xs-12.update-item.clearfix.border-bottom
 									p.color--green.small.unmarg.float-left.col-xs-12 Update #{(date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()}
-									h4.color--blue.float-left.col-xs-12= contentful.Updates[0].title
-									p.col-xs-12.color--blue= contentful.Updates[0].featuredText
+									h4.color--blue.float-left.col-xs-12= contentful.ProductUpdates[0].title
+									p.col-xs-12.color--blue= contentful.ProductUpdates[0].featuredText
 									.col-xs-12
 										div.arrow-right.float-right(style="height:40px; width:40px;")
 								
 				
 
 				
-				- var i = 1; var e = (contentful.Updates.length >=4) ? 4 : contentful.Updates.length; while (i<e){
-				- var date = new Date(contentful.Updates[i].date);
+				- var i = 1; var e = (contentful.ProductUpdates.length >=4) ? 4 : contentful.ProductUpdates.length; while (i<e){
+				- var date = new Date(contentful.ProductUpdates[i].date);
 					.col-md-4.update-item.bg--white.clearfix.border-bottom
-						a(href="#{contentful.Updates[i]._url}")
+						a(href="#{contentful.ProductUpdates[i]._url}")
 							p.color--green.small.unmarg.float-left.col-xs-12 Update #{(date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()}
-							h6.color--blue.unmarg.float-left.col-xs-10.weight-700= contentful.Updates[i].title
+							h6.color--blue.unmarg.float-left.col-xs-10.weight-700= contentful.ProductUpdates[i].title
 							.col-xs-12
 								div.arrow-right.float-right
 							

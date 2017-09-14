@@ -16,18 +16,18 @@ block content
 		#inspiration-posts.container
 			.masonry
 				.masonry__container
-					- var i = 0; var e = (contentful.Updates.length >=4) ? 4 : contentful.Updates.length; while (i<e){
-					- var date = new Date(contentful.Updates[i].date);
+					- var i = 0; var e = (contentful.InspirationUpdates.length >=4) ? 4 : contentful.InspirationUpdates.length; while (i<e){
+					- var date = new Date(contentful.InspirationUpdates[i].date);
 						.masonry__item.inspiration-post.update-post.bg--white.clearfix.border-bottom
-								a(href="#{contentful.Updates[i]._url}")
+								a(href="#{contentful.InspirationUpdates[i]._url}")
 									.img-clip
-										img(src="#{asset(contentful.Updates[i].featuredImage)}")
+										img(src="#{asset(contentful.InspirationUpdates[i].featuredImage)}")
 									.masonry-content.clearfix
-										p.color--green.small.unmarg.float-left.col-sm-12= contentful.Updates[i].location +' '+ (date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()
-										h3.color--blue.float-left.col-sm-12= contentful.Updates[i].title
-										p.color--default.col-xs-10= contentful.Updates[i].featuredText
+										p.color--green.small.unmarg.float-left.col-sm-12= contentful.InspirationUpdates[i].location +' '+ (date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()
+										h3.color--blue.float-left.col-sm-12= contentful.InspirationUpdates[i].title
+										p.color--default.col-xs-10= contentful.InspirationUpdates[i].featuredText
 										.col-xs-12
-											a.float-right.btn.btn-circle.btn-blue-white(href="#{contentful.Updates[i]._url}")
+											a.float-right.btn.btn-circle.btn-blue-white(href="#{contentful.InspirationUpdates[i]._url}")
 												span.btn__text= contentful.Home[0].productDetails
 												img.arrow-right(src="/img/icon/arrow-right-blue.png")
 											//-img.arrow-right(src="/img/icon/arrow-o-right.png")

@@ -50,12 +50,29 @@ module.exports =
 						'locale':'es'
 					}
 				Updates:
+					id: 'blogPost'
+					filters:{
+						'locale':'es'
+						'order': '-sys.createdAt'
+
+					}
+					path: (e) -> "blog/#{slugify(e.url)}"
+					template: 'views/partials/_update.jade'
+				ProductUpdates:
 					id: 'updates'
 					filters:{
 						'locale':'es'
 						'order': '-sys.createdAt'
 					}
 					path: (e) -> "updates/#{slugify(e.url)}"
+					template: 'views/partials/_update.jade'
+				InspirationUpdates:
+					id: 'inspirationPost'
+					filters:{
+						'locale':'es'
+						'order': '-sys.createdAt'
+					}
+					path: (e) -> "inspiration/#{slugify(e.url)}"
 					template: 'views/partials/_update.jade'
 				Navigation:
 					id: 'navigation'
