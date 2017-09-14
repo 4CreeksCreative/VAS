@@ -112,7 +112,7 @@ section
 .dropdown__content
 	padding 0 !important
 section.imagebg.parallax
-	min-height 750px;
+	//min-height 750px;
 	//border-radius 0px 0px 25% 0px
 .img-clip
 	//border-radius 0px 0px 25% 0px
@@ -1000,8 +1000,8 @@ body
 #inspiration-posts
 	position relative
 	z-index 3
-	top -425px
-	margin-bottom -325px
+	top -250px
+	margin-bottom -200px
 	.masonry-content
 		padding 30px
 	.masonry__container 
@@ -1105,9 +1105,29 @@ body
 			margin-top -50px
 		.move-up
 			transform translate(0px, -50px)
+		#blog-content, #hero
+			.height-70
+				height 60vh !important
+		#inspiration-posts
+			
+			top -150px
+			margin-bottom -50px
+	@media(max-height:700px)
+		#updates-section
+			margin-top 75px
+		.move-up
+			transform translate(0px, -50px)
 		#blog-content
 			.height-70
 				height 60vh !important
+				min-height 400px
+		#hero
+			min-height 400px
+		#inspiration-posts
+			
+			top -80px
+			margin-bottom 0px
+		
 
 // --- queries
 @media (max-height:1000px)
