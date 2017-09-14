@@ -98,14 +98,7 @@ block content
 												a(href='#{asset(image)}', data-lightbox='true')
 													img(src="#{asset(image)}")
 
-		if entry.downloads != undefined
-			.container.mb--2
-				.row
-					.col-sm-12
-						h5.color--blue= contentful.Support[0].downloads
-						for item in entry.downloads
-							a.btn.btn-blue-white.download-before-blue-white(href='#{asset(item.fields.file)}', target='_blank', rel='noopener')
-								span.btn__text= item.fields.title
+		
 		
 
 
@@ -141,6 +134,15 @@ block content
 							li
 								a#inshare(target="_blank")
 									img(src="/img/social/social-linkedin-blue.png")
+
+		if entry.downloads != undefined
+			.container.mb--2.mt--2
+				.row
+					.col-sm-12
+						h5.color--blue= contentful.Support[0].downloads
+						for item in entry.downloads
+							a.btn.btn-blue-white.download-before-blue-white(href='#{asset(item.fields.file)}', target='_blank', rel='noopener')
+								span.btn__text= item.fields.title
 
 		include _4updates
 		//-section#more-updates
