@@ -102,9 +102,9 @@ module.exports =
 					}
 					template: 'views/partials/_event.jade'
 				TOTM:
-					id: 'tipOfTheMonthPost'
+					id: 'tipOfTheMonthPostGerman'
 					filters:{
-						'locale':'de'
+						'locale':'en-US'
 						'order': '-sys.createdAt'
 					}
 					template: 'views/partials/_TOTM.jade'
