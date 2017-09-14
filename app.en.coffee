@@ -83,20 +83,7 @@ module.exports =
 					filters:{
 						'locale':'en-US'
 					}
-				ProductPost:
-					id: 'productBlogPost'
-					filters:{
-						'locale':'en-US'
-						'order': '-sys.createdAt'
-					}
-					template: 'views/partials/_product.jade'
-				EventPost:
-					id: 'eventBlogPost'
-					filters:{
-						'locale':'en-US'
-						'order': '-sys.createdAt'
-					}
-					template: 'views/partials/_event.jade'
+				
 				TOTM:
 					id: 'tipOfTheMonthPost'
 					filters:{
