@@ -19,7 +19,7 @@ footer#footer.corner-point-brown
 					/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
 					We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
 				#mc_embed_signup
-					form#mc-embedded-subscribe-form.validate(action='//vas.us14.list-manage.com/subscribe/post?u=f0f106248a8a0df7906dc9354&id=779c844d05', method='post', name='mc-embedded-subscribe-form', target='_blank', novalidate='' data-success="#{contentful.Footer[0].subscribeSuccess}")
+					form#mc-embedded-subscribe-form.validate(action='//vas.us14.list-manage.com/subscribe/post?u=f0f106248a8a0df7906dc9354&id=779c844d05', method='post', name='mc-embedded-subscribe-form', target='_blank', novalidate='' data-error="#{contentful.Contact[0].sendErrorMessage}" data-success="#{contentful.Footer[0].subscribeSuccess}")
 						#mc_embed_signup_scroll
 							#mce-responses.clear
 								#mce-error-response.response(style='display:none')
