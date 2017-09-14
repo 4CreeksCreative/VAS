@@ -74,14 +74,17 @@ block content
 							for item in entry.checklist
 								h6.color--white.check-mark-before= item
 
-		if entry.downloads != undefined
-			.container.mb--2
-				.row
-					.col-sm-12
-						h5.color--blue= contentful.Support[0].downloads
-						for item in entry.downloads
-							a.btn.btn-blue-white.download-before-blue-white(href='#{asset(item.fields.file)}', target='_blank', rel='noopener')
-								span.btn__text= item.fields.title
+		if entry.textAreas3 != undefined
+			.container
+				for item in entry.textAreas3
+					.row.mt--1
+						.col-sm-8
+							if item.fields.subhead != undefined
+								h6.color--green= item.fields.subhead
+							if item.fields.body != undefined
+								pre= item.fields.body
+
+
 		
 		if entry.gallery != undefined
 			section#image-gallery
@@ -95,15 +98,15 @@ block content
 												a(href='#{asset(image)}', data-lightbox='true')
 													img(src="#{asset(image)}")
 
-		if entry.textAreas3 != undefined
-			.container
-				for item in entry.textAreas3
-					.row.mt--1
-						.col-sm-8
-							if item.fields.subhead != undefined
-								h6.color--green= item.fields.subhead
-							if item.fields.body != undefined
-								pre= item.fields.body
+		if entry.downloads != undefined
+			.container.mb--2
+				.row
+					.col-sm-12
+						h5.color--blue= contentful.Support[0].downloads
+						for item in entry.downloads
+							a.btn.btn-blue-white.download-before-blue-white(href='#{asset(item.fields.file)}', target='_blank', rel='noopener')
+								span.btn__text= item.fields.title
+		
 
 
 
