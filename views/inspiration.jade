@@ -27,8 +27,8 @@ block content
 										h3.color--blue.float-left.col-sm-12= contentful.Updates[i].title
 										p.color--default.col-xs-10= contentful.Updates[i].featuredText
 										.col-xs-12
-											a.float-right.btn.btn-circle.btn-blue-white
-												span.btn__text= contentful.Home[0].headerButtonText
+											a.float-right.btn.btn-circle.btn-blue-white(href="#{contentful.Updates[i]._url}")
+												span.btn__text= contentful.Home[0].productDetails
 												img.arrow-right(src="/img/icon/arrow-right-blue.png")
 											//-img.arrow-right(src="/img/icon/arrow-o-right.png")
 						- i++}
