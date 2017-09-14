@@ -194,6 +194,9 @@ input.large
 	top 0
 	bottom 0
 	margin auto
+#social-share
+	h1,h2,h3,h4,h5,h6
+		line-height 35px
 .social-icons
 	li
 			
@@ -403,7 +406,7 @@ input.large
 a
 	color $green
 	&:hover
-		color $yellowgreen
+		color $blue
 ::selection 
 	background $blue /* WebKit/Blink Browsers */
 	color $white
@@ -658,7 +661,7 @@ header
 				font-size 15px 
 				line-height inherit 
 				font-weight 600
-				&:hover
+				&:hover, &:active
 					color $blue 
 					transition .2s 
 		#mega-menu
@@ -1016,7 +1019,8 @@ body
 				.btn__text
 					display none
 					font-size 20px
-
+			.btn-circle
+				padding 2px 20px !important
 			&:first-child
 				margin-top 60px
 			&:hover
