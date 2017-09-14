@@ -2,8 +2,8 @@ extends ../layout
 
 block head
 	meta(property="og:image" content="#{asset(entry.featuredImage)}")
-	meta(property="og:title" content= entry.title)
-	meta(property="og:description" content= entry.featuredText)
+	meta#page-title(property="og:title" content= entry.title)
+	meta#page-description(property="og:description" content= entry.featuredText)
 
 block content
 	#blog-content.content
