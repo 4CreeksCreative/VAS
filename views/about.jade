@@ -11,14 +11,15 @@ block content
 					.col-sm-12
 						h2#updatetitle= contentful.About[0].headerTitle
 
-
-		section
-			.container
-				.row
-					.col-sm-8
-						for item in contentful.About[0].aboutUsSection
-							h3.color--green= item.fields.sectionTitle
-							!= item.fields.sectionContent
+		if contentful.About[0].aboutUsSection != undefined
+			section
+				.container
+					for item in contentful.About[0].aboutUsSection
+						.row.mt--1
+							.col-sm-8
+							
+								h3.color--green= item.fields.sectionTitle
+								pre= item.fields.sectionContent
 
 						//- h3.color--green Company Overview
 						
