@@ -813,6 +813,7 @@ body
 			padding 25px
 			h1,h2,h3,h4,h5,h6 
 				margin-bottom 20px
+			
 		&:hover
 			
 			.product-content
@@ -836,7 +837,7 @@ body
 				color $white !important
 			p
 				color $white !important
-			.arrow-after-blue-white:after
+			.arrow-after-custom:after
 				background transparent url(../img/icon/arrow-right.png) no-repeat center center
 				background-size contain
 			.btn
@@ -846,17 +847,25 @@ body
 				.btn__text
 					color $white !important
 					i
+		
 						color $white !important
-				&:hover
-					background $white !important
-					border-color $blue !important
-					.btn__text
-						color $blue !important
-				&:active
-					background $white !important
-				&:hover:after
-					background transparent url(../img/icon/arrow-right-blue.png) no-repeat center center !important
-					background-size contain
+		.arrow-after-custom:after
+				background transparent url(../img/icon/arrow-right-blue.png) no-repeat center center
+				background-size contain
+		.btn
+			&:hover
+				background $white !important
+				border-color $blue !important
+			
+				.btn__text
+					color $blue !important
+			&:hover:after
+				background transparent url(../img/icon/arrow-right-blue.png) no-repeat center center
+				background-size contain
+			&:active
+				background $white !important
+				
+					
 								
 #video-teaser
 	.imagebg
