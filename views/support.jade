@@ -28,7 +28,7 @@ block content
 				if contentful.Support[0].publicDownloadsItems != undefined
 					.row
 						for item in contentful.Support[0].publicDownloadsItems
-							.col-sm-12
+							.col-sm-12(style="margin:10px 0;")
 								a.btn.btn-blue-white.download-before-blue-white(href='#{asset(item.fields.file)}')
 									span.btn__text= item.fields.title
 											
