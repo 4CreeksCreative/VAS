@@ -28,7 +28,7 @@ block content
 				//-!= entry.mainContent
 				if entry.textAreas != undefined
 					for item in entry.textAreas
-						.row
+						.row.mt--1
 							.col-sm-8
 								if item.fields.subhead != undefined
 									h6.color--green= item.fields.subhead
@@ -55,7 +55,7 @@ block content
 		if entry.textAreas2 != undefined
 			.container
 				for item in entry.textAreas2
-					.row
+					.row.mt--1
 						.col-sm-6
 							if item.fields.subhead != undefined
 								h6.color--green= item.fields.subhead
@@ -98,7 +98,7 @@ block content
 		if entry.textAreas3 != undefined
 			.container
 				for item in entry.textAreas3
-					.row
+					.row.mt--1
 						.col-sm-8
 							if item.fields.subhead != undefined
 								h6.color--green= item.fields.subhead
