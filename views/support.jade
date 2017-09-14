@@ -19,7 +19,7 @@ block content
 						h3.color--green= contentful.Support[0].recentUpdates
 						for item in contentful.Support[0].supportUpdates
 							h6.color--blue= item.fields.title
-							!= item.fields.content
+							pre= item.fields.content
 		section
 			.container
 				.row
