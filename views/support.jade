@@ -12,20 +12,26 @@ block content
 						h2#updatetitle= contentful.Support[0].headerTitle
 
 
-		section
-			.container
-				.row
-					.col-sm-8
-						h3.color--green= contentful.Support[0].recentUpdates
-						for item in contentful.Support[0].supportUpdates
-							h6.color--blue= item.fields.title
-							pre= item.fields.content
-		section
-			.container
-				.row
-					.col-sm-8
-						h3.color--green= contentful.Support[0].publicDownloads
-				if contentful.Support[0].publicDownloadsItems != undefined
+		if contentful.Support[0].supportUpdates.length > 0
+			section
+				.container
+					.row
+						.col-sm-8
+							h3.color--green= contentful.Support[0].recentUpdates
+							for item in contentful.Support[0].supportUpdates
+								- var date = new Date(contentful.Updates[i].date);
+								p.color--green.small= (date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()
+								h6.color--blue= item.fields.title
+								pre= item.fields.content
+
+		
+		if contentful.Support[0].publicDownloadsItems > 0
+			section
+				.container
+					.row
+						.col-sm-8
+							h3.color--green= contentful.Support[0].publicDownloads
+				
 					.row
 						for item in contentful.Support[0].publicDownloadsItems
 							.col-sm-12(style="margin:10px 0;")
