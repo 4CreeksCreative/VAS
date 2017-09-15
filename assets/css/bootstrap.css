@@ -93,7 +93,7 @@ hr {
   height: 0;
 }
 pre {
-  overflow: auto;
+  /*overflow: auto;*/
 }
 code,
 kbd,
@@ -1343,7 +1343,7 @@ kbd kbd {
   box-shadow: none;
 }
 pre {
-  display: block;
+  /*display: block;
   padding: 9.5px;
   margin: 0 0 10px;
   font-size: 13px;
@@ -1353,15 +1353,15 @@ pre {
   color: #333333;
   background-color: #f5f5f5;
   border: 1px solid #cccccc;
-  border-radius: 4px;
+  border-radius: 4px;*/
 }
 pre code {
-  padding: 0;
+  /*padding: 0;
   font-size: inherit;
   color: inherit;
   white-space: pre-wrap;
   background-color: transparent;
-  border-radius: 0;
+  border-radius: 0;*/
 }
 .pre-scrollable {
   max-height: 340px;
