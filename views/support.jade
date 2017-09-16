@@ -19,9 +19,8 @@ block content
 						.col-sm-8
 							h3.color--green= contentful.Support[0].recentUpdates
 							for item in contentful.Support[0].supportUpdates
-								- var date = new Date(item.date);
-								//-p.color--green.small= (date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()
-								- console.log((date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear() + item.date)
+								- var date = new Date(item.fields.date);
+								p.color--green.small= (date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()
 								h6.color--blue= item.fields.title
 								pre= item.fields.content
 
