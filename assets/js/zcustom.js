@@ -12,7 +12,17 @@ $(document).ready(function(){
 		$('#share-icons a.twitter').attr('href', 'https://twitter.com/home?status='+window.location.href)
 		$('#share-icons a.linkedin').attr('href', 'https://www.linkedin.com/shareArticle?mini=true&url='+window.location.href+'&title='+$('#updatetitle').text()+'&summary='+$('#featuredtext').text()+'&source='+window.location.href)
         $('#share-icons a.email').attr('href', 'mailto:?subject=' + encodeURIComponent($('#page-title').attr('content')) + '&body=' + encodeURIComponent('Check out this article on VAS.com') + '%0D%0A' + encodeURIComponent($('#page-description').attr('content'))+ '%0D%0A' + window.location.href)
-	
+        console.log('current page = '+ window.location.pathname)
+        $('header a').each(function(i,val){
+           
+            var regex = new RegExp('('+window.location.pathname+')','ig')
+             
+            if(regex.test($(val).attr('href'))){
+                $(val).addClass('currentPage')
+                console.log('added currentPage class to '+ $(val).attr('href'))
+            }
+
+        })
 })
 
 $('form.form-email.custom-script').submit(function(e){
