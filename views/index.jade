@@ -119,11 +119,11 @@ block content
 						.img-clip
 							img(src="#{asset(product.photo)}")
 						div.product-content.text-left
-							h3.color--blue= product.title
+							h3.mb--1.color--blue= product.title
 							for item in product.list
 								p.weight-normal.font--corbel.color--blue.check-mark-before
 									!= item
-							a.mt--1.btn.btn-blue-white.arrow-after-custom(href="#{product.pageUrl}")
+							a.btn.btn-blue-white.arrow-after-custom(href="#{product.pageUrl}")
 								span.btn__text= contentful.Home[0].productDetails
 				
 
