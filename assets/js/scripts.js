@@ -2597,15 +2597,31 @@ mr = (function (mr, $, window, document){
             	if(dataArray.length === 2){
             		toggleElement = dataArray[0];
             		toggleClass   = dataArray[1];
-            		$(candidate).on('click',function(){
+            		if(candidate.is('.toggle-custom')){
+                        $(candidate, '#menu-overlay-toggle').on('click',function(){
                         if(!candidate.hasClass('toggled-class')){
                             candidate.toggleClass('toggled-class');
                         }else{
                             candidate.removeClass('toggled-class');
                         }
-            			$(toggleElement).toggleClass(toggleClass);
-            			return false;
-            		});
+                        $(toggleElement).toggleClass(toggleClass);
+                        return false;
+                         });
+                    
+                    }
+                    else {
+                        $(candidate).on('click',function(){
+                        if(!candidate.hasClass('toggled-class')){
+                            candidate.toggleClass('toggled-class');
+                        }else{
+                            candidate.removeClass('toggled-class');
+                        }
+                        $(toggleElement).toggleClass(toggleClass);
+                        return false;
+                    });
+
+                    }
+                    
             	}else{
             		console.log('Error in [data-toggle-class] attribute. This attribute accepts an element, or comma separated elements terminated witha ";" followed by a class name to toggle');
             	}

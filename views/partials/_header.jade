@@ -1,3 +1,4 @@
+#menu-overlay-toggle.custom-toggled-class(data-toggle-class='#menu-overlay-toggle,#menu1,#language-dropdown;custom-toggled-class')
 header
 	.nav-container(style="height:100%;")
 		.visible-xs(style="height:100%;")
@@ -8,19 +9,19 @@ header
 							img.logo(alt='logo', src='/img/logo/vasLogo-color.png')
 							
 					.float-right.col-xs-9.col-sm-10.text-right(style="height:100%;")
-						a.hamburger-toggle(href='#', data-toggle-class='#menu1;hidden-xs')
+						a.hamburger-toggle.toggle-custom(href='#', data-toggle-class='#menu-overlay-toggle,#menu1,#language-dropdown;custom-toggled-class')
 							i.icon.icon--sm.stack-interface.stack-menu
 				// end of row
 			// end of container
 		// end bar
-		nav#menu1.hidden-xs
+		nav#menu1.custom-toggled-class
 			.container(style="padding:0px;")
 				a(href='/').float-left.hidden-xs.logo
 					img.logo(alt='logo', src='/img/logo/vasLogo-color.png')
 				
 
 				#mega-menu.row
-					.col-sm-11.col-xs-9.text-right.text-right-xs.float-right.float-right-xs.bg--white
+					.col-sm-11.col-xs-12.text-right.text-right-xs.float-right.float-right-xs.bg--white
 						.bar__module
 							ul.menu-horizontal.text-right.text-left-xs
 								//-li
@@ -34,7 +35,7 @@ header
 
 				
 				#mini-menu.row.small
-					.col-sm-11.col-xs-9.text-right.float-right.text-center-xs.float-right-xs.bg--white
+					.col-sm-11.col-xs-12.text-right.float-right.text-center-xs.float-right-xs.bg--white
 						.bar__module
 							ul.menu-horizontal.text-right.text-left-xs
 								li
@@ -50,8 +51,8 @@ header
 									.dropdown__container
 										.container
 											.row
-												#language-dropdown.col-xs-12.col-sm-3.dropdown__content.dropdown__content--lg
-													.col-md-12.col-sm-4.text-left
+												#language-dropdown.custom-toggled-class.col-xs-12.col-sm-5.col-md-3.dropdown__content.dropdown__content--lg
+													.col-xs-12.text-left
 														ul
 															li
 																a.language(href="/")= contentful.Navigation[0].english
