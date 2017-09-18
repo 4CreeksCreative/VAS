@@ -1,7 +1,7 @@
 extends layout
 
 block content
-	.content
+	#about.content
 		section#hero.img-clip.imagebg.parallax.cover.height-70(data-overlay="7")
 			.background-image-holder
 				img(alt='background', src='#{asset(contentful.About[0].headerBackground)}')
@@ -13,9 +13,9 @@ block content
 
 		if contentful.About[0].aboutUsSection != undefined
 			section
-				.container
+				#about-content.container
 					for item in contentful.About[0].aboutUsSection
-						.row.mt--1
+						.row
 							.col-sm-8
 							
 								h3.color--green= item.fields.sectionTitle
