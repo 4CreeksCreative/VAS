@@ -15,7 +15,7 @@ $(document).ready(function(){
         console.log('current page = '+ window.location.pathname)
         $('header a').each(function(i,val){
            
-            var regex = new RegExp('('+window.location.pathname+')','ig')
+            var regex = new RegExp('(^'+window.location.pathname+'$)','ig')
              
             if(regex.test($(val).attr('href'))){
                 $(val).addClass('currentPage')
