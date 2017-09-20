@@ -11,8 +11,16 @@ block content
 					.col-sm-12
 						h2#updatetitle= contentful.Support[0].headerTitle
 
-
-		if contentful.Support[0].supportUpdates.length > 0
+		if contentful.Support[0].links != undefined && contentful.Support[0].links.length > 0
+			section
+				.container
+					.row
+						.col-sm-8
+							h3.color--green= contentful.Support[0].linksSubhead
+							for item in contentful.Support[0].links
+								a.btn.btn-blue-white.arrow-after-blue-white(href='#{item.fields.buttonUrl}' target="_blank" rel="noopener")
+									span.btn__text= item.fields.buttonText
+		if contentful.Support[0].supportUpdates != undefined && contentful.Support[0].supportUpdates.length > 0
 			section
 				.container
 					.row
@@ -25,7 +33,7 @@ block content
 								pre= item.fields.content
 
 		
-		if contentful.Support[0].publicDownloadsItems > 0
+		if contentful.Support[0].publicDownloadsItems != undefined && contentful.Support[0].publicDownloadsItems.length > 0
 			section
 				.container
 					.row
@@ -37,5 +45,3 @@ block content
 							.col-sm-12(style="margin:10px 0;")
 								a.btn.btn-blue-white.download-before-blue-white(href='#{asset(item.fields.file)}')
 									span.btn__text= item.fields.title
-											
-					
