@@ -84,7 +84,12 @@ block content
 							if item.fields.body != undefined
 								pre= item.fields.body
 
-
+		if entry.videoEmbedIframe != undefined
+			section
+				.container
+					.row
+						.col-sm-12
+							!= entry.videoEmbedIframe
 		
 		if entry.gallery != undefined
 			section#image-gallery

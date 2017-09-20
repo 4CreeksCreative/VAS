@@ -28,16 +28,25 @@ block content
 					.col-sm-8
 						pre.font--corbel.weight-normal= entry.body
 
-		section#image-gallery
-			.container
-				.row
-					.col-sm-12.unpad
-						.masonry
-								.masonry__container
-									for image in entry.photoGallery
-										.masonry__item.col-xs-6.col-sm-3
-											a(href='#{asset(image)}', data-lightbox='true')
-												img(src="#{asset(image)}")
+
+		if entry.videoEmbedIframe != undefined
+			section
+				.container
+					.row
+						.col-sm-12
+							!= entry.videoEmbedIframe
+
+		if entry.photoGallery != undefined
+			section#image-gallery
+				.container
+					.row
+						.col-sm-12.unpad
+							.masonry
+									.masonry__container
+										for image in entry.photoGallery
+											.masonry__item.col-xs-6.col-sm-3
+												a(href='#{asset(image)}', data-lightbox='true')
+													img(src="#{asset(image)}")
 										
 					
 
