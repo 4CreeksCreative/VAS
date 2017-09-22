@@ -54,7 +54,7 @@ module.exports =
 					filters:{
 						'locale':'es'
 						'order': '-sys.createdAt'
-
+						'fields.hideFromSiteTestingPurposes':'true'
 					}
 					path: (e) -> "blog/#{slugify(e.url)}"
 					template: 'views/partials/_update.jade'
@@ -104,7 +104,7 @@ module.exports =
 					filters:{
 						'locale':'es'
 					}
-				
+
 				TOTM:
 					id: 'tipOfTheMonthPost'
 					filters:{
@@ -122,7 +122,7 @@ module.exports =
 					filters:{
 						'locale':'es'
 					}
-		
+
 	]
 
 	stylus:

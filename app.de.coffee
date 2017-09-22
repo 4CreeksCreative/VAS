@@ -104,7 +104,7 @@ module.exports =
 					filters:{
 						'locale':'de'
 					}
-				
+
 				TOTM:
 					id: 'tipOfTheMonthGerman'
 					filters:{
@@ -122,8 +122,8 @@ module.exports =
 					filters:{
 						'locale':'de'
 					}
-				
-		
+
+
 	]
 
 	stylus:

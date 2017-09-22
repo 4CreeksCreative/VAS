@@ -30,6 +30,14 @@ block content
 					for item in entry.textAreas
 						.row.mt--1
 							.col-sm-8
+								if item.fields.image != undefined
+									if item.fields.imageWidth != undefined
+										div(class="#{item.fields.imageWidth}")
+											img(src="#{asset(item.fields.image)}")
+									else 
+										.col-sm-12
+											img(src="#{asset(item.fields.image)}")
+										
 								if item.fields.subhead != undefined
 									h6.color--green= item.fields.subhead
 								if item.fields.body != undefined
