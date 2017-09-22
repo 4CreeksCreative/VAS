@@ -29,18 +29,21 @@ block content
 				if entry.textAreas != undefined
 					for item in entry.textAreas
 						.row.mt--1
-							.col-sm-8
-								if item.fields.image != undefined
-									if item.fields.imageWidth != undefined
-										div(class="#{item.fields.imageWidth}")
-											img(src="#{asset(item.fields.image)}")
-									else 
-										.col-sm-12
-											img(src="#{asset(item.fields.image)}")
+							if item.fields.image != undefined
+								if item.fields.imageWidth != undefined
+									div(class="#{item.fields.imageWidth}")
+										img(src="#{asset(item.fields.image)}")
+								else 
+									.col-sm-12
+										img(src="#{asset(item.fields.image)}")
 										
-								if item.fields.subhead != undefined
+						if item.fields.subhead != undefined
+							.row.mt--1
+								.col-sm-8
 									h6.color--green= item.fields.subhead
-								if item.fields.body != undefined
+						if item.fields.body != undefined
+							.row
+								.col-sm-8
 									pre= item.fields.body
 		
 		if entry.largeImage != undefined
@@ -64,15 +67,27 @@ block content
 			.container
 				for item in entry.textAreas2
 					.row.mt--1
-						.col-sm-6
-							if item.fields.subhead != undefined
+						
+						if item.fields.image != undefined
+							if item.fields.imageWidth != undefined
+								div(class="#{item.fields.imageWidth}")
+									img(src="#{asset(item.fields.image)}")
+							else 
+								.col-sm-12
+									img(src="#{asset(item.fields.image)}")
+					
+					if item.fields.subhead != undefined
+						.row.mt--1
+							.col-sm-6
 								h6.color--green= item.fields.subhead
-							if item.fields.body != undefined
+					if item.fields.body != undefined
+						.row
+							.col-sm-6
 								pre= item.fields.body
 
-						if entry.bluePullquote != undefined
-							.col-sm-6.blue-pullquote
-								h6.color--blue= entry.bluePullquote
+							if entry.bluePullquote != undefined
+								.col-sm-6.blue-pullquote
+									h6.color--blue= entry.bluePullquote
 
 		if entry.checklist != undefined
 			.mb--2.mt--2.bg--blue
@@ -86,10 +101,20 @@ block content
 			.container
 				for item in entry.textAreas3
 					.row.mt--1
-						.col-sm-8
-							if item.fields.subhead != undefined
+						if item.fields.image != undefined
+							if item.fields.imageWidth != undefined
+								div(class="#{item.fields.imageWidth}")
+									img(src="#{asset(item.fields.image)}")
+							else 
+								.col-sm-12
+									img(src="#{asset(item.fields.image)}")
+					if item.fields.subhead != undefined
+						.row.mt--1
+							.col-sm-8
 								h6.color--green= item.fields.subhead
-							if item.fields.body != undefined
+					if item.fields.body != undefined
+						.row
+							.col-sm-8
 								pre= item.fields.body
 
 		if entry.videoEmbedIframe != undefined
@@ -110,6 +135,7 @@ block content
 											.masonry__item.col-xs-6.col-sm-3
 												a(href='#{asset(image)}', data-lightbox='true')
 													img(src="#{asset(image)}")
+												span.small.color--blue= image.fields.title
 
 		
 		
@@ -153,7 +179,9 @@ block content
 				.row
 					.col-sm-12
 						h5.color--blue= contentful.Support[0].downloads
-						for item in entry.downloads
+				for item in entry.downloads
+					.row
+						.col-sm-12(style="margin:10px 0;")
 							a.btn.btn-blue-white.download-before-blue-white(href='#{asset(item.fields.file)}', target='_blank', rel='noopener')
 								span.btn__text= item.fields.title
 
