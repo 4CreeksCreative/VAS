@@ -22,12 +22,38 @@ block content
 				.row
 					.col-sm-12
 						p.color--green= entry.location + ' - ' + (date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()
-			
-			.container
 				.row
 					.col-sm-8
 						pre.font--corbel.weight-normal= entry.body
-
+				
+				if entry.textAreas != undefined
+					for item in entry.textAreas
+						if item.fields.images != undefined
+							.row
+								.col-sm-12.unpad
+									.masonry
+											.masonry__container
+												if item.fields.imageWidth != undefined
+													for image in item.fields.images
+														.masonry__item.col-xs-6.col-sm-3
+															a(href='#{asset(image)}', data-lightbox='true')
+																img(src="#{asset(image)}")
+															span.small.color--blue= image.fields.title
+												else
+													for image in item.fields.images
+														.masonry__item.col-xs-12.col-sm-12
+															a(href='#{asset(image)}', data-lightbox='true')
+																img(src="#{asset(image)}")
+															span.small.color--blue= image.fields.title
+										
+						if item.fields.subhead != undefined
+							.row.mt--1
+								.col-sm-8
+									h6.color--green= item.fields.subhead
+						if item.fields.body != undefined
+							.row
+								.col-sm-8
+									pre= item.fields.body
 
 		if entry.videoEmbedIframe != undefined
 			section
