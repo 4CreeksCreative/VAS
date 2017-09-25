@@ -1,8 +1,8 @@
-//-extends layout
+extends layout
 
-//-block content
-	//-.content
-		section#hero.imagebg.clip.parallax.cover.height-70(data-overlay="7")
+block content
+	.content
+		//-section#hero.imagebg.clip.parallax.cover.height-70(data-overlay="7")
 			.background-image-holder
 				img(alt='background', src='#{asset(contentful.Contact[0].headerImage)}')
 			.signature-container
@@ -14,33 +14,46 @@
 						//-a.btn.btn-white-green.arrow-after-white-green(href='#')
 							span.btn__text= contentful.Home[0].headerButtonText
 							
-section
-	.container
-		.row
-			.col-sm-12
-				h3.color--green= contentful.Contact[0].contactTitle
-		.row
-			.col-sm-12.unpad
-				form#contact-form.form-email.custom-script(data-error="#{contentful.Contact[0].sendErrorMessage}", name='App Form', netlify-honeypot="bot-field", action='/thankyou', netlify)
-					.col-sm-12.hidden
-						label don't fill this out:
-						input(type='text', name='bot-field')
-					.col-sm-6
-						label= contentful.Contact[0].yourName
-						input.validate-required(type='text', name='name')
-					.col-sm-6
-						label= contentful.Contact[0].yourDairy
-						input(type='text', name='dairy-name')
-					.col-sm-6
-						label= contentful.Contact[0].yourEmail
-						input.validate-required.validate-email(type='text', name='email')
-					.col-sm-6
-						label= contentful.Contact[0].yourPhone
-						input.validate-number-dash(type='text', name='phone-number')
-					//-.col-sm-12
-						label= contentful.Contact[0].yourMessage
-						textarea.validate-required(type='text', name='message')
-					.float-right(style="padding-right:15px;")
-						button.btn.btn-blue-white.arrow-after-blue-white(type='submit' style="position:relative;z-index:9;")
-							span.btn__text= contentful.Contact[0].sendButtonText
-							
+		section
+			.container
+				.row
+					.col-sm-12
+						h3.color--green= contentful.Contact[0].contactTitle
+				.row
+					.col-sm-12.unpad
+						form#contact-form.form-email.custom-script(data-error="#{contentful.Contact[0].sendErrorMessage}", name='App Form', netlify-honeypot="bot-field", action='/thankyou', netlify)
+							.col-sm-12.hidden
+								label don't fill this out:
+								input(type='text', name='bot-field')
+							.col-sm-6
+								label= contentful.Contact[0].yourName
+								input.validate-required(type='text', name='name')
+							.col-sm-6
+								label= contentful.Contact[0].yourDairy
+								input(type='text', name='dairy-name')
+							.col-sm-6
+								label= contentful.Contact[0].yourEmail
+								input.validate-required.validate-email(type='text', name='email')
+							.col-sm-6
+								label= contentful.Contact[0].yourPhone
+								input.validate-number-dash(type='text', name='phone-number')
+							//-.col-sm-12
+								label= contentful.Contact[0].yourMessage
+								textarea.validate-required(type='text', name='message')
+							.float-right(style="padding-right:15px;")
+								button.btn.btn-blue-white.arrow-after-blue-white(type='submit' style="position:relative;z-index:9;")
+									span.btn__text= contentful.Contact[0].sendButtonText
+							//- p
+							//- 	label
+							//- 		| Your Name: 
+							//- 		input.validate-required(type='text', name='name')
+							//- p
+							//- 	label
+							//- 		| Your Email: 
+							//- 		input(type='email', name='email')
+							//- p
+							//- 	label
+							//- 		| Message: 
+							//- 		textarea(name='message')
+							//- p
+							//- 	button(type='submit') Send
