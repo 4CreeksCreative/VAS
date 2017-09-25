@@ -18,7 +18,10 @@ block content
 			.container
 				.row
 					.col-sm-12
-						h3.color--green= contentful.Contact[0].contactTitle
+						h3.color--green= contentful.Contact[0].appContactHeader
+				.row
+					.col-sm-12
+						p.font-corbel.weight--normal= contentful.Contact[0].appContactBody
 				.row
 					.col-sm-12.unpad
 						form#contact-form.form-email.custom-script(data-error="#{contentful.Contact[0].sendErrorMessage}", name='App Form', netlify-honeypot="bot-field", action='/thankyou', netlify)
