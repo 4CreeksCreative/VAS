@@ -28,14 +28,23 @@ block content
 				//-!= entry.mainContent
 				if entry.textAreas != undefined
 					for item in entry.textAreas
-						.row.mt--1
-							if item.fields.image != undefined
-								if item.fields.imageWidth != undefined
-									div(class="#{item.fields.imageWidth}")
-										img(src="#{asset(item.fields.image)}")
-								else 
-									.col-sm-12
-										img(src="#{asset(item.fields.image)}")
+						if item.fields.images != undefined
+							.row
+								.col-sm-12.unpad
+									.masonry
+											.masonry__container
+												if item.fields.imageWidth != undefined
+													for image in item.fields.images
+														.masonry__item.col-xs-6.col-sm-3
+															a(href='#{asset(image)}', data-lightbox='true')
+																img(src="#{asset(image)}")
+															span.small.color--blue= image.fields.title
+												else
+													for image in item.fields.images
+														.masonry__item.col-xs-12.col-sm-12
+															a(href='#{asset(image)}', data-lightbox='true')
+																img(src="#{asset(image)}")
+															span.small.color--blue= image.fields.title
 										
 						if item.fields.subhead != undefined
 							.row.mt--1
@@ -66,15 +75,23 @@ block content
 		if entry.textAreas2 != undefined
 			.container
 				for item in entry.textAreas2
-					.row.mt--1
-						
-						if item.fields.image != undefined
-							if item.fields.imageWidth != undefined
-								div(class="#{item.fields.imageWidth}")
-									img(src="#{asset(item.fields.image)}")
-							else 
-								.col-sm-12
-									img(src="#{asset(item.fields.image)}")
+					if item.fields.images != undefined
+						.row
+							.col-sm-12.unpad
+								.masonry
+										.masonry__container
+											if item.fields.imageWidth != undefined
+												for image in item.fields.images
+													.masonry__item.col-xs-6.col-sm-3
+														a(href='#{asset(image)}', data-lightbox='true')
+															img(src="#{asset(image)}")
+														span.small.color--blue= image.fields.title
+											else
+												for image in item.fields.images
+													.masonry__item.col-xs-12.col-sm-12
+														a(href='#{asset(image)}', data-lightbox='true')
+															img(src="#{asset(image)}")
+														span.small.color--blue= image.fields.title
 					
 					if item.fields.subhead != undefined
 						.row.mt--1
@@ -100,7 +117,24 @@ block content
 		if entry.textAreas3 != undefined
 			.container
 				for item in entry.textAreas3
-					.row.mt--1
+					if item.fields.images != undefined
+						.row
+							.col-sm-12.unpad
+								.masonry
+										.masonry__container
+											if item.fields.imageWidth != undefined
+												for image in item.fields.images
+													.masonry__item.col-xs-6.col-sm-3
+														a(href='#{asset(image)}', data-lightbox='true')
+															img(src="#{asset(image)}")
+														span.small.color--blue= image.fields.title
+											else
+												for image in item.fields.images
+													.masonry__item.col-xs-12.col-sm-12
+														a(href='#{asset(image)}', data-lightbox='true')
+															img(src="#{asset(image)}")
+														span.small.color--blue= image.fields.title
+					//-.row.mt--1
 						if item.fields.image != undefined
 							if item.fields.imageWidth != undefined
 								div(class="#{item.fields.imageWidth}")
@@ -137,24 +171,9 @@ block content
 													img(src="#{asset(image)}")
 												span.small.color--blue= image.fields.title
 
-		
-		
-
-
 
 		if entry.mainContent != undefined
 			!= entry.mainContent
-
-
-
-
-
-
-
-
-
-
-
 		section#social-share.mb--2
 			.container
 				.row.text-left
