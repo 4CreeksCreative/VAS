@@ -36,13 +36,13 @@ block content
 												if item.fields.imageWidth != undefined
 													for image in item.fields.images
 														.masonry__item.col-xs-6.col-sm-3
-															a(href='#{asset(image)}', data-lightbox='true')
+															a(href='#{asset(image)}', data-lightbox="Gallery 1")
 																img(src="#{asset(image)}")
 															span.small.color--blue= image.fields.title
 												else
 													for image in item.fields.images
 														.masonry__item.col-xs-12.col-sm-12
-															a(href='#{asset(image)}', data-lightbox='true')
+															a(href='#{asset(image)}', data-lightbox="Gallery 1")
 																img(src="#{asset(image)}")
 															span.small.color--blue= image.fields.title
 										
@@ -71,7 +71,7 @@ block content
 									.masonry__container
 										for image in entry.photoGallery
 											.masonry__item.col-xs-6.col-sm-3
-												a(href='#{asset(image)}', data-lightbox='true')
+												a(href='#{asset(image)}', data-lightbox="Gallery")
 													img(src="#{asset(image)}")
 												span.small.color--blue= image.fields.title
 										
