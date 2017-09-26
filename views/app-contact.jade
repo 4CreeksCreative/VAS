@@ -13,7 +13,7 @@ block content
 						h5= contentful.Contact[0].headerSubtext
 						//-a.btn.btn-white-green.arrow-after-white-green(href='#')
 							span.btn__text= contentful.Home[0].headerButtonText
-							
+
 		section
 			.container
 				.row
@@ -32,14 +32,33 @@ block content
 								label= contentful.Contact[0].yourName
 								input.validate-required(type='text', name='name')
 							.col-sm-6
-								label= contentful.Contact[0].yourDairy
-								input(type='text', name='dairy-name')
-							.col-sm-6
 								label= contentful.Contact[0].yourEmail
 								input.validate-required.validate-email(type='text', name='email')
-							.col-sm-6
+							.col-sm-4
 								label= contentful.Contact[0].yourPhone
 								input.validate-number-dash(type='text', name='phone-number')
+							.col-sm-4
+								label= contentful.Contact[0].yourDairy
+								input(type='text', name='dairy-name')
+							.col-sm-4
+								label= contentful.Contact[0].numberOfCows
+								input(type='text', name='number-of-cows')
+
+
+							hr
+							.col-sm-12
+								label= contentful.Contact[0].address
+								input.validate-required(type='text', name='address')
+							.col-sm-4
+								label= contentful.Contact[0].city
+								input.validate-required(type='text', name='city')
+							.col-sm-4
+								label= contentful.Contact[0].state
+								input.validate-required(type='text', name='state')
+							.col-sm-4
+								label= contentful.Contact[0].zip
+								input.validate-number(type='text', name='zip')
+
 							//-.col-sm-12
 								label= contentful.Contact[0].yourMessage
 								textarea.validate-required(type='text', name='message')
