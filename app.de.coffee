@@ -122,6 +122,12 @@ module.exports =
 					filters:{
 						'locale':'de'
 					}
+				BlogCategories:
+					id: 'blogCategoryGerman'
+					filters:{
+						'locale':'en-US'
+						'order': 'fields.title'
+					}
 
 
 	]
