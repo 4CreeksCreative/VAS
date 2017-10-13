@@ -199,10 +199,11 @@ block content
 					.col-sm-12
 						h5.color--blue= contentful.Support[0].downloads
 				for item in entry.downloads
-					.row
-						.col-sm-12(style="margin:10px 0;")
-							a.btn.btn-blue-white.download-before-blue-white(href='#{asset(item.fields.file)}', target='_blank', rel='noopener')
-								span.btn__text= item.fields.title
+					if item.fields.file != undefined
+						.row
+							.col-sm-12(style="margin:10px 0;")
+								a.btn.btn-blue-white.download-before-blue-white(href='#{asset(item.fields.file)}', target='_blank', rel='noopener')
+									span.btn__text= item.fields.title
 
 		include _4updates
 		//-section#more-updates
