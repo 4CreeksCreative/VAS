@@ -53,7 +53,7 @@ module.exports =
 					id: 'blogPostGerman'
 					filters:{
 						'locale':'en-US'
-						'order': '-sys.createdAt'
+						'order': '-fields.date'
 
 					}
 					path: (e) -> "blog/#{slugify(e.url)}"
@@ -62,7 +62,7 @@ module.exports =
 					id: 'updatePostGerman'
 					filters:{
 						'locale':'en-US'
-						'order': '-sys.createdAt'
+						'order': '-fields.date'
 					}
 					path: (e) -> "updates/#{slugify(e.url)}"
 					template: 'views/partials/_update.jade'
@@ -70,7 +70,7 @@ module.exports =
 					id: 'inspirationPostGerman'
 					filters:{
 						'locale':'en-US'
-						'order': '-sys.createdAt'
+						'order': '-fields.date'
 					}
 					path: (e) -> "inspiration/#{slugify(e.url)}"
 					template: 'views/partials/_update.jade'
@@ -109,7 +109,7 @@ module.exports =
 					id: 'tipOfTheMonthGerman'
 					filters:{
 						'locale':'en-US'
-						'order': '-sys.createdAt'
+						'order': '-fields.date'
 					}
 					template: 'views/partials/_TOTM.jade'
 				TOU:
@@ -127,6 +127,24 @@ module.exports =
 					filters:{
 						'locale':'en-US'
 						'order': 'fields.title'
+					}
+				Jobs:
+					id:'jobListing'
+					filters:{
+						'order':'-fields.date'
+						'locale':'de'
+					}
+				JobCategories:
+					id:'jobCategory'
+					filters:{
+						'order':'fields.category'
+						'locale':'de'
+					}
+				JobLocations:
+					id:'jobLocation'
+					filters:{
+						'order':'fields.location'
+						'locale':'de'
 					}
 
 
