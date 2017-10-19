@@ -118,6 +118,12 @@ module.exports =
 					filters:{
 						'locale':'en-US'
 					}
+				BlogCategories:
+					id: 'blogCategory'
+					filters:{
+						'locale':'en-US'
+						'order': 'fields.title'
+					}
 
 
 
