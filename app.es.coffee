@@ -54,7 +54,6 @@ module.exports =
 					filters:{
 						'locale':'es'
 						'order': '-sys.createdAt'
-						'fields.hideFromSiteTestingPurposes':'true'
 					}
 					path: (e) -> "blog/#{slugify(e.url)}"
 					template: 'views/partials/_update.jade'
