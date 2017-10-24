@@ -23,19 +23,21 @@ block content
 					.row
 						.col-sm-12.text-center
 							h3.color--green= contentful.Home[0].updatesSectionTitle
-					.row.masonry-filter-container.text-center
-						.masonry-filter-holder.text-center
-							.masonry__filters.text-center(data-filter-all-text='All Categories')
-								ul
-									li.active(data-masonry-filter='*') All Categories
-									for item in contentful.BlogCategories
-										li.active(data-masonry-filter='#{item.slug}')= item.title
+					if contentful.BlogCategories.length > 0
+						.row.masonry-filter-container.text-center
+							.masonry-filter-holder.text-center
+								.masonry__filters.text-center(data-filter-all-text='All Categories')
+									ul
+										li.active(data-masonry-filter='*') All Categories
+										for item in contentful.BlogCategories
+											li.active(data-masonry-filter='#{item.slug}')= item.title
 					.row.masonry__container
 						- var i = 0; var e = contentful.Updates.length; while (i<e){
 						- var date = new Date(contentful.Updates[i].date);
 							- var cats = ''
-							for item in contentful.Updates[i].category
-								- cats+= ' filter-'+item.fields.slug
+							if contentful.Updates[i].category.length > 0
+								for item in contentful.Updates[i].category
+									- cats+= ' filter-'+item.fields.slug
 							.col-xs-12.update-item.bg--white.clearfix.masonry__item(class='#{cats}')
 								a(href="#{contentful.Updates[i]._url}")
 									p.color--green.small.unmarg.float-left.col-xs-12= contentful.Updates[i].location + ' ' + (date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()
