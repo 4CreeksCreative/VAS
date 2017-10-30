@@ -56,78 +56,43 @@ $('form.form-email.custom-script').submit(function(e){
 })
 
 
+
+
 // --------- CUSTOM JOB ENTRY SEARCH
-$(document).on('click','#job-search-btn',function(){
-	function newRegex(string) {
-		if (string != null){
-			return new RegExp(string, 'ig')
-		}
-		else {
-			return false
-		}
-	}
+function JobSearch(){
 	var query = {
-		text:$('#jobQuery').val() == '' ? null : $('#jobQuery').val(),
-		class:[
-			$('#jobLocation').val() == '*' ? null : $('#jobLocation').val(),
-			$('#jobCategory').val() == '*' ? null : $('#jobCategory').val()
-		]
-	},
-		regex = ''
-	$.each(query.class,function(i,val){
-		if (regex != '' && val != null){
-			regex += '|('+val+')'
+		text: $('#jobQuery').val() == '' ? null : new RegExp($('#jobQuery').val(),'i'),
+		location: $('#jobLocation').val() == '*' ? null : new RegExp($('#jobLocation').val(),'i'),
+		category: $('#jobCategory').val() == '*' ? null : new RegExp($('#jobCategory').val(),'i'),
+	}
+
+	$('.job-post').show()
+
+	$('.job-post').each(function(i,val){
+		if (query.location != null && !(query.location).test($(val).attr('class').toString())){
+			$(val).hide()
 		}
-		else if (val != null) {
-			regex = '('+val+')'
+		if (query.category != null && !(query.category).test($(val).attr('class').toString())){
+			$(val).hide()
+		}
+		if (query.text != null && !(query.text).test($(val).find('#item-title').html().toString())){
+			$(val).hide()
 		}
 	})
-	if(regex != ''){
-		regex = newRegex(regex)
-		$('.job-post').hide()
-		$('.job-post').each(function(i,val){
-			if(regex.test($(val).attr('class'))){
-				$(val).show()
-			}
-		})
-	}
-	else {
-		$('.job-post').show()
-	}
 
-	// $('.job-post').hide()
-	// var show = true
-	// var allCats = true
-	// $('.job-post').each(function(j,val2){
-	// 	$.each(query.class,function(i,val){
-	// 		if(val != null){
-	// 			show = false
-	// 			allCats = false
-	// 			if($(val2).hasClass(val)){
-	// 				$(val2).show();
-	// 			}
-	// 		}
-	// 	})
-	// 	if(query.text != null && allCats){
-	// 		show = false
-	// 		$('.job-post').each(function(i,val){
-	// 			if($(val).find('#item-title').html().search(newRegex('('+query.text+')')) != -1){
-	// 				$(val).show();
-	// 			}
-	// 		})
-	// 	}
-	// 	else if(query.text != null && !allCats){
-	// 		$('.job-post').each(function(i,val){
-	// 			if($(val).find('#item-title').html().search(newRegex('('+query.text+')')) === -1){
-	// 				$(val).hide();
-	// 			}
-	// 		})
-	// 	}
-	// })
-	//
-	// if(show){
-	// 	$('.job-post').show()
-	// }
-
-
+}
+$('#jobQuery').keyup(function(e){
+	if(e.which == 13 || e.keyCode == 13){
+			e.preventDefault()
+			JobSearch()
+		}
+})
+// $(document).on('keydown','#jobQuery',function(e){
+// 	if(e.keycode == 13){
+// 		e.preventDefault()
+// 		JobSearch()
+// 	}
+// })
+$(document).on('click','#job-search-btn',function(){
+	JobSearch()
 })
