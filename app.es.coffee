@@ -133,6 +133,7 @@ module.exports =
 						'order':'-fields.date'
 						'locale':'es'
 					}
+					template: 'views/partials/_job.jade'
 				JobCategories:
 					id:'jobCategory'
 					filters:{

@@ -134,6 +134,7 @@ module.exports =
 						'order':'-fields.date'
 						'locale':'de'
 					}
+					template: 'views/partials/_job.jade'
 				JobCategories:
 					id:'jobCategory'
 					filters:{
