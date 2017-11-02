@@ -9,77 +9,44 @@ block content
 			.container
 				.row
 					.col-lg-6
-						h1= contentful.InspirationPage[0].headerLargeText
-						h5= contentful.InspirationPage[0].headerSubtext
+						if contentful.InspirationPage[0].headerLargeText != undefined
+							h1= contentful.InspirationPage[0].headerLargeText
+						if contentful.InspirationPage[0].headerSubtext != undefined
+							h5= contentful.InspirationPage[0].headerSubtext
 						//-a.btn.btn-white-green.type--uppercase.arrow-after-white-green(href='#')
 							span.btn__text= contentful.Home[0].headerButtonText
-		#inspiration-posts.container
-			.masonry
-				.masonry__container
-					- var i = 0; var e = (contentful.InspirationUpdates.length >=4) ? 4 : contentful.InspirationUpdates.length; while (i<e){
-					- var date = new Date(contentful.InspirationUpdates[i].date);
-						.masonry__item.inspiration-post.update-post.bg--white.clearfix.border-bottom
-								a(href="#{contentful.InspirationUpdates[i]._url}")
-									.img-clip
-										img(src="#{asset(contentful.InspirationUpdates[i].featuredImage)}")
-									.masonry-content.clearfix
-										p.color--green.small.unmarg.float-left.col-sm-12= contentful.InspirationUpdates[i].location +' '+ (date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()
-										h3.color--blue.float-left.col-sm-12= contentful.InspirationUpdates[i].title
-										p.color--default.col-xs-10= contentful.InspirationUpdates[i].featuredText
-										.col-xs-12
-											a.float-right.btn.btn-circle.btn-blue-white(href="#{contentful.InspirationUpdates[i]._url}")
-												span.btn__text= contentful.Home[0].productDetails
-												img.arrow-right(src="/img/icon/arrow-right-blue.png")
-											//-img.arrow-right(src="/img/icon/arrow-o-right.png")
-						- i++}
+		if contentful.InspirationUpdates.length > 0
+			#inspiration-posts.container
+				.masonry
+					.masonry__container
+						- var i = 0; var e = (contentful.InspirationUpdates.length >=4) ? 4 : contentful.InspirationUpdates.length; while (i<e){
+						- var date = new Date(contentful.InspirationUpdates[i].date);
+							.masonry__item.inspiration-post.update-post.bg--white.clearfix.border-bottom
+									a(href="#{contentful.InspirationUpdates[i]._url}")
+										.img-clip
+											img(src="#{asset(contentful.InspirationUpdates[i].featuredImage)}")
+										.masonry-content.clearfix
+											p.color--green.small.unmarg.float-left.col-sm-12= contentful.InspirationUpdates[i].location +' '+ (date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()
+											h3.color--blue.float-left.col-sm-12= contentful.InspirationUpdates[i].title
+											p.color--default.col-xs-10= contentful.InspirationUpdates[i].featuredText
+											.col-xs-12
+												a.float-right.btn.btn-circle.btn-blue-white(href="#{contentful.InspirationUpdates[i]._url}")
+													span.btn__text= contentful.Home[0].productDetails
+													img.arrow-right(src="/img/icon/arrow-right-blue.png")
+												//-img.arrow-right(src="/img/icon/arrow-o-right.png")
+							- i++}
 					
-
-
-
-
-			//-.row
-				- var i = 0; var e = (contentful.Updates.length >=4) ? 4 : contentful.Updates.length; while (i<e){
-				- var date = new Date(contentful.Updates[i].date);
-					.inspiration-post.update-post.bg--white.clearfix.border-bottom
-						a(href="#{contentful.Updates[i]._url}")
-							.img-clip
-								img(src="#{asset(contentful.Updates[i].featuredImage)}")
-							p.color--green.small.unmarg.float-left.col-sm-12 Update #{date.getMonth() +'/'+ date.getDate() +'/'+ date.getFullYear()}
-							h4.color--blue.unmarg.float-left.col-sm-12= contentful.Updates[i].title
-							p.col-xs-10= contentful.Updates[i].featuredText
-							img.arrow-right(src="/img/icon/arrow-o-right.png")
-				- i++}
-				//-.col-md-8.hidden-sm.hidden-xs
-				//-.col-md-4.update-post.border-bottom.bg--white.clearfix
-					a(href="#")
-						p.color--green.small.unmarg.float-left.col-xs-12 Update 2/3/2017
-						h4.color--blue.unmarg.float-left.col-xs-10 Visit VAS at the 2017 World Dairy Expo!
-						i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--green.float-right.col-xs-2
-				//-.col-md-8.hidden-sm.hidden-xs
-				//-.col-md-4.update-post.border-bottom.bg--white.clearfix
-					a(href="#")
-						p.color--green.small.unmarg.float-left.col-xs-12 Update 2/3/2017
-						h4.color--blue.unmarg.float-left.col-xs-10 Visit VAS at the 2017 World Dairy Expo!
-						i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--green.float-right.col-xs-2
-				//-.col-md-8.hidden-sm.hidden-xs
-				//-.col-md-4.update-post.border-bottom.bg--white.clearfix
-					a(href="#")
-						p.color--green.small.unmarg.float-left.col-xs-12 Update 2/3/2017
-						h4.color--blue.unmarg.float-left.col-xs-10 Visit VAS at the 2017 World Dairy Expo!
-						i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--green.float-right.col-xs-2
-		
 
 		section.imagebg.parallax.cover.height-80
 			.background-image-holder
-				img(alt='background', src='#{asset(contentful.InspirationPage[0].bottomImage)}')
+				if contentful.InspirationPage[0].bottomImage != undefined
+					img(alt='background', src='#{asset(contentful.InspirationPage[0].bottomImage)}')
 		.container
 			.row
 				#text-overlap.corner-point-green.col-lg-8.bg--gradient.clearfix.float-right
 					h6.color--white.col-sm-12= contentful.InspirationPage[0].bottomImageText
 					p.small.col-sm-6.color--white= contentful.InspirationPage[0].bottomImageTextName
 					div.col-sm-6.text-center
-						//-a.btn.btn-white-green.arrow-after-white-green(href='#')
-							span.small.btn__text= contentful.InspirationPage[0].bottomImageButtonText
 						
 								
 		include partials/_4updates
