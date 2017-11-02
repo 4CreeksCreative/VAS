@@ -33,40 +33,6 @@ block content
 											//-img.arrow-right(src="/img/icon/arrow-o-right.png")
 						- i++}
 					
-
-
-
-
-			//-.row
-				- var i = 0; var e = (contentful.Updates.length >=4) ? 4 : contentful.Updates.length; while (i<e){
-				- var date = new Date(contentful.Updates[i].date);
-					.inspiration-post.update-post.bg--white.clearfix.border-bottom
-						a(href="#{contentful.Updates[i]._url}")
-							.img-clip
-								img(src="#{asset(contentful.Updates[i].featuredImage)}")
-							p.color--green.small.unmarg.float-left.col-sm-12 Update #{date.getMonth() +'/'+ date.getDate() +'/'+ date.getFullYear()}
-							h4.color--blue.unmarg.float-left.col-sm-12= contentful.Updates[i].title
-							p.col-xs-10= contentful.Updates[i].featuredText
-							img.arrow-right(src="/img/icon/arrow-o-right.png")
-				- i++}
-				//-.col-md-8.hidden-sm.hidden-xs
-				//-.col-md-4.update-post.border-bottom.bg--white.clearfix
-					a(href="#")
-						p.color--green.small.unmarg.float-left.col-xs-12 Update 2/3/2017
-						h4.color--blue.unmarg.float-left.col-xs-10 Visit VAS at the 2017 World Dairy Expo!
-						i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--green.float-right.col-xs-2
-				//-.col-md-8.hidden-sm.hidden-xs
-				//-.col-md-4.update-post.border-bottom.bg--white.clearfix
-					a(href="#")
-						p.color--green.small.unmarg.float-left.col-xs-12 Update 2/3/2017
-						h4.color--blue.unmarg.float-left.col-xs-10 Visit VAS at the 2017 World Dairy Expo!
-						i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--green.float-right.col-xs-2
-				//-.col-md-8.hidden-sm.hidden-xs
-				//-.col-md-4.update-post.border-bottom.bg--white.clearfix
-					a(href="#")
-						p.color--green.small.unmarg.float-left.col-xs-12 Update 2/3/2017
-						h4.color--blue.unmarg.float-left.col-xs-10 Visit VAS at the 2017 World Dairy Expo!
-						i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--green.float-right.col-xs-2
 		
 
 		section.imagebg.parallax.cover.height-80
@@ -78,8 +44,7 @@ block content
 					h6.color--white.col-sm-12= contentful.InspirationPage[0].bottomImageText
 					p.small.col-sm-6.color--white= contentful.InspirationPage[0].bottomImageTextName
 					div.col-sm-6.text-center
-						//-a.btn.btn-white-green.arrow-after-white-green(href='#')
-							span.small.btn__text= contentful.InspirationPage[0].bottomImageButtonText
+
 						
 								
 		include partials/_4updates
