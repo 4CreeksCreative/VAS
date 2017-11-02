@@ -23,15 +23,6 @@ block content
 					.row
 						.col-sm-12.text-center
 							h3.color--green= contentful.Home[0].updatesSectionTitle
-<<<<<<< HEAD
-					.row.masonry-filter-container.text-center
-						.masonry-filter-holder.text-center
-							.masonry__filters.text-center(data-filter-all-text='All Categories')
-								ul
-									li.active(data-masonry-filter='*') All Categories TESTING!
-									for item in contentful.BlogCategories
-										li.active(data-masonry-filter='#{item.slug}')= item.title
-=======
 					if contentful.BlogCategories.length > 0
 						.row.masonry-filter-container.text-center
 							.masonry-filter-holder.text-center
@@ -40,7 +31,6 @@ block content
 										li.active(data-masonry-filter='*') All Categories
 										for item in contentful.BlogCategories
 											li.active(data-masonry-filter='#{item.slug}')= item.title
->>>>>>> master
 					.row.masonry__container
 						- var i = 0; var e = contentful.Updates.length; while (i<e){
 						- var date = new Date(contentful.Updates[i].date);
