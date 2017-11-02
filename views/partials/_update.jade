@@ -56,6 +56,10 @@ block content
 							.row
 								.col-sm-8
 									pre!= item.fields.body
+						if item.fields.videoIframe != undefined
+							.row
+								.col-sm-12
+									!= item.fields.videoIframe
 		
 		if entry.largeImage != undefined
 			.section.cover
@@ -109,7 +113,10 @@ block content
 							if entry.bluePullquote != undefined
 								.col-sm-6.blue-pullquote
 									h6.color--blue= entry.bluePullquote
-
+					if item.fields.videoIframe != undefined
+						.row
+							.col-sm-12
+								!= item.fields.videoIframe
 		if entry.checklist != undefined
 			.mb--2.mt--2.bg--blue
 				.container
@@ -156,6 +163,10 @@ block content
 						.row
 							.col-sm-8
 								pre!= item.fields.body
+					if item.fields.videoIframe != undefined
+						.row
+							.col-sm-12
+								!= item.fields.videoIframe
 
 		if entry.videoEmbedIframe != undefined
 			section
