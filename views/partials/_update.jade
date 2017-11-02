@@ -38,13 +38,15 @@ block content
 														.masonry__item.col-xs-6.col-sm-3
 															a(href='#{asset(image)}', data-lightbox="Gallery 1")
 																img(src="#{asset(image)}")
-															span.small.color--blue= image.fields.title
+															if (item.displayImageTitle === 'yes')
+																span.block.small.color--blue= image.fields.title
 												else
 													for image in item.fields.images
 														.masonry__item.col-xs-12.col-sm-12
 															a(href='#{asset(image)}', data-lightbox="Gallery 1")
 																img(src="#{asset(image)}")
-															span.small.color--blue= image.fields.title
+															if (item.displayImageTitle === 'yes')
+																span.block.small.color--blue= image.fields.title
 										
 						if item.fields.subhead != undefined
 							.row.mt--1
@@ -53,7 +55,11 @@ block content
 						if item.fields.body != undefined
 							.row
 								.col-sm-8
-									pre= item.fields.body
+									pre!= item.fields.body
+						if item.fields.videoIframe != undefined
+							.row
+								.col-sm-12
+									!= item.fields.videoIframe
 		
 		if entry.largeImage != undefined
 			.section.cover
@@ -85,13 +91,15 @@ block content
 													.masonry__item.col-xs-6.col-sm-3
 														a(href='#{asset(image)}', data-lightbox="Gallery 2")
 															img(src="#{asset(image)}")
-														span.small.color--blue= image.fields.title
+														if (item.displayImageTitle === 'yes')
+															span.small.color--blue= image.fields.title
 											else
 												for image in item.fields.images
 													.masonry__item.col-xs-12.col-sm-12
 														a(href='#{asset(image)}', data-lightbox="Gallery 2")
 															img(src="#{asset(image)}")
-														span.small.color--blue= image.fields.title
+														if (item.displayImageTitle === 'yes')
+															span.small.color--blue= image.fields.title
 					
 					if item.fields.subhead != undefined
 						.row.mt--1
@@ -100,12 +108,15 @@ block content
 					if item.fields.body != undefined
 						.row
 							.col-sm-6
-								pre= item.fields.body
+								pre!= item.fields.body
 
 							if entry.bluePullquote != undefined
 								.col-sm-6.blue-pullquote
 									h6.color--blue= entry.bluePullquote
-
+					if item.fields.videoIframe != undefined
+						.row
+							.col-sm-12
+								!= item.fields.videoIframe
 		if entry.checklist != undefined
 			.mb--2.mt--2.bg--blue
 				.container
@@ -127,13 +138,15 @@ block content
 													.masonry__item.col-xs-6.col-sm-3
 														a(href='#{asset(image)}', data-lightbox="Gallery 3")
 															img(src="#{asset(image)}")
-														span.small.color--blue= image.fields.title
+														if (item.displayImageTitle === 'yes')
+															span.small.color--blue= image.fields.title
 											else
 												for image in item.fields.images
 													.masonry__item.col-xs-12.col-sm-12
 														a(href='#{asset(image)}', data-lightbox="Gallery 3")
 															img(src="#{asset(image)}")
-														span.small.color--blue= image.fields.title
+														if (item.displayImageTitle === 'yes')
+															span.small.color--blue= image.fields.title
 					//-.row.mt--1
 						if item.fields.image != undefined
 							if item.fields.imageWidth != undefined
@@ -149,7 +162,11 @@ block content
 					if item.fields.body != undefined
 						.row
 							.col-sm-8
-								pre= item.fields.body
+								pre!= item.fields.body
+					if item.fields.videoIframe != undefined
+						.row
+							.col-sm-12
+								!= item.fields.videoIframe
 
 		if entry.videoEmbedIframe != undefined
 			section

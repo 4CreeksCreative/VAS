@@ -1,11 +1,8 @@
-
-// --------- CUSTOM LOCALE LINK MANIPULATION
-
-var locale = (/\/de\/|\/es\//ig.exec(window.location.pathname)) ? /\/de\/|\/es\//ig.exec(window.location.pathname)[0].substring(0,3) : ''
+var locale = (/\/de\/|\/ru\/|\/es\//ig.exec(window.location.pathname)) ? /\/de\/|\/es\//ig.exec(window.location.pathname)[0].substring(0,3) : ''
 $(document).ready(function(){
 		$('a:not(.language, .social, .lb-next, .lb-prev)').each(function(i,val){
-			if(!(/^(#)\w+$|^(#)+$|(http)|\/de\/|\/es\/|\/\/|(contentful)/ig).test($(val).attr('href')) && $(val).attr('href') != undefined){
-				//console.log('changed '+$(val).attr('href') + ' to ' + locale+$(val).attr('href'))
+			if(!(/^(#)\w+$|^(#)+$|(http)|\/de\/|\/ru\/|\/es\/|\/\/|(contentful)/ig).test($(val).attr('href')) && $(val).attr('href') != undefined){
+				console.log('changed '+$(val).attr('href') + ' to ' + locale+$(val).attr('href'))
 				$(val).attr('href',locale+$(val).attr('href'))
 			}
 		})

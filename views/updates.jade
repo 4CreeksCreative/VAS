@@ -35,7 +35,7 @@ block content
 						- var i = 0; var e = contentful.Updates.length; while (i<e){
 						- var date = new Date(contentful.Updates[i].date);
 							- var cats = ''
-							if contentful.BlogCategories.length > 0
+							if contentful.Updates[i].category.length > 0
 								for item in contentful.Updates[i].category
 									- cats+= ' filter-'+item.fields.slug
 							.col-xs-12.update-item.bg--white.clearfix.masonry__item(class='#{cats}')
