@@ -21,9 +21,9 @@ block content
 					if contentful.BlogCategories.length > 0
 						.row.masonry-filter-container.text-center
 							.masonry-filter-holder.text-center
-								.masonry__filters.text-center(data-filter-all-text='All Categories')
+								.masonry__filters.text-center(data-filter-all-text='#{contentful.UpdatesPage[0].allCategories}')
 									ul
-										li.active(data-masonry-filter='*') All Categories
+										li.active(data-masonry-filter='*')= contentful.UpdatesPage[0].allCategories
 										for item in contentful.BlogCategories
 											li.active(data-masonry-filter='#{item.slug}')= item.title
 					.row.masonry__container
