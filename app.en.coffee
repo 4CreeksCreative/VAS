@@ -95,6 +95,19 @@ module.exports =
 					filters:{
 						'locale':'en-US'
 					}
+				NewsletterPage:
+					id: 'newsletterPage'
+					filters:{
+						'locale':'en-US'
+					}
+				NewsletterPosts:
+					id: 'newsletterPosts'
+					filters:{
+						'locale':'en-US'
+						'order':'fields.date'
+					}
+					path: (e) -> "newsletter/#{slugify(e.url)}"
+					template: 'views/partials/_update.jade'
 				InspirationPage:
 					id: 'inspirationPage'
 					filters:{

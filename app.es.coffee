@@ -78,6 +78,19 @@ module.exports =
 					filters:{
 						'locale':'es'
 					}
+				NewsletterPage:
+					id: 'newsletterPage'
+					filters:{
+						'locale':'es'
+					}
+				NewsletterPosts:
+					id: 'newsletterPosts'
+					filters:{
+						'locale':'es'
+						'order':'fields.date'
+					}
+					path: (e) -> "newsletter/#{slugify(e.url)}"
+					template: 'views/partials/_update.jade'
 				Footer:
 					id: 'footer'
 					filters:{

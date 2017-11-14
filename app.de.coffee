@@ -58,6 +58,19 @@ module.exports =
 					}
 					path: (e) -> "blog/#{slugify(e.url)}"
 					template: 'views/partials/_update.jade'
+				NewsletterPage:
+					id: 'newsletterPage'
+					filters:{
+						'locale':'de'
+					}
+				NewsletterPosts:
+					id: 'newsletterPosts'
+					filters:{
+						'locale':'de'
+						'order':'fields.date'
+					}
+					path: (e) -> "newsletter/#{slugify(e.url)}"
+					template: 'views/partials/_update.jade'
 				ProductUpdates:
 					id: 'updatePostGerman'
 					filters:{

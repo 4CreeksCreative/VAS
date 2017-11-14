@@ -1,0 +1,30 @@
+extends layout
+
+block content
+	.content
+		section#hero.img-clip.imagebg.parallax.cover.height-70(data-overlay="7")
+			.background-image-holder
+				img(alt='background', src='#{asset(contentful.NewsletterPage[0].headerBackground)}')
+			.signature-container
+			.container.pos-vertical-center
+				.row
+					.col-sm-12
+						h2#updatetitle= contentful.NewsletterPage[0].title
+
+
+		if contentful.NewsletterPosts.length > 0
+			section.updates-section.masonry
+				.container
+					.row
+						.col-sm-12.text-center
+							h3.color--green= contentful.NewsletterPage[0].title
+					
+					.row.masonry__container
+						- var i = 0; var e = contentful.NewsletterPosts.length; while (i<e){
+						- var date = new Date(contentful.NewsletterPosts[i].date);
+							.col-xs-12.update-item.bg--white.clearfix.masonry__item
+								a(href="#{contentful.NewsletterPosts[i]._url}")
+									p.color--green.small.unmarg.float-left.col-xs-12= contentful.NewsletterPosts[i].location + ' ' + (date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()
+									h6.weight-700.color--blue.unmarg.float-left.col-xs-10= contentful.NewsletterPosts[i].title
+									div.arrow-right.float-right
+						- i++}
