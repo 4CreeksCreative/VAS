@@ -11,9 +11,7 @@ block content
 					.col-lg-6
 						h1= contentful.Contact[0].headerText
 						h5= contentful.Contact[0].headerSubtext
-						//-a.btn.btn-white-green.arrow-after-white-green(href='#')
-							span.btn__text= contentful.Home[0].headerButtonText
-							
+
 		section
 			.container
 				.row
@@ -43,17 +41,3 @@ block content
 							.float-right(style="padding-right:15px;")
 								button.btn.btn-blue-white.arrow-after-blue-white(type='submit' style="position:relative;z-index:9;")
 									span.btn__text= contentful.Contact[0].sendButtonText
-							//- p
-							//- 	label
-							//- 		| Your Name: 
-							//- 		input.validate-required(type='text', name='name')
-							//- p
-							//- 	label
-							//- 		| Your Email: 
-							//- 		input(type='email', name='email')
-							//- p
-							//- 	label
-							//- 		| Message: 
-							//- 		textarea(name='message')
-							//- p
-							//- 	button(type='submit') Send
