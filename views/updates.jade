@@ -15,20 +15,15 @@ block content
 		if contentful.Updates.length > 0
 			section.updates-section.masonry
 				.container
-					
-										
-
-						
-					
 					.row
 						.col-sm-12.text-center
 							h3.color--green= contentful.Home[0].updatesSectionTitle
 					if contentful.BlogCategories.length > 0
 						.row.masonry-filter-container.text-center
 							.masonry-filter-holder.text-center
-								.masonry__filters.text-center(data-filter-all-text='All Categories')
+								.masonry__filters.text-center(data-filter-all-text='#{contentful.UpdatesPage[0].allCategories}')
 									ul
-										li.active(data-masonry-filter='*') All Categories
+										li.active(data-masonry-filter='*')= contentful.UpdatesPage[0].allCategories
 										for item in contentful.BlogCategories
 											li.active(data-masonry-filter='#{item.slug}')= item.title
 					.row.masonry__container
@@ -43,45 +38,6 @@ block content
 									p.color--green.small.unmarg.float-left.col-xs-12= contentful.Updates[i].location + ' ' + (date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()
 									h6.weight-700.color--blue.unmarg.float-left.col-xs-10= contentful.Updates[i].title
 									div.arrow-right.float-right
-									//-img.arrow-right(src="/img/icon/arrow-o-right.png")
-									//-i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--green.float-right.col-xs-2
-						- i++}
-		//-if contentful.ProductPost.length > 0
-			section.updates-section
-				.container
-					.row
-						.col-sm-12.text-center
-							h3.color--green= contentful.Home[0].productUpdates
-						
-						- var i = 0; var e = contentful.ProductPost.length; while (i<e){
-						- var date = new Date(contentful.ProductPost[i].date);
-
-							.col-xs-12.update-item.bg--white.clearfix
-								a(href="#{contentful.ProductPost[i]._url}")
-									p.color--green.small.unmarg.float-left.col-xs-12 Update #{(date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()}
-									h6.weight-700.color--blue.unmarg.float-left.col-xs-10= contentful.ProductPost[i].title
-									div.arrow-right.float-right
-									//-img.arrow-right(src="/img/icon/arrow-o-right.png")
-									//-i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--green.float-right.col-xs-2
-						- i++}
-
-		//-if contentful.EventPost.length > 0
-			section.updates-section
-				.container
-					.row
-						.col-sm-12.text-center
-							h3.color--green= contentful.Home[0].eventUpdates
-						
-						- var i = 0; var e = contentful.EventPost.length; while (i<e){
-						- var date = new Date(contentful.EventPost[i].date);
-
-							.col-xs-12.update-item.bg--white.clearfix
-								a(href="#{contentful.EventPost[i]._url}")
-									p.color--green.small.unmarg.float-left.col-xs-12 Update #{(date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()}
-									h6.weight-700.color--blue.unmarg.float-left.col-xs-10= contentful.EventPost[i].title
-									div.arrow-right.float-right
-									//-img.arrow-right(src="/img/icon/arrow-o-right.png")
-									//-i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--green.float-right.col-xs-2
 						- i++}
 
 		if contentful.TOTM.length > 0
@@ -99,6 +55,4 @@ block content
 									p.color--green.small.unmarg.float-left.col-xs-12 Update #{(date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()}
 									h6.weight-700.color--blue.unmarg.float-left.col-xs-10= contentful.TOTM[i].title
 									div.arrow-right.float-right
-									//-img.arrow-right(src="/img/icon/arrow-o-right.png")
-									//-i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--green.float-right.col-xs-2
 						- i++}

@@ -38,15 +38,16 @@ block content
 														.masonry__item.col-xs-6.col-sm-3
 															a(href='#{asset(image)}', data-lightbox="Gallery 1")
 																img(src="#{asset(image)}")
-															if (item.displayImageTitle === 'yes')
-																span.small.color--blue= image.fields.title
+															
+																if (item.fields.displayImageTitle === 'yes')
+																	span.small.color--blue= image.fields.title
 												else
 													for image in item.fields.images
 														.masonry__item.col-xs-12.col-sm-12
 															a(href='#{asset(image)}', data-lightbox="Gallery 1")
 																img(src="#{asset(image)}")
-															if (item.displayImageTitle === 'yes')
-																span.block.small.color--blue= image.fields.title
+																if (item.fields.displayImageTitle === 'yes')
+																	span.block.small.color--blue= image.fields.title
 										
 						if item.fields.subhead != undefined
 							.row.mt--1
@@ -82,8 +83,6 @@ block content
 												span.block.small.color--blue= image.fields.title
 										
 					
-
-
 		section#social-share.mb--2
 			.container
 				.row.text-left
@@ -92,35 +91,9 @@ block content
 							h6.unmarg.color--blue= contentful.Social[0].shareHeader
 						#share-icons.float-left
 							include _social-icons
-						//-ul
-							li
-								a#fbshare(target="_blank")
-									img(src="/img/social/social-facebook-blue.png")
-							li
-								a#twittershare(target="_blank")
-									img(src="/img/social/social-twitter-blue.png")
-							li
-								a#inshare(target="_blank")
-									img(src="/img/social/social-linkedin-blue.png")
 
 		include _4updates
-		//-section#more-updates
-			.container
-				.row
-					.col-sm-12.text-left
-						h3.color--green= contentful.Home[0].updatesSectionTitle
-					
-					- var i = 0; var e = (contentful.Updates.length >=4) ? 4 : contentful.Updates.length; while (i<4){
-					- var date = new Date(contentful.Updates[i].date);
-
-						.col-md-12.unpad.update-post.bg--white.clearfix
-							a(href="#{contentful.Updates[i]._url}")
-								p.color--green.small.unmarg.float-left.col-xs-12 Update #{date.getMonth() +'/'+ date.getDate() +'/'+ date.getFullYear()}
-								h4.color--blue.unmarg.float-left.col-xs-10= contentful.Updates[i].title
-								div.arrow-right.float-right
-								//-i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--green.float-right.col-xs-2
-					- i++}
-
+		
 	script.
 		document.querySelector('#share-icons .facebook').onclick = function(e){
 		e.preventDefault(0)
