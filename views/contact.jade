@@ -19,7 +19,7 @@ block content
 						h3.color--green= contentful.Contact[0].contactTitle
 				.row
 					.col-sm-12.unpad
-						form#contact-form.form-email.custom-script(data-error="#{contentful.Contact[0].sendErrorMessage}", name='contact', netlify-honeypot="bot-field", action='/thankyou', netlify)
+						form#contact-form.form-email.custom-script(data-error="#{contentful.Contact[0].sendErrorMessage}", name="Contact-#{contentful.Contact[0].locale}', netlify-honeypot="bot-field", action='/#{contentful.Contact[0].locale}/thankyou', netlify)
 							.col-sm-12.hidden
 								label don't fill this out:
 								input(type='text', name='bot-field')
