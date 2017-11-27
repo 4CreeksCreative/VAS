@@ -9,7 +9,7 @@ if contentful.Updates.length > 0
 
 				.update-item.col-xs-12.clearfix
 					a.clearfix(href="#{contentful.Updates[i]._url}")
-						p.color--green.small.unmarg.float-left.col-xs-12 Update #{(date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()}
+						p.color--green.small.unmarg.float-left.col-xs-12.uppercase Update #{(date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()}
 						h6.weight-700.color--blue.unmarg.float-left.col-xs-10= contentful.Updates[i].title
 						div.arrow-right.float-right
 						//-img.arrow-right(src="/img/icon/arrow-o-right.png")

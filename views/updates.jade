@@ -33,7 +33,7 @@ block content
 							if contentful.Updates[i].category.length > 0
 								for item in contentful.Updates[i].category
 									- cats+= ' filter-'+item.fields.slug
-							.col-xs-12.update-item.bg--white.clearfix.masonry__item(class='#{cats}')
+							.col-xs-12.update-item.bg--white.clearfix.masonry__item.unmarg(class='#{cats}')
 								a(href="#{contentful.Updates[i]._url}")
 									p.color--green.small.unmarg.float-left.col-xs-12= contentful.Updates[i].location + ' ' + (date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()
 									h6.weight-700.color--blue.unmarg.float-left.col-xs-10= contentful.Updates[i].title
