@@ -103,16 +103,17 @@ block content
 					
 					if item.fields.subhead != undefined
 						.row.mt--1
-							.col-sm-6
+							.col-md-6.col-sm-8
 								h6.color--green= item.fields.subhead
 					if item.fields.body != undefined
 						.row
-							.col-sm-6
+							if entry.bluePullquote != undefined
+								.col-md-6.col-sm-12.blue-pullquote
+									h6.color--blue= entry.bluePullquote
+							.col-md-6.col-sm-8
 								pre!= item.fields.body
 
-							if entry.bluePullquote != undefined
-								.col-sm-6.blue-pullquote
-									h6.color--blue= entry.bluePullquote
+							
 					if item.fields.videoIframe != undefined
 						.row
 							.col-sm-12
