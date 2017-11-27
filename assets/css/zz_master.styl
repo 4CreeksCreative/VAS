@@ -19,7 +19,10 @@ h3,h4,h5,h6
 p,a,input,textarea,select,option,span,li
 	font-weight 600
 
-
+.uppercase
+	text-transform uppercase
+.small
+	font-size 14px
 h1
 	font-size 60px
 	line-height 60px
@@ -198,8 +201,10 @@ ul
 	color $gray3
 
 #updates-section p
-	font-size 16px
+	&:not(.small)
+		font-size 16px
 	line-height 24px
+	font-weight 600
 
 .large
 	font-size 25px
