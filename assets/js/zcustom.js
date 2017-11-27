@@ -6,14 +6,16 @@ $(document).ready(function(){
 				$(val).attr('href',locale+$(val).attr('href'))
 			}
 		})
-		$('#contact-form').attr('action',locale+$('#contact-form').attr('action'))
+		//$('#contact-form').attr('action',locale+$('#contact-form').attr('action'))
 
 		$('#share-icons a.facebook').attr('href', 'https://www.facebook.com/dialog/share?app_id=407590409638822&display=popup&href='+window.location.href+'&quote='+encodeURIComponent($('#page-description').attr('content')))
 		$('#share-icons a.twitter').attr('href', 'https://twitter.com/home?status='+window.location.href)
 		$('#share-icons a.linkedin').attr('href', 'https://www.linkedin.com/shareArticle?mini=true&url='+window.location.href+'&title='+$('#updatetitle').text()+'&summary='+$('#featuredtext').text()+'&source='+window.location.href)
         $('#share-icons a.email').attr('href', 'mailto:?subject=' + encodeURIComponent($('#page-title').attr('content')) + '&body=' + encodeURIComponent('Check out this article on VAS.com') + '%0D%0A' + encodeURIComponent($('#page-description').attr('content'))+ '%0D%0A' + window.location.href)
         console.log('current page = '+ window.location.pathname)
-        $('header a').each(function(i,val){
+        
+		
+		$('header a').each(function(i,val){
 
             var regex = new RegExp('(^'+window.location.pathname+'$)','ig')
 

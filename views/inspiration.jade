@@ -15,6 +15,7 @@ block content
 							h5= contentful.InspirationPage[0].headerSubtext
 						//-a.btn.btn-white-green.type--uppercase.arrow-after-white-green(href='#')
 							span.btn__text= contentful.Home[0].headerButtonText
+
 		if contentful.InspirationUpdates.length > 0
 			#inspiration-posts.container
 				.masonry
@@ -26,7 +27,7 @@ block content
 										.img-clip
 											img(src="#{asset(contentful.InspirationUpdates[i].featuredImage)}")
 										.masonry-content.clearfix
-											p.color--green.small.unmarg.float-left.col-sm-12= contentful.InspirationUpdates[i].location +' '+ (date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()
+											p.color--green.small.unmarg.float-left.col-sm-12.uppercase= contentful.InspirationUpdates[i].location +' '+ (date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()
 											h3.color--blue.float-left.col-sm-12= contentful.InspirationUpdates[i].title
 											p.color--default.col-xs-10= contentful.InspirationUpdates[i].featuredText
 											.col-xs-12
@@ -35,6 +36,7 @@ block content
 													img.arrow-right(src="/img/icon/arrow-right-blue.png")
 												//-img.arrow-right(src="/img/icon/arrow-o-right.png")
 							- i++}
+
 					
 		
 
