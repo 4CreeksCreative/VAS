@@ -25,7 +25,7 @@ block content
 									ul
 										li.active(data-masonry-filter='*')= contentful.UpdatesPage[0].allCategories
 										for item in contentful.BlogCategories
-											li.active(data-masonry-filter='#{item.slug}')= item.title
+											li(data-masonry-filter='#{item.slug}')= item.title
 					.row.masonry__container
 						- var i = 0; var e = contentful.Updates.length; while (i<e){
 						- var date = new Date(contentful.Updates[i].date);
