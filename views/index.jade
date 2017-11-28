@@ -44,9 +44,9 @@ block content
 								.background-image-holder
 									img(src="#{asset(contentful.ProductUpdates[0].featuredImage)}")
 							.col-sm-12.update-item.move-up.clearfix(style="bottom:-10px;")
-									p.color--green.small.unmarg.float-left.col-xs-12 Update #{(date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()}
+									p.color--green.small.unmarg.float-left.col-xs-12.uppercase Update #{(date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()}
 									h4.color--blue.float-left.col-xs-12= contentful.ProductUpdates[0].title
-									p.col-xs-12.color--blue= contentful.ProductUpdates[0].featuredText
+									p.col-xs-12.color--default= contentful.ProductUpdates[0].featuredText
 									.col-xs-12
 										div.arrow-right.float-right
 							
@@ -59,9 +59,9 @@ block content
 								.background-image-holder
 									img(src="#{asset(contentful.ProductUpdates[0].featuredImage)}")
 							.col-xs-12.update-item.clearfix.border-bottom
-									p.color--green.small.unmarg.float-left.col-xs-12 Update #{(date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()}
+									p.color--green.small.unmarg.float-left.col-xs-12.uppercase Update #{(date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()}
 									h4.color--blue.float-left.col-xs-12= contentful.ProductUpdates[0].title
-									p.col-xs-12.color--blue= contentful.ProductUpdates[0].featuredText
+									p.col-xs-12.color--default= contentful.ProductUpdates[0].featuredText
 									.col-xs-12
 										div.arrow-right.float-right(style="height:40px; width:40px;")
 								
@@ -72,7 +72,7 @@ block content
 				- var date = new Date(contentful.ProductUpdates[i].date);
 					.col-md-4.update-item.bg--white.clearfix.border-bottom
 						a(href="#{contentful.ProductUpdates[i]._url}")
-							p.color--green.small.unmarg.float-left.col-xs-12 Update #{(date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()}
+							p.color--green.small.unmarg.float-left.col-xs-12.uppercase Update #{(date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()}
 							h6.color--blue.unmarg.float-left.col-xs-10.weight-700= contentful.ProductUpdates[i].title
 							.col-xs-12
 								div.arrow-right.float-right
