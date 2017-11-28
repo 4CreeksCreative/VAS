@@ -175,16 +175,21 @@ ul
 .masonry-filter-holder
 	ul
 		font-size 16px
-		&:after
-			content ""
-			height 20px
-			width 20px
-			position absolute
-			top 14px
-			right 80px
-			background-image url("../img/icon/arrow-down-blue.png")
-			background-size contain
-			background-repeat no-repeat
+		li.active
+			color $green !important
+			&:before
+				content ""
+				height 20px
+				width 20px
+				position absolute
+				top 14px
+				right 20%
+				background-image url("../img/icon/arrow-down-blue.png")
+				background-size contain
+				background-repeat no-repeat
+		&:hover
+			li.active:before
+				display none
 
 .language-dropdown
 	ul
