@@ -25,7 +25,7 @@ block content
 									.masonry-content.clearfix
 										p.color--green.small.unmarg.float-left.col-sm-12.uppercase= contentful.InspirationUpdates[i].location +' '+ (date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()
 										h3.color--blue.float-left.col-sm-12= contentful.InspirationUpdates[i].title
-										p.color--default.col-xs-10= contentful.InspirationUpdates[i].featuredText
+										p.color--default.featured-text.col-xs-10= contentful.InspirationUpdates[i].featuredText
 										.col-xs-12
 											a.float-right.btn.btn-circle.btn-blue-white(href="#{contentful.InspirationUpdates[i]._url}")
 												span.btn__text= contentful.Home[0].productDetails
