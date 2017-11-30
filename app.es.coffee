@@ -9,7 +9,9 @@ slugify      = require 'slugify'
 module.exports =
 	output: 'public/es'
 	ignores: ['start_app.js','readme.md', '**/layout.*', '**/_*', '.gitignore', 'ship.*conf','**/public/**','**/img/resized/*','**/img/stack/*']
-
+	env: 'es'
+	locals:
+		env: 'es'
 	extensions: [
 		js_pipeline(files: ['assets/**/*.js','assets/js/*.coffee']),
 		css_pipeline(files: ['assets/**/*.css','assets/css/*.styl'])
