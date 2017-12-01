@@ -32,8 +32,51 @@ footer#footer.corner-point-brown
 								
 									button#mc-embedded-subscribe.col-sm-5.col-xs-12.col-offset-sm-1.float-left-xs.float-right.btn.btn-white-gray.arrow-after-white-gray.large.unmarg(type='submit', value='Subscribe', name='subscribe')
 										span.btn__text= contentful.Footer[0].subscribeButtonText
-		
-		#footer-nav-row.row
+			else if locals.env === "de"
+				#subscribe.col-md-6.col-xs-12.float-right.clearfix
+					// Start of signup
+					script(language='javascript').
+						function validate_signup(frm) {
+							var emailAddress = frm.Email.value;
+							var errorString = '';
+							if (emailAddress == '' || emailAddress.indexOf('@') == -1) {
+								errorString = 'Please enter your email address';
+							}
+							var isError = false;
+							if (errorString.length > 0)
+								isError = true;
+								if (isError)
+									alert(errorString);
+									return !isError;
+								}
+
+					form#signup(name='signup', action='http://dmtrk.net/signup.ashx', method='post', onsubmit='return validate_signup(this)')
+						p.color--white
+							| Melden Sie sich noch heute für unseren kostenlosen Newsletter an, um monatlich Tipps und Informationen zu DairyComp und zum Herdenmanagement zu erhalten.
+						input(type='hidden', name='addressbookid', value='4177455')
+						//- UserID - required field, do not remove
+						input(type='hidden', name='userid', value='127796')
+						//- ReturnURL - when the user hits submit, they'll get sent here
+						input(type='hidden', name='ReturnURL', value='http://www.returnpage.de')
+						//- Email - the user's email address
+						table
+							tr
+								td.color--white Email
+								td
+									input(type='text', name='Email')
+							tr
+								td.color--white Vorname
+								td
+									input.text(type='text', name='cd_FIRSTNAME')
+							tr
+								td.color--white Nachname
+								td
+									input.text(type='text', name='cd_LASTNAME')
+						button.btn.btn-white-gray.arrow-after-white-gray.large(type='Submit', name='Submit', value='Anmelden')
+							span.btn__text Anmelden
+					// End of signup
+
+		#footer-nav-row.row.mt--3
 			.col-sm-3.col-xs-6.text-center-xs
 				ul.footer-nav
 					//-li
