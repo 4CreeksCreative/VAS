@@ -55,7 +55,7 @@ module.exports =
 					id: 'blogPostGerman'
 					filters:{
 						'locale':'en-US'
-						'order': '-sys.createdAt'
+						'order': '-fields.date'
 
 					}
 					path: (e) -> "blog/#{slugify(e.url)}"
@@ -72,7 +72,7 @@ module.exports =
 					id: 'inspirationPostGerman'
 					filters:{
 						'locale':'en-US'
-						'order': '-sys.createdAt'
+						'order': '-fields.date'
 					}
 					path: (e) -> "inspiration/#{slugify(e.url)}"
 					template: 'views/partials/_update.jade'
@@ -111,7 +111,7 @@ module.exports =
 					id: 'tipOfTheMonthGerman'
 					filters:{
 						'locale':'en-US'
-						'order': '-sys.createdAt'
+						'order': '-fields.date'
 					}
 					template: 'views/partials/_TOTM.jade'
 				TOU:
