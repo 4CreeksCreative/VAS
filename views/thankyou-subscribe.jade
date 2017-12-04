@@ -1,0 +1,19 @@
+extends layout
+
+block head
+	style
+		|header,footer{display:none !important;}
+		|.content{padding-top:0px !important;}
+
+block content
+	.content
+		section#hero.imagebg.clip.parallax.cover.height-100(data-overlay="7")
+			.background-image-holder
+				img(alt='background', src='#{asset(contentful.Contact[0].headerImage)}')
+			.signature-container
+			.container
+				.row
+					.col-lg-4
+						h1= contentful.Contact[0].thankYouSubscribe
+						a.btn.btn-white-green.arrow-after-white-green(href='/')
+							span.btn__text= contentful.Contact[0].returnToHome
