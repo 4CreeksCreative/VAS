@@ -64,13 +64,13 @@ module.exports =
 						'locale':'de'
 					}
 				NewsletterPosts:
-					id: 'newsletterPosts'
+					id: 'newsletters'
 					filters:{
 						'locale':'de'
 						'order':'fields.date'
 					}
 					path: (e) -> "newsletter/#{slugify(e.url)}"
-					template: 'views/partials/_update.jade'
+					template: 'views/partials/_newsletter.jade'
 				ProductUpdates:
 					id: 'updatePostGerman'
 					filters:{

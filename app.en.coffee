@@ -101,19 +101,18 @@ module.exports =
 						'locale':'en-US'
 					}
 				NewsletterPosts:
-					id: 'newsletterPosts'
+					id: 'newsletters'
 					filters:{
 						'locale':'en-US'
 						'order':'fields.date'
 					}
 					path: (e) -> "newsletter/#{slugify(e.url)}"
-					template: 'views/partials/_update.jade'
+					template: 'views/partials/_newsletter.jade'
 				InspirationPage:
 					id: 'inspirationPage'
 					filters:{
 						'locale':'en-US'
 					}
-
 				TOTM:
 					id: 'tipOfTheMonthPost'
 					filters:{
