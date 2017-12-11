@@ -6,8 +6,12 @@ css_pipeline = require 'css-pipeline'
 contentful   = require 'roots-contentful'
 slugify      = require 'slugify'
 
+
 module.exports =
 	output: 'public'
+	env: 'en'
+	locals:
+		env: 'en'
 	ignores: ['start_app.js','readme.md', '**/layout.*', '**/_*', '.gitignore', 'ship.*conf','**/public/**','**/img/resized/*','**/img/stack/*','*.coffee']
 
 	extensions: [
@@ -18,6 +22,7 @@ module.exports =
 			# access_token: 'f34cc60b7d98d36e0c5483b32cd4538fe787cc5b758ce0e8e202ce7026ae4d69' #DRAFT TOKEN
 			access_token: '73bcd210fd4dd20baef3fb8293fba85fc18f91e563f06c146991414739107f9e'
 			space_id: 'c7vdx45k3txt'
+			
 			content_types:
 				##Variable_name:
 					##id: 'ID' ##FIND THIS ON CONTENTFUL
@@ -49,7 +54,7 @@ module.exports =
 					id: 'blogPost'
 					filters:{
 						'locale':'en-US'
-						'order': '-sys.createdAt'
+						'order': '-fields.date'
 					}
 					path: (e) -> "blog/#{slugify(e.url)}"
 					template: 'views/partials/_update.jade'
@@ -66,7 +71,7 @@ module.exports =
 					id: 'inspirationPost'
 					filters:{
 						'locale':'en-US'
-						'order': '-sys.createdAt'
+						'order': '-fields.date'
 					}
 					path: (e) -> "inspiration/#{slugify(e.url)}"
 					template: 'views/partials/_update.jade'
@@ -117,7 +122,7 @@ module.exports =
 					id: 'tipOfTheMonthPost'
 					filters:{
 						'locale':'en-US'
-						'order': '-sys.createdAt'
+						'order': '-fields.date'
 					}
 					template: 'views/partials/_TOTM.jade'
 				TOU:
@@ -153,3 +158,4 @@ module.exports =
 
 	server:
 		clean_urls:true
+	

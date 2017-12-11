@@ -50,11 +50,11 @@ block content
 										
 						if item.fields.subhead != undefined
 							.row.mt--1
-								.col-sm-8
+								.col-sm-12.col-md-10.col-lg-8
 									h6.color--green= item.fields.subhead
 						if item.fields.body != undefined
 							.row
-								.col-sm-8
+								.col-sm-12.col-md-10.col-lg-8
 									pre!= item.fields.body
 						if item.fields.videoIframe != undefined
 							.row
@@ -72,10 +72,10 @@ block content
 		if entry.imageSubtext != undefined
 			.container
 				.row
-					#text-overlap.corner-point-white.col-lg-6.float-right.bg--white.clearfix
-						p.color--blue.col-sm-12= entry.imageSubtext
+					#text-overlap.corner-point-white.col-lg-6.col-sm-8.float-right.bg--white.clearfix
+						p.color--blue= entry.imageSubtext
 						if entry.imageSubtextName != undefined
-							p.small.color--green.col-sm-12= entry.imageSubtextName
+							p.small.color--green= entry.imageSubtextName
 							
 
 		if entry.textAreas2 != undefined
@@ -103,14 +103,14 @@ block content
 					
 					if item.fields.subhead != undefined
 						.row.mt--1
-							.col-md-6.col-sm-8
+							.col-md-6.col-sm-12
 								h6.color--green= item.fields.subhead
 					if item.fields.body != undefined
 						.row
 							if entry.bluePullquote != undefined
 								.col-md-6.col-sm-12.blue-pullquote
 									h6.color--blue= entry.bluePullquote
-							.col-md-6.col-sm-8
+							.col-md-6.col-sm-12
 								pre!= item.fields.body
 
 							
@@ -158,11 +158,11 @@ block content
 									img(src="#{asset(item.fields.image)}")
 					if item.fields.subhead != undefined
 						.row.mt--1
-							.col-sm-8
+							.col-sm-12.col-md-10.col-lg-8
 								h6.color--green= item.fields.subhead
 					if item.fields.body != undefined
 						.row
-							.col-sm-8
+							.col-sm-12.col-md-10.col-lg-8
 								pre!= item.fields.body
 					if item.fields.videoIframe != undefined
 						.row

@@ -7,11 +7,11 @@ contentful   = require 'roots-contentful'
 slugify      = require 'slugify'
 
 module.exports =
-	output: 'public/de'
+	output: 'public/ru'
 	ignores: ['start_app.js','readme.md', '**/layout.*', '**/_*', '.gitignore', 'ship.*conf','**/public/**','**/img/resized/*','**/img/stack/*']
-	env: 'de'
+	env: 'ru'
 	locals:
-		env: 'de'
+		env: 'ru'
 	extensions: [
 		js_pipeline(files: ['assets/**/*.js','assets/js/*.coffee']),
 		css_pipeline(files: ['assets/**/*.css','assets/css/*.styl'])
@@ -33,58 +33,44 @@ module.exports =
 				Home:
 					id: 'homePage'
 					filters:{
-						'locale':'de'
+						'locale':'ru'
 
 					}
 				HomeProducts:
-					id: 'homePageProductsGerman'
+					id: 'homePageProducts'
 					filters:{
-						'locale':'en-US'
+						'locale':'ru'
 					}
 				About:
 					id: 'aboutUsPage'
 					filters:{
-						'locale':'de'
+						'locale':'ru'
 					}
 				Support:
-					id: 'supportPageGerman'
+					id: 'supportPage'
 					filters:{
-						'locale':'en-US'
+						'locale':'ru'
 					}
 				Updates:
-					id: 'blogPostGerman'
+					id: 'blogPost'
 					filters:{
-						'locale':'en-US'
+						'locale':'ru'
 						'order': '-fields.date'
-
 					}
 					path: (e) -> "blog/#{slugify(e.url)}"
 					template: 'views/partials/_update.jade'
-				NewsletterPage:
-					id: 'newsletterPage'
-					filters:{
-						'locale':'de'
-					}
-				NewsletterPosts:
-					id: 'newsletters'
-					filters:{
-						'locale':'de'
-						'order':'fields.date'
-					}
-					path: (e) -> "newsletter/#{slugify(e.url)}"
-					template: 'views/partials/_newsletter.jade'
 				ProductUpdates:
-					id: 'updatePostGerman'
+					id: 'updates'
 					filters:{
-						'locale':'en-US'
+						'locale':'ru'
 						'order': '-sys.createdAt'
 					}
 					path: (e) -> "updates/#{slugify(e.url)}"
 					template: 'views/partials/_update.jade'
 				InspirationUpdates:
-					id: 'inspirationPostGerman'
+					id: 'inspirationPost'
 					filters:{
-						'locale':'en-US'
+						'locale':'ru'
 						'order': '-fields.date'
 					}
 					path: (e) -> "inspiration/#{slugify(e.url)}"
@@ -92,58 +78,57 @@ module.exports =
 				Navigation:
 					id: 'navigation'
 					filters:{
-						'locale':'de'
+						'locale':'ru'
 					}
 				Footer:
 					id: 'footer'
 					filters:{
-						'locale':'de'
+						'locale':'ru'
 					}
 				Social:
 					id: 'social'
 					filters:{
-						'locale':'de'
+						'locale':'ru'
 					}
 				Contact:
 					id: 'contactPage'
 					filters:{
-						'locale':'de'
+						'locale':'ru'
 					}
 				UpdatesPage:
 					id: 'updatesPage'
 					filters:{
-						'locale':'de'
+						'locale':'ru'
 					}
 				InspirationPage:
 					id: 'inspirationPage'
 					filters:{
-						'locale':'de'
+						'locale':'ru'
 					}
 
 				TOTM:
-					id: 'tipOfTheMonthGerman'
+					id: 'tipOfTheMonthPost'
 					filters:{
-						'locale':'en-US'
+						'locale':'ru'
 						'order': '-fields.date'
 					}
 					template: 'views/partials/_TOTM.jade'
 				TOU:
 					id: 'termsOfUse'
 					filters:{
-						'locale':'de'
+						'locale':'ru'
 					}
 				Privacy:
 					id: 'privacyPolicy'
 					filters:{
-						'locale':'de'
+						'locale':'ru'
 					}
 				BlogCategories:
-					id: 'blogCategoryGerman'
+					id: 'blogCategory'
 					filters:{
-						'locale':'en-US'
+						'locale':'ru'
 						'order': 'fields.title'
 					}
-
 
 	]
 
@@ -159,4 +144,3 @@ module.exports =
 
 	server:
 		clean_urls:true
-	
