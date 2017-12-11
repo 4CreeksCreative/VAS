@@ -105,7 +105,19 @@ module.exports =
 					filters:{
 						'locale':'ru'
 					}
-
+				NewsletterPage:
+					id: 'newsletterPage'
+					filters:{
+						'locale':'es'
+					}
+				NewsletterPosts:
+					id: 'newsletters'
+					filters:{
+						'locale':'es'
+						'order':'fields.date'
+					}
+					path: (e) -> "newsletter/#{slugify(e.url)}"
+					template: 'views/partials/_newsletter.jade'
 				TOTM:
 					id: 'tipOfTheMonthPost'
 					filters:{
