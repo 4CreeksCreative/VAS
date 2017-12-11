@@ -7,27 +7,96 @@ block head
 
 block content
 	#blog-content.content
-		//-p= JSON.stringify(entry.textAreas)
-		//- section#hero.clip.imagebg.parallax.cover.height-70(data-overlay="7")
-		//- 	.signature-container
-		//- 	.background-image-holder
-		//- 		img(alt='background', src='#{asset(entry.featuredImage)}')
-        //- 
-		//- 	.container.pos-vertical-center
-		//- 		.row.text-left
-		//- 			.col-sm-12
-		//- 				h1#updatetitle= entry.title
-		//- 				h6#featuredtext.featuredText= entry.featuredText
-		section#updates-content
-			- var date = new Date(entry.date);
-			.container
-				.row
+		section#hero.clip.parallax.cover.height-70(data-overlay="7")
+			.signature-container
+			.container.pos-vertical-center
+				.row.text-left
 					.col-sm-12
-						p.color--green= entry.location + ' - ' + (date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()
+						h1#updatetitle Newsletters
+						h6#featuredtext.featuredText December
+		
+		- var stories = 0
+		for story in entry.stories
+			if stories === 0
+				section.newsletter-header
+					.container.imagebg.height-70
+						.background-image-holder
+							img(alt='background', src='#{asset(story.fields.featuredImage)}')
+						.col-sm-12.pos-vertical-center
+							h1#updatetitle= story.fields.title
+							h6#featuredtext.featuredText= story.fields.featuredText
+			else
+				section
+					.container.imagebg.height-70
+						.background-image-holder
+							img(alt='background', src='#{asset(story.fields.featuredImage)}')
+						.col-sm-12.pos-vertical-center
+							h1#updatetitle= story.fields.title
+							h6#featuredtext.featuredText= story.fields.featuredText
+			- stories++
+			section#updates-content
+				- var date = new Date(story.fields.date);
+				.container
+					.row
+						.col-sm-12
+							p.color--green= story.fields.location + ' - ' + (date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()
+				
+					//-!= entry.mainContent
+					if story.fields.textAreas != undefined
+						for item in story.fields.textAreas
+							if item.fields.images != undefined
+								.row
+									.col-sm-12.unpad
+										.masonry
+												.masonry__container
+													if item.fields.imageWidth != undefined
+														for image in item.fields.images
+															.masonry__item.col-xs-6.col-sm-3
+																a(href='#{asset(image)}', data-lightbox="Gallery 1")
+																	img(src="#{asset(image)}")
+																	if (item.fields.displayImageTitle === 'yes')
+																		span.block.small.color--blue= image.fields.title
+													else
+														for image in item.fields.images
+															.masonry__item.col-xs-12.col-sm-12
+																a(href='#{asset(image)}', data-lightbox="Gallery 1")
+																	img(src="#{asset(image)}")
+																	if (item.fields.displayImageTitle === 'yes')
+																		span.block.small.color--blue= image.fields.title
+											
+							if item.fields.subhead != undefined
+								.row.mt--1
+									.col-sm-12.col-md-10.col-lg-8
+										h6.color--green= item.fields.subhead
+							if item.fields.body != undefined
+								.row
+									.col-sm-12.col-md-10.col-lg-8
+										pre!= item.fields.body
+							if item.fields.videoIframe != undefined
+								.row
+									.col-sm-12
+										!= item.fields.videoIframe
 			
-				//-!= entry.mainContent
-				if entry.textAreas != undefined
-					for item in entry.textAreas
+			if story.fields.largeImage != undefined
+				.section.cover
+					.container
+						.row
+							.col-sm-12
+								img(src='#{asset(story.fields.largeImage)}')
+
+			
+			if story.fields.imageSubtext != undefined
+				.container
+					.row
+						#text-overlap.corner-point-white.col-lg-6.col-sm-8.float-right.bg--white.clearfix
+							p.color--blue= story.fields.imageSubtext
+							if story.fields.imageSubtextName != undefined
+								p.small.color--green= story.fields.imageSubtextName
+								
+
+			if story.fields.textAreas2 != undefined
+				.container
+					for item in story.fields.textAreas2
 						if item.fields.images != undefined
 							.row
 								.col-sm-12.unpad
@@ -36,18 +105,73 @@ block content
 												if item.fields.imageWidth != undefined
 													for image in item.fields.images
 														.masonry__item.col-xs-6.col-sm-3
-															a(href='#{asset(image)}', data-lightbox="Gallery 1")
+															a(href='#{asset(image)}', data-lightbox="Gallery 2")
 																img(src="#{asset(image)}")
 																if (item.fields.displayImageTitle === 'yes')
-																	span.block.small.color--blue= image.fields.title
+																	span.small.color--blue= image.fields.title
 												else
 													for image in item.fields.images
 														.masonry__item.col-xs-12.col-sm-12
-															a(href='#{asset(image)}', data-lightbox="Gallery 1")
+															a(href='#{asset(image)}', data-lightbox="Gallery 2")
 																img(src="#{asset(image)}")
 																if (item.fields.displayImageTitle === 'yes')
-																	span.block.small.color--blue= image.fields.title
-										
+																	span.small.color--blue= image.fields.title
+						
+						if item.fields.subhead != undefined
+							.row.mt--1
+								.col-md-6.col-sm-12
+									h6.color--green= item.fields.subhead
+						if item.fields.body != undefined
+							.row
+								if story.fields.bluePullquote != undefined
+									.col-md-6.col-sm-12.blue-pullquote
+										h6.color--blue= story.fields.bluePullquote
+								.col-md-6.col-sm-12
+									pre!= item.fields.body
+
+								
+						if item.fields.videoIframe != undefined
+							.row
+								.col-sm-12
+									!= item.fields.videoIframe
+			if story.fields.checklist != undefined
+				.mb--2.mt--2.bg--blue
+					.container
+						.row.mt--1.mb--1
+							.col-sm-12
+								for item in story.fields.checklist
+									h6.color--white.check-mark-before= item
+
+			if story.fields.textAreas3 != undefined
+				.container
+					for item in story.fields.textAreas3
+						if item.fields.images != undefined
+							.row
+								.col-sm-12.unpad
+									.masonry
+											.masonry__container
+												if item.fields.imageWidth != undefined
+													for image in item.fields.images
+														.masonry__item.col-xs-6.col-sm-3
+															a(href='#{asset(image)}', data-lightbox="Gallery 3")
+																img(src="#{asset(image)}")
+																if (item.fields.displayImageTitle === 'yes')
+																	span.small.color--blue= image.fields.title
+												else
+													for image in item.fields.images
+														.masonry__item.col-xs-12.col-sm-12
+															a(href='#{asset(image)}', data-lightbox="Gallery 3")
+																img(src="#{asset(image)}")
+																if (item.fields.displayImageTitle === 'yes')
+																	span.small.color--blue= image.fields.title
+						//-.row.mt--1
+							if item.fields.image != undefined
+								if item.fields.imageWidth != undefined
+									div(class="#{item.fields.imageWidth}")
+										img(src="#{asset(item.fields.image)}")
+								else 
+									.col-sm-12
+										img(src="#{asset(item.fields.image)}")
 						if item.fields.subhead != undefined
 							.row.mt--1
 								.col-sm-12.col-md-10.col-lg-8
@@ -60,138 +184,43 @@ block content
 							.row
 								.col-sm-12
 									!= item.fields.videoIframe
-		
-		if entry.largeImage != undefined
-			.section.cover
-				.container
-					.row
-						.col-sm-12
-							img(src='#{asset(entry.largeImage)}')
 
-		
-		if entry.imageSubtext != undefined
-			.container
-				.row
-					#text-overlap.corner-point-white.col-lg-6.col-sm-8.float-right.bg--white.clearfix
-						p.color--blue= entry.imageSubtext
-						if entry.imageSubtextName != undefined
-							p.small.color--green= entry.imageSubtextName
-							
-
-		if entry.textAreas2 != undefined
-			.container
-				for item in entry.textAreas2
-					if item.fields.images != undefined
+			if story.fields.videoEmbedIframe != undefined
+				section
+					.container
+						.row
+							.col-sm-12
+								!= story.fields.videoEmbedIframe
+			
+			if story.fields.gallery != undefined
+				section#image-gallery
+					.container
 						.row
 							.col-sm-12.unpad
 								.masonry
 										.masonry__container
-											if item.fields.imageWidth != undefined
-												for image in item.fields.images
-													.masonry__item.col-xs-6.col-sm-3
-														a(href='#{asset(image)}', data-lightbox="Gallery 2")
-															img(src="#{asset(image)}")
-															if (item.fields.displayImageTitle === 'yes')
-																span.small.color--blue= image.fields.title
-											else
-												for image in item.fields.images
-													.masonry__item.col-xs-12.col-sm-12
-														a(href='#{asset(image)}', data-lightbox="Gallery 2")
-															img(src="#{asset(image)}")
-															if (item.fields.displayImageTitle === 'yes')
-																span.small.color--blue= image.fields.title
-					
-					if item.fields.subhead != undefined
-						.row.mt--1
-							.col-md-6.col-sm-12
-								h6.color--green= item.fields.subhead
-					if item.fields.body != undefined
-						.row
-							if entry.bluePullquote != undefined
-								.col-md-6.col-sm-12.blue-pullquote
-									h6.color--blue= entry.bluePullquote
-							.col-md-6.col-sm-12
-								pre!= item.fields.body
+											for image in story.fields.gallery
+												.masonry__item.col-xs-6.col-sm-3
+													a(href='#{asset(image)}', data-lightbox="Gallery")
+														img(src="#{asset(image)}")
+													span.small.color--blue= image.fields.title
 
-							
-					if item.fields.videoIframe != undefined
-						.row
-							.col-sm-12
-								!= item.fields.videoIframe
-		if entry.checklist != undefined
-			.mb--2.mt--2.bg--blue
-				.container
-					.row.mt--1.mb--1
-						.col-sm-12
-							for item in entry.checklist
-								h6.color--white.check-mark-before= item
 
-		if entry.textAreas3 != undefined
-			.container
-				for item in entry.textAreas3
-					if item.fields.images != undefined
-						.row
-							.col-sm-12.unpad
-								.masonry
-										.masonry__container
-											if item.fields.imageWidth != undefined
-												for image in item.fields.images
-													.masonry__item.col-xs-6.col-sm-3
-														a(href='#{asset(image)}', data-lightbox="Gallery 3")
-															img(src="#{asset(image)}")
-															if (item.fields.displayImageTitle === 'yes')
-																span.small.color--blue= image.fields.title
-											else
-												for image in item.fields.images
-													.masonry__item.col-xs-12.col-sm-12
-														a(href='#{asset(image)}', data-lightbox="Gallery 3")
-															img(src="#{asset(image)}")
-															if (item.fields.displayImageTitle === 'yes')
-																span.small.color--blue= image.fields.title
-					//-.row.mt--1
-						if item.fields.image != undefined
-							if item.fields.imageWidth != undefined
-								div(class="#{item.fields.imageWidth}")
-									img(src="#{asset(item.fields.image)}")
-							else 
-								.col-sm-12
-									img(src="#{asset(item.fields.image)}")
-					if item.fields.subhead != undefined
-						.row.mt--1
-							.col-sm-12.col-md-10.col-lg-8
-								h6.color--green= item.fields.subhead
-					if item.fields.body != undefined
-						.row
-							.col-sm-12.col-md-10.col-lg-8
-								pre!= item.fields.body
-					if item.fields.videoIframe != undefined
-						.row
-							.col-sm-12
-								!= item.fields.videoIframe
+			if story.fields.mainContent != undefined
+				!= story.fields.mainContent
 
-		if entry.videoEmbedIframe != undefined
-			section
-				.container
+			if story.fields.downloads != undefined
+				.container.mb--2.mt--2
 					.row
 						.col-sm-12
-							!= entry.videoEmbedIframe
-		
-		if entry.gallery != undefined
-			section#image-gallery
-				.container
-					.row
-						.col-sm-12.unpad
-							.masonry
-									.masonry__container
-										for image in entry.gallery
-											.masonry__item.col-xs-6.col-sm-3
-												a(href='#{asset(image)}', data-lightbox="Gallery")
-													img(src="#{asset(image)}")
-												span.small.color--blue= image.fields.title
+							h5.color--blue= contentful.Support[0].downloads
+					for item in story.fields.downloads
+						if item.fields.file != undefined
+							.row
+								.col-sm-12(style="margin:10px 0;")
+									a.btn.btn-blue-white.download-before-blue-white(href='#{asset(item.fields.file)}', target='_blank', rel='noopener')
+										span.btn__text= item.fields.title
 
-
-		if entry.mainContent != undefined
-			!= entry.mainContent
 		section#social-share.mb--2
 			.container
 				.row.text-left
@@ -200,46 +229,23 @@ block content
 							h6.unmarg.color--blue= contentful.Social[0].shareHeader
 						#share-icons.float-left
 							include _social-icons
-						//-ul
-							li
-								a#fbshare(target="_blank")
-									img(src="/img/social/social-facebook-blue.png")
-							li
-								a#twittershare(target="_blank")
-									img(src="/img/social/social-twitter-blue.png")
-							li
-								a#inshare(target="_blank")
-									img(src="/img/social/social-linkedin-blue.png")
-
-		if entry.downloads != undefined
-			.container.mb--2.mt--2
-				.row
-					.col-sm-12
-						h5.color--blue= contentful.Support[0].downloads
-				for item in entry.downloads
-					if item.fields.file != undefined
-						.row
-							.col-sm-12(style="margin:10px 0;")
-								a.btn.btn-blue-white.download-before-blue-white(href='#{asset(item.fields.file)}', target='_blank', rel='noopener')
-									span.btn__text= item.fields.title
-
 		include _4updates
-		//-section#more-updates
-			.container
-				.row
-					.col-sm-12.text-left
-						h3.color--green= contentful.Home[0].updatesSectionTitle
-					
-					- var i = 0; var e = (contentful.Updates.length >=4) ? 4 : contentful.Updates.length; while (i<4){
-					- var date = new Date(contentful.Updates[i].date);
+			//-section#more-updates
+				.container
+					.row
+						.col-sm-12.text-left
+							h3.color--green= contentful.Home[0].updatesSectionTitle
+						
+						- var i = 0; var e = (contentful.Updates.length >=4) ? 4 : contentful.Updates.length; while (i<4){
+						- var date = new Date(contentful.Updates[i].date);
 
-						.col-md-12.unpad.update-post.bg--white.clearfix
-							a(href="#{contentful.Updates[i]._url}")
-								p.color--green.small.unmarg.float-left.col-xs-12 Update #{date.getMonth() +'/'+ date.getDate() +'/'+ date.getFullYear()}
-								h4.color--blue.unmarg.float-left.col-xs-10= contentful.Updates[i].title
-								div.arrow-right.float-right
-								//-i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--green.float-right.col-xs-2
-					- i++}
+							.col-md-12.unpad.update-post.bg--white.clearfix
+								a(href="#{contentful.Updates[i]._url}")
+									p.color--green.small.unmarg.float-left.col-xs-12 Update #{date.getMonth() +'/'+ date.getDate() +'/'+ date.getFullYear()}
+									h4.color--blue.unmarg.float-left.col-xs-10= contentful.Updates[i].title
+									div.arrow-right.float-right
+									//-i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--green.float-right.col-xs-2
+						- i++}
 
 	script.
 		document.querySelector('#share-icons .facebook').onclick = function(e){
