@@ -9,7 +9,9 @@ slugify      = require 'slugify'
 module.exports =
 	output: 'public/de'
 	ignores: ['start_app.js','readme.md', '**/layout.*', '**/_*', '.gitignore', 'ship.*conf','**/public/**','**/img/resized/*','**/img/stack/*']
-
+	env: 'de'
+	locals:
+		env: 'de'
 	extensions: [
 		js_pipeline(files: ['assets/**/*.js','assets/js/*.coffee']),
 		css_pipeline(files: ['assets/**/*.css','assets/css/*.styl'])
@@ -55,7 +57,7 @@ module.exports =
 					id: 'blogPostGerman'
 					filters:{
 						'locale':'en-US'
-						'order': '-sys.createdAt'
+						'order': '-fields.date'
 
 					}
 					path: (e) -> "blog/#{slugify(e.url)}"
@@ -72,7 +74,7 @@ module.exports =
 					id: 'inspirationPostGerman'
 					filters:{
 						'locale':'en-US'
-						'order': '-sys.createdAt'
+						'order': '-fields.date'
 					}
 					path: (e) -> "inspiration/#{slugify(e.url)}"
 					template: 'views/partials/_update.jade'
@@ -111,7 +113,7 @@ module.exports =
 					id: 'tipOfTheMonthGerman'
 					filters:{
 						'locale':'en-US'
-						'order': '-sys.createdAt'
+						'order': '-fields.date'
 					}
 					template: 'views/partials/_TOTM.jade'
 				TOU:
@@ -146,3 +148,4 @@ module.exports =
 
 	server:
 		clean_urls:true
+	

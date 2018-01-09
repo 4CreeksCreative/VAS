@@ -7,31 +7,76 @@ footer#footer.corner-point-brown
 				!= contentful.Footer[0].blueBoxContent
 				a.btn.btn-white-blue.arrow-after-white-blue.large(href='/support' style="margin-top:25px;")
 					span.btn__text= contentful.Footer[0].blueBoxButtonText
-			#subscribe.col-md-6.col-xs-12.float-right.clearfix
-				!= contentful.Footer[0].subscribeContent
-				
-				
+			if locals.env != "de"
+				//-- alert('#{locals.env}')
+				#subscribe.col-md-6.col-xs-12.float-right.clearfix
+					!= contentful.Footer[0].subscribeContent
+					
+					
 
-				#mc_embed_signup
-					form#mc-embedded-subscribe-form.validate(action='//vas.us14.list-manage.com/subscribe/post?u=f0f106248a8a0df7906dc9354&id=779c844d05', method='post', name='mc-embedded-subscribe-form', target='_blank', novalidate='' data-error="#{contentful.Contact[0].sendErrorMessage}" data-success="#{contentful.Footer[0].subscribeSuccess}")
-						#mc_embed_signup_scroll
-							#mce-responses.clear
-								#mce-error-response.response(style='display:none')
-								#mce-success-response.response(style='display:none')
-							//- real people should not fill this in and expect good things - do not remove this or risk form bot signups
-							div(style='position: absolute; left: -5000px;', aria-hidden='true')
-								input(type='text', name='b_f0f106248a8a0df7906dc9354_779c844d05', tabindex='-1', value='')
+					#mc_embed_signup
+						form#mc-embedded-subscribe-form.validate(action='//vas.us14.list-manage.com/subscribe/post?u=f0f106248a8a0df7906dc9354&id=779c844d05', method='post', name='mc-embedded-subscribe-form', target='_blank', novalidate='' data-error="#{contentful.Contact[0].sendErrorMessage}" data-success="#{contentful.Footer[0].subscribeSuccess}")
+							#mc_embed_signup_scroll
+								#mce-responses.clear
+									#mce-error-response.response(style='display:none')
+									#mce-success-response.response(style='display:none')
+								//- real people should not fill this in and expect good things - do not remove this or risk form bot signups
+								div(style='position: absolute; left: -5000px;', aria-hidden='true')
+									input(type='text', name='b_f0f106248a8a0df7906dc9354_779c844d05', tabindex='-1', value='')
 
 
-							.mc-field-group.clearfix
-								//-label(for='mce-EMAIL') Email Address 
-								input#mce-EMAIL.required.email.col-sm-6.col-xs-12.large(type='email', value='', name='EMAIL' placeholder="#{contentful.Footer[0].subscribePlaceholder}")
-							
-							
-								button#mc-embedded-subscribe.col-sm-5.col-xs-12.col-offset-sm-1.float-left-xs.float-right.btn.btn-white-gray.arrow-after-white-gray.large.unmarg(type='submit', value='Subscribe', name='subscribe')
-									span.btn__text= contentful.Footer[0].subscribeButtonText
-		
-		#footer-nav-row.row
+								.mc-field-group.clearfix
+									//-label(for='mce-EMAIL') Email Address 
+									input#mce-EMAIL.required.email.col-sm-6.col-xs-12.large(type='email', value='', name='EMAIL' placeholder="#{contentful.Footer[0].subscribePlaceholder}")
+								
+								
+									button#mc-embedded-subscribe.col-sm-5.col-xs-12.col-offset-sm-1.float-left-xs.float-right.btn.btn-white-gray.arrow-after-white-gray.large.unmarg(type='submit', value='Subscribe', name='subscribe')
+										span.btn__text= contentful.Footer[0].subscribeButtonText
+			else if locals.env === "de"
+				#subscribe.col-md-6.col-xs-12.float-right.clearfix
+					// Start of signup
+					script(language='javascript').
+						function validate_signup(frm) {
+							var emailAddress = frm.Email.value;
+							var errorString = '';
+							if (emailAddress == '' || emailAddress.indexOf('@') == -1) {
+								errorString = 'Please enter your email address';
+							}
+							var isError = false;
+							if (errorString.length > 0)
+								isError = true;
+								if (isError)
+									alert(errorString);
+									return !isError;
+								}
+
+					form#signup(name='signup', action='http://dmtrk.net/signup.ashx', method='post', onsubmit='return validate_signup(this)')
+						p.color--white
+							| Melden Sie sich noch heute für unseren kostenlosen Newsletter an, um monatlich Tipps und Informationen zu DairyComp und zum Herdenmanagement zu erhalten.
+						input(type='hidden', name='addressbookid', value='4177455')
+						//- UserID - required field, do not remove
+						input(type='hidden', name='userid', value='127796')
+						//- ReturnURL - when the user hits submit, they'll get sent here
+						input(type='hidden', name='ReturnURL', value='http://web.vas.com/de/thankyou-subscribe')
+						//- Email - the user's email address
+						table
+							tr
+								td.color--white Email
+								td
+									input(type='text', name='Email')
+							tr
+								td.color--white Vorname
+								td
+									input.text(type='text', name='cd_FIRSTNAME')
+							tr
+								td.color--white Nachname
+								td
+									input.text(type='text', name='cd_LASTNAME')
+						button.btn.btn-white-gray.arrow-after-white-gray.large(type='Submit', name='Submit', value='Anmelden')
+							span.btn__text Anmelden
+					// End of signup
+
+		#footer-nav-row.row.mt--3
 			.col-sm-3.col-xs-6.text-center-xs
 				ul.footer-nav
 					//-li
