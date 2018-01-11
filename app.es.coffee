@@ -65,7 +65,7 @@ module.exports =
 					id: 'updates'
 					filters:{
 						'locale':'es'
-						'order': '-sys.createdAt'
+						'order': '-fields.date'
 					}
 					path: (e) -> "updates/#{slugify(e.url)}"
 					template: 'views/partials/_update.jade'

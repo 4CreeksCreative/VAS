@@ -63,7 +63,7 @@ module.exports =
 					id: 'updates'
 					filters:{
 						'locale':'en-US'
-						'order': '-sys.createdAt'
+						'order': '-fields.date'
 
 					}
 					path: (e) -> "updates/#{slugify(e.url)}"
