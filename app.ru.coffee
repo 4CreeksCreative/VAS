@@ -5,6 +5,7 @@ js_pipeline  = require 'js-pipeline'
 css_pipeline = require 'css-pipeline'
 contentful   = require 'roots-contentful'
 slugify      = require 'slugify'
+md           = require 'marked'
 
 module.exports =
 	output: 'public/ru'
@@ -146,3 +147,6 @@ module.exports =
 
 	server:
 		clean_urls:true
+
+	locals:
+		md:require 'marked'
