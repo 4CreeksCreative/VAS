@@ -25,7 +25,7 @@ block content
 				if entry.body != undefined
 					.row
 						.col-sm-12.col-md-10.col-lg-8
-							pre.font--corbel.weight-normal= entry.body
+							.font--corbel.weight-normal.markdown!= md(entry.body)
 				
 				if entry.textAreas != undefined
 					for item in entry.textAreas
@@ -57,7 +57,7 @@ block content
 						if item.fields.body != undefined
 							.row
 								.col-sm-12.col-md-10.col-lg-8
-									pre= item.fields.body
+									.markdown!= md(item.fields.body)
 						if item.fields.videoIframe != undefined
 							.row
 								.col-sm-12
