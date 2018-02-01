@@ -38,6 +38,9 @@ header
 					.col-sm-11.col-xs-12.text-right.float-right.text-center-xs.float-right-xs.bg--white
 						.bar__module
 							ul.menu-horizontal.text-right.text-left-xs
+								if locals.env === 'en'
+									li
+										a(href="/jobs") Careers
 								li
 									a(href="/updates")= contentful.Navigation[0].updates
 								//-li
