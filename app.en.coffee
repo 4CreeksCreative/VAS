@@ -131,8 +131,25 @@ module.exports =
 						'locale':'en-US'
 						'order': 'fields.title'
 					}
-
-
+				Jobs:
+					id:'jobListing'
+					filters:{
+						'order':'-fields.date'
+						'locale':'en-US'
+					}
+					template: 'views/partials/_job.jade'
+				JobCategories:
+					id:'jobCategory'
+					filters:{
+						'order':'fields.category'
+						'locale':'en-US'
+					}
+				JobLocations:
+					id:'jobLocation'
+					filters:{
+						'order':'fields.location'
+						'locale':'en-US'
+					}
 
 	]
 

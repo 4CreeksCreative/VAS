@@ -1,0 +1,57 @@
+extends layout
+
+block content
+	.content
+		section#hero.imagebg.clip.parallax.cover.height-70(data-overlay="7")
+			.background-image-holder
+				img(alt='background', src='#{asset(contentful.UpdatesPage[0].headerBackground)}')
+			.signature-container
+			.container.pos-vertical-center
+				.row
+					.col-lg-8
+						h1 Join the team
+						//-h5= contentful.Home[0].headerSubtext
+		section
+			#jobSearch.container
+				.row
+					.col-sm-12
+						label Search
+						input#jobQuery(type='text')
+					.col-sm-6
+						label location
+						select#jobLocation
+							option(value="*") All
+							if contentful.JobLocations.length > 0
+								for item in contentful.JobLocations
+									option(value="#{item.slug}")= item.location
+					.col-sm-6
+						label Category
+						select#jobCategory
+							option(value="*") All
+							if contentful.JobCategories.length > 0
+								for item in contentful.JobCategories
+									option(value="#{item.slug}")= item.category
+				.row.text-center
+					#job-search-btn.btn.btn-blue-white.arrow-after-blue-white
+						span.btn__text Search
+		
+		if contentful.Jobs.length > 0
+			section#jobPosts.updates-section
+				.container
+					.row
+						.text-left
+							for item in contentful.Jobs
+								- var date = new Date(item.date);
+								if item.categories.length > 0
+									- var cats = ''
+									for item2 in item.categories
+										- cats += " "+item2.fields.slug
+								.job-post.update-item.col-xs-12.clearfix(class="#{cats} #{item.location.fields.slug}")
+									a.clearfix(href="#{item._url}")
+										p.color--green.small.unmarg.float-left.col-xs-12 Update #{(date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()}
+										h6#item-title.weight-700.color--blue.unmarg.float-left.col-xs-10= item.title
+										div.arrow-right.float-right
+										//-img.arrow-right(src="/img/icon/arrow-o-right.png")
+										//-i.icon.icon--sm.fa.fa-arrow-circle-o-right.color--green.float-right.col-xs-2
+							
+			
