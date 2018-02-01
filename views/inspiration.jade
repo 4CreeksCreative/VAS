@@ -9,35 +9,41 @@ block content
 			.container
 				.row
 					.col-lg-6
-						h1= contentful.InspirationPage[0].headerLargeText
-						h5= contentful.InspirationPage[0].headerSubtext
+						if contentful.InspirationPage[0].headerLargeText != undefined
+							h1= contentful.InspirationPage[0].headerLargeText
+						if contentful.InspirationPage[0].headerSubtext != undefined
+							h5= contentful.InspirationPage[0].headerSubtext
 						//-a.btn.btn-white-green.type--uppercase.arrow-after-white-green(href='#')
 							span.btn__text= contentful.Home[0].headerButtonText
-		#inspiration-posts.container
-			.masonry
-				.masonry__container
-					- var i = 0; var e = (contentful.InspirationUpdates.length >=4) ? 4 : contentful.InspirationUpdates.length; while (i<e){
-					- var date = new Date(contentful.InspirationUpdates[i].date);
-						.masonry__item.inspiration-post.update-post.bg--white.clearfix.border-bottom
-								a(href="#{contentful.InspirationUpdates[i]._url}")
-									.img-clip
-										img(src="#{asset(contentful.InspirationUpdates[i].featuredImage)}")
-									.masonry-content.clearfix
-										p.color--green.small.unmarg.float-left.col-sm-12= contentful.InspirationUpdates[i].location +' '+ (date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()
-										h3.color--blue.float-left.col-sm-12= contentful.InspirationUpdates[i].title
-										p.color--default.col-xs-10= contentful.InspirationUpdates[i].featuredText
-										.col-xs-12
-											a.float-right.btn.btn-circle.btn-blue-white(href="#{contentful.InspirationUpdates[i]._url}")
-												span.btn__text= contentful.Home[0].productDetails
-												img.arrow-right(src="/img/icon/arrow-right-blue.png")
-											//-img.arrow-right(src="/img/icon/arrow-o-right.png")
-						- i++}
+
+		if contentful.InspirationUpdates.length > 0
+			#inspiration-posts.container
+				.masonry
+					.masonry__container
+						- var i = 0; var e = (contentful.InspirationUpdates.length >=4) ? 4 : contentful.InspirationUpdates.length; while (i<e){
+						- var date = new Date(contentful.InspirationUpdates[i].date);
+							.masonry__item.inspiration-post.update-post.bg--white.clearfix.border-bottom
+									a(href="#{contentful.InspirationUpdates[i]._url}")
+										.img-clip
+											img(src="#{asset(contentful.InspirationUpdates[i].featuredImage)}")
+										.masonry-content.clearfix
+											p.color--green.small.unmarg.float-left.col-sm-12.uppercase= contentful.InspirationUpdates[i].location +' '+ (date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()
+											h3.color--blue.float-left.col-sm-12= contentful.InspirationUpdates[i].title
+											p.color--default.col-xs-10= contentful.InspirationUpdates[i].featuredText
+											.col-xs-12
+												a.float-right.btn.btn-circle.btn-blue-white(href="#{contentful.InspirationUpdates[i]._url}")
+													span.btn__text= contentful.Home[0].productDetails
+													img.arrow-right(src="/img/icon/arrow-right-blue.png")
+												//-img.arrow-right(src="/img/icon/arrow-o-right.png")
+							- i++}
+
 					
 		
 
 		section.imagebg.parallax.cover.height-80
 			.background-image-holder
-				img(alt='background', src='#{asset(contentful.InspirationPage[0].bottomImage)}')
+				if contentful.InspirationPage[0].bottomImage != undefined
+					img(alt='background', src='#{asset(contentful.InspirationPage[0].bottomImage)}')
 		.container
 			.row
 				#text-overlap.corner-point-green.col-lg-8.bg--gradient.clearfix.float-right

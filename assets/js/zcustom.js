@@ -1,4 +1,7 @@
-var locale = (/\/de\/|\/ru\/|\/es\//ig.exec(window.location.pathname)) ? /\/de\/|\/es\//ig.exec(window.location.pathname)[0].substring(0,3) : ''
+
+
+
+var locale = (/\/de\/|\/ru\/|\/es\//ig.exec(window.location.pathname)) ? /\/de\/|\/ru\/|\/es\//ig.exec(window.location.pathname)[0].substring(0,3) : ''
 $(document).ready(function(){
 		$('a:not(.language, .social, .lb-next, .lb-prev)').each(function(i,val){
 			if(!(/^(#)\w+$|^(#)+$|(http)|\/de\/|\/ru\/|\/es\/|\/\/|(contentful)/ig).test($(val).attr('href')) && $(val).attr('href') != undefined){
@@ -6,7 +9,7 @@ $(document).ready(function(){
 				$(val).attr('href',locale+$(val).attr('href'))
 			}
 		})
-		$('#contact-form').attr('action',locale+$('#contact-form').attr('action'))
+		//$('#contact-form').attr('action',locale+$('#contact-form').attr('action'))
 
 		$('#share-icons a.facebook').attr('href', 'https://www.facebook.com/dialog/share?app_id=407590409638822&display=popup&href='+window.location.href+'&quote='+encodeURIComponent($('#page-description').attr('content')))
 		$('#share-icons a.twitter').attr('href', 'https://twitter.com/home?status='+window.location.href)

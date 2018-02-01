@@ -4,33 +4,73 @@ block content
 	.content
 		section#hero.img-clip.imagebg.parallax.cover.height-70(data-overlay="7")
 			.background-image-holder
-				img(alt='background', src='#{asset(contentful.Support[0].headerBackground)}')
+				if contentful.Support[0].headerBackground != undefined
+					img(alt='background', src='#{asset(contentful.Support[0].headerBackground)}')
 			.signature-container
-			.container.pos-vertical-center
+			if contentful.Support[0].headerTitle != undefined
+				.container.pos-vertical-center
+					.row
+						.col-sm-12
+							h2#updatetitle= contentful.Support[0].headerTitle
+
+		section
+			.container
 				.row
 					.col-sm-12
-						h2#updatetitle= contentful.Support[0].headerTitle
-
+						h3.color--green= contentful.Contact[0].contactTitle
+				.row
+					.col-sm-12.unpad
+						- var locale = contentful.Contact[0].locale == 'en' ? '' : '/'+contentful.Contact[0].locale
+						form#contact-form.form-email.custom-script(data-error="#{contentful.Contact[0].sendErrorMessage}", name="Support-#{contentful.Contact[0].locale}", netlify-honeypot="bot-field", action='#{locale}/thankyou', netlify)
+							.col-sm-12.hidden
+								label don't fill this out:
+								input(type='text', name='bot-field')
+							.col-sm-6
+								label= contentful.Contact[0].yourName
+								input.validate-required(type='text', name='name')
+							.col-sm-6
+								label= contentful.Contact[0].yourDairy
+								input(type='text', name='dairy-name')
+							.col-sm-6
+								label= contentful.Contact[0].yourEmail
+								input.validate-required.validate-email(type='text', name='email')
+							.col-sm-6
+								label= contentful.Contact[0].yourPhone
+								input.validate-number-dash(type='text', name='phone-number')
+							.col-sm-12
+								label= contentful.Contact[0].yourMessage
+								textarea.validate-required(type='text', name='message')
+							.float-right(style="padding-right:15px;")
+								button.btn.btn-blue-white.arrow-after-blue-white(type='submit' style="position:relative;z-index:9;")
+									span.btn__text= contentful.Contact[0].sendButtonText
+									
 		if contentful.Support[0].links != undefined && contentful.Support[0].links.length > 0
 			section
 				.container
 					.row
 						.col-sm-8
-							h3.color--green= contentful.Support[0].linksSubhead
+							if contentful.Support[0].linksSubhead != undefined
+								h3.color--green= contentful.Support[0].linksSubhead
 							for item in contentful.Support[0].links
-								a.btn.btn-blue-white.arrow-after-blue-white(href='#{item.fields.buttonUrl}' target="_blank" rel="noopener")
-									span.btn__text= item.fields.buttonText
+								if item.fields.buttonUrl != undefined
+									a.btn.btn-blue-white.arrow-after-blue-white(href='#{item.fields.buttonUrl}' target="_blank" rel="noopener")
+										if item.fields.buttonText != undefined
+											span.btn__text= item.fields.buttonText
 		if contentful.Support[0].supportUpdates != undefined && contentful.Support[0].supportUpdates.length > 0
 			section
 				.container
 					.row
 						.col-sm-8
-							h3.color--green= contentful.Support[0].recentUpdates
+							if contentful.Support[0].recentUpdates != undefined
+								h3.color--green= contentful.Support[0].recentUpdates
 							for item in contentful.Support[0].supportUpdates
-								- var date = new Date(item.fields.date);
-								p.color--green.small= (date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()
-								h6.color--blue= item.fields.title
-								pre= item.fields.content
+								if item.fields.date != undefined
+									- var date = new Date(item.fields.date);
+									p.color--green.small= (date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()
+								if item.fields.title != undefined
+									h6.color--blue= item.fields.title
+								if item.fields.content != undefined
+									pre= item.fields.content
 
 		
 		if contentful.Support[0].publicDownloadsItems != undefined && contentful.Support[0].publicDownloadsItems.length > 0
@@ -38,10 +78,13 @@ block content
 				.container
 					.row
 						.col-sm-8
-							h3.color--green= contentful.Support[0].publicDownloads
+							if contentful.Support[0].publicDownloads != undefined
+								h3.color--green= contentful.Support[0].publicDownloads
 				
 					.row
 						for item in contentful.Support[0].publicDownloadsItems
 							.col-sm-12(style="margin:10px 0;")
-								a.btn.btn-blue-white.download-before-blue-white(href='#{asset(item.fields.file)}')
-									span.btn__text= item.fields.title
+								if item.fields.file != undefined
+									a.btn.btn-blue-white.download-before-blue-white(href='#{asset(item.fields.file)}')
+										if item.fields.title != undefined
+											span.btn__text= item.fields.title

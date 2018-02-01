@@ -7,14 +7,12 @@ contentful   = require 'roots-contentful'
 slugify      = require 'slugify'
 md           = require 'marked'
 
-
 module.exports =
-	output: 'public'
-	env: 'en'
+	output: 'public/ru'
+	ignores: ['start_app.js','readme.md', '**/layout.*', '**/_*', '.gitignore', 'ship.*conf','**/public/**','**/img/resized/*','**/img/stack/*']
+	env: 'ru'
 	locals:
-		env: 'en'
-	ignores: ['start_app.js','readme.md', '**/layout.*', '**/_*', '.gitignore', 'ship.*conf','**/public/**','**/img/resized/*','**/img/stack/*','*.coffee']
-
+		env: 'ru'
 	extensions: [
 		js_pipeline(files: ['assets/**/*.js','assets/js/*.coffee']),
 		css_pipeline(files: ['assets/**/*.css','assets/css/*.styl'])
@@ -24,38 +22,42 @@ module.exports =
 			#preview: true
 			access_token: '73bcd210fd4dd20baef3fb8293fba85fc18f91e563f06c146991414739107f9e'
 			space_id: 'c7vdx45k3txt'
-			
 			content_types:
-				##Variable_name:
-					##id: 'ID' ##FIND THIS ON CONTENTFUL
-					##template: 'views/partial/_cf_post.jade' ##render out content based on this template
-					##filters: { 'fields.environment[in]': ['staging', 'production'] } ##filter for language, etc
-					##path: (e) -> "blogging/#{e.category}/#{slugify(e.title)}" ##custom path
-					##write: 'data.json' ##write a JSON file with the data
+				##Rates:
+					##id: 'loanRates'
+					##template: 'views/partial/_cf_post.jade'
+					##filters: { 'fields.environment[in]': ['staging', 'production'] }
+					##path: (e) -> "blogging/#{e.category}/#{slugify(e.title)}"
+					##write: 'data.json'
+					##sort: compareFunction
+					##transform: transformFunction
+				##press_links:
+				##  id: 'xxxxxx'
 				Home:
 					id: 'homePage'
 					filters:{
-						'locale':'en-US'
+						'locale':'ru'
+
 					}
 				HomeProducts:
 					id: 'homePageProducts'
 					filters:{
-						'locale':'en-US'
+						'locale':'ru'
 					}
 				About:
 					id: 'aboutUsPage'
 					filters:{
-						'locale':'en-US'
+						'locale':'ru'
 					}
 				Support:
 					id: 'supportPage'
 					filters:{
-						'locale':'en-US'
+						'locale':'ru'
 					}
 				Updates:
 					id: 'blogPost'
 					filters:{
-						'locale':'en-US'
+						'locale':'ru'
 						'order': '-fields.date'
 					}
 					path: (e) -> "blog/#{slugify(e.url)}"
@@ -63,16 +65,15 @@ module.exports =
 				ProductUpdates:
 					id: 'updates'
 					filters:{
-						'locale':'en-US'
+						'locale':'ru'
 						'order': '-fields.date'
-
 					}
 					path: (e) -> "updates/#{slugify(e.url)}"
 					template: 'views/partials/_update.jade'
 				InspirationUpdates:
 					id: 'inspirationPost'
 					filters:{
-						'locale':'en-US'
+						'locale':'ru'
 						'order': '-fields.date'
 					}
 					path: (e) -> "inspiration/#{slugify(e.url)}"
@@ -80,75 +81,56 @@ module.exports =
 				Navigation:
 					id: 'navigation'
 					filters:{
-						'locale':'en-US'
+						'locale':'ru'
 					}
 				Footer:
 					id: 'footer'
 					filters:{
-						'locale':'en-US'
+						'locale':'ru'
 					}
 				Social:
 					id: 'social'
 					filters:{
-						'locale':'en-US'
+						'locale':'ru'
 					}
 				Contact:
 					id: 'contactPage'
 					filters:{
-						'locale':'en-US'
+						'locale':'ru'
 					}
 				UpdatesPage:
 					id: 'updatesPage'
 					filters:{
-						'locale':'en-US'
+						'locale':'ru'
 					}
 				InspirationPage:
 					id: 'inspirationPage'
 					filters:{
-						'locale':'en-US'
+						'locale':'ru'
 					}
 
 				TOTM:
 					id: 'tipOfTheMonthPost'
 					filters:{
-						'locale':'en-US'
+						'locale':'ru'
 						'order': '-fields.date'
 					}
 					template: 'views/partials/_TOTM.jade'
 				TOU:
 					id: 'termsOfUse'
 					filters:{
-						'locale':'en-US'
+						'locale':'ru'
 					}
 				Privacy:
 					id: 'privacyPolicy'
 					filters:{
-						'locale':'en-US'
+						'locale':'ru'
 					}
 				BlogCategories:
 					id: 'blogCategory'
 					filters:{
-						'locale':'en-US'
+						'locale':'ru'
 						'order': 'fields.title'
-					}
-				Jobs:
-					id:'jobListing'
-					filters:{
-						'order':'-fields.date'
-						'locale':'en-US'
-					}
-					template: 'views/partials/_job.jade'
-				JobCategories:
-					id:'jobCategory'
-					filters:{
-						'order':'fields.category'
-						'locale':'en-US'
-					}
-				JobLocations:
-					id:'jobLocation'
-					filters:{
-						'order':'fields.location'
-						'locale':'en-US'
 					}
 
 	]

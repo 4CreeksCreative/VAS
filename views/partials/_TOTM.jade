@@ -22,9 +22,10 @@ block content
 				.row
 					.col-sm-12
 						p.color--green= entry.location + ' - ' + (date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()
-				.row
-					.col-sm-8
-						pre.font--corbel.weight-normal= entry.body
+				if entry.body != undefined
+					.row
+						.col-sm-12.col-md-10.col-lg-8
+							.font--corbel.weight-normal.markdown!= md(entry.body)
 				
 				if entry.textAreas != undefined
 					for item in entry.textAreas
@@ -51,12 +52,12 @@ block content
 										
 						if item.fields.subhead != undefined
 							.row.mt--1
-								.col-sm-8
+								.col-sm-12.col-md-10.col-lg-8
 									h6.color--green= item.fields.subhead
 						if item.fields.body != undefined
 							.row
-								.col-sm-8
-									pre= item.fields.body
+								.col-sm-12.col-md-10.col-lg-8
+									.markdown!= md(item.fields.body)
 						if item.fields.videoIframe != undefined
 							.row
 								.col-sm-12
