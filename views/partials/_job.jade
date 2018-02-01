@@ -27,7 +27,7 @@ block content
 				if entry.description != undefined
 					.row
 						.col-sm-8
-							p!= entry.description
+							.md!= md(entry.description)
 
 		if entry.files != undefined
 			.container.mb--2.mt--2
