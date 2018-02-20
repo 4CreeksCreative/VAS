@@ -48,9 +48,9 @@ $('form.form-email.custom-script').submit(function(e){
 		formError = body.find('.form-error');
 		formSuccess = body.find('.form-success');
 		thisForm.addClass('attempted-submit');
+		
 
-
-	if (mr.forms.validateFields($('form.form-email.custom-script')) !== 1) return
+	if (mr.forms.validateFields($('form.form-email.custom-script')) !== 1 && grecaptcha.getResponse() != '') return
 	else e.preventDefault(); mr.forms.showFormError(formSuccess, formError, 1000, 5000, 500);
 
 })

@@ -39,6 +39,8 @@ block content
 							.col-sm-12
 								label= contentful.Contact[0].yourMessage
 								textarea.validate-required(type='text', name='message')
+							.col-sm-12
+								.g-recaptcha(data-sitekey="6Lcwh0cUAAAAADcooEb0o_1UkRw7aL7Ypo1-mIx4")
 							.float-right(style="padding-right:15px;")
 								button.btn.btn-blue-white.arrow-after-blue-white(type='submit' style="position:relative;z-index:9;")
 									span.btn__text= contentful.Contact[0].sendButtonText
