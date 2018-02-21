@@ -48,8 +48,11 @@ $('form.form-email.custom-script').submit(function(e){
 		formError = body.find('.form-error');
 		formSuccess = body.find('.form-success');
 		thisForm.addClass('attempted-submit');
-	if (grecaptcha.getResponse() != ''){
+	if (grecaptcha.getResponse() === ''){
 		errorText = 'Please complete captcha'
+	}
+	if (/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/igm.test($('textarea').val()) === true){
+		errorText = 'Please do not include URLs in the message body'
 	}
 	if (mr.forms.validateFields($('form.form-email.custom-script')) !== 1 && grecaptcha.getResponse() != '' && /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/igm.test($('textarea').val()) != true) return
 	else e.preventDefault(); mr.forms.showFormError(formSuccess, formError, 1000, 5000, 500);
