@@ -56,12 +56,13 @@ $('form.form-email.custom-script').submit(function(e){
 	formSuccess = body.find('.form-success');
 	thisForm.addClass('attempted-submit');
 	if (mr.forms.validateFields($('form.form-email.custom-script')) !== 1 && grecaptcha.getResponse() != '' && /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/igm.test($('textarea').val()) != true){
-		$('form.form-email.custom-script').find('input.name').attr('name','name'+key)
-		$('form.form-email.custom-script').find('input.dairy').attr('name','dairy-name'+key)
-		$('form.form-email.custom-script').find('input.phone').attr('name','phone-number'+key)
-		$('form.form-email.custom-script').find('input.email').attr('name','email'+key)
-		$('form.form-email.custom-script').find('textarea.message').attr('name','message'+key)
-		$.post('', thisForm.serialize()).then(function() {
+		clearInterval(x);
+		$('form.form-email.custom-script').find('input.name').attr('name','name'+key);
+		$('form.form-email.custom-script').find('input.dairy').attr('name','dairy-name'+key);
+		$('form.form-email.custom-script').find('input.phone').attr('name','phone-number'+key);
+		$('form.form-email.custom-script').find('input.email').attr('name','email'+key);
+		$('form.form-email.custom-script').find('textarea.message').attr('name','message'+key);
+		$.post(thisForm.attr("action"), thisForm.serialize()).then(function() {
 			window.location = thisForm.attr("action")
 		});
 	}
@@ -69,9 +70,9 @@ $('form.form-email.custom-script').submit(function(e){
 
 })
 
-var x = setInterval(function() {
-	$('form.form-email.custom-script').find('input').attr('name',Math.floor(Math.random() * Math.floor(10)))
-}, 500);
+var x = setInterval(function(){
+	$('form.form-email.custom-script').find('input').attr('name',Math.floor(Math.random() * Math.floor(9)))
+}, 1000);
 
 // --------- CUSTOM JOB ENTRY SEARCH
 function JobSearch(){
