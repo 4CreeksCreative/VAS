@@ -30,6 +30,7 @@ $(document).ready(function(){
 // --------- CUSTOM FORM VALIDATION
 
 $('form.form-email.custom-script').submit(function(e){
+	e.preventDefault();
 	var body          = $('body'),
 		thisForm      = $(e.target).closest('form'),
 		formAction    = typeof thisForm.attr('action') !== typeof undefined ? thisForm.attr('action') : "",
@@ -55,7 +56,7 @@ $('form.form-email.custom-script').submit(function(e){
 	formSuccess = body.find('.form-success');
 	thisForm.addClass('attempted-submit');
 	if (mr.forms.validateFields($('form.form-email.custom-script')) !== 1 && grecaptcha.getResponse() != '' && /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/igm.test($('textarea').val()) != true) return
-	else e.preventDefault(); mr.forms.showFormError(formSuccess, formError, 1000, 5000, 500);
+	else mr.forms.showFormError(formSuccess, formError, 1000, 5000, 500);
 
 })
 
