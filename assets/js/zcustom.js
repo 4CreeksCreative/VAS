@@ -61,7 +61,7 @@ $('form.form-email.custom-script').submit(function(e){
 		$('form.form-email.custom-script').find('input.phone').attr('name','phone-number'+key)
 		$('form.form-email.custom-script').find('input.email').attr('name','email'+key)
 		$('form.form-email.custom-script').find('textarea.message').attr('name','message'+key)
-		$.post(thisForm.attr("action"), thisForm.serialize()).then(function() {
+		$.post('', thisForm.serialize()).then(function() {
 			window.location = thisForm.attr("action")
 		});
 	}
