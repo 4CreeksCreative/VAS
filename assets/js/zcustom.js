@@ -55,7 +55,9 @@ $('form.form-email.custom-script').submit(function(e){
 	formError = body.find('.form-error');
 	formSuccess = body.find('.form-success');
 	thisForm.addClass('attempted-submit');
-	if (mr.forms.validateFields($('form.form-email.custom-script')) !== 1 && grecaptcha.getResponse() != '' && /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/igm.test($('textarea').val()) != true) return
+	if (mr.forms.validateFields($('form.form-email.custom-script')) !== 1 && grecaptcha.getResponse() != '' && /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/igm.test($('textarea').val()) != true){
+		$.post(thisForm.attr("action"), thisForm.serialize()).then(function() {});
+	}
 	else mr.forms.showFormError(formSuccess, formError, 1000, 5000, 500);
 
 })
