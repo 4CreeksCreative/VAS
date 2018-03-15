@@ -4,6 +4,11 @@ block content
 	- var key = Math.floor(Math.random() * Math.floor(10))
 	script.
 		var key = #{key}
+		$('form.form-email.custom-script').find('input.name').attr('name','name#{key}');
+		$('form.form-email.custom-script').find('input.dairy').attr('name','dairy-name#{key}');
+		$('form.form-email.custom-script').find('input.phone').attr('name','phone-number#{key}');
+		$('form.form-email.custom-script').find('input.email').attr('name','email#{key}');
+		$('form.form-email.custom-script').find('textarea.message').attr('name','message#{key}');
 	.content
 		section#hero.imagebg.clip.parallax.cover.height-70(data-overlay="7")
 			.background-image-holder
@@ -26,22 +31,22 @@ block content
 						form#contact-form.form-email.custom-script(data-error="#{contentful.Contact[0].sendErrorMessage}", name="Contact-#{contentful.Contact[0].locale}", netlify-honeypot="bot-field", action='#{locale}/thankyou', netlify netlify-recaptcha)
 							.col-sm-12.hidden
 								label don't fill this out:
-								input(type='text', name='bot-field#{key}')
+								input(type='text', name='bot-field')
 							.col-sm-6
 								label= contentful.Contact[0].yourName
-								input.name.validate-required(type='text', name='name#{key}')
+								input.name.validate-required(type='text', name='name')
 							.col-sm-6
 								label= contentful.Contact[0].yourDairy
-								input.dairy(type='text', name='dairy-name#{key}')
+								input.dairy(type='text', name='dairy-name')
 							.col-sm-6
 								label= contentful.Contact[0].yourEmail
-								input.email.validate-required.validate-email(type='text', name='email#{key}')
+								input.email.validate-required.validate-email(type='text', name='email')
 							.col-sm-6
 								label= contentful.Contact[0].yourPhone
-								input.phone.validate-number-dash(type='text', name='phone-number#{key}')
+								input.phone.validate-number-dash(type='text', name='phone-number')
 							.col-sm-12
 								label= contentful.Contact[0].yourMessage
-								textarea.message.validate-required(type='text', name='message#{key}')
+								textarea.message.validate-required(type='text', name='message')
 							.col-sm-12
 								div(netlify-recaptcha)
 							.float-right(style="padding-right:15px;")
