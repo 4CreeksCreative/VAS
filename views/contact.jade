@@ -2,15 +2,6 @@ extends layout
 
 block content
 	- var key = Math.floor(Math.random() * Math.floor(10))
-	script.
-		var key = #{key}
-		$(document).ready(function(){
-			$('form.form-email.custom-script').find('input.name').attr('name','name#{key}');
-			$('form.form-email.custom-script').find('input.dairy').attr('name','dairy-name#{key}');
-			$('form.form-email.custom-script').find('input.phone').attr('name','phone-number#{key}');
-			$('form.form-email.custom-script').find('input.email').attr('name','email#{key}');
-			$('form.form-email.custom-script').find('textarea.message').attr('name','message#{key}');
-		})
 	.content
 		section#hero.imagebg.clip.parallax.cover.height-70(data-overlay="7")
 			.background-image-holder
@@ -54,3 +45,12 @@ block content
 							.float-right(style="padding-right:15px;")
 								button.btn.btn-blue-white.arrow-after-blue-white(type='submit' style="position:relative;z-index:9;")
 									span.btn__text= contentful.Contact[0].sendButtonText
+	script.
+		var key = #{key}
+		$(document).ready(function(){
+			$('form.form-email.custom-script').find('input.name').attr('name','name#{key}');
+			$('form.form-email.custom-script').find('input.dairy').attr('name','dairy-name#{key}');
+			$('form.form-email.custom-script').find('input.phone').attr('name','phone-number#{key}');
+			$('form.form-email.custom-script').find('input.email').attr('name','email#{key}');
+			$('form.form-email.custom-script').find('textarea.message').attr('name','message#{key}');
+		})
