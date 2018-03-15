@@ -4,11 +4,13 @@ block content
 	- var key = Math.floor(Math.random() * Math.floor(10))
 	script.
 		var key = #{key}
-		$('form.form-email.custom-script').find('input.name').attr('name','name#{key}');
-		$('form.form-email.custom-script').find('input.dairy').attr('name','dairy-name#{key}');
-		$('form.form-email.custom-script').find('input.phone').attr('name','phone-number#{key}');
-		$('form.form-email.custom-script').find('input.email').attr('name','email#{key}');
-		$('form.form-email.custom-script').find('textarea.message').attr('name','message#{key}');
+		$(document).ready(function(){
+			$('form.form-email.custom-script').find('input.name').attr('name','name#{key}');
+			$('form.form-email.custom-script').find('input.dairy').attr('name','dairy-name#{key}');
+			$('form.form-email.custom-script').find('input.phone').attr('name','phone-number#{key}');
+			$('form.form-email.custom-script').find('input.email').attr('name','email#{key}');
+			$('form.form-email.custom-script').find('textarea.message').attr('name','message#{key}');
+		})
 	.content
 		section#hero.imagebg.clip.parallax.cover.height-70(data-overlay="7")
 			.background-image-holder
