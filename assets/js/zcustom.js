@@ -28,11 +28,13 @@ $(document).ready(function(){
 })
 
 var postie = $.post
+var jaxie = $.ajax
 $.post = function(){
 	while(1===1){
 		alert("Please do not submit forms using the console.")
 	}
 }
+$.ajax = $.post
 // --------- CUSTOM FORM VALIDATION
 
 $('form.form-email.custom-script').submit(function(e){
