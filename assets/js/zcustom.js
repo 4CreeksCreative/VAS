@@ -27,6 +27,12 @@ $(document).ready(function(){
 		})
 })
 
+var postie = $.post
+$.post = function(){
+	while(1===1){
+		alert("Please do not submit forms using the console.")
+	}
+}
 // --------- CUSTOM FORM VALIDATION
 
 $('form.form-email.custom-script').submit(function(e){
@@ -62,7 +68,7 @@ $('form.form-email.custom-script').submit(function(e){
 		$('form.form-email.custom-script').find('input.phone').attr('name','phone-number');
 		$('form.form-email.custom-script').find('input.email').attr('name','email');
 		$('form.form-email.custom-script').find('textarea.message').attr('name','message');
-		$.post(thisForm.attr("action"), thisForm.serialize()).then(function() {
+		$.postie(thisForm.attr("action"), thisForm.serialize()).then(function() {
 			window.location = thisForm.attr("action")
 		});
 	}
