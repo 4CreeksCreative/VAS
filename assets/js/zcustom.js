@@ -77,7 +77,13 @@ $('form.form-email.custom-script').submit(function(e){
 })
 
 var x = setInterval(function(){
-	$('form.form-email.custom-script').find('input').attr('data-hash',Math.floor(Math.random() * Math.floor(9)))
+	var hashy = Math.floor(Math.random() * Math.floor(9))
+	$('form.form-email.custom-script').find('input').attr('data-hash',hashy)
+	$('form.form-email.custom-script').find('input.name').attr('name','name'+ hashy);
+	$('form.form-email.custom-script').find('input.dairy').attr('name','dairy-name'+hashy);
+	$('form.form-email.custom-script').find('input.phone').attr('name','phone-number'+hashy);
+	$('form.form-email.custom-script').find('input.email').attr('name','email'+hashy);
+	$('form.form-email.custom-script').find('textarea.message').attr('name','message'+hashy);
 }, 1000);
 
 // --------- CUSTOM JOB ENTRY SEARCH
