@@ -43,8 +43,23 @@ header
 										a(href="/jobs") Careers
 									li
 										a(href="https://www.halfhartedoutfitters.com/vas" target="_blank") VAS Store
-								li
-									a(href="/updates")= contentful.Navigation[0].updates
+								li.dropdown
+									span.dropdown__trigger= contentful.Navigation[0].updates
+									.dropdown__container
+										.container
+											.row
+												.custom-toggled-class.col-xs-12.col-sm-5.col-md-3.dropdown__content.dropdown__content--lg
+													.col-xs-12.text-left
+														ul
+															li.dropdown-item
+																a(href="/updates")= contentful.Home[0].updatesSectionTitle
+															li.dropdown-item
+																a(href="/updates#tipOfTheMonth")= contentful.Home[0].tipOfTheMonth
+															
+															//- li
+															//- 	a.language(href="/de")= contentful.Navigation[0].german
+															//- li
+															//- 	a.language(href="/ru" style="font-weight:500;")= contentful.Navigation[0].russian
 								//-li
 									a(href="#")= contentful.Navigation[0].newsletter
 								li
@@ -56,7 +71,7 @@ header
 									.dropdown__container
 										.container
 											.row
-												#language-dropdown.custom-toggled-class.col-xs-12.col-sm-5.col-md-3.dropdown__content.dropdown__content--lg
+												.box-shadow.custom-toggled-class.col-xs-12.col-sm-5.col-md-3.dropdown__content.dropdown__content--lg
 													.col-xs-12.text-left
 														ul
 															li

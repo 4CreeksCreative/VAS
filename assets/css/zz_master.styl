@@ -136,9 +136,9 @@ p i
 	height 100%
 .hamburger-toggle i
 	color $green2
-#language-dropdown
-	box-shadow $box-shadow
 .language-dropdown
+	.box-shadow
+		box-shadow $box-shadow
 	border-left $border
 	padding-left 10px
 	img
@@ -228,7 +228,7 @@ ul
 			li.active:before
 				display none
 
-.language-dropdown
+.dropdown__container
 	ul
 		font-size 14px
 
@@ -762,7 +762,7 @@ header
 		.currentPage
 			color $blue !important
 		#mini-menu
-			a, .language
+			a, .language, span.dropdown__trigger, .dropdown-item a
 				text-transform none
 				opacity 1
 				color $green2
