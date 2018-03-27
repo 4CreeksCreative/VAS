@@ -73,6 +73,7 @@ $('form.form-email.custom-script').submit(function(e){
 		// $.postie(thisForm.attr("action"), thisForm.serialize()).then(function() {
 		// 	window.location = thisForm.attr("action")
 		// });
+		return true
 	}
 	else{
 		e.preventDefault()
