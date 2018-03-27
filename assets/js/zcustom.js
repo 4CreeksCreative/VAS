@@ -38,7 +38,7 @@ $.ajax = $.post
 // --------- CUSTOM FORM VALIDATION
 
 $('form.form-email.custom-script').submit(function(e){
-	e.preventDefault();
+	//e.preventDefault();
 	var body          = $('body'),
 		thisForm      = $(e.target).closest('form'),
 		formAction    = typeof thisForm.attr('action') !== typeof undefined ? thisForm.attr('action') : "",
@@ -70,23 +70,27 @@ $('form.form-email.custom-script').submit(function(e){
 		$('form.form-email.custom-script').find('input.phone').attr('name','phone-number');
 		$('form.form-email.custom-script').find('input.email').attr('name','email');
 		$('form.form-email.custom-script').find('textarea.message').attr('name','message');
-		$.postie(thisForm.attr("action"), thisForm.serialize()).then(function() {
-			window.location = thisForm.attr("action")
-		});
+		// $.postie(thisForm.attr("action"), thisForm.serialize()).then(function() {
+		// 	window.location = thisForm.attr("action")
+		// });
 	}
-	else mr.forms.showFormError(formSuccess, formError, 1000, 5000, 500);
+	else{
+		e.preventDefault()
+		mr.forms.showFormError(formSuccess, formError, 1000, 5000, 500);
+	}
+	
 
 })
 
-var x = setInterval(function(){
-	var hashy = Math.floor(Math.random() * Math.floor(9))
-	$('form.form-email.custom-script').find('input').attr('data-hash',hashy)
-	$('form.form-email.custom-script').find('input.name').attr('name','name'+ hashy);
-	$('form.form-email.custom-script').find('input.dairy').attr('name','dairy-name'+hashy);
-	$('form.form-email.custom-script').find('input.phone').attr('name','phone-number'+hashy);
-	$('form.form-email.custom-script').find('input.email').attr('name','email'+hashy);
-	$('form.form-email.custom-script').find('textarea.message').attr('name','message'+hashy);
-}, 1000);
+// var x = setInterval(function(){
+// 	var hashy = Math.floor(Math.random() * Math.floor(9))
+// 	$('form.form-email.custom-script').find('input').attr('data-hash',hashy)
+// 	$('form.form-email.custom-script').find('input.name').attr('name','name'+ hashy);
+// 	$('form.form-email.custom-script').find('input.dairy').attr('name','dairy-name'+hashy);
+// 	$('form.form-email.custom-script').find('input.phone').attr('name','phone-number'+hashy);
+// 	$('form.form-email.custom-script').find('input.email').attr('name','email'+hashy);
+// 	$('form.form-email.custom-script').find('textarea.message').attr('name','message'+hashy);
+// }, 1000);
 
 // --------- CUSTOM JOB ENTRY SEARCH
 function JobSearch(){
