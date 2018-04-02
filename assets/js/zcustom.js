@@ -73,16 +73,7 @@ $('form.form-email.custom-script').submit(function(e){
 			http.open("POST", formAction, true);
 			http.send(params);
 			http.onload = function() {
-				var res = JSON.parse(http.responseText)
-				if(res.status == "success"){
-					window.location = thisForm.attr('action')
-				}
-				else{
-					thisForm.find('input,textarea').prop('readonly','false')
-					thisForm.find("button").prop("disabled","false")
-					formError.html('Something went wrong sending the email...')
-					mr.forms.showFormError(formSuccess, formError, 1000, 5000, 500)
-				}
+				window.location = thisForm.attr('action')
 			}
 	}
 	else{
