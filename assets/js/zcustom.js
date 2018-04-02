@@ -1,4 +1,15 @@
-
+const postie = $.post;
+const jaxie = $.ajax;
+const huehue = new XMLHttpRequest();
+$.post = function(){
+	//console.log("POST rekt email bruh")
+}
+$.ajax = function(){
+	//console.log("AJAX rekt email bruh")
+}
+var XMLHttpRequest = function(){
+	//console.log("XML rekt email bruh")
+}
 
 
 var locale = (/\/de\/|\/ru\/|\/es\//ig.exec(window.location.pathname)) ? /\/de\/|\/ru\/|\/es\//ig.exec(window.location.pathname)[0].substring(0,3) : ''
@@ -27,14 +38,7 @@ $(document).ready(function(){
 		})
 })
 
-var postie = $.post
-var jaxie = $.ajax
-$.post = function(){
-	while(1===1){
-		alert("Please do not submit forms using the console.")
-	}
-}
-$.ajax = $.post
+
 // --------- CUSTOM FORM VALIDATION
 
 $('form.form-email.custom-script').submit(function(e){
@@ -64,16 +68,22 @@ $('form.form-email.custom-script').submit(function(e){
 	formSuccess = body.find('.form-success');
 	thisForm.addClass('attempted-submit');
 	if (mr.forms.validateFields($('form.form-email.custom-script')) !== 1 && grecaptcha.getResponse() != '' && /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/igm.test($('textarea').val()) != true){
-		// clearInterval(x);
-		// $('form.form-email.custom-script').find('input.name').attr('name','name');
-		// $('form.form-email.custom-script').find('input.dairy').attr('name','dairy-name');
-		// $('form.form-email.custom-script').find('input.phone').attr('name','phone-number');
-		// $('form.form-email.custom-script').find('input.email').attr('name','email');
-		// $('form.form-email.custom-script').find('textarea.message').attr('name','message');
-		// $.postie(thisForm.attr("action"), thisForm.serialize()).then(function() {
-		// 	window.location = thisForm.attr("action")
-		// });
-		return true
+			var http = huehue;
+			var params = new FormData(document.getElementById('contact-form'))
+			http.open("POST", formAction, true);
+			http.send(params);
+			http.onload = function() {
+				var res = JSON.parse(http.responseText)
+				if(res.status == "success"){
+					window.location = thisForm.attr('action')
+				}
+				else{
+					thisForm.find('input,textarea').prop('readonly','false')
+					thisForm.find("button").prop("disabled","false")
+					formError.html('Something went wrong sending the email...')
+					mr.forms.showFormError(formSuccess, formError, 1000, 5000, 500)
+				}
+			}
 	}
 	else{
 		e.preventDefault()
