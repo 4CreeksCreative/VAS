@@ -42,7 +42,7 @@ $(document).ready(function(){
 // --------- CUSTOM FORM VALIDATION
 
 $('form.form-email.custom-script').submit(function(e){
-	//e.preventDefault();
+	e.preventDefault();
 	var body          = $('body'),
 		thisForm      = $(e.target).closest('form'),
 		formAction    = typeof thisForm.attr('action') !== typeof undefined ? thisForm.attr('action') : "",
@@ -86,7 +86,6 @@ $('form.form-email.custom-script').submit(function(e){
 			}
 	}
 	else{
-		e.preventDefault()
 		mr.forms.showFormError(formSuccess, formError, 1000, 5000, 500);
 	}
 	
