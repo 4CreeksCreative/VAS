@@ -93,25 +93,25 @@ function JobSearch(){
 		category: $('#jobCategory').val() == '*' ? null : new RegExp($('#jobCategory').val(),'i'),
 	}
 
-	$('.job-post').show()
+	$('.job-post').show();
 
 	$('.job-post').each(function(i,val){
 		if (query.location != null && !(query.location).test($(val).attr('class').toString())){
-			$(val).hide()
+			$(val).hide();
 		}
 		if (query.category != null && !(query.category).test($(val).attr('class').toString())){
-			$(val).hide()
+			$(val).hide();
 		}
 		if (query.text != null && !(query.text).test($(val).find('#item-title').html().toString())){
-			$(val).hide()
+			$(val).hide();
 		}
 	})
 
 }
 $('#jobQuery').keyup(function(e){
 	if(e.which == 13 || e.keyCode == 13){
-			e.preventDefault()
-			JobSearch()
+			e.preventDefault();
+			JobSearch();
 		}
 })
 // $(document).on('keydown','#jobQuery',function(e){
