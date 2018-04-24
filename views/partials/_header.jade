@@ -24,17 +24,8 @@ header
 					.col-sm-11.col-xs-12.text-right.text-right-xs.float-right.float-right-xs.bg--white
 						.bar__module
 							ul.menu-horizontal.text-right.text-left-xs
-								li.dropdown
-									span.dropdown__trigger= contentful.Navigation[0].products
-									.dropdown__container
-										.container
-											.row
-												.custom-dropdown.col-xs-12.col-sm-5.col-md-3.dropdown__content.dropdown__content--lg
-													.col-sm-12
-														ul
-															for item in contentful.ProductUpdates
-																li
-																	a(href="#{item._url}")= item.title
+								//-li
+									a(href="#")= contentful.Navigation[0].solutions
 								li
 									a(href="/about")= contentful.Navigation[0].aboutUs
 								li
@@ -64,7 +55,6 @@ header
 																a(href="/updates")= contentful.Home[0].updatesSectionTitle
 															//-li.dropdown-item
 																a(href="/updates#tipOfTheMonth")= contentful.Home[0].tipOfTheMonth
-															
 															//- li
 															//- 	a.language(href="/de")= contentful.Navigation[0].german
 															//- li
