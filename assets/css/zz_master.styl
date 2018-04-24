@@ -777,7 +777,7 @@ header
 					color $blue
 					transition .2s
 		#mega-menu
-			a
+			a, span
 				text-transform none
 				opacity 1
 				color $green
@@ -788,6 +788,26 @@ header
 				&:hover
 					color $blue
 					transition .2s
+		#mega-menu
+			.custom-dropdown
+				@media (max-width:767px)
+					left 0 !important
+				ul
+					font-size 15px
+				padding 10px 20px
+				li
+					margin 0
+					a
+						font-size 15px
+				// right 0
+				// left initial !important
+				// transition 0.5s
+				// position fixed
+				// width 65%
+				@media (max-height:475px)
+					bottom 0
+					top initial
+				
 	#mega-menu
 		position relative
 		top 40px

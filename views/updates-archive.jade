@@ -30,28 +30,21 @@ block content
 										for item in contentful.BlogCategories
 											li(data-masonry-filter='#{item.slug}')= item.title
 					
-					.row.text-center
-						.col-sm-12
-							a.btn.btn-green-white.arrow-after-green-white(href='/updates-archive')
-								span.btn__text= contentful.Home[0].updatesButtonText
 					.row.masonry__container
 						if contentful.Updates != undefined
-							- var max = 4
 							for update in contentful.Updates
-								if max > 0
-									- max--
-									- var date = new Date(update.date);
-									- var cats = ''
-									if update.category != undefined
-										for item in update.category
-											- cats+= ' filter-'+item.fields.slug
-									.col-xs-12.update-item.bg--white.clearfix.masonry__item.unmarg(class='#{cats}')
-										a(href="#{update._url}")
-											p.color--green.small.unmarg.float-left.col-xs-12= update.location + ' ' + (date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()
-											h6.weight-700.color--blue.unmarg.float-left.col-xs-10= update.title
-											div.arrow-right.float-right
+								- var date = new Date(update.date);
+								- var cats = ''
+								if update.category != undefined
+									for item in update.category
+										- cats+= ' filter-'+item.fields.slug
+								.col-xs-12.update-item.bg--white.clearfix.masonry__item.unmarg(class='#{cats}')
+									a(href="#{update._url}")
+										p.color--green.small.unmarg.float-left.col-xs-12= update.location + ' ' + (date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()
+										h6.weight-700.color--blue.unmarg.float-left.col-xs-10= update.title
+										div.arrow-right.float-right
 
-		if contentful.TOTM.length > 0
+		//-if contentful.TOTM.length > 0
 			section#tipOfTheMonth.updates-section.masonry
 				.container
 					.row
@@ -66,10 +59,6 @@ block content
 										li.active(data-masonry-filter='*')= contentful.UpdatesPage[0].allCategories
 										for item in contentful.BlogCategories
 											li(data-masonry-filter='#{item.slug}')= item.title
-					.row.text-center
-						.col-sm-12
-							a.btn.btn-green-white.arrow-after-green-white(href='/totm-archive')
-								span.btn__text= contentful.Home[0].viewAllTotm
 					.row.masonry__container
 						if contentful.TOTM != undefined
 							- var max = 3
