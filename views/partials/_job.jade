@@ -1,0 +1,41 @@
+extends ../layout
+
+block head
+	meta(property="og:image" content="#{asset(entry.headerImage)}")
+	meta#page-title(property="og:title" content= entry.title)
+
+block content
+	#blog-content.content
+		section#hero.clip.imagebg.parallax.cover.height-70(data-overlay="7")
+			.signature-container
+			.background-image-holder
+				if entry.headerImage != undefined
+					img(alt='background', src='#{asset(entry.headerImage)}')
+				else
+					img(alt='background', src='/img/job.jpg')
+			
+			.container.pos-vertical-center
+				.row.text-left
+					.col-sm-12
+						h1#updatetitle= entry.title
+		section#updates-content
+			- var date = new Date(entry.date);
+			.container
+				.row
+					.col-sm-12
+						p.color--green= entry.location.fields.location + ' - ' + (date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()
+				if entry.description != undefined
+					.row
+						.col-sm-8
+							.markdown!= md(entry.description)
+
+		if entry.files != undefined
+			.container.mb--2.mt--2
+				.row
+					.col-sm-12
+						h5.color--blue= contentful.Support[0].downloads
+				for item in entry.files
+					.row
+						.col-sm-12(style="margin:10px 0;")
+							a.btn.btn-blue-white.download-before-blue-white(href='#{asset(item)}', target='_blank', rel='noopener')
+								span.btn__text= item.fields.title

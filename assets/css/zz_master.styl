@@ -136,9 +136,9 @@ p i
 	height 100%
 .hamburger-toggle i
 	color $green2
-#language-dropdown
-	box-shadow $box-shadow
 .language-dropdown
+	.box-shadow
+		box-shadow $box-shadow
 	border-left $border
 	padding-left 10px
 	img
@@ -168,6 +168,13 @@ textarea
 
 
 // --- misc classes
+#contact-form2
+	display none
+#jobSearch
+	[class*="col-"]
+		margin-bottom 20px
+
+
 .markdown
 	p,ol li, ul li, span, strong, em
 		font-family $corbel !important
@@ -183,6 +190,8 @@ textarea
 				font-family $corbel
 	p
 		line-height 30px !important
+		a
+			font-family $corbel
 #sister-cos
 	position relative
 	top -20px
@@ -195,6 +204,8 @@ textarea
 			margin-right 10px
 		img
 			width 80px
+		&.connect-summit
+			width 60px
 ul
 	font-size 0
 	.dropdown__trigger
@@ -220,9 +231,10 @@ ul
 			li.active:before
 				display none
 
-.language-dropdown
+.dropdown__container
 	ul
 		font-size 14px
+
 .masonry-filter-container
 	margin 0
 .masonry__filters
@@ -278,6 +290,8 @@ input.large
 #social-share
 	h1,h2,h3,h4,h5,h6
 		line-height 35px
+	.instagram
+		display none
 .social-icons
 	li
 
@@ -576,6 +590,8 @@ a
 	border-radius 999px
 	white-space normal
 	padding 0 20px
+	.btn__text
+		font-family $uni !important
 
 // --- white on gray
 .btn-white-gray,
@@ -749,7 +765,7 @@ header
 		.currentPage
 			color $blue !important
 		#mini-menu
-			a, .language
+			a, .language, span.dropdown__trigger, .dropdown-item a
 				text-transform none
 				opacity 1
 				color $green2

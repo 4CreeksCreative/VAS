@@ -33,20 +33,13 @@ block content
 								.col-sm-12.unpad
 									.masonry
 											.masonry__container
-												if item.fields.imageWidth != undefined
-													for image in item.fields.images
-														.masonry__item.col-xs-6.col-sm-3
-															a(href='#{asset(image)}', data-lightbox="Gallery 1")
-																img(src="#{asset(image)}")
-																if (item.fields.displayImageTitle === 'yes')
-																	span.block.small.color--blue= image.fields.title
-												else
-													for image in item.fields.images
-														.masonry__item.col-xs-12.col-sm-12
-															a(href='#{asset(image)}', data-lightbox="Gallery 1")
-																img(src="#{asset(image)}")
-																if (item.fields.displayImageTitle === 'yes')
-																	span.block.small.color--blue= image.fields.title
+												for image in item.fields.images
+													- var imgWidth = item.fields.imageWidth != undefined ? item.fields.imageWidth : 'col-sm-12'
+													.masonry__item.col-xs-12(class="#{imgWidth}")
+														a(href='#{asset(image)}', data-lightbox="Gallery 1")
+															img(src="#{asset(image)}")
+															if (item.fields.displayImageTitle === 'yes')
+																span.block.small.color--blue= image.fields.title
 										
 						if item.fields.subhead != undefined
 							.row.mt--1

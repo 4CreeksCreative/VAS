@@ -80,7 +80,22 @@ block content
 				- i++}
 				
 				
-	
+		section#products.container
+			.row.text-center
+				.col-lg-12
+					h3.color--green= contentful.Home[0].productSectionTitle
+			#products-container.mt--1.row.text-center
+				for product in contentful.HomeProducts
+					.col-md-4.col-xs-12.float-center-sm.unpad.product-post
+						.img-clip
+							img(src="#{asset(product.photo)}")
+						div.product-content.text-left
+							h3.mb--1.color--blue= product.title
+							for item in product.list
+								p.weight-normal.font--corbel.color--blue.check-mark-before
+									!= item
+							a.btn.btn-blue-white.arrow-after-custom(href="#{product.pageUrl}")
+								span.btn__text= contentful.Home[0].productDetails
 		#video-teaser.container
 			.row
 				.col-lg-12(style="padding:0px;")
@@ -109,22 +124,7 @@ block content
 							.modal-content.bg-dark(data-width='60%', data-height='60%')
 								!= contentful.Home[0].featuredVideo
 								
-		section#products.container
-			.row.text-center
-				.col-lg-12
-					h3.color--green= contentful.Home[0].productSectionTitle
-			#products-container.mt--1.row.text-center
-				for product in contentful.HomeProducts
-					.col-md-4.col-xs-12.float-center-sm.unpad.product-post
-						.img-clip
-							img(src="#{asset(product.photo)}")
-						div.product-content.text-left
-							h3.mb--1.color--blue= product.title
-							for item in product.list
-								p.weight-normal.font--corbel.color--blue.check-mark-before
-									!= item
-							a.btn.btn-blue-white.arrow-after-custom(href="#{product.pageUrl}")
-								span.btn__text= contentful.Home[0].productDetails
+		
 
 				
 		include partials/_4updates

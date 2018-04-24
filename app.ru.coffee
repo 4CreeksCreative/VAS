@@ -13,6 +13,7 @@ module.exports =
 	env: 'ru'
 	locals:
 		env: 'ru'
+		md:require 'marked'
 	extensions: [
 		js_pipeline(files: ['assets/**/*.js','assets/js/*.coffee']),
 		css_pipeline(files: ['assets/**/*.css','assets/css/*.styl'])
@@ -147,6 +148,3 @@ module.exports =
 
 	server:
 		clean_urls:true
-
-	locals:
-		md:require 'marked'

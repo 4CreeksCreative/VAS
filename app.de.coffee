@@ -13,6 +13,7 @@ module.exports =
 	env: 'de'
 	locals:
 		env: 'de'
+		md:require 'marked'
 	extensions: [
 		js_pipeline(files: ['assets/**/*.js','assets/js/*.coffee']),
 		css_pipeline(files: ['assets/**/*.css','assets/css/*.styl'])
@@ -133,6 +134,25 @@ module.exports =
 						'locale':'en-US'
 						'order': 'fields.title'
 					}
+				Jobs:
+					id:'jobListing'
+					filters:{
+						'order':'-fields.date'
+						'locale':'de'
+					}
+					template: 'views/partials/_job.jade'
+				JobCategories:
+					id:'jobCategory'
+					filters:{
+						'order':'fields.category'
+						'locale':'de'
+					}
+				JobLocations:
+					id:'jobLocation'
+					filters:{
+						'order':'fields.location'
+						'locale':'de'
+					}
 
 
 	]
@@ -149,6 +169,3 @@ module.exports =
 
 	server:
 		clean_urls:true
-
-	locals:
-		md:require 'marked'

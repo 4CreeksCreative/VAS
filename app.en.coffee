@@ -13,6 +13,7 @@ module.exports =
 	env: 'en'
 	locals:
 		env: 'en'
+		md:require 'marked'
 	ignores: ['start_app.js','readme.md', '**/layout.*', '**/_*', '.gitignore', 'ship.*conf','**/public/**','**/img/resized/*','**/img/stack/*','*.coffee']
 
 	extensions: [
@@ -131,8 +132,26 @@ module.exports =
 						'locale':'en-US'
 						'order': 'fields.title'
 					}
-
-
+				Jobs:
+					id:'jobListing'
+					filters:{
+						'order':'-fields.date'
+						'locale':'en-US'
+					}
+					template: 'views/partials/_job.jade'
+					path: (e) -> "jobs/#{slugify(e.title)}"
+				JobCategories:
+					id:'jobCategory'
+					filters:{
+						'order':'fields.category'
+						'locale':'en-US'
+					}
+				JobLocations:
+					id:'jobLocation'
+					filters:{
+						'order':'fields.location'
+						'locale':'en-US'
+					}
 
 	]
 
@@ -148,6 +167,3 @@ module.exports =
 
 	server:
 		clean_urls:true
-
-	locals:
-		md:require 'marked'

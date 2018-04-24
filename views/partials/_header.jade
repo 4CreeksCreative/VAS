@@ -47,10 +47,42 @@ header
 					.col-sm-11.col-xs-12.text-right.float-right.text-center-xs.float-right-xs.bg--white
 						.bar__module
 							ul.menu-horizontal.text-right.text-left-xs
-								li
-									a(href="/updates")= contentful.Navigation[0].updates
+								if locals.env === 'en'
+									li
+										a(href="/jobs") Careers
+									li
+										a(href="https://www.halfhartedoutfitters.com/vas" target="_blank") VAS Store
+								li.dropdown
+									span.dropdown__trigger= contentful.Navigation[0].updates
+									.dropdown__container
+										.container
+											.row
+												.custom-toggled-class.col-xs-12.col-sm-5.col-md-3.dropdown__content.dropdown__content--lg
+													.col-xs-12.text-left
+														ul
+															li.dropdown-item
+																a(href="/updates")= contentful.Home[0].updatesSectionTitle
+															//-li.dropdown-item
+																a(href="/updates#tipOfTheMonth")= contentful.Home[0].tipOfTheMonth
+															
+															//- li
+															//- 	a.language(href="/de")= contentful.Navigation[0].german
+															//- li
+															//- 	a.language(href="/ru" style="font-weight:500;")= contentful.Navigation[0].russian
 								//-li
 									a(href="#")= contentful.Navigation[0].newsletter
+								li.dropdown
+									span.dropdown__trigger= contentful.Navigation[0].education
+									.dropdown__container
+										.container
+											.row
+												.custom-toggled-class.col-xs-12.col-sm-5.col-md-3.dropdown__content.dropdown__content--lg
+													.col-xs-12.text-left
+														ul
+															li.dropdown-item
+																a(href="http://www.dairylearning.com/" target="_blank") DairyLearning.com
+															li.dropdown-item
+																a(href="/updates#tipOfTheMonth")= contentful.Home[0].tipOfTheMonth
 								li
 									a(href="/contact")= contentful.Navigation[0].contact
 								li.dropdown.language-dropdown
@@ -60,7 +92,7 @@ header
 									.dropdown__container
 										.container
 											.row
-												#language-dropdown.custom-toggled-class.col-xs-12.col-sm-5.col-md-3.dropdown__content.dropdown__content--lg
+												.box-shadow.custom-toggled-class.col-xs-12.col-sm-5.col-md-3.dropdown__content.dropdown__content--lg
 													.col-xs-12.text-left
 														ul
 															li
