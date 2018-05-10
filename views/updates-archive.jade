@@ -27,8 +27,10 @@ block content
 								.masonry__filters.text-center(data-filter-all-text='#{contentful.UpdatesPage[0].allCategories}')
 									ul
 										li.active(data-masonry-filter='*')= contentful.UpdatesPage[0].allCategories
-										for item in contentful.BlogCategories
-											li(data-masonry-filter='#{item.slug}')= item.title
+										li(data-masonry-filter='vasplatform') Vas Platform
+										li(data-masonry-filter='dairycomp') Dairy Comp
+										li(data-masonry-filter='feedcomp') Feed Comp
+										li(data-masonry-filter='pocketcowcard') Pocket Cow Card
 					
 					.row.masonry__container
 						if contentful.Updates != undefined
@@ -36,8 +38,7 @@ block content
 								- var date = new Date(update.date);
 								- var cats = ''
 								if update.category != undefined
-									for item in update.category
-										- cats+= ' filter-'+item.fields.slug
+									- cats+= ' filter-'+update.category
 								.col-xs-12.update-item.bg--white.clearfix.masonry__item.unmarg(class='#{cats}')
 									a(href="#{update._url}")
 										p.color--green.small.unmarg.float-left.col-xs-12= update.location + ' ' + (date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()
