@@ -1,0 +1,77 @@
+extends layout
+
+block content
+	.content
+		section#hero.img-clip.imagebg.parallax.cover.height-70(data-overlay="7")
+			.background-image-holder
+				if contentful.UpdatesPage[0].headerBackground != undefined
+					img(alt='background', src='#{asset(contentful.UpdatesPage[0].headerBackground)}')
+			.signature-container
+			.container.pos-vertical-center
+				.row
+					.col-sm-12
+						if contentful.Home[0].updatesSectionTitle != undefined
+							h2#updatetitle= contentful.Home[0].updatesSectionTitle
+
+
+		if contentful.Articles != undefined
+			section.updates-section.masonry
+				.container
+					.row
+						.col-sm-12.text-center
+							if contentful.Home[0].updatesSectionTitle != undefined
+								h3.color--green= contentful.Home[0].updatesSectionTitle
+					if contentful.BlogCategories != undefined
+						.row.masonry-filter-container.text-center
+							.masonry-filter-holder.text-center
+								.masonry__filters.text-center(data-filter-all-text='#{contentful.UpdatesPage[0].allCategories}')
+									ul
+										li.active(data-masonry-filter='*')= contentful.UpdatesPage[0].allCategories
+										for item in contentful.BlogCategories
+											li(data-masonry-filter='#{item.slug}')= item.title
+					
+					.row.masonry__container
+						if contentful.Articles != undefined
+							for update in contentful.Articles
+								- var date = new Date(update.date);
+								- var cats = ''
+								if update.category != undefined
+									for item in update.category
+										- cats+= ' filter-'+item.fields.slug
+								.col-xs-12.update-item.bg--white.clearfix.masonry__item.unmarg(class='#{cats}')
+									a(href="#{update._url}")
+										p.color--green.small.unmarg.float-left.col-xs-12= update.location + ' ' + (date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()
+										h6.weight-700.color--blue.unmarg.float-left.col-xs-10= update.title
+										div.arrow-right.float-right
+
+		//-if contentful.TOTM.length > 0
+			section#tipOfTheMonth.updates-section.masonry
+				.container
+					.row
+						.col-sm-12.text-center
+							if contentful.Home[0].tipOfTheMonth != undefined
+								h3.color--green= contentful.Home[0].tipOfTheMonth
+					if contentful.BlogCategories != undefined
+						.row.masonry-filter-container.text-center
+							.masonry-filter-holder.text-center
+								.masonry__filters.text-center(data-filter-all-text='#{contentful.UpdatesPage[0].allCategories}')
+									ul
+										li.active(data-masonry-filter='*')= contentful.UpdatesPage[0].allCategories
+										for item in contentful.BlogCategories
+											li(data-masonry-filter='#{item.slug}')= item.title
+					.row.masonry__container
+						if contentful.TOTM != undefined
+							- var max = 3
+							for TOTM in contentful.TOTM
+								if max > 0
+									- max --
+									- var date = new Date(TOTM.date);
+									- var cats = ''
+									if TOTM.category != undefined
+										for item in TOTM.category
+											- cats+= ' filter-'+item.fields.slug
+									.col-xs-12.update-item.bg--white.clearfix.masonry__item(class="#{cats}")
+										a(href="#{TOTM._url}")
+											p.color--green.small.unmarg.float-left.col-xs-12 Update #{(date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()}
+											h6.weight-700.color--blue.unmarg.float-left.col-xs-10= TOTM.title
+											div.arrow-right.float-right

@@ -14,7 +14,7 @@ module.exports =
 	locals:
 		env: 'en'
 		md:require 'marked'
-	ignores: ['start_app.js','readme.md', '**/layout.*', '**/_*', '.gitignore', 'ship.*conf','**/public/**','**/img/resized/*','**/img/stack/*','*.coffee']
+	ignores: ['start.js','readme.md', '**/layout.*', '**/_*', '.gitignore', 'ship.*conf','**/public/**','**/img/resized/*','**/img/stack/*','*.coffee', '**/contentful-export/**']
 
 	extensions: [
 		js_pipeline(files: ['assets/**/*.js','assets/js/*.coffee']),
@@ -53,13 +53,21 @@ module.exports =
 					filters:{
 						'locale':'en-US'
 					}
-				Updates:
+				Articles:
 					id: 'blogPost'
 					filters:{
 						'locale':'en-US'
 						'order': '-fields.date'
 					}
-					path: (e) -> "blog/#{slugify(e.url)}"
+					path: (e) -> "articles/#{slugify(e.url)}"
+					template: 'views/partials/_update.jade'
+				Updates:
+					id: 'updatePost'
+					filters:{
+						'locale':'en-US'
+						'order': '-fields.date'
+					}
+					path: (e) -> "updates/#{slugify(e.url)}"
 					template: 'views/partials/_update.jade'
 				ProductUpdates:
 					id: 'updates'

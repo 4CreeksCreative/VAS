@@ -9,7 +9,7 @@ md           = require 'marked'
 
 module.exports =
 	output: 'public/de'
-	ignores: ['start_app.js','readme.md', '**/layout.*', '**/_*', '.gitignore', 'ship.*conf','**/public/**','**/img/resized/*','**/img/stack/*']
+	ignores: ['start.js','readme.md', '**/layout.*', '**/_*', '.gitignore', 'ship.*conf','**/public/**','**/img/resized/*','**/img/stack/*','*.coffee', '**/contentful-export/**']
 	env: 'de'
 	locals:
 		env: 'de'
@@ -55,14 +55,22 @@ module.exports =
 					filters:{
 						'locale':'en-US'
 					}
-				Updates:
+				Articles:
 					id: 'blogPostGerman'
 					filters:{
 						'locale':'en-US'
 						'order': '-fields.date'
+					}
+					path: (e) -> "articles/#{slugify(e.url)}"
+					template: 'views/partials/_update.jade'
+				Updates:
+					id: 'updatePost'
+					filters:{
+						'locale':'de'
+						'order': '-fields.date'
 
 					}
-					path: (e) -> "blog/#{slugify(e.url)}"
+					path: (e) -> "updates/#{slugify(e.url)}"
 					template: 'views/partials/_update.jade'
 				ProductUpdates:
 					id: 'updatePostGerman'

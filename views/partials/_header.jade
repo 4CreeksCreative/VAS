@@ -52,9 +52,10 @@ header
 													.col-xs-12.text-left
 														ul
 															li.dropdown-item
-																a(href="/updates")= contentful.Home[0].articles
-															//-li.dropdown-item
-																a(href="/updates#tipOfTheMonth")= contentful.Home[0].tipOfTheMonth
+																a(href="/articles")= contentful.Home[0].articles
+															if locals.env === 'en'
+																li.dropdown-item
+																	a(href="/updates")= contentful.Home[0].updatesSectionTitle
 															//- li
 															//- 	a.language(href="/de")= contentful.Navigation[0].german
 															//- li
@@ -72,7 +73,7 @@ header
 															li.dropdown-item
 																a(href="http://www.dairylearning.com/" target="_blank") DairyLearning.com
 															li.dropdown-item
-																a(href="/updates#tipOfTheMonth")= contentful.Home[0].tipOfTheMonth
+																a(href="/articles#tipOfTheMonth")= contentful.Home[0].tipOfTheMonth
 								li
 									a(href="/contact")= contentful.Navigation[0].contact
 								li.dropdown.language-dropdown

@@ -14,21 +14,23 @@ block content
 							h2#updatetitle= contentful.Home[0].updatesSectionTitle
 
 
-		if contentful.Updates != undefined
+		if contentful.Updates != undefined && contentful.Updates[0] != undefined
+			p=JSON.stringify(contentful.Updates)
 			section.updates-section.masonry
 				.container
 					.row
 						.col-sm-12.text-center
 							if contentful.Home[0].updatesSectionTitle != undefined
 								h3.color--green= contentful.Home[0].updatesSectionTitle
-					if contentful.BlogCategories != undefined
-						.row.masonry-filter-container.text-center
-							.masonry-filter-holder.text-center
-								.masonry__filters.text-center(data-filter-all-text='#{contentful.UpdatesPage[0].allCategories}')
-									ul
-										li.active(data-masonry-filter='*')= contentful.UpdatesPage[0].allCategories
-										for item in contentful.BlogCategories
-											li(data-masonry-filter='#{item.slug}')= item.title
+					.row.masonry-filter-container.text-center
+						.masonry-filter-holder.text-center
+							.masonry__filters.text-center(data-filter-all-text='#{contentful.UpdatesPage[0].allCategories}')
+								ul
+									li.active(data-masonry-filter='*')= contentful.UpdatesPage[0].allCategories
+									li(data-masonry-filter='vasplatform') Vas Platform
+									li(data-masonry-filter='dairycomp') Dairy Comp
+									li(data-masonry-filter='feedcomp') Feed Comp
+									li(data-masonry-filter='pocketcowcard') Pocket Cow Card
 					
 					.row.text-center
 						.col-sm-12
@@ -43,46 +45,51 @@ block content
 									- var date = new Date(update.date);
 									- var cats = ''
 									if update.category != undefined
-										for item in update.category
-											- cats+= ' filter-'+item.fields.slug
+										- cats+= ' filter-'+update.category
 									.col-xs-12.update-item.bg--white.clearfix.masonry__item.unmarg(class='#{cats}')
 										a(href="#{update._url}")
 											p.color--green.small.unmarg.float-left.col-xs-12= update.location + ' ' + (date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()
 											h6.weight-700.color--blue.unmarg.float-left.col-xs-10= update.title
 											div.arrow-right.float-right
 
-		if contentful.TOTM.length > 0
-			section#tipOfTheMonth.updates-section.masonry
+		else
+			section.updates-section
 				.container
 					.row
 						.col-sm-12.text-center
-							if contentful.Home[0].tipOfTheMonth != undefined
-								h3.color--green= contentful.Home[0].tipOfTheMonth
-					if contentful.BlogCategories != undefined
-						.row.masonry-filter-container.text-center
-							.masonry-filter-holder.text-center
-								.masonry__filters.text-center(data-filter-all-text='#{contentful.UpdatesPage[0].allCategories}')
-									ul
-										li.active(data-masonry-filter='*')= contentful.UpdatesPage[0].allCategories
-										for item in contentful.BlogCategories
-											li(data-masonry-filter='#{item.slug}')= item.title
-					.row.text-center
-						.col-sm-12
-							a.btn.btn-green-white.arrow-after-green-white(href='/totm-archive')
-								span.btn__text= contentful.Home[0].viewAllTotm
-					.row.masonry__container
-						if contentful.TOTM != undefined
-							- var max = 3
-							for TOTM in contentful.TOTM
-								if max > 0
-									- max --
-									- var date = new Date(TOTM.date);
-									- var cats = ''
-									if TOTM.category != undefined
-										for item in TOTM.category
-											- cats+= ' filter-'+item.fields.slug
-									.col-xs-12.update-item.bg--white.clearfix.masonry__item(class="#{cats}")
-										a(href="#{TOTM._url}")
-											p.color--green.small.unmarg.float-left.col-xs-12 Update #{(date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()}
-											h6.weight-700.color--blue.unmarg.float-left.col-xs-10= TOTM.title
-											div.arrow-right.float-right
+							h3.color--green No updates at this time, stay tuned!
+		//- if contentful.TOTM.length > 0
+		//- 	section#tipOfTheMonth.updates-section.masonry
+		//- 		.container
+		//- 			.row
+		//- 				.col-sm-12.text-center
+		//- 					if contentful.Home[0].tipOfTheMonth != undefined
+		//- 						h3.color--green= contentful.Home[0].tipOfTheMonth
+		//- 			if contentful.BlogCategories != undefined
+		//- 				.row.masonry-filter-container.text-center
+		//- 					.masonry-filter-holder.text-center
+		//- 						.masonry__filters.text-center(data-filter-all-text='#{contentful.UpdatesPage[0].allCategories}')
+		//- 							ul
+		//- 								li.active(data-masonry-filter='*')= contentful.UpdatesPage[0].allCategories
+		//- 								for item in contentful.BlogCategories
+		//- 									li(data-masonry-filter='#{item.slug}')= item.title
+		//- 			.row.text-center
+		//- 				.col-sm-12
+		//- 					a.btn.btn-green-white.arrow-after-green-white(href='/totm-archive')
+		//- 						span.btn__text= contentful.Home[0].viewAllTotm
+		//- 			.row.masonry__container
+		//- 				if contentful.TOTM != undefined
+		//- 					- var max = 3
+		//- 					for TOTM in contentful.TOTM
+		//- 						if max > 0
+		//- 							- max --
+		//- 							- var date = new Date(TOTM.date);
+		//- 							- var cats = ''
+		//- 							if TOTM.category != undefined
+		//- 								for item in TOTM.category
+		//- 									- cats+= ' filter-'+item.fields.slug
+		//- 							.col-xs-12.update-item.bg--white.clearfix.masonry__item(class="#{cats}")
+		//- 								a(href="#{TOTM._url}")
+		//- 									p.color--green.small.unmarg.float-left.col-xs-12 Update #{(date.getMonth()+1) +' '+ date.getDate() +' '+ date.getFullYear()}
+		//- 									h6.weight-700.color--blue.unmarg.float-left.col-xs-10= TOTM.title
+		//- 									div.arrow-right.float-right
