@@ -13,7 +13,49 @@ html(xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#")
 		
 		title= 'VAS - ' + contentful.Home[0].headerLargeText
 		meta(name='description', content='VAS - #{contentful.Home[0].headerLargeText}')
+		
+		//- begin tracking codes for Paradot
+		case locals.env
+			when 'en'
+				script(type='text/javascript').
+					console.log('paradot en')
+				    piAId = '456842';
+				    piCId = '41851';
+				    piHostname = 'pi.pardot.com';
+			when 'de'
+				script(type="text/javascript").
+					console.log('paradot de')
+					piAId = '456842';
+					piCId = '45750';
+					piHostname = 'pi.pardot.com';
+			when 'ru'
+				script(type="text/javascript").
+					console.log('paradot ru')
+					piAId = '456842';
+					piCId = '45752';
+					piHostname = 'pi.pardot.com';
+			when 'es'
+				script(type="text/javascript").
+					console.log('paradot es')
+					piAId = '456842';
+					piCId = '45748';
+					piHostname = 'pi.pardot.com';
+		
+		script(type='text/javascript').
+			//- piAId = '456842';
+			//- piCId = '41851';
+			//- piHostname = 'pi.pardot.com';
+			(function() {
+				function async_load(){
+					var s = document.createElement('script'); s.type = 'text/javascript';
+					s.src = ('https:' == document.location.protocol ? 'https://pi' : 'http://cdn') + '.pardot.com/pd.js';
+					var c = document.getElementsByTagName('script')[0]; c.parentNode.insertBefore(s, c);
+					}
+					if(window.attachEvent) { window.attachEvent('onload', async_load); }
+					else { window.addEventListener('load', async_load, false); }
+			})();
 
+		
 		block head
 		
 		!= css("/")
