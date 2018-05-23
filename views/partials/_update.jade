@@ -48,7 +48,7 @@ block content
 						if item.fields.body != undefined
 							.row
 								.col-sm-12.col-md-10.col-lg-8
-									.markdown!= md(item.fields.body)
+									.md!= md(item.fields.body)
 						if item.fields.videoIframe != undefined
 							.row
 								.col-sm-12
@@ -104,7 +104,7 @@ block content
 								.col-md-6.col-sm-12.blue-pullquote
 									h6.color--blue= entry.bluePullquote
 							.col-md-6.col-sm-12
-								.markdown!= md(item.fields.body)
+								.md!= md(item.fields.body)
 
 							
 					if item.fields.videoIframe != undefined
@@ -156,7 +156,7 @@ block content
 					if item.fields.body != undefined
 						.row
 							.col-sm-12.col-md-10.col-lg-8
-								.markdown!= md(item.fields.body)
+								.md!= md(item.fields.body)
 					if item.fields.videoIframe != undefined
 						.row
 							.col-sm-12
