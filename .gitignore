@@ -2,6 +2,7 @@
 node_modules
 public
 assets/img/RESIZED
+assets/help/*.*
 *.psd
 *.ai
 contentful_export.json
