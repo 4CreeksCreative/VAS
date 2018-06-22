@@ -10,4 +10,18 @@ vasEnglish.on('error',console.error)
 vasGerman.on('error',console.error)
 vasRussian.on('error',console.error)
 
-vasSpanish.compile().then(vasGerman.compile().then(vasEnglish.compile().then(vasRussian.compile())))
+setTimeout(function(){
+	vasSpanish.compile()
+},1000)
+
+setTimeout(function(){
+	vasGerman.compile()
+},1000)
+
+setTimeout(function(){
+	vasEnglish.compile()
+},1000)
+
+setTimeout(function(){
+	vasRussian.compile()
+},1000)
