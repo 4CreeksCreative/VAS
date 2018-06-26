@@ -12,16 +12,16 @@ vasRussian.on('error',console.error)
 
 setTimeout(function(){
 	vasSpanish.compile()
-},1000)
+},2000)
 
 setTimeout(function(){
 	vasGerman.compile()
-},1000)
+},4000)
 
 setTimeout(function(){
 	vasEnglish.compile()
-},1000)
+},6000)
 
 setTimeout(function(){
 	vasRussian.compile()
-},1000)
+},8000)
