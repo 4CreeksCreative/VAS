@@ -11,34 +11,27 @@ footer#footer.corner-point-brown
 				//-- alert('#{locals.env}')
 				#subscribe.col-md-6.col-xs-12.float-right.clearfix
 					!= contentful.Footer[0].subscribeContent
-					- var locale = contentful.Contact[0].locale == 'en' ? '' : '/'+contentful.Contact[0].locale
-					form#contact-form2.form-email.custom-script(data-error="#{contentful.Contact[0].sendErrorMessage}", name="Contact-bot", action='#{locale}/thankyou', netlify-recaptcha)
-						//- netlify-honeypot="bot-field",
-						//- .col-sm-12.hidden
-						//- 	label don't fill this out:
-						//- 	input(type='text', name='bot-field')
-						.col-sm-6
-							label= contentful.Contact[0].yourPhone
-							input.phone(type='text', name='subject')
-						.col-sm-12
-							label= contentful.Contact[0].yourMessage
-							textarea.message.validate-required(type='text', name='message')
-						.col-sm-12
-							div(netlify-recaptcha)
-						.float-right(style="padding-right:15px;")
-							button.btn.btn-blue-white.arrow-after-blue-white(type='submit' style="position:relative;z-index:9;")
-								span.btn__text= contentful.Contact[0].sendButtonText
-					form#contact-form.form-email.custom-script(data-error="#{contentful.Contact[0].sendErrorMessage}", name="email-subscribe-#{contentful.Contact[0].locale}", action='#{locale}/thankyou', netlify netlify-recaptcha netlify-honeypot="website")
-						//- netlify-honeypot="bot-field",
-						.col-sm-12.hidden
-							label don't fill this out:
-							input(type='text', name='website')
-						.col-sm-12.unpad
-							//-label(placeholder="contentful.Contact[0].yourEmail")= contentful.Contact[0].yourEmail
-							input.email.validate-required.validate-email(type='text', name='email' placeholder="#{contentful.Contact[0].yourEmail}")
-						.float-left(style="padding-right:15px;")
-							button.btn.btn-white-gray.arrow-after-white-gray(type='submit' style="position:relative;z-index:9;")
-								span.btn__text Subscribe
+					
+					
+
+					#mc_embed_signup
+						form#mc-embedded-subscribe-form.validate(action='//vas.us14.list-manage.com/subscribe/post?u=f0f106248a8a0df7906dc9354&id=779c844d05', method='post', name='mc-embedded-subscribe-form', target='_blank', novalidate='' data-error="#{contentful.Contact[0].sendErrorMessage}" data-success="#{contentful.Footer[0].subscribeSuccess}")
+							#mc_embed_signup_scroll
+								#mce-responses.clear
+									#mce-error-response.response(style='display:none')
+									#mce-success-response.response(style='display:none')
+								//- real people should not fill this in and expect good things - do not remove this or risk form bot signups
+								div(style='position: absolute; left: -5000px;', aria-hidden='true')
+									input(type='text', name='b_f0f106248a8a0df7906dc9354_779c844d05', tabindex='-1', value='')
+
+
+								.mc-field-group.clearfix
+									//-label(for='mce-EMAIL') Email Address 
+									input#mce-EMAIL.required.email.col-sm-6.col-xs-12.large(type='email', value='', name='EMAIL' placeholder="#{contentful.Footer[0].subscribePlaceholder}")
+								
+								
+									button#mc-embedded-subscribe.col-sm-5.col-xs-12.col-offset-sm-1.float-left-xs.float-right.btn.btn-white-gray.arrow-after-white-gray.large.unmarg(type='submit', value='Subscribe', name='subscribe')
+										span.btn__text= contentful.Footer[0].subscribeButtonText
 			else if locals.env === "de"
 				#subscribe.col-md-6.col-xs-12.float-right.clearfix
 					// Start of signup

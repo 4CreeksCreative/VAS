@@ -913,7 +913,7 @@ mr = (function (mr, $, window, document){
         // return false so form submits through jQuery rather than reloading page.
         if (e.preventDefault) e.preventDefault();
         else e.returnValue = false;
-	
+
         var body          = $('body'),
             thisForm      = $(e.target).closest('form'),
             formAction    = typeof thisForm.attr('action') !== typeof undefined ? thisForm.attr('action') : "",
@@ -922,7 +922,7 @@ mr = (function (mr, $, window, document){
             originalError = thisForm.attr('original-error'),
             captchaUsed   = thisForm.find('div.recaptcha').length ? true:false,
             successRedirect, formError, formSuccess, errorText, successText;
-	
+
         body.find('.form-error, .form-success').remove();
         submitButton.attr('data-text', submitButton.text());
         errorText = thisForm.attr('data-error') ? thisForm.attr('data-error') : "Please fill all fields correctly";
@@ -932,25 +932,25 @@ mr = (function (mr, $, window, document){
         formError = body.find('.form-error');
         formSuccess = body.find('.form-success');
         thisForm.addClass('attempted-submit');
-	
+
         // Do this if the form is intended to be submitted to MailChimp or Campaign Monitor
         if (formAction.indexOf('createsend.com') !== -1 || formAction.indexOf('list-manage.com') !== -1 ) {
-	
+
             console.log('Mail list form signup detected.');
             if (typeof originalError !== typeof undefined && originalError !== false) {
                 formError.html(originalError);
             }
-	
+            
             // validateFields returns 1 on error;
             if (mr.forms.validateFields(thisForm) !== 1) {
-	
+               
                 thisForm.removeClass('attempted-submit');
-	
+
                 // Hide the error if one was shown
                 formError.fadeOut(200);
                 // Create a new loading spinner in the submit button.
                 submitButton.addClass('btn--loading');
-	
+                
                 try{
                     $.ajax({
                         url: thisForm.attr('action'),
@@ -962,24 +962,24 @@ mr = (function (mr, $, window, document){
                         contentType: 'application/json; charset=utf-8',
                         success: function(data){
                             // Request was a success, what was the response?
-	
+
                             if (data.result !== "success" && data.Status !== 200) {
-	
+                                
                                 // Got an error from Mail Chimp or Campaign Monitor
-	
+
                                 // Keep the current error text in a data attribute on the form
                                 formError.attr('original-error', formError.text());
                                 // Show the error with the returned error text.
                                 formError.html(data.msg).stop(true).fadeIn(1000);
                                 formSuccess.stop(true).fadeOut(1000);
-	
+
                                 submitButton.removeClass('btn--loading');
                             } else {
-	
+                                
                                 // Got success from Mail Chimp or Campaign Monitor
-	
+                                
                                 submitButton.removeClass('btn--loading');
-	
+
                                 successRedirect = thisForm.attr('data-success-redirect');
                                 // For some browsers, if empty `successRedirect` is undefined; for others,
                                 // `successRedirect` is false.  Check for both.
@@ -998,12 +998,12 @@ mr = (function (mr, $, window, document){
                     // Show the error with the returned error text.
                     formError.html(err.message);
                     mr.forms.showFormError(formSuccess, formError, 1000, 5000, 500);
-	
+
                     submitButton.removeClass('btn--loading');
                 }
-	
-	
-	
+            
+
+                
             } else {
                 // There was a validation error - show the default form error message
                 mr.forms.showFormError(formSuccess, formError, 1000, 5000, 500);
@@ -1013,21 +1013,21 @@ mr = (function (mr, $, window, document){
             if (typeof originalError !== typeof undefined && originalError !== false) {
                 formError.text(originalError);
             }
-	
+
             error = mr.forms.validateFields(thisForm);
-	
+
             if (error === 1) {
                 mr.forms.showFormError(formSuccess, formError, 1000, 5000, 500);
             } else {
-	
+
                 thisForm.removeClass('attempted-submit');
-	
+
                 // Hide the error if one was shown
                 formError.fadeOut(200);
-	
+                
                 // Create a new loading spinner in the submit button.
                 submitButton.addClass('btn--loading');
-	
+
                 jQuery.ajax({
                     type: "POST",
                     url: (formAction !== "" ? formAction : "mail/mail.php"),
@@ -1035,9 +1035,9 @@ mr = (function (mr, $, window, document){
                     success: function(response) {
                         // Swiftmailer always sends back a number representing number of emails sent.
                         // If this is numeric (not Swift Mailer error text) AND greater than 0 then show success message.
-	
+
                         submitButton.removeClass('btn--loading');
-	
+
                         if ($.isNumeric(response)) {
                             if (parseInt(response,10) > 0) {
                                 // For some browsers, if empty 'successRedirect' is undefined; for others,
@@ -1046,7 +1046,7 @@ mr = (function (mr, $, window, document){
                                 if (typeof successRedirect !== typeof undefined && successRedirect !== false && successRedirect !== "") {
                                     window.location = successRedirect;
                                 }
-	
+
                                 mr.forms.resetForm(thisForm);
                                 mr.forms.showFormSuccess(formSuccess, formError, 1000, 5000, 500);
                                 mr.forms.captcha.resetWidgets();
