@@ -20,7 +20,6 @@ block content
 						h3.color--green= contentful.Contact[0].contactTitle
 				.row
 					.col-sm-12.unpad
-						- var locale = contentful.Contact[0].locale == 'en' ? '' : '/'+contentful.Contact[0].locale
 						form#contact-form2.form-email.custom-script(data-error="#{contentful.Contact[0].sendErrorMessage}", name="Contact-bot", action='#{locale}/thankyou', netlify-recaptcha)
 							//- netlify-honeypot="bot-field",
 							//- .col-sm-12.hidden

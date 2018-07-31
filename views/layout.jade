@@ -23,6 +23,8 @@ html(xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#")
 	- if(pageClass[0] === undefined && entry != null & entry.sys.contentType.sys.id != undefined){pageClass = entry.sys.contentType.sys.id}
 	- else{pageClass = pageClass[0]}
 	- console.log('loading a page type: ' + env + ' ' + pageClass)
+	- var locale = contentful.Contact[0].locale == 'en' ? '' : '/'+contentful.Contact[0].locale
+	
 	body
 		include partials/_header
 		block content
