@@ -63,7 +63,7 @@ $('#subscribe-form').submit(function(e){
 	thisForm.addClass('attempted-submit');
 	if (mr.forms.validateFields($(thisForm)) !== 1){
 			var http = huehue;
-			var params = new FormData(thisForm)
+			var params = new FormData(document.getElementById('subscribe-form'))
 			http.open("POST", formAction, true);
 			http.send(params);
 			http.onload = function() {
