@@ -56,9 +56,9 @@ $('#contact-form').submit(function(e){
 	submitButton.attr('data-text', submitButton.text());
 	errorText = thisForm.attr('data-error') ? thisForm.attr('data-error') : "Please fill all fields correctly";
 	successText = thisForm.attr('data-success') ? thisForm.attr('data-success') : "Thanks, we'll be in touch shortly";
-	// if (grecaptcha.getResponse() === ''){
-	// 	errorText = 'Please complete captcha'
-	// }
+	if (grecaptcha.getResponse() === ''){
+		errorText = 'Please complete captcha'
+	}
 	if (/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/igm.test($('textarea').val()) === true){
 		errorText = 'Please do not include URLs in the message body'
 	}
@@ -67,8 +67,7 @@ $('#contact-form').submit(function(e){
 	formError = body.find('.form-error');
 	formSuccess = body.find('.form-success');
 	thisForm.addClass('attempted-submit');
-	//if (mr.forms.validateFields($('#contact-form')) !== 1 && grecaptcha.getResponse() != '' && /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/igm.test($('textarea').val()) != true){
-	if (mr.forms.validateFields($('#contact-form')) !== 1 && /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/igm.test($('textarea').val()) != true){
+	if (mr.forms.validateFields($('#contact-form')) !== 1 && grecaptcha.getResponse() != '' && /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/igm.test($('textarea').val()) != true){
 			var http = huehue;
 			var params = new FormData(document.getElementById('contact-form'))
 			http.open("POST", formAction, true);
