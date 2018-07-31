@@ -55,15 +55,13 @@ $('#subscribe-form').submit(function(e){
 	submitButton.attr('data-text', submitButton.text());
 	errorText = thisForm.attr('data-error') ? thisForm.attr('data-error') : "Please fill all fields correctly";
 	successText = thisForm.attr('data-success') ? thisForm.attr('data-success') : "Thanks, we'll be in touch shortly";
-	if (/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/igm.test($('textarea').val()) === true){
-		errorText = 'Please do not include URLs in the message body'
-	}
+	
 	thisForm.append('<div class="form-error" style="display: none;">' + errorText + '</div>');
 	thisForm.append('<div class="form-success" style="display: none;">' + successText + '</div>');
 	formError = body.find('.form-error');
 	formSuccess = body.find('.form-success');
 	thisForm.addClass('attempted-submit');
-	if (mr.forms.validateFields($(thisForm)) !== 1 && /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/igm.test($('textarea').val()) != true){
+	if (mr.forms.validateFields($(thisForm)) !== 1){
 			var http = huehue;
 			var params = new FormData(thisForm)
 			http.open("POST", formAction, true);
