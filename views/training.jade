@@ -1,0 +1,22 @@
+extends layout
+
+block content
+	#about.content
+		section#hero.img-clip.imagebg.parallax.cover.height-70(data-overlay="7")
+			.background-image-holder
+				img(alt='background', src='#{asset(contentful.Training[0].headerBackground)}')
+			.signature-container
+			.container.pos-vertical-center
+				.row
+					.col-sm-12
+						h2#updatetitle= contentful.Training[0].headerTitle
+
+		if contentful.Training[0].aboutUsSection != undefined
+			section
+				#about-content.container
+					for item in contentful.Training[0].aboutUsSection
+						.row
+							.col-sm-12.col-md-10.col-lg-8
+							
+								h3.color--green= item.fields.sectionTitle
+								.md!= md(item.fields.sectionContent)

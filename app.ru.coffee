@@ -50,6 +50,11 @@ module.exports =
 					filters:{
 						'locale':'ru'
 					}
+				Training:
+					id: 'trainingPage'
+					filters:{
+						'locale':'ru'
+					}
 				Support:
 					id: 'supportPage'
 					filters:{

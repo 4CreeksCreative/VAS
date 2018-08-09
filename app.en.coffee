@@ -48,6 +48,11 @@ module.exports =
 					filters:{
 						'locale':'en-US'
 					}
+				Training:
+					id: 'trainingPage'
+					filters:{
+						'locale':'en-US'
+					}
 				Support:
 					id: 'supportPage'
 					filters:{
